@@ -1,3 +1,3 @@
-./ssh-install.sh
-./jdk-install.sh
-./nginx-install.sh
+sh ./ssh-install.sh
+sh ./jdk-install.sh
+sh ./nginx-install.sh
