@@ -28,3 +28,7 @@
       gpgcheck=0
       enabled=1
     ```
+* How to upgrade to VIM 8.0+?
+  * yum install gcc
+  * yum install ncurses-devel.x86_64
+  * Follow remaining steps in [VIM8 Upgrade in CentOS](https://blog.csdn.net/Kexiii/article/details/83928540)
