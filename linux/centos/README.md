@@ -16,3 +16,15 @@
 * How to solve issue: "could not resolve host?"
   * vim /etc/resolv.conf
   * compare with normal server config
+* How to change the mirrors?
+  * Backup: mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+  * Backup: wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+* Fix error: "No package nginx available."
+  * vim /etc/yum.repos.d/nginx.repo
+    ```
+      [nginx]
+      name=nginx repo
+      baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+      gpgcheck=0
+      enabled=1
+    ```
