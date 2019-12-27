@@ -31,4 +31,6 @@
 * How to upgrade to VIM 8.0+?
   * yum install gcc
   * yum install ncurses-devel.x86_64
+  * sudo wget -O vim.zip https://github.com/vim/vim/archive/master.zip&&unzip vim.zip -d ./&&cd ./vim-master/src&&./configure --with-features=huge --enable-pythoninterp=yes --enable-cscope --enable-fontset --enable-python3interp=yes --with-python3-config-dir=/usr/local/python3/lib/python3.8/config-3.8-x86_64-linux-gnu  --prefix=/usr/local/vim  &&make&&make install
+  * ln -s /usr/local/vim .local
   * Follow remaining steps in [VIM8 Upgrade in CentOS](https://blog.csdn.net/Kexiii/article/details/83928540)
