@@ -16,6 +16,7 @@
 * How to solve issue: "could not resolve host?"
   * vim /etc/resolv.conf
   * compare with normal server config
+  * reboot server
 * How to change the mirrors?
   * Backup: mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
   * Backup: wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
