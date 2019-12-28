@@ -8,3 +8,5 @@ egrep -v "^#|^$" /opt/zookeeper/conf/zoo.cfg
 mkdir -p /opt/zookeeper/{logs,data}
 # depends on specific machine
 #echo "1" > /opt/zookeeper/data/myid
+# /opt/zookeeper/bin/zkServer.sh start
+# /opt/zookeeper/bin/zkServer.sh status
