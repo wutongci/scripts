@@ -26,6 +26,28 @@
   ```
   for((i=0;i<=2;i++)); do /opt/redis/bin/redis-server /opt/redis/redis-cluster/700$i/redis.config; done
   ```
+  * create cluster
+    ```
+    cd /opt/redis/bin
+  ./redis-cli --cluster create 10.128.42.59:7000 10.128.42.59:7001 10.128.42.59:7002 10.128.42.78:7003 10.128.42.78:7004 10.128.42.78:7005 10.128.42.118:7006 10.128.42.118:7007 10.128.42.118:7008 --cluster-replicas 1
+    ```
+  * Verify cluster
+    run cmd in one machine
+    ```
+    ./redis-cli -h 10.128.42.59 -c -p 7000
+    ```
+    run cmd in other machine
+    ```
+    ./redis-cli -h 10.128.42.118 -c -p 7007
+    ```
+  * useful commands
+    * cluster info
+    * cluster nodes
+  * view node infomation
+    * ip:port is any available address
+    ```
+    ./redis-cli --cluster check 10.128.42.118:7006
+    ```
 * How to verify reids status?
   * ps -ef | grep redis
   * netstat -tnlp | grep redis 
