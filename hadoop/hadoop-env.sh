@@ -44,11 +44,11 @@
 # Generic settings for HADOOP
 ###
 
-export HDFS_NAMENODE_USER=root
-export HDFS_DATANODE_USER=root
-export HDFS_SECONDARYNAMENODE_USER=root
-export YARN_RESOURCEMANAGER_USER=root
-export YARN_NODEMANAGER_USER=root
+export HDFS_NAMENODE_USER=yang
+export HDFS_DATANODE_USER=yang
+export HDFS_SECONDARYNAMENODE_USER=yang
+export YARN_RESOURCEMANAGER_USER=yang
+export YARN_NODEMANAGER_USER=yang
 
 # Technically, the only required environment variable is JAVA_HOME.
 # All others are optional.  However, the defaults are probably not
