@@ -15,19 +15,19 @@
 # limitations under the License.
 
 ########### These MUST be filled in for a storm configuration
-storm.zookeeper.servers:
-     - "10.128.42.59"
-     - "10.128.42.78"
-     - "10.128.42.118"
+ storm.zookeeper.servers:
+    - "10.128.42.59"
+    - "10.128.42.78"
+    - "10.128.42.118"
 # 
-nimbus.seeds: ["10.128.42.59", "10.128.42.78", "10.128.42.118"]
-storm.local.dir: "/opt/storm/data"
-supervisor.slots.ports:
+ nimbus.seeds: ["10.128.42.59", "10.128.42.78", "10.128.42.118"]
+ storm.local.dir: "/opt/storm/data"
+ supervisor.slots.ports:
     - 6700
     - 6701
     - 6702
     - 6703
-ui.port 9099
+ ui.port: 9099
       # 
 # 
 # ##### These may optionally be filled in:
