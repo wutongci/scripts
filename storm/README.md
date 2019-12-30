@@ -8,3 +8,4 @@
   ```
   chmod u+x xxxx.sh
   ```
+* How to fix error: "Could not find leader nimbus from seed hosts Did you specify a valid list of nimbus hosts for config nimbus.seeds?"
