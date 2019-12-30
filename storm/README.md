@@ -1,7 +1,7 @@
 * add env varaible
   ```
   vim /etc/profile
-  export STORM_HOME=/opt/ronnie/storm-2.0.0
+  export STORM_HOME=/opt/storm
   export PATH=$STORM_HOME/bin:$PATH
   ```
 * add permission on shell file?
