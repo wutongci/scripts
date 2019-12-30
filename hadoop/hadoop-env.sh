@@ -57,7 +57,8 @@ export YARN_NODEMANAGER_USER=yang
 
 # The java implementation to use. By default, this environment
 # variable is REQUIRED on ALL platforms except OS X!
-# export JAVA_HOME=
+# Note different machiens has different jvm path, this env is necessary!!
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 # Location of Hadoop.  By default, Hadoop will attempt to determine
 # this location based upon its execution path.
