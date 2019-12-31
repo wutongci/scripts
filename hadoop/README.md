@@ -18,3 +18,10 @@
 * How to check Hadoop status?
   * http://10.128.42.59:9870/dfshealth.html#tab-overview  (master server)
   * http://10.128.42.59:8088/cluster
+* Fix error: "Error occurred during initialization of boot layer java.lang.module.FindException: Module java.activation not found"
+  * Download activiation-1.1.jar
+  * add the following config in yarn-env.sh file
+  ```
+  export YARN_RESOURCEMANAGER_OPTS="--add-modules=ALL-SYSTEM"
+  export YARN_NODEMANAGER_OPTS="--add-modules=ALL-SYSTEM"
+  ```
