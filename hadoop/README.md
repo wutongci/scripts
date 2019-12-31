@@ -17,3 +17,4 @@
   ```
 * How to check Hadoop status?
   * http://10.128.42.59:9870/dfshealth.html#tab-overview  (master server)
+  * http://10.128.42.59:8088/cluster
