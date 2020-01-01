@@ -1,5 +1,6 @@
 * How to install spark?
   * prerequisite
+    * Zookeeper
     * Hadoop
   * run install.sh
   * update env variable
