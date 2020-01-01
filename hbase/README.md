@@ -9,3 +9,5 @@
   ```
     ./bin/start-hbase.sh
   ```
+* How to verify hbase status?
+  * http://10.128.42.59:16010/master-status
