@@ -1,4 +1,9 @@
 * Ideally, we only need to run script in one machine
+* update /etc/profile
+  ```
+  export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+  export PATH=$JAVA_HOME/bin:$PATH
+  ```
 * how to grant permssion on other machines?
   ```
   ssh-keygen -t rsa
