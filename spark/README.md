@@ -14,3 +14,5 @@
     ```
       cd /opt/spark && ./sbin/start-all.sh
     ```
+* Note
+  * Currently, I notice that spark will use 8080 and 8081. Also, storm will use 8080. So need to think about this issue later.
