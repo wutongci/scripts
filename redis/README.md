@@ -40,7 +40,7 @@
     ```
     ./redis-cli -h 10.128.42.118 -c -p 7007
     ```
-  * useful commands
+  * useful commands 
     * cluster info
     * cluster nodes
   * view node infomation
