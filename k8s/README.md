@@ -67,6 +67,17 @@
     vim /etc/fstab
     ```
     comment out the line which contains swap
+  * Error while initializing connection to Kubernetes apiserver. This most likely means that the cluster is misconfigured
+    ```
+    https://www.jianshu.com/p/f9a2bd82e368
+    ```
+  * Metric client health check failed: the server could not find the requested resource?
+  * Useful commands
+    * kubectl describe deployment kubernetes-dashboard -n kube-system
+    * kubectl get pods --namespace=kube-system
+    * kubectl get service --namespace=kube-system
+    * kubectl describe pod kubernetes-dashboard-b8cb74bdd-xqr6w --namespace kube-system
+    * kubectl logs kubernetes-dashboard-b7ffbc8cb-45z4h --namespace kube-system
   * Resources
     * [1](https://jimmysong.io/kubernetes-handbook/practice/dashboard-addon-installation.html)
     * [2](https://www.qikqiak.com/k8s-book/docs/17.%E5%AE%89%E8%A3%85%20Dashboard%20%E6%8F%92%E4%BB%B6.html)
