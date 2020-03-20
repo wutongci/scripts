@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg"
+	 xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g transform="translate(-431.000000, -231.000000)">
+			<g transform="translate(364.000000, 76.000000)">
+				<g transform="translate(60.000000, 150.000000)">
+					<g transform="translate(7.000000, 5.000000)">
+						<circle class="ets-pr-fb-survey-icon-background" cx="15" cy="15" r="15"/>
+						<path class="ets-pr-fb-survey-icon-fill"
+							  d="M10.6929508,20.4193492 L9.29089089,19.2278481 L8.73417722,20.0278992 L10.1362371,21.2194003 C11.553368,22.4235126 13.2509108,23.0253165 14.9493671,23.0253165 C16.6478233,23.0253165 18.3458229,22.4235126 19.7624971,21.2194003 L21.164557,20.0278992 L20.6078433,19.2278481 L19.2062401,20.4193492 C16.6998868,22.549624 13.1997608,22.5486151 10.6929508,20.4193492 Z"
+							  transform="translate(14.949367, 21.126582) scale(-1, -1) translate(-14.949367, -21.126582) "/>
+						<path class="ets-pr-fb-survey-icon-fill"
+							  d="M9.21518987,14.2721519 C9.21518987,13.5765528 9.78266262,13.0126582 10.478689,13.0126582 L10.5086528,13.0126582 C11.2064641,13.0126582 11.7721519,13.5717032 11.7721519,14.2721519 L11.7721519,14.2721519 C11.7721519,14.967751 11.2046792,15.5316456 10.5086528,15.5316456 L10.478689,15.5316456 C9.7808777,15.5316456 9.21518987,14.9726006 9.21518987,14.2721519 L9.21518987,14.2721519 Z"
+							  transform="translate(10.493671, 14.272152) scale(-1, -1) translate(-10.493671, -14.272152) "/>
+						<rect class="ets-pr-fb-survey-icon-fill"
+							  x="18.2278481" y="13.0126582" width="2.55696203" height="2.51898734"
+							  rx="1.25949367"/>
+						<path class="ets-pr-fb-survey-icon-stroke"
+							  d="M8,9 L12.5,11.5" stroke-linecap="round"/>
+						<path class="ets-pr-fb-survey-icon-stroke"
+							  d="M18,9 L22.5,11.5" stroke-linecap="round"
+							  transform="translate(20.250000, 10.250000) scale(-1, 1) translate(-20.250000, -10.250000) "/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

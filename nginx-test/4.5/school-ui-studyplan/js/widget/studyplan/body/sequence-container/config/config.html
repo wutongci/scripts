@@ -1,0 +1,15 @@
+<%
+	var unit = data.unit;
+%>
+<div class="ets-sp-cfg">
+	<div class="ets-sp-cfg-hd">
+		<h2 data-weave="troopjs-ef/blurb/widget" data-blurb-id="656054" data-text-en="set up unit plan"></h2>
+		<h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="656055" data-text-en="Estimated 6 hours to complete the unit"></h5>
+	</div>
+	<div class="ets-sp-cfg-bd">
+        <div data-weave="school-ui-studyplan/shared/pace-config/main" data-mode="<%=data.mode%>" data-config='<%= JSON.stringify(data.properties).replace(/\'/g, "&#39;")%>'></div>
+	</div>
+	<div class="ets-sp-cfg-ft">
+		<button type="button" class="btn btn-primary btn-m btn-block ets-sp-cfg-create"><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="656059" data-text-en="Let's go"></span> <i class="glyphicon icon-caret-right"></i></button>
+	</div>
+</div>

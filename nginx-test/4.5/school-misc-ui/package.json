@@ -1,0 +1,33 @@
+{
+  "_from": "@ef/school-misc-ui@2018.44.2",
+  "_id": "@ef/school-misc-ui@2018.44.2",
+  "_inBundle": false,
+  "_integrity": "sha1-vFfzAy9r8ehJo0Nu0bgohgZ38MI=",
+  "_location": "/@ef/school-misc-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/school-misc-ui@2018.44.2",
+    "name": "@ef/school-misc-ui",
+    "escapedName": "@ef%2fschool-misc-ui",
+    "scope": "@ef",
+    "rawSpec": "2018.44.2",
+    "saveSpec": null,
+    "fetchSpec": "2018.44.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/school-misc-ui/-/school-misc-ui-2018.44.2.tgz",
+  "_shasum": "bc57f3032f6bf1e849a3436ed1b828860677f0c2",
+  "_spec": "@ef/school-misc-ui@2018.44.2",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "name": "@ef/school-misc-ui",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "version": "2018.44.2"
+}

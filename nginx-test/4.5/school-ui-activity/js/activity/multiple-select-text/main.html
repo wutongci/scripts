@@ -1,0 +1,15 @@
+<%
+	var data = data || {};
+	var commonAudio = data.references.aud;
+%>
+<div class="ets-act-mt-container">
+	<%if (commonAudio) { %>
+		<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+			<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+		           data-src="<%=commonAudio.url%>" type="audio/mpeg"
+		           class="ets-ap ets-mt-com-ap"></audio>
+		</div></div>
+	<%}%>
+	<div class="ets-act-mst-wrap" data-weave="school-ui-activity/activity/multiple-select-text/multiple-select-text">
+	</div>
+</div>

@@ -1,0 +1,53 @@
+<%
+    var model = data || {},
+        isEnglish = model.isEnglish,
+        SEP_CHAR = isEnglish ? "" : "; ",
+        result = model.result || {};
+%>
+<h5 class="ets-ui-tts-translation-hd">
+    <p class="ets-ui-tts-word"><%=result.wordText%></p>
+    <% if(result.uk) { %>
+    <span class="ets-ui-tts-ipa-region">UK</span>
+    <span class="ets-ui-tts-ipa">/<%=result.uk%>/</span>
+    <%}%>
+    <% if(result.us) { %>
+    <span class="ets-ui-tts-ipa-region">US</span>
+    <span class="ets-ui-tts-ipa">/<%=result.us%>/</span>
+    <%}%>
+</h5>
+<ul class="ets-ui-tts-translation-bd<%=(isEnglish ? " ets-english" : "")%>">
+    <% renderTranslation(result.pos || []); %>
+</ul>
+
+<% function renderTranslation(posList) {
+    var posCount = posList.length;
+    for(var i = 0; i < posCount; i++) {
+        renderPartOfSpeech(posList[i]);
+    }
+}%>
+
+<% function renderPartOfSpeech(pos) { %>
+<li class="ets-ui-tts-word-pos">
+    <p><%=pos.partOfSpeech%></p>
+    <ul class="ets-ui-tts-word-sense">
+        <% renderDefinition(pos.definitions || []); %>
+    </ul>
+</li>
+<%}%>
+
+<%
+// For English layout : <li>definition1</li><li>definition2</li>
+// Non English layout : <li>definition1; definition2</li>
+function renderDefinition(definitions) {
+    var index = 0,
+        count = definitions.length,
+        outerLoopCount = isEnglish ? count : (count > 0 ? 1 : 0),
+        innerLoopCount = count - outerLoopCount + 1;
+    for(var i = 0; i < outerLoopCount; i++) {
+%>
+<li class="ets-ui-tts-word-def">
+    <% for(var j = 0; j < innerLoopCount; j++) { %>
+    <%=definitions[index++]%><%=SEP_CHAR%>
+    <%}%>
+</li>
+<%}}%>

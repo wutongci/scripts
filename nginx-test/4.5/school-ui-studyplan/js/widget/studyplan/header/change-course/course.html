@@ -1,0 +1,23 @@
+<%if(data.enableShowCourseName) {%>
+<div class="ets-sp-chc-hd">
+    <%if(data.changeCourseLink && data.enableChangeCourse) {%>
+    <div class="ets-sp-chc-widget ets-sp-chc-link">
+        <h3><%= data.courseName %></h3>
+        <h4><%= data.levelName %></h4>
+        <a class="ets-sp-chc-link-url" data-weave="troopjs-ef/blurb/widget" data-blurb-id="668938" data-text-en="Change course" href="<%=data.changeCourseLink%>"></a>
+    </div>
+    <%}else{%>
+    <div class="ets-sp-chc-widget ets-sp-chc-switch <%= (data.enableChangeCourse ? "ets-sp-chc-hand": "")%>" <%if(data.enableChangeCourse) {%>data-action='switch' <%}%> >
+        <%if(data.enableChangeCourse) {%>
+            <div class="ets-sp-chc-switch-arrow">
+                <i class="glyphicon icon-caret-down"></i>
+            </div>
+        <%}%>
+        <div class="ets-sp-chc-switch-main">
+            <h3><%= data.courseName %></h3>
+            <h4><%= data.levelName %></h4>
+        </div>
+    </div>
+    <%}%>
+</div>
+<%}%>

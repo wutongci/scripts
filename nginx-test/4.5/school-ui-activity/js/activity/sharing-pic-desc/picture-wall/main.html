@@ -1,0 +1,90 @@
+<%
+    var others = data.others;
+    var myself = data.myself;
+    var imagePath;
+    function getImagePath(isFromLibrary, imgPath) {
+        if(imgPath.indexOf('http:') < 0) { //todo: delete the line after 15-1 release
+            imgPath = (isFromLibrary ? data.cacheServer : data.uploadCacheServer) + imgPath;
+        }
+        return imgPath;
+    }
+%>
+<ul class="ets-profile-wall ets-cf">
+    <% for (var i = 0, len = others.length; i < len; i++ ) {
+        imagePath = getImagePath(others[i].isFromLibrary, others[i].imagePath);
+    %>
+    <li <% if (i === 9) { %>class="ets-add-margin-right"<% } %>>
+        <a href="#" student-id="<%= others[i].studentId %>" class="ets-profile-wall-item">
+            <img src="<%= imagePath %>">
+            <div class="ets-shadow"></div>
+        </a>
+
+        <div class="ets-tooltip ets-left-arrow" data-weave="school-ui-activity/shared/tooltip/main">
+            <p><%= others[i].descr %></p>
+
+            <div class="ets-person-info">
+                <img src="<%= others[i].avatar %>" width="40" height="40" alt="">
+                <div class="ets-info">
+                    <p class="ets-name"><%=others[i].firstName%></p>
+                    <% if (others[i].countryFlag) { %>
+                    <p class="ets-location">
+                        <img src="/_imgs/friends/flags/<%= others[i].countryFlag %>.gif" width="16" height="11"/>
+                        <span><%= others[i].country %></span>
+                    </p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+
+    </li>
+    <% } %>
+    <% for (var j = i; j < 20; j++) { %>
+    <li class="ets-profile-placeholder <% if (j === 9) { %>ets-add-margin-right<% } %>">
+        <a class="ets-profile-wall-item-placeholder">
+            <div class="ets-shadow"></div>
+        </a>
+    </li>
+    <% } %>
+</ul>
+<div class="ets-profile-me">
+    <a href="#" class="ets-profile-wall-item">
+        <img src="<% if (myself && myself.imagePath) { %><%= getImagePath(myself.isFromLibrary, myself.imagePath) + '?' + (new Date).getTime() %><% } %>">
+        <div class="ets-shadow"></div>
+    </a>
+    
+    <div class="ets-tooltip ets-left-arrow" data-weave="school-ui-activity/shared/tooltip/main">
+        <p><% if (myself && myself.descr) { %><%= myself.descr %><% } %></p>
+
+        <div class="ets-person-info">
+            <img src="<%= myself.avatar%>" width="40" height="40" alt="">
+                <div class="ets-info">
+                    <p class="ets-name"><%= myself.firstName %></p>
+                    <% if (myself.countryFlag) { %>
+                    <p class="ets-location">
+                        <img src="/_imgs/friends/flags/<%= myself.countryFlag %>.gif" width="16" height="11"/>
+                        <span><%= myself.country %></span>
+                    </p>
+                    <% } %>
+                </div>
+        </div>
+
+        <div class="ets-tooltip-btns">
+            <span class="ets-btn-small ets-btn-white ets-btn-shadow ets-profile-edit-button">
+                <span data-blurb-id="467434" data-text-en="Edit your entry"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="ets-msg-box">
+    <div class="ets-content">
+        <h3 data-blurb-id="467619" data-weave="troopjs-ef/blurb/widget" data-text-en="See what other students like"></h3>
+        <p data-blurb-id="467620" data-weave="troopjs-ef/blurb/widget" data-text-en="There are thousands of other students learning English at Englishtown. Take a minute to browse around and see what food the other students in the school like."></p>
+        <p data-blurb-id="467621" data-weave="troopjs-ef/blurb/widget" data-text-en="Click on the pictures to read their stories."></p>
+
+        <div class="ets-btn ets-btn-blue ets-btn-shadowed ets-msg-box-close-button">
+            <span data-blurb-id="462940" data-weave="troopjs-ef/blurb/widget" data-text-en="Close">
+            </span>
+        </div>
+    </div>
+</div>

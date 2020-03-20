@@ -1,0 +1,38 @@
+<%
+    var audios = data.audios;
+    var pics = data.pics;
+%>
+
+<div class="ets-act-mpa">
+
+    <div class="ets-targets">
+        <ul class="ets-cf">
+            <% for (var i = 0, len = audios.length; i < len; i++) { %>
+            <li <% if(i === len - 1){ %>class="last"<% } %>>
+                <div class="ets-mb-top ets-mb-top-small" data-at-id="<%= audios[i]._id %>" data-audio-id="<%= audios[i]._id %>">
+                    <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+                        <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                               data-src="<%=audios[i].audio.url%>" type="audio/mpeg"
+                               class="ets-ap"></audio>
+                    </div></div>
+                </div>
+                <div class="ets-placeholder"></div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="ets-options">
+        <ul class="ets-cf">
+            <% for (var i = 0, len = pics.length; i < len; i++) { %>
+            <li <% if(i === len - 1){ %>class="last"<% } %>>
+                <div class="ets-mb-bottom ets-mb-bottom-large" data-at-id="<%= pics[i]._id %>" data-pic-id="<%= pics[i]._id %>" data-index="<%= i %>">
+                    <i class="ets-indicator"></i>
+                    <img src="<%= pics[i].image.url %>" alt="" width="127" height="97">
+                    <div class="ets-img-shadow"></div>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>

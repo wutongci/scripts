@@ -1,0 +1,44 @@
+<%
+    var pics = data.pics;
+    var texts = data.texts;
+%>
+
+<div class="ets-act-mtp">
+    <% if (data.references.aud) { %>
+    <div class="ets-references">
+        <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                   data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+                   class="ets-ap"></audio>
+        </div></div>
+    </div>
+    <% } %>
+
+    <div class="ets-targets">
+        <ul class="ets-cf">
+            <%for (var i = 0, len = pics.length; i < len; i++) {%>
+            <li <% if(i === len - 1){ %>class="last"<% } %>>
+                <div class="ets-mb-top" data-at-id="<%= pics[i]._id %>" data-pic-id="<%= pics[i]._id %>">
+                    <img src="<%= pics[i].image.url %>" alt="" width="127" height="97">
+                    <div class="ets-img-shadow"></div>
+                </div>
+                <div class="ets-placeholder">
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="ets-options">
+        <ul class="ets-cf">
+            <%for (var i = 0, len = texts.length; i < len; i++) {%>
+            <li <% if(i === len - 1){ %>class="last"<% } %>>
+                <div class="ets-mb-bottom" data-at-id="<%= texts[i]._id %>" data-text-id="<%= texts[i]._id %>" data-index="<%= i %>">
+                    <i class="ets-indicator"></i>
+                    <span><%= texts[i].txt %></span>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>

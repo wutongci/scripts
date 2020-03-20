@@ -1,0 +1,75 @@
+
+<%
+    var outBlurb = function(id,en){
+        var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+
+        return res;
+    };
+%>
+<div class="ets-act-asr ets-disabled" data-at-id="btn-asr-record">
+	<div class="ets-act-playback"></div>
+	<div class="ets-act-asr-button" data-action="record"><div class="ets-act-asr-loading"></div></div>
+	<div class="ets-act-asr-pop ets-tip" data-at-id="pnl-message-asr-tip">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<span data-at-id="lbl-asr-tip-topic" <%= outBlurb("512394", "Click to record your answer")%>></span>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-message">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<span <%= outBlurb("467533", "Wait. Connecting...")%>></span>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-volume" data-at-id="pnl-message-asr-volume">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<span data-at-id="lbl-asr-volume-topic" <%= outBlurb("512393", "Click to stop recording")%>></span>
+			<div class="ets-act-asr-indicator"><span></span></div>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-warning-pop ets-warning" data-at-id="pnl-message-asr-warning">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-warning-topic"></h4>
+			<p data-at-id="lbl-asr-warning-content"></p>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-error-pop ets-error" data-at-id="pnl-message-asr-error">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-error-topic"></h4>
+			<p data-at-id="lbl-asr-error-content"></p>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-hint-pop ets-hint" data-at-id="pnl-message-asr-hint">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-hint-topic"></h4>
+			<p data-at-id="lbl-asr-hint-content"></p>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-hint-pop ets-broken" data-at-id="pnl-message-asr-switch-typing">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4 data-at-id="lbl-asr-switch-topic"><span <%= outBlurb("626862", "Sorry, it seems that we have trouble recognizing your voice")%>></span></h4>
+			<p data-at-id="lbl-asr-switch-content" <%= outBlurb("626864", "Do you want to try this activity in non-speaking mode instead?")%> ></p>
+			<div class="ets-btn ets-btn-blue ets-btn-shadowed" data-action="switch" data-at-id="btn-switch-typing-yes">
+				<span <%= outBlurb("506853", "Yes")%> ></span>
+			</div>
+			<div class="ets-btn ets-btn-blue ets-btn-shadowed" data-action="cancel" data-at-id="btn-switch-typing-no">
+				<span <%= outBlurb("506854", "No")%> ></span>
+			</div>
+		</div>
+	</div>
+	<div class="ets-act-asr-pop ets-error-pop ets-down" data-at-id="pnl-message-asr-down">
+		<div class="ets-hd"></div>
+		<div class="ets-bd">
+			<h4><span <%= outBlurb("467530", "Speech recognition error")%>></span></h4>
+			<p>The speech recognition is not working now.</p>
+			<div class="ets-btn-small ets-btn-blue ets-btn-shadowed" data-action="down">
+				<span <%= outBlurb("150652", "OK")%>></span>
+			</div>&nbsp;
+		</div>
+	</div>
+</div>

@@ -1,0 +1,46 @@
+<%
+  var detailCategoryBlurbs = {
+    Clarity: "672774",
+    Confidence: "672775",
+    Expression: "672776",
+    Accuracy: "672777",
+    Range: "672778"
+  };
+  var _ = data._;
+  var teacher = data.teacher;
+  var feedback = data.feedback;
+%>
+<div class="ets-pr-fb-detail ets-pr-fb-detail-osa ets-none ets-pr-fb-open">
+  <div class="ets-pr-fb-teacher">
+    <% if (teacher) { %>
+    <img src="<%= teacher.imageUrl %>"/>
+    <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659698" data-text-en="Teacher"></span>
+    <span><%= teacher.displayName %></span>
+    <% } %>
+  </div>
+  <div class="ets-pr-fb-content">
+    <div class="ets-pr-fb-score-large">
+      <span class="ets-pr-fb-score-num"><%= feedback.osaGradedStatus %></span>
+    </div>
+    <h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="708940" data-text-en="Teacher's comments"></h5>
+    <p><%= _.escape(feedback.overall) %></p>
+    
+    <div class="ets-pr-fb-lists">
+      <% if (feedback.strengthCategory) { %>
+      <h6 data-weave="troopjs-ef/blurb/widget" data-blurb-id="672780" data-text-en="Strength"></h6>
+      <dl>
+        <dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id='<%= detailCategoryBlurbs[feedback.strengthCategory] %>'></span>:</dt>
+        <dd><%= feedback.strength %></dd>
+      </dl>
+      <% } %>
+
+      <% if (feedback.improvementCategory) { %>
+      <h6 data-weave="troopjs-ef/blurb/widget" data-blurb-id="672781" data-text-en="Areas for improvement"></h6>
+      <dl>
+        <dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id='<%= detailCategoryBlurbs[feedback.improvementCategory] %>'></span>:</dt>
+        <dd><%= feedback.improvement %></dd>
+      </dl>
+      <% } %>
+    </div>
+  </div>
+</div>

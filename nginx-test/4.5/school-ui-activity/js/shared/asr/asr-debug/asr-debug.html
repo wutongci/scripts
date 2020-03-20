@@ -1,0 +1,14 @@
+<h1>ASR DEBUGGER TOOL</h1>
+<p>------------------------------------------------------------------------</p>
+<%
+	for (var i = 0; i < data.length; i++) {
+		writeButton(data[i].code, data[i].msg);
+	}
+%>
+
+<% function writeButton(code, msg) { %>
+	<button class="asr-debug-submit" data-errorcode="<%= code %>"><%= msg + "(" + code + ")" %></button>
+<% } %>
+<p>------------------------------------------------------------------------</p>
+<input style="width: 400px" id="correctAnswerUrl" type="text" placeholder="CORRECT_ANSWER_URL"/>
+<button class="asr-debug-submit" data-action='recorder'>SUBMIT</button>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cards</title>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, requiresActiveX=true, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="{CCL:configuration.servers.cache}/_shared/headerfooter/{CCL:headerfooter.version}/css/main.min.css">
+
+<!--[if lte IE 8]>
+<!-- build:template
+<% if (environment === 'newPlatform') { %>
+<link rel="stylesheet" href="{CCL:configuration.servers.cache}/school/4.5/school-misc-ui/css/main.min.css">
+<% } else { %>
+<link rel="stylesheet" href="/_shared/school-misc-ui/{CCL:school-misc-ui.version}/css/main.min.css">
+<% } %>
+/build -->
+<![endif]-->
+<![if (!IE) | (gte IE 9)]>
+<!-- build:template
+<% if (environment === 'newPlatform') { %>
+<link rel="stylesheet" href="{CCL:configuration.servers.cache}/school/4.5/school-misc-ui/css/main.min.css">
+<% } else { %>
+<link rel="stylesheet" href="{CCL:configuration.servers.cache}/_shared/school-misc-ui/{CCL:school-misc-ui.version}/css/main.min.css">
+<% } %>
+/build -->
+
+<![endif]>
+
+<!--[if lte IE 8]>
+    <script src="{CCL:configuration.servers.cache}/_shared/html5shiv/3.6/html5shiv.min.js"></script>
+    <script src="{CCL:configuration.servers.cache}/_shared/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="{CCL:configuration.servers.cache}/_shared/require.js/2.1.5/require.min.js"></script>
+
+<!--# block name="env-config" --><!--# endblock -->
+<script id="platformAuth--env-config" type="application/json">
+    <!--# include file="/platformAuthConfig.json" stub="env-config" -->
+</script>
+<script id="endpoints--env-config" type="application/json">
+    <!--# include file="/endpoints.json" stub="env-config" -->
+</script>
+<script id="paths--env-config" type="application/json">
+    <!--# include file="/paths.json" stub="env-config" -->
+</script>
+    
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/jQuery.dotdotdot/src/js/jquery.dotdotdot.js"></script>
+	<script src="bower_components/jquery.gray/js/jquery.gray.js"></script>
+</head>
+
+<body>
+<div class="container smui-container">
+	<div class="row">
+		<div class="col-xs-4"><h1>Closed/GE</h1></div>
+		<div class="col-xs-4"><h1>Opened/BE</h1></div>
+		<div class="col-xs-4"><h1>Current/BE</h1></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4">
+			<a class="smui-card smui-card-ge">
+				<div class="smui-card-head">
+					<div class="smui-card-image">
+						<img src="http://dev.englishtown.com/juno/10/97/26/v/109726/LI16.6.1_choosing_web.jpg" alt="">
+					</div>
+					<div class="smui-card-mask"></div>
+					<div class="smui-card-text">
+						<div class="smui-card-number">16</div>
+						<div class="smui-card-title">
+							<h3 class="smui-card-title-text">
+								Obere Fortgeschrittene<span class="smui-card-arrow"><span class="glyphicon glyphicon-arrow-active"></span></span>
+							</h3>
+						</div>
+					</div>
+					<div class="smui-card-note">
+						<span class="smui-card-note-current">Your current course</span><span class="glyphicon glyphicon-complete"></span>
+					</div>
+				</div>
+				<div class="smui-card-body">
+					<div class="smui-card-text">
+						<p>Correspondence This course will teach you how to write a variety of business correspondence and documents, ranging from a meeting agenda to a business proposal.</p>
+					</div>
+				</div>
+				<div class="smui-card-foot align-right text-uppercase">				
+					<div class="smui-card-action smui-card-close">
+						<span>close</span>
+						<span class="glyphicon glyphicon-close"></span>
+					</div>			
+					<div class="smui-card-action smui-card-more">
+						<span>Learn more</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col-xs-4">						
+			<a class="smui-card smui-card-opened">
+				<div class="smui-card-head">
+					<div class="smui-card-image">
+						<img src="http://dev.englishtown.com/juno/10/97/26/v/109726/LI16.6.1_choosing_web.jpg" alt="">
+					</div>
+					<div class="smui-card-mask"></div>
+					<div class="smui-card-text">
+						<div class="smui-card-title">
+							<h3 class="smui-card-title-text">
+								Negotiations<span class="smui-card-arrow"><span class="glyphicon glyphicon-arrow-active"></span></span>
+							</h3>
+						</div>
+					</div>
+					<div class="smui-card-note">
+						<span class="smui-card-note-current">Your current course</span><span class="glyphicon glyphicon-complete"></span>
+					</div>
+				</div>
+				<div class="smui-card-body">
+					<div class="smui-card-text">
+						<p>Correspondence This course will teach you how to write a variety of business correspondence and documents, ranging from a meeting agenda to a business proposal.</p>
+					</div>
+				</div>
+				<div class="smui-card-foot align-right text-uppercase">				
+					<div class="smui-card-action smui-card-close">
+						<span>close</span>
+						<span class="glyphicon glyphicon-close"></span>
+					</div>
+					<div class="smui-card-action smui-card-more">
+						<span>Learn more</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col-xs-4">						
+			<a class="smui-card smui-card-current">
+				<div class="smui-card-head">
+					<div class="smui-card-image">
+						<img src="http://dev.englishtown.com/juno/10/97/26/v/109726/LI16.6.1_choosing_web.jpg" alt="">
+					</div>
+					<div class="smui-card-mask"></div>
+					<div class="smui-card-text">
+						<div class="smui-card-title">
+							<h3 class="smui-card-title-text">
+								Mitarbeiterfuhrung Und Management Management<span class="smui-card-arrow"><span class="glyphicon glyphicon-arrow-active"></span></span>
+							</h3>
+						</div>
+					</div>
+					<div class="smui-card-note">
+						<span class="smui-card-note-current">Your current course</span><span class="glyphicon glyphicon-complete"></span>
+					</div>
+				</div>
+				<div class="smui-card-body">
+					<div class="smui-card-text">
+						<p>Correspondence This course will teach you how to write a variety of business correspondence and documents, ranging from a meeting agenda to a business proposal.</p>
+					</div>
+				</div>
+				<div class="smui-card-foot align-right text-uppercase">				
+					<div class="smui-card-action smui-card-close">
+						<span>close</span>
+						<span class="glyphicon glyphicon-close"></span>
+					</div>			
+					<div class="smui-card-action smui-card-more">
+						<span>Learn more</span>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="container smui-container">
+	<div class="row">
+		<div class="col-xs-4"><h1>TOEFL</h1></div>
+		<div class="col-xs-4"><h1>Locked/BE</h1></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4">						
+			<a class="smui-card">
+				<div class="smui-card-head">
+					<div class="smui-card-image">
+						<img src="http://dev.englishtown.com/juno/10/97/26/v/109726/LI16.6.1_choosing_web.jpg" alt="">
+					</div>
+					<div class="smui-card-mask"></div>
+					<div class="smui-card-text">
+						<div class="smui-card-title">
+							<h3 class="smui-card-title-text">
+								TOEFL<span class="smui-card-arrow"><span class="glyphicon glyphicon-arrow-active"></span></span>
+							</h3>
+						</div>
+					</div>
+					<div class="smui-card-note">
+						<span class="glyphicon glyphicon-complete"></span>
+					</div>
+				</div>
+				<div class="smui-card-body">
+					<div class="smui-card-text">
+						<p>This course will teach you the basics of effective military communication, including how to give briefings and to write orders, radio messages and reports.</p>
+					</div>
+				</div>
+				<div class="smui-card-foot align-right text-uppercase">
+					<div class="smui-card-action smui-card-more">
+						<span>Take this course</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col-xs-4">						
+			<a class="smui-card smui-card-locked">
+				<div class="smui-card-head">
+					<div class="smui-card-image">
+						<img src="http://dev.englishtown.com/juno/10/97/26/v/109726/LI16.6.1_choosing_web.jpg" alt="">
+					</div>
+					<div class="smui-card-mask"></div>
+					<div class="smui-card-text">
+						<div class="smui-card-title">
+							<h3 class="smui-card-title-text">
+								Mitarbeiterfuhrung Und Management Management<span class="smui-card-arrow"><span class="glyphicon glyphicon-arrow-active"></span></span>
+							</h3>
+						</div>
+					</div>
+					<div class="smui-card-note">
+						<span class="smui-card-note-current">Your current course</span><span class="glyphicon glyphicon-complete"></span>
+					</div>
+				</div>
+				<div class="smui-card-body">
+					<div class="smui-card-text">
+						<p>Correspondence This course will teach you how to write a variety of business correspondence and documents, ranging from a meeting agenda to a business proposal.</p>
+					</div>
+				</div>
+				<div class="smui-card-foot align-right text-uppercase">				
+					<div class="smui-card-action smui-card-close">
+						<span>close</span>
+						<span class="glyphicon glyphicon-close"></span>
+					</div>			
+					<div class="smui-card-action smui-card-more">
+						<span>Learn more</span>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="container smui-container">
+	<div class="row">
+		<div class="col-xs-4"><h1>Apps</h1></div>
+		<div class="col-xs-4"><h1>Study Tools</h1></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4">						
+			<div class="smui-card">
+				<div class="smui-card-head">
+					<div class="smui-card-image">
+						<img src="http://dev.englishtown.com/juno/10/97/26/v/109726/LI16.6.1_choosing_web.jpg" alt="">
+					</div>
+				</div>
+				<div class="smui-card-body">
+					<div class="smui-card-text">
+						<p>This course will teach you the basics of effective military communication, including how to give briefings and to write orders, radio messages and reports.</p>
+					</div>
+				</div>
+				<div class="smui-card-foot align-right text-uppercase">
+					<div class="smui-card-more smui-card-download clearfix">
+                        <span class="smui-card-download-text">Download On</span>
+                        <div class="smui-card-download-icon">
+                            <a href="#" class="glyphicon glyphicon-ios"></a>
+                            <a href="#" class="glyphicon glyphicon-android"></a>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">						
+			<a class="smui-card smui-card-locked">
+				<div class="smui-card-head">
+					<div class="smui-card-image">
+						<img src="http://dev.englishtown.com/juno/10/97/26/v/109726/LI16.6.1_choosing_web.jpg" alt="">
+					</div>
+					<div class="smui-card-mask"></div>
+					<div class="smui-card-text">
+						<div class="smui-card-title">
+							<h3 class="smui-card-title-text">
+								Mitarbeiterfuhrung Und Management Management<span class="smui-card-arrow"><span class="glyphicon glyphicon-arrow-active"></span></span>
+							</h3>
+						</div>
+					</div>
+					<div class="smui-card-note">
+						<span class="smui-card-note-current">Your current course</span><span class="glyphicon glyphicon-complete"></span>
+					</div>
+				</div>
+				<div class="smui-card-body">
+					<div class="smui-card-text">
+						<p>Correspondence This course will teach you how to write a variety of business correspondence and documents, ranging from a meeting agenda to a business proposal.</p>
+					</div>
+				</div>
+				<div class="smui-card-foot align-right text-uppercase">				
+					<div class="smui-card-action smui-card-close">
+						<span>close</span>
+						<span class="glyphicon glyphicon-close"></span>
+					</div>			
+					<div class="smui-card-action smui-card-more">
+						<span>Learn more</span>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// text ellipsis
+	$(".smui-card-title").dotdotdot({
+		ellipsis: '...',
+		wrap: 'letter',
+		after: '.smui-card-arrow'
+	}).trigger('isTruncated', function(isTruncated){
+		var $elem = $(this);
+		var $text = $elem.find('.smui-card-title-text');
+		var $arrow = $text.find('.glyphicon-arrow-active');
+		if(!isTruncated){
+			// when a line starts with an arrow						
+			// remove blank space before arrow
+			if($text.position().left === $arrow.position().left){
+				$arrow.css({
+					marginLeft: 0
+				});
+			}
+
+			// GE levels don't need align to middle due to level number
+			if($text.height()<32){
+				$text.append($('<span>').addClass('smui-card-title-alignment'));
+			}
+		}
+	});
+
+	$('.smui-card-locked .smui-card-image').BlackAndWhite({ hoverEffect: false });
+</script>
+</body>
+</html>

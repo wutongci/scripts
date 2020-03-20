@@ -1,0 +1,54 @@
+<div class="clearfix row">
+    <div class="evc-studyplan-welcome-content">
+        <h2 data-weave="troopjs-ef/blurb/widget" data-blurb-id="568614"></h2>
+        <p class="evc-studyplan-welcome-content-des">
+            <span data-weave="school-ui-shared/widget/blurb" data-blurb-ccl="school.courseware.blurb.568615" data-blurb-id="568615" data-text-en="In the private class you learn English with your own private teacher."></span><br>
+            <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568616"></span>
+            <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568617"></span><br>
+            <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568618"></span>
+        </p>
+        <p>
+            <button type="button" class="btn btn-primary" data-weave="troopjs-ef/blurb/widget" data-blurb-id="568611" data-action="getStart"></button>
+        </p>
+    </div>
+    <div class="evc-studyplan-welcome-image">
+        <% if (data.video) { %>
+            <a href="" data-action="showVideo">
+                <img src="<%= data.cacheServer%>/_imgs/evc/pl/studyplan/video.jpg">
+            </a>
+            <p class="evc-studyplan-welcome-video-description" data-weave="troopjs-ef/blurb/widget" data-blurb-id="569775"></p>
+            <div data-weave="school-ui-studyplan/widget/gl-pl/popupvideo/main" data-video-url="<%= data.video%>"></div>
+        <% } else if (data.image) { %>
+            <img src="<%= data.image%>">
+        <% } %>
+    </div>
+</div>
+
+<style type="text/css">
+    .evc-studyplan-welcome-content{
+        text-align: left;
+        float: left;
+        width: 510px;
+        padding: 0 15px;
+    }
+    .evc-studyplan-welcome-content > p{
+        margin-top: 30px;
+    }
+    .evc-studyplan-welcome-content-des{
+        line-height: 1.7em;
+    }
+    .evc-studyplan-welcome-image{
+        float: right;
+        padding: 0 30px 0 15px;
+        width: 375px;
+    }
+    .evc-studyplan-welcome-image > a{
+        display: inline-block;
+        margin-top: 7px;
+        margin-bottom: 10px;
+    }
+    .evc-studyplan-welcome-video-description {
+        font-style: italic;
+        text-align: center;
+    }
+</style>

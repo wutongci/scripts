@@ -1,0 +1,46 @@
+<%  
+    var outputBlurb = function (id,en) {
+        var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+        return res;
+    };
+%>
+<div class="ets-act-st ets-cf">
+    <div class="ets-create-profile">
+        <div class="ets-profile-image">
+            <div class="ets-tooltip ets-tooltip-error" data-weave="school-ui-activity/shared/tooltip/main">
+            </div>
+
+            <div class="ets-corp-area" >
+                <img src="">
+            </div>
+            <div class="ets-btn-change">
+                <div class="ets-btn ets-btn-white ets-btn-shadowed ets-btn-change-button">
+                    <span <%= outputBlurb(467430,"Change Picture") %>></span>
+                </div>
+            </div>
+            <div class="ets-edit-entry ets-none">
+                <div class="ets-btn ets-btn-white ets-btn-shadowed ets-edit-entry-button">
+                    <span <%= outputBlurb(467434,"Edit your entry") %> ></span>
+                </div>
+            </div>
+        </div>
+        <div class="ets-describe-area ets-none">
+            <div class="ets-tooltip ets-none" data-weave="school-ui-activity/shared/tooltip/main">
+                <span><%= data.content.pickImgTips %></span>
+            </div>
+
+            <textarea id="input-describe" cols="30" rows="10" data-weave="school-ui-activity/shared/textchange/main"></textarea>
+             
+            <div class="share-info">
+                <label for="agree-share" data-weave="school-ui-activity/shared/checkbox/main">
+                    <input type="checkbox" id="agree-share" name="agree-share" checked="checked">
+                    <i class="icon-people"></i> <span data-blurb-id="467432" data-weave="troopjs-ef/blurb/widget" data-text-en="Share my post with other students"></span>
+                </label>
+            </div>
+            <div class="ets-btn ets-btn-blue ets-btn-shadowed ets-disabled ets-describe-submit-button"
+                 data-action="submit"><%/* data-action="submit" is used by tests */%>
+                <span data-blurb-id="462455" data-weave="troopjs-ef/blurb/widget" data-text-en="Submit"></span>
+            </div>
+        </div>
+    </div>
+</div>

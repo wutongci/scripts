@@ -1,0 +1,36 @@
+<%
+	var data = data || {};
+	var txt = data.content.questions[this._index].txt;
+	var texts = data.content.questions[this._index].options;
+	var questionAudio = data.content.questions[this._index].audio;
+	var autoWeightBtnBg = data._layoutType === "right";
+%>
+<div class="ets-act-mst ets-act-multiple ets-cf">
+	<div class="ets-act-mst-content">
+		<div class="ets-act-mt-top">
+			<%if (questionAudio) { %>
+				<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+					<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+				           data-src="<%=questionAudio.url%>" type="audio/mpeg"
+				           class="ets-ap"></audio>
+				</div></div>
+			<%}%>
+			<div class="ets-act-mt-title-container">
+				<span class="ets-act-mt-title"><%= txt %></span>
+			</div>
+		</div>
+		<ul class="ets-act-mst-options">
+			<% for (var i = 0;i < texts.length;i++) { %>
+				<li class="ets-act-mst-option" data-at-id="<%= texts[i]._id %>" data-answer="<%= texts[i]._id %>" data-index="<%=i%>">
+					<div class="ets-table-hack">
+						<span><%= texts[i].txt %></span>
+					</div>
+					<% if (autoWeightBtnBg) {%>
+					<span class="ets-act-mst-option-bg"></span>
+					<%} %>
+				</li>
+			<% } %>
+			<div class="ets-ar ets-clear"></div>
+		</ul>
+	</div>
+</div>

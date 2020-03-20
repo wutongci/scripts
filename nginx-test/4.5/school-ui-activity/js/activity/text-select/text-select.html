@@ -1,0 +1,41 @@
+<%
+	var me = this;
+	var model = data;
+	var makePhrase = model.makePhrase;
+	var isAnyMode = model.isAnyMode;
+	var hasSharedAudio = model.hasSharedAudio;
+	var renderQuestionPhrases = model.renderQuestionPhrases;
+%>
+<div class="ets-act-tsl-view-main">
+	<div class="ets-act-tsl-phrases"><%renderPhrases();%></div>
+</div>
+<%
+function renderPhrases() {
+	for(var i = 0, len = renderQuestionPhrases.length; i < len; i++) {
+		var phrase = renderQuestionPhrases[i];
+
+		var audioUrl = !hasSharedAudio && phrase.audio ? phrase.audio.url : '';
+		var phraseTextClass = isAnyMode ? 'ets-any' : 'ets-some';
+		if(audioUrl) {
+			phraseTextClass += ' ets-has-audio';
+		}
+		var firstLastClass = (i === 0 ? ' ets-first' : '') + (i === len - 1 ? ' ets-last' : '');
+		%>
+		<div class="ets-act-tsl-phrase<%=firstLastClass%>">
+			<%if(audioUrl) {%>
+			<div class="ets-act-tsl-audio">
+				<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+					<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+						   data-src="<%=audioUrl%>" type="audio/mpeg"
+						   class="ets-ap ets-ap-small ets-ap-nobar"></audio>
+				</div></div>
+			</div>
+			<%}%>
+			<div data-phrase-index="<%=i%>" data-phrase-id="<%=phrase._id%>" class="ets-act-tsl-text ets-doing <%=phraseTextClass%>">
+				<%=makePhrase.call(me, phrase, isAnyMode)%>
+			</div>
+		</div>
+		<%
+	}
+}
+%>

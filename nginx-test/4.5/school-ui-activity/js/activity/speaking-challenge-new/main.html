@@ -1,0 +1,88 @@
+<%
+var isAudioInputAvailable = data.references && data.references.aud && data.references.aud.url;
+var isModelAudioInputAvailable = data.modelAud && data.modelAud.url;
+%>
+<div class="gud text-center">
+
+    <div class="ets-act-spc-new ets-cf">
+
+        <% if (isModelAudioInputAvailable) { %>
+            <div class="glyphicon glyphicon-volume-up active js-toggle">
+                <div class="tooltip-volume-up " data-weave="troopjs-ef/blurb/widget" data-blurb-id="655958">Listen to a model audio to what it sounds like</div>
+            </div>
+         <% } %>
+
+
+        <div class="ets-act-spc-l">
+
+            
+            <div class="ets-act-spc-content asr-output ets-act-disabled-<%= Boolean(isAudioInputAvailable) %>">
+                <!-- asr component -->
+                <div class="title"><strong data-weave="troopjs-ef/blurb/widget" data-blurb-id="655954">Record your Audio</strong></div>
+                <div class="ets-act-spc-asr">
+                    <div data-weave="school-ui-activity/shared/asr/asr-ui"></div>
+                    <div class="ets-tooltip">
+                        <div class="ets-tooltip-content" data-weave="troopjs-ef/blurb/widget" data-blurb-id="464924">
+                            Press to record
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ets-act-record">
+                    <div class="ets-tooltip ets-tooltip-green">
+                        <div class="ets-tooltip-content" data-weave="troopjs-ef/blurb/widget" data-blurb-id="464925">
+                            Listen to your recording. You can record again or press DONE.
+                        </div>
+                    </div>
+                </div>
+
+                <% if (isAudioInputAvailable) { %>
+                    <div class="icon-replay-audioin please-play" data-weave="troopjs-ef/blurb/widget" data-blurb-id="655956">Re-play Audio</div>
+                <% } %>
+            </div>
+
+            <% if (isAudioInputAvailable) { %>
+                <div class="ets-act-spc-content audio-input">
+                    <!-- audio-input component-->
+                        <div class="title"><strong data-weave="troopjs-ef/blurb/widget" data-blurb-id="655957" >Listen to this audio</strong></div>
+
+                        <div class="swing-container">
+                            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                                   data-src="<%= data.references.aud.url %>" class="ets-ap" type="audio/mpeg"
+                                   controls="controls"></audio>
+
+                           <div class="ets-tooltip">
+                                <div class="ets-tooltip-content" data-weave="troopjs-ef/blurb/widget" data-blurb-id="464923"></div>
+                            </div>
+
+                        </div>
+
+
+                </div>
+             <% } %>
+
+        </div>
+
+        <div class="ets-act-spc-r">
+
+        
+            <% if (isModelAudioInputAvailable) { %>
+                <div class="glyphicon glyphicon-arrow-left active js-toggle"></div>
+
+                    <!-- model-audio-input component-->
+
+                <div class="ets-act-spc-content model-audio-input" >
+                    <div class="title"><strong data-weave="troopjs-ef/blurb/widget" data-blurb-id="655955">Model Audio</strong></div>
+
+                    <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                           data-src="<%= data.modelAud.url %>" class="ets-ap" type="audio/mpeg"
+                           controls="controls"></audio>
+                </div>
+
+                
+            <% } %>
+
+         </div>
+
+    </div>
+</div>

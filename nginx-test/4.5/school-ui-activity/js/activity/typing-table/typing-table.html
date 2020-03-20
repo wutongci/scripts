@@ -1,0 +1,45 @@
+<%
+    var items = data.tables;
+	var attr = data.tablesAttr[data.curPage];
+    var item = items[data.curPage];
+    var rows = item.length;
+    var cols = item[rows-1] && item[rows-1].length;
+%>
+<table class="ets-act-tpt-t">
+    <%
+        for(var i = 0 ; i < rows ; i++){
+    %>
+        <tr class="<%=(i==rows-1?'ets-act-tpt-last':'ets-act-tpt-tr-m')%>">
+            <%
+                for(var j=0;j<cols;j++){
+            %>
+				<%
+	                if(attr[i][j] != undefined) {
+	            %>
+                <td class="<%=(j==cols-1?'ets-act-tpt-last':'ets-act-tpt-m')%>" <%= (attr[i][j]?attr[i][j]:'')%> >
+                    <%
+                        if(item[i][j]){
+                            if(item[i][j]._toAnswer != null){
+                    %>
+                            <div class="ets-act-tpt-input ets-act-tpt-n" data-r="<%=i%>" data-c="<%=j%>">
+                                <input type="text" data-id="<%=item[i][j]._toAnswer%>" data-at-id="<%=item[i][j]._toAnswer%>" data-weave="school-ui-activity/shared/textchange/main" maxlength='200'/>
+                                <span class="ets-act-tpt-txt ets-none"></span>
+                            </div>
+                            <%}else{%>
+                                <%=item[i][j]%>
+                            <%}
+                        }
+                    %>
+                </td>
+		        <%
+		            }
+		        %>
+            <%
+                }
+            %>
+        </tr>
+    <%
+        }
+    %>
+</table>
+<div class="ets-act-tpt-b" data-weave="school-ui-activity/shared/toggle-slide/main"></div>

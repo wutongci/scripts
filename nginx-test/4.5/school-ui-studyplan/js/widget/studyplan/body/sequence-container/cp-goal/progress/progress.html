@@ -1,0 +1,16 @@
+<div class="ets-sp-goal-progress cp-goal-progress <%=data.customClass%>">
+	<p class="cp-progres-title">
+		<span class="ets-icon-badge-goal-poly"></span>
+	</p>
+	<p class="cp-progress-msg" data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=data.progressMsg%>">LEFT TO COMPLETE THIS UNIT</p>
+	<p class="cp-progress-msg-goal-set" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695058">Set a new study goal</p>
+	<div class="cp-progress-sub-msg">
+		<h2 data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=data.subMsg%>"></h2>
+		<% if(data.tooltipMsg){ %>
+		<div class="msg-tooltip">
+			<div data-weave="school-ui-studyplan/shared/tooltip/main(option)" data-option='{"content": <%=data.tooltipMsg%>, "customClass": "message"}'>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>

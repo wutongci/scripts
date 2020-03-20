@@ -1,0 +1,28 @@
+<%
+	var blurb = function(id,en){
+	    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+	    return res;
+	};
+%>
+<div class="ets-act-summary">
+	<div class="ets-act-summary-main ets-cf">
+		<div class="ets-act-summary-main-correct">
+			<div class="ets-act-summary-num-correct"><%=data.correctNum%></div>
+			<br>
+			<h4 class="ets-correct"><span <%=blurb(480845,"correct answers")%>></span></h4>
+		</div>
+		<div class="ets-act-summary-main-skipped">
+			<div class="ets-act-summary-num-skipped"><%=data.skippedNum%></div>
+			<br>
+			<h4 class="ets-skipped"><span <%=blurb(480846,"skipped answers")%>></span></h4>
+		</div>
+	</div>
+	<div class="ets-act-summary-result" >
+		<%if (data.passed) {%>
+		<h2><span <%=blurb(480844,"Result")%>></span>: <span class="ets-pass" data-at-id='lbl-result-state-message' <%=blurb(461315,"Passed")%>></span></h2>
+		<%} else {%>
+		<h2><span <%=blurb(480844,"Result")%>></span>: <span class="ets-fail" data-at-id='lbl-result-state-message' <%=blurb(461316,"Not passed")%>></span></h2>
+		<p><span data-at-id='lbl-result-need-passed-message' <%=blurb(465093,"you need")%> data-values='{"number":<%= data.passNum%>}' ></span></p>
+		<%}%>
+	</div>
+</div>

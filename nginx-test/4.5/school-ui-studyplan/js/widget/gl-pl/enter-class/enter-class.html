@@ -1,0 +1,29 @@
+<%
+  var data = data || {};
+%>
+<div class="evc-studyplan-enter">
+	<button class="btn btn-primary countdown-scoreboard-enter" data-weave="troopjs-ef/blurb/widget" data-blurb-id="78907">Enter class</button>
+</div>
+<%if (data.hasRecord) { %>
+<label class="evc-studyplan-record <%=(data.recordDisabled ? 'evc-studyplan-record-disabled' : '')%>">
+	<input type="checkbox" class="evc-studyplan-record-check" <%=(data.recordChecked ? 'checked="checked"' : '')%> <%=(data.recordDisabled ? 'disabled="disabled"' : '')%>/>
+	<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="708472" data-text-en="Send me class video"></span>
+	<span class="glyphicon glyphicon-exclamation-sign" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="<%=data.recordHint%>"></span>
+</label>
+<% } %>
+<style>
+	.evc-studyplan-enter{
+		margin:20px 0;
+	}
+	.evc-studyplan-enter .btn {
+		font-family: "roboto_condensedbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+		padding:10px 30px;
+	}
+	label.evc-studyplan-record {
+		font-weight: normal;
+	}
+	label.evc-studyplan-record-disabled {
+		color: #ccc;
+	}
+</style>

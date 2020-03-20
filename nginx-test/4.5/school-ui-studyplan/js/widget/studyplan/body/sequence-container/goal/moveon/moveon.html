@@ -1,0 +1,121 @@
+<%
+	function getBlurbHTML() {
+		var classPrimary = 'btn btn-m btn-primary';
+		var classDefault = 'btn btn-m btn-default';
+		var prefix = ' <button class=';
+		var suffix = ' <i class="glyphicon icon-caret-right"></i></button>';
+		var result;
+
+		if(data.isLastLevel) {
+			if(data.isLastUnit) {
+                if(data.enableLevelTest && data.isGE) {
+                    prefix = '<a href="' + data.levelTestPath + '?testid='
+                    + data.levelTestId + '" target="_blank"><span class="' + classDefault + '" data-weave="troopjs-ef/blurb/widget" data-blurb-id="450035" data-text-en="Take the level test"></span></a>' + prefix;
+                }
+
+				if(data.enableSelectCourse) {
+					prefix += '"' + classPrimary + '" data-action="select/course" data-link="' + data.changeCourseLink + '">';
+					result = '<span data-blurb-id="' + data.blurbIds.cpSelectCourse + '" data-text-en="Select the next course you want to do" data-weave="troopjs-ef/blurb/widget"></span>';
+				}
+			}
+		} else if(data.isLastUnit) {
+			prefix += '"' + classPrimary + ' ' + (data.enableChangeLevel ? '' : 'hide') + '" data-action="next/level">';
+
+			if(data.enableLevelTest && data.isGE) {
+				prefix = '<a href="' + data.levelTestPath + '?testid='
+					+ data.levelTestId + '" target="_blank"><span class="' + classDefault + '" data-weave="troopjs-ef/blurb/widget" data-blurb-id="450035" data-text-en="Take the level test"></span></a>' + prefix;
+			}
+
+			result = '<span data-blurb-id="569912" data-text-en="Move to the next level" data-weave="troopjs-ef/blurb/widget"></span> '
+		} else {
+			prefix += '"' + classPrimary + '" data-action="next/unit">';
+
+			result = '<span data-blurb-id="569911" data-text-en="Go to Unit ^number^" data-weave="troopjs-ef/blurb/widget" data-values=\'{"number":' + data.nextUnitIndex + '}\'></span>';
+		}
+
+		return result ? (prefix + result + suffix) : "";
+	}
+%>
+
+<div class="ets-sp-goal-moveon">
+		<%
+		if(data.hasActiveSPInCurrentLevel){
+		%>
+		<!--
+		if not, we cann't render the move on button. because case SPC-4998
+		-->
+			<div class="ets-sp-goal-moveon-main">
+					<%= getBlurbHTML()%>
+			</div>
+		<%
+		}
+		%>
+
+		<%
+		if(data.optionalItems.length){
+		%>
+		<div class="ets-sp-moveon-items">
+			<div class="ets-sp-optional-title" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656559" data-text-en="We recommend you to take optional lessons before you move on"></div>
+			<div class="ets-sp-optional-items">
+			<%
+			for (var n=0; n<data.optionalItems.length; n++){
+				switch(data.optionalItems[n].itemData.typeCode){
+					case "cp20":
+			%>
+						<div class="ets-sp-item-small">
+							<i class="ets-sp-icon">
+								<i class="ets-sp-icon-bg glyphicon icon-circle"></i>
+								<i class="ets-sp-icon-badge ets-icon-badge-check-point"></i>
+								<% if (data.optionalItems[n].locked) { %>
+									<i class="ets-icon-badge-locked">
+										<i class="ets-sp-locked-mark-bg glyphicon icon-circle"></i>
+										<i class="ets-sp-locked-mark-icon ets-icon-lock"></i>
+									</i>
+								<% } %>
+							</i>
+							<span class="ets-sp-name" data-weave="troopjs-ef/blurb/widget" data-text-en="Private Class" data-blurb-id="639494"></span>
+						</div>
+						<%
+						break;
+					case "pl":
+						%>
+						<div class="ets-sp-item-small">
+							<i class="ets-sp-icon">
+								<i class="ets-sp-icon-bg glyphicon icon-circle"></i>
+								<i class="ets-sp-icon-badge ets-icon-badge-private-lesson"></i>
+								<% if (data.optionalItems[n].locked) { %>
+									<i class="ets-icon-badge-locked">
+										<i class="ets-sp-locked-mark-bg glyphicon icon-circle"></i>
+										<i class="ets-sp-locked-mark-icon ets-icon-lock"></i>
+									</i>
+								<% } %>
+							</i>
+							<span class="ets-sp-name" data-weave="troopjs-ef/blurb/widget" data-text-en="Private Class" data-blurb-id="569833"></span>
+						</div>
+						<%
+						break;
+					case "gl":
+						%>
+						<div class="ets-sp-item-small">
+							<i class="ets-sp-icon">
+								<i class="ets-sp-icon-bg glyphicon icon-circle"></i>
+								<i class="ets-sp-icon-badge ets-icon-badge-group-lesson"></i>
+								<% if (data.optionalItems[n].locked) { %>
+									<i class="ets-icon-badge-locked">
+										<i class="ets-sp-locked-mark-bg glyphicon icon-circle"></i>
+										<i class="ets-sp-locked-mark-icon ets-icon-lock"></i>
+									</i>
+								<% } %>
+							</i>
+							<span class="ets-sp-name" data-weave="troopjs-ef/blurb/widget" data-text-en="Private Class" data-blurb-id="638118"></span>
+						</div>
+			<%
+				}
+			}
+			%>
+			</div>
+		</div>
+		<%
+		}
+		%>
+</div>

@@ -1,0 +1,56 @@
+{
+  "_from": "@ef/certificates-ui@0.0.2-7-b2b",
+  "_id": "@ef/certificates-ui@0.0.2-7-b2b",
+  "_inBundle": false,
+  "_integrity": "sha512-cMGD8yKo6Z+K7WmIpD2l/pAdxPHe/oKJ22Y1lOxSh6W5WzCzxAmv0ivy0WBx+uP4X0q2xkI2nTnyMJXEI2agOA==",
+  "_location": "/@ef/certificates-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/certificates-ui@0.0.2-7-b2b",
+    "name": "@ef/certificates-ui",
+    "escapedName": "@ef%2fcertificates-ui",
+    "scope": "@ef",
+    "rawSpec": "0.0.2-7-b2b",
+    "saveSpec": null,
+    "fetchSpec": "0.0.2-7-b2b"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/certificates-ui/-/certificates-ui-0.0.2-7-b2b.tgz",
+  "_shasum": "79e183db3135b6df4975ca04bf4fbbd805f32dbb",
+  "_spec": "@ef/certificates-ui@0.0.2-7-b2b",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "mini-css-extract-plugin": "^0.4.1",
+    "optimize-css-assets-webpack-plugin": "^4.0.3",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "unminified-webpack-plugin": "^2.0.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "files": [
+    "index.html",
+    "template.html",
+    "dist/**/*"
+  ],
+  "license": "UNLICENSED",
+  "name": "@ef/certificates-ui",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "echo \"No tests\""
+  },
+  "version": "0.0.2-7-b2b"
+}

@@ -1,0 +1,69 @@
+<%
+var images = data.content.stockImages;
+%>
+<div class="ets-create-profile">
+    <div class="ets-images-area">
+
+        <div class="ets-tooltip" data-weave="school-ui-activity/shared/tooltip/main">
+            <!-- TODO: should from authoring tool -->
+            <span><%= data.content.descriptionTips %></span>
+        </div>
+
+
+        <div class="ets-tooltip ets-tooltip-error" data-weave="school-ui-activity/shared/tooltip/main">
+        </div>
+
+        <div class="ets-gallery">
+            <ul class="ets-cf">
+                <% for(var i=0; i<images.length; i++) { %>
+                <li>
+                    <a href="#" class="ets-gallery-item">
+                        <img src="<%=images[i].url %>">
+                        <span class="ets-shadow"></span>
+                    </a> 
+                </li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div class="ets-uploading">
+            <div class="ets-progress">
+                <div class="ets-progress-bg">
+                    <div class="ets-current-progress"></div>
+                </div>
+            </div>
+            <p data-blurb-id="443582" data-weave="troopjs-ef/blurb/widget" data-text-en="Uploading"></p>
+        </div>
+
+    
+        <div class="ets-reupload">
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <% if (!data.isiPad) { %>
+                <div>
+                    <div class="ets-btn ets-btn-blue ets-btn-shadowed">
+                        <span data-blurb-id="467433" data-weave="troopjs-ef/blurb/widget" data-text-en="Upload another picture"></span>
+                        <input type="file" name="UploadImage" class="ets-file"/>
+                    </div>
+                </div>
+                <% } %>
+                <div>
+                    <div class="ets-btn ets-btn-white ets-btn-shadowed ets-select-library">
+                        <span data-blurb-id="443595" data-weave="troopjs-ef/blurb/widget"  data-text-en="Select a picture from library"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <% if (!data.isiPad && data.enableUpload) { %>
+        <div class="ets-upload">
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <span data-blurb-id="462924" data-weave="troopjs-ef/blurb/widget" data-text-en="or">or</span> 
+                <span class="upload-btn">
+                    <a href="#"><span data-blurb-id="467429" data-weave="troopjs-ef/blurb/widget" data-text-en="upload your own picture"></span><input type="file" name="UploadImage" class="ets-file"/></a>
+                </span>
+            </form>
+        </div>
+        <% } %>
+    </div>
+    
+</div>

@@ -1,0 +1,27 @@
+<div class="ets-act-tpg-main"><%
+var paragraphs = data.paragraphs,
+    tabindex = 0;
+for(var paragraphIndex=0;paragraphIndex<paragraphs.length;paragraphIndex++){
+    var paragraph = paragraphs[paragraphIndex];
+    for(var j=0;j<paragraph.length;j++){
+        var cell = paragraph[j];
+        if(cell && cell._toAs){
+            tabindex++;
+%>
+    <span class="ets-act-tpg-cell ets-act-tpg-n">
+        <span class="ets-act-tpg-cm">
+            <input class="ets-act-tpg-input" autocomplete="off" type="text" data-id="<%=cell.txt%>" data-at-id="<%=cell.txt%>" data-weave="school-ui-activity/shared/textchange/main" size="10" tabindex="<%=tabindex%>"/>
+            <span class="ets-act-tpg-txt ets-act-tpg-none"></span>
+            <span class="ets-act-tpg-idc"></span>
+        </span>
+    </span>
+<%
+        }else{
+%>
+    <%=cell.txt%>    
+<%
+        }
+    }
+}
+%></div>
+<div class="ets-act-tpg-shadow ets-act-tpg-none"></div>

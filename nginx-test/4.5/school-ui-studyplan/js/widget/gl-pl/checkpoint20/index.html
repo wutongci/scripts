@@ -1,0 +1,89 @@
+<%
+var statusCode = data.statusCode;
+var unitId = data.unitId;
+
+var STATUS_WELCOME = "welcome";
+var STATUS_NEVERTAKE = "nevertake";
+var STATUS_BOOKED = "booked";
+var STATUS_DROPOUT = "dropout";
+var STATUS_PENDING = "pending";
+var STATUS_ATTENDED = "attended";
+%>
+<div class="st-evc-status" data-weave="school-ui-studyplan/widget/gl-pl/announcement/cp20"></div>
+<div class="st-evc-status" data-weave="school-ui-studyplan/widget/gl-pl/statusbar/cp20"></div>
+<div class="evc-studyplan-wrapper">
+	<% if(statusCode === STATUS_WELCOME) { %>
+		<div class="evc-studyplan-column-single evc-studyplan-welcome" data-weave="school-ui-studyplan/widget/gl-pl/welcome-cp20/main"></div>
+	<% } else { %>
+		<div class="evc-studyplan-column-full"></div>
+		<% if(statusCode !== STATUS_NEVERTAKE && statusCode !== STATUS_DROPOUT) {%>
+			<div class="evc-studyplan-column-single">
+				<div class="evc-studyplan-gap-2x" data-weave="school-ui-studyplan/widget/gl-pl/lesson/cp20"></div>
+				<% if(statusCode !== STATUS_PENDING && statusCode !== STATUS_ATTENDED){ %>
+					<div class="evc-studyplan-gap-1x evc-studyplan-class-info"></div>
+				<% } %>
+			</div>
+		<% } %>
+		<div class="evc-studyplan-activity-container">
+		</div>
+	<% } %>
+</div>
+
+<style type="text/css">
+	.evc-studyplan-wrapper{
+		text-align: center;
+		padding: 30px 0 50px;
+		color: #4a4a4a;
+	}
+	.evc-studyplan-column-full{
+		display: inline-block;
+	}
+	.evc-studyplan-column-single{
+		display: inline-block;
+		width: 980px;
+	}
+	.evc-studyplan-column-single hr{
+		margin-bottom: 0;
+	}
+	.evc-studyplan-gap-2x{
+		text-align: left;
+		width: 620px;
+		padding-left: 35px;
+		padding-right: 35px;
+		vertical-align: top;
+		display: inline-block;
+		margin: 20px auto;
+	}
+	.evc-studyplan-gap-1x{
+		text-align: left;
+		width: 330px;
+		vertical-align: top;
+		margin: auto;
+		padding-left: 30px;
+		display: inline-block;
+		border-left:1px #eee solid;
+	}
+	.evc-studyplan-gap-1x .evc-studyplan-gap-block{
+		margin-bottom: 15px;
+	}
+	.st-evc-status{
+		color: #4a4a4a;
+		background-color: #e6e6e6;
+	}
+	.evc-studyplan-gray{
+		color:#999999;
+	}
+	.evc-studyplan-green{
+		color:#87c600;
+	}
+	.evc-studyplan-blue{
+		color: #00bee3;
+	}
+	.evc-none{
+		display: none;
+	}
+	.evc-studyplan-activity-container {
+		width:880px;
+		margin:0 auto;
+	}
+</style>

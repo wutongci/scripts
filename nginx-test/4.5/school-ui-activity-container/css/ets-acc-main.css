@@ -1,0 +1,747 @@
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Courseware UI > Notification
+//  File:          ets-ui-notification.less
+//  Images:        
+//  Dependencies:  
+//  Description:   This is a common notification for school new courseware.
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-ntf-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  z-index: 200;
+}
+.ets-ntf {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 40px 10%;
+  width: 80%;
+  background: white;
+  border: 2px solid #999;
+  -webkit-box-shadow: 0 0 20px black;
+  -moz-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px black;
+  z-index: 201;
+}
+.ets-ntf .ets-ntf-header {
+  font-size: 30px;
+  color: #555;
+}
+.ets-ntf .ets-ntf-body {
+  margin: 0 auto;
+}
+.ets-ntf .ets-ntf-body > div {
+  height: 350px;
+}
+.ets-ntf .ets-ntf-body .ets-title {
+  font-size: 18px;
+  color: #555;
+}
+.ets-ntf .ets-ntf-body p {
+  color: #999;
+  line-height: 20px;
+}
+.ets-ntf .ets-ntf-body .ets-sidebar {
+  width: 30%;
+  height: auto;
+  float: left;
+}
+.ets-ntf .ets-ntf-body .ets-sidebar li {
+  margin: 20px 0;
+}
+.ets-ntf .ets-ntf-body .ets-section {
+  width: 65%;
+  height: 100%;
+  float: right;
+  margin-top: 20px;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+}
+.ets-ntf .ets-ntf-body .ets-section img {
+  width: 100%;
+  height: 350px;
+}
+.ets-ntf .ets-ntf-body .ets-section .ets-btn {
+  margin-top: 10px;
+  float: right;
+}
+.ets-ui-acc-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  background-color: #000000\9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  opacity: 0;
+  overflow: auto;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: background-color 300ms, opacity 300ms;
+  -moz-transition: background-color 300ms, opacity 300ms;
+  -ms-transition: background-color 300ms, opacity 300ms;
+  -o-transition: background-color 300ms, opacity 300ms;
+  transition: background-color 300ms, opacity 300ms;
+}
+.ets-ui-acc-wrap.ets-acc-open {
+  background-color: rgba(0, 0, 0, 0.96);
+  opacity: 1;
+}
+.ets-ui-acc-wrap .ets-ui-acc {
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  -webkit-transition: height 300ms, top 300ms;
+  -moz-transition: height 300ms, top 300ms;
+  -ms-transition: height 300ms, top 300ms;
+  -o-transition: height 300ms, top 300ms;
+  transition: height 300ms, top 300ms;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-hd {
+  background-color: #2e353e;
+  -webkit-tap-highlight-color: transparent;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-hd .ets-ui-acc-hd-main {
+  width: 980px;
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-hd .ets-ui-acc-hd-main .ets-ui-acc-step-title {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 40px;
+  float: left;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-hd .ets-ui-acc-hd-main .ets-ui-acc-step-nav {
+  text-align: center;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-hd .ets-ui-acc-hd-main .ets-ui-acc-step-nav .ets-ui-acc-act-nav {
+  display: inline-block;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-hd .ets-ui-acc-hd-main .ets-ui-acc-btn-close {
+  width: 42px;
+  height: 42px;
+  background: transparent url("../img/ets-ui-main.png") 0 -250px no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 9999;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-ft {
+  background-color: #2e353e;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-ft .ets-ui-acc-ft-main {
+  width: 980px;
+  height: 46px;
+  padding: 3px 0;
+  margin: 0 auto;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-ft .ets-ui-acc-ft-main .ets-btn.ets-btn-shadowed,
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-ft .ets-ui-acc-ft-main .ets-progress {
+  margin: 4px 5px 0 5px;
+  display: none;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-ft .ets-ui-acc-ft-main .ets-btn.ets-btn-shadowed.ets-show,
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-ft .ets-ui-acc-ft-main .ets-progress.ets-show {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-bd {
+  background-color: #dedfe0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.ets-ui-acc-wrap .ets-ui-acc .ets-ui-acc-bd .ets-ui-acc-bd-main {
+  min-height: 540px;
+  margin: 0 auto;
+}
+.ets-ui-acc-wrap.ets-atpreview .ets-ui-acc-act-nav,
+.ets-ui-acc-wrap.ets-atpreview .ue-notifications-container,
+.ets-ui-acc-wrap.ets-atpreview .ets-ui-acc-btn-close,
+.ets-ui-acc-wrap.ets-atpreview .ets-ui-acc-step-title,
+.ets-ui-acc-wrap.ets-atpreview .ets-act-rating {
+  display: none;
+}
+.ets-loading .ets-ui-acc-loading {
+  display: block;
+}
+.ets-ui-acc-loading {
+  display: none;
+  z-index: 2000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-main {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-content {
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-icon {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+  height: 40px;
+  background: url("../img/ets-ui-acc-loading-bg.png") center center no-repeat;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-icon > span {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background: url("../img/ets-ui-acc-loading-icon.gif") center center no-repeat;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-timeout {
+  display: none;
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-timeout > .ets-bd {
+  text-align: center;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-timeout > .ets-bd > h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 1px 0 #444;
+  line-height: 1.4;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-timeout > .ets-bd > p {
+  color: #eee;
+  font-size: 16px;
+  text-shadow: 0 1px 0 #444;
+  line-height: 1.4;
+}
+.ets-ui-acc-loading .ets-ui-acc-loading-timeout > .ets-ft {
+  margin-top: 15px;
+  text-align: center;
+}
+.ets-ui-acc-loading.ets-timeout .ets-ui-acc-loading-backdrop {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.ets-ui-acc-loading.ets-timeout .ets-ui-acc-loading-timeout {
+  display: block;
+}
+.ets-ui-acc-loading.ets-timeout .ets-ui-acc-loading-icon {
+  display: none;
+}
+.ets-ui-acc-act-notification {
+  position: absolute;
+  right: 0px;
+  top: -3px;
+  margin: 12px 112px 0px 0px;
+}
+.ets-ui-acc-act-alert {
+  position: absolute;
+  right: 90px;
+  z-index: 2000;
+}
+.ets-ui-acc-act-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 40px;
+}
+.ets-ui-acc-act-nav li {
+  margin: 5px 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  background: url("../img/ets-ui-main.png") right -518px no-repeat;
+}
+.ets-ui-acc-act-nav li:hover {
+  background: url("../img/ets-ui-main.png") right -559px no-repeat;
+}
+.ets-ui-acc-act-nav a {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  color: #B5B5B5;
+  text-shadow: 1px 0 0 #222;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  width: 28px;
+  font-weight: 700;
+  line-height: 28px;
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ets-ui-acc-act-nav a:hover {
+  color: #ddd;
+}
+.ets-ui-acc-act-nav a::-moz-focus-inner {
+  border: 0;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-active {
+  padding-bottom: 8px;
+  height: 28px;
+  color: #fff;
+  cursor: default;
+  background: url("../img/ets-ui-acc-arrow.png") -65px bottom no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-summary .ets-ui-acc-act-nav-active {
+  background: url("../img/ets-ui-acc-arrow.png") -1px bottom no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-summary .ets-ui-acc-act-nav-active.ets-passed {
+  background: url("../img/ets-ui-acc-arrow.png") -33px bottom no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-passing {
+  background: url("../img/ets-ui-main.png") right -469px no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-passing:hover {
+  background: url("../img/ets-ui-main.png") right -469px no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-passed {
+  cursor: pointer;
+  background: url("../img/ets-ui-main.png") right -421px no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-passed:hover {
+  background: url("../img/ets-ui-main.png") -737px -421px no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-summary {
+  cursor: pointer;
+  background: url("../img/ets-ui-main.png") -737px -469px no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-summary:hover {
+  background: url("../img/ets-ui-main.png") -737px -518px no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-summary-green {
+  background: url("../img/ets-ui-main.png") -737px -559px no-repeat;
+}
+.ets-ui-acc-act-nav .ets-ui-acc-act-nav-summary-green:hover {
+  background: url("../img/ets-ui-main.png") -737px -559px no-repeat;
+}
+.ets-ui-acc-act-nav-btn-prev {
+  width: 10px;
+  background: url("../img/ets-ui-main.png") -782px -416px no-repeat;
+}
+.ets-ui-acc-act-nav-btn-next {
+  width: 10px;
+  background: url("../img/ets-ui-main.png") -782px -456px no-repeat;
+}
+.ets-ui-techcheck-overlay {
+  position: relative;
+  z-index: 300;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Courseware UI > Step Summary
+//  File:          ets-ui-step-summary.less
+//  Images:        
+//  Dependencies:  
+//  Description:   
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-ui-step-summary {
+  padding: 75px 0 0 0;
+  margin: 0 auto;
+  height: 465px;
+}
+/* make box center align and text left align */
+.ets-ui-step-summary-bd {
+  display: table;
+  margin: 0 auto;
+  padding: 0 40px 0;
+  *width: 70%;
+  *padding: 0;
+}
+.ets-ui-step-summary-bd .ets-cf {
+  *height: 0;
+}
+.ets-ui-step-summary h3 {
+  font-size: 72px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0px 1px 0 #666;
+  margin: 10px 0;
+  position: relative;
+  float: left;
+  *line-height: 1.2;
+  *float: none;
+}
+.ets-ui-step-summary h3 .ets-ui-icon-max {
+  position: absolute;
+  right: -120px;
+  top: -20px;
+}
+.ets-ui-step-summary h3 .ets-ui-icon-pass-l {
+  position: absolute;
+  left: -95px;
+  top: 6px;
+}
+.ets-ui-step-summary h4 {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.6;
+  text-shadow: 0px 1px 0 #666;
+  margin: 10px 0;
+}
+.ets-ui-step-summary p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0px 1px 0 #666;
+}
+.ets-ui-step-summary-acts {
+  margin: 60px 0;
+}
+.ets-ui-step-summary-acts li {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  margin: 0 15px 0 0;
+  padding: 0;
+  width: 51px;
+  height: 52px;
+  background: transparent url("../img/ets-ui-main.png") -749px -100px no-repeat;
+  vertical-align: middle;
+}
+.ets-ui-step-summary-acts li.ets-pass {
+  background-position: -480px -240px;
+}
+.ets-ui-step-summary-acts li.ets-fail {
+  background-position: -540px -240px;
+  font-size: 29px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 52px;
+  color: #caccce;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.ets-ui-step-summary-actions {
+  padding: 10px 0;
+  text-align: center;
+}
+.ets-ui-step-summary-actions .ets-btn {
+  font-size: 14px;
+  margin-right: 10px;
+}
+.ets-ui-acc-step-status-pass {
+  background: #78BB00 url("../img/ets-ui-pattern-dots.png");
+}
+.ets-ui-acc-step-status-fail {
+  background: #8E949B url("../img/ets-ui-pattern-dots.png");
+}
+.ets-ui-acc-step-status-pass h3,
+.ets-ui-acc-step-status-pass h4,
+.ets-ui-acc-step-status-pass p {
+  text-shadow: 0px 1px 0 #22790F;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Courseware UI > Activity Launcher
+//  File:          ets-ui-activity-launcher.less
+//  Images:        
+//  Dependencies:  
+//  Description:   For activity iframe
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-ui-activity-launcher {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.ets-ui-activity-launcher-backdrop {
+  background-color: #000;
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: box-shadow 1s;
+  -moz-transition: box-shadow 1s;
+  -o-transition: box-shadow 1s;
+  -ms-transition: box-shadow 1s;
+  transition: box-shadow 1s;
+  display: none;
+}
+.ets-ui-activity-launcher-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ets-act-live-chat {
+  position: absolute;
+  right: 0;
+  top: 12px;
+}
+.ets-act-live-chat .ets-act-live-chat-when-online .ets-act-live-chat-button {
+  display: none;
+  margin: 0;
+  padding: 9px 10px 9px 47px;
+  color: #fff;
+  background: #8dbc24 url("../img/live-chat.svg") no-repeat 10px 5px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: 0;
+}
+.ets-act-live-chat .ets-act-live-chat-when-online .ets-act-live-chat-button.livechat-online {
+  display: inline-block;
+}
+.ets-act-live-chat .ets-act-live-chat-when-online .tooltip-inner {
+  border-radius: 3px;
+}
+.ets-act-live-chat .ets-act-live-chat-when-online .tooltip-inner .tooltip-text {
+  padding: 5px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ets-act-live-chat .ets-act-live-chat-when-online .tooltip-inner .tooltip-close {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  padding: 5px;
+  font-size: 9px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}
+.ets-acc-sharing {
+  margin: 0 auto;
+  width: 1020px;
+  height: 40px;
+  position: relative;
+}
+@-webkit-keyframes ets-acc-sharing-shake {
+  0% {
+    -webkit-transform: translateY(-5px);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+  }
+  100% {
+    -webkit-transform: translateY(-5px);
+  }
+}
+@-moz-keyframes ets-acc-sharing-shake {
+  0% {
+    -moz-transform: translateY(-5px);
+  }
+  50% {
+    -moz-transform: translateY(5px);
+  }
+  100% {
+    -moz-transform: translateY(-5px);
+  }
+}
+@-ms-keyframes ets-acc-sharing-shake {
+  0% {
+    -ms-transform: translateY(-5px);
+  }
+  50% {
+    -ms-transform: translateY(5px);
+  }
+  100% {
+    -ms-transform: translateY(-5px);
+  }
+}
+@keyframes ets-acc-sharing-shake {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+.ets-acc-sharing-box {
+  height: 32px;
+  float: right;
+  line-height: 32px;
+  margin-right: 107px;
+  position: relative;
+  color: #FFF;
+  text-shadow: 0 1px 1px #333;
+  font-size: 18px;
+}
+.ets-acc-sharing-box .ets-acc-sharing-text {
+  *margin-right: 5px;
+  *display: inline-block;
+}
+.ets-acc-sharing-box .ets-acc-sharing-container {
+  position: absolute;
+  right: -83px;
+  bottom: 45px;
+  background: #223600;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 1px;
+  display: none;
+  *margin-top: -10px;
+}
+.ets-acc-sharing-box .ets-acc-sharing-container.ets-acc-sharing-shake {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-animation: ets-acc-sharing-shake 2s ease-in-out 1s infinite;
+  -moz-animation: ets-acc-sharing-shake 2s ease-in-out 1s infinite;
+  -ms-animation: ets-acc-sharing-shake 2s ease-in-out 1s infinite;
+  animation: ets-acc-sharing-shake 2s ease-in-out 1s infinite;
+  animation-fill-mode: forwards;
+}
+.ets-acc-sharing-box .ets-acc-sharing-inner {
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  width: 170px;
+  padding: 8px 12px;
+  font-size: 11px;
+  color: #FFF;
+  line-height: 1.5;
+  position: relative;
+}
+.ets-acc-sharing-box .ets-acc-sharing-arrow {
+  width: 20px;
+  height: 8px;
+  background: url("../img/ets-sharing-arrow.png");
+  position: absolute;
+  bottom: -9px;
+  margin-left: -10px;
+  left: 50%;
+  z-index: 1;
+}
+.ets-acc-sharing-box .ets-acc-sharing-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  cursor: pointer;
+  vertical-align: top;
+  background: url("../img/ets-sharing-facebook.png");
+}
+.ets-acc-sharing-box .ets-acc-sharing-container p {
+  float: left;
+  padding-left: 10px;
+}
+.ets-acc-sharing-box .ets-acc-sharing-container p:first-child {
+  padding-left: 23px;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ets-acc-sharing-box .ets-acc-sharing-arrow {
+    bottom: -8px;
+  }
+}
+.ets-acc-asr-not-supported {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 32px;
+}
+.ets-acc-asr-not-supported-warning-icon {
+  display: inline-block;
+  width: 65px;
+  height: 58px;
+  background: url("../img/asr-not-supported-warning.svg");
+  margin-bottom: 16px;
+}
+.ets-acc-asr-not-supported-notice {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 17px;
+}
+.ets-acc-asr-not-supported-link {
+  color: #0078ff;
+}
+.ets-acc-asr-not-supported-btn-proceed,
+.ets-acc-asr-not-supported-btn-skip {
+  margin-left: 17px;
+  margin-right: 17px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.ets-acc-asr-not-supported-btn-proceed {
+  color: white;
+  background: black;
+  margin-bottom: 10px;
+}
+.ets-acc-asr-not-supported-btn-skip {
+  color: black;
+  background: transparent;
+  border: 1px solid #4d4d4d;
+}
+.ets-acc-asr-not-supported-livechat {
+  margin-top: 19px;
+}
+.ets-acc-asr-not-supported-livechat .tck-ui-button-help {
+  cursor: pointer;
+  color: #0078ff;
+}
+.ets-acc-asr-not-supported-livechat .tck-ui-icon {
+  display: none !important;
+}

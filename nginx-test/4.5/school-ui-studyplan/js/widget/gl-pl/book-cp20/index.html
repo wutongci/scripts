@@ -1,0 +1,41 @@
+<%
+	var bookUrl = data.bookUrl;
+%>
+<div class="evc-studyplan-btn-book">
+	<h2 data-weave="troopjs-ef/blurb/widget" data-blurb-id="639505" data-text-en="Welcome to your private lesson"></h2>
+	<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="639506" data-text-en="Review what you’ve learned in this unit in your private lesson. This live session with a teacher takes 20 minutes and is included with your subscription."></p>
+	<div class="evc-studyplan-btn-warp">
+		<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="639507" data-text-en="Your private lesson must be booked 24 hours in advance."></p>
+		<button class="btn btn-default" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="639508" data-text-en="Skip your private lesson"></button>
+		<a href="<%= bookUrl %>" class="btn btn-primary" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="639509" data-text-en="Book your private lesson"><i class="glyphicon icon-caret-right"></i></a>
+	</div>
+</div>
+<p class="text-muted" data-weave="troopjs-ef/blurb/widget" data-blurb-id="639510" data-text-en="You can skip your private lesson, but we strongly recommend you book it."></p>
+<style type="text/css">
+	.evc-studyplan-activity-container .evc-studyplan-gap-2x {
+		padding: 0;
+		margin: 0;
+		width: 660px;
+	}
+	.evc-studyplan-btn-book{
+		padding: 30px 20px;
+		color: #555555;
+		background-color: #f0f0f0;
+	}
+	.evc-studyplan-btn-book h2 {
+		margin-bottom: 10px;
+	}
+	.evc-studyplan-btn-book .btn{
+		display: inline-block;
+		margin: 10px 8px;
+	}
+	.evc-studyplan-btn-book p {
+		font-size: 1.3em;
+	}
+	.evc-studyplan-btn-warp {
+		margin-top: 20px;
+	}
+	p.text-muted{
+		margin-top: 8px;
+	}
+</style>

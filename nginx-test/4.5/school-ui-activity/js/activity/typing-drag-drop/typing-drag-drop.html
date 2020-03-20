@@ -1,0 +1,44 @@
+<%
+    var paragraphs = data.paragraphs;
+    var dragPieces = data.dragPieces;
+%>
+<div class="ets-act-tpd-main">
+<%
+for(var i=0;i<paragraphs.length;i++){
+    var paragraph = paragraphs[i];
+    for(var j=0;j<paragraph.length;j++){
+        var cell = paragraph[j];
+        if(cell._toAs){
+        %>
+            <span class="ets-act-tpd-gap ets-act-tpd-n" data-at-tag="droppable" data-at-id="<%=cell.text%>" data-id="<%=cell.text%>"><span class="ets-act-tpd-cm">
+                </span>
+            </span> 
+        <%
+        }else{
+        %>
+            <%=cell.text%>
+        <%
+        }
+    }
+}
+%>
+</div>
+<div class="ets-act-tpd-shadow ets-act-tpg-none"></div>
+<div class="ets-act-tpd-items">
+    <ul>
+    <%
+    for(var i=0;i<data.dragPieces.length;i++){
+        var piece = data.dragPieces[i];
+        %>
+        <li>
+            <span class="ets-act-tpd-item ets-act-tpd-item-n" data-index="<%=i%>" data-at-tag="draggable" data-at-id="<%=piece._id%>" data-id="<%=piece._id%>"><span class="ets-act-tpd-im">
+                <span class="ets-act-tpd-txt"><%=piece.txt%>
+                </span><span class="ets-act-tpd-idc">
+                </span></span>
+            </span>
+        </li>
+        <%
+    }
+    %>
+    </ul>
+</div> 

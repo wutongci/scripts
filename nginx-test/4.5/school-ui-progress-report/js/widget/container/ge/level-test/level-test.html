@@ -1,0 +1,36 @@
+<div class="ets-pr-level-test-container">
+	<h2 class="ets-pr-score-title" data-weave="school-ui-progress-report/widget/container/ge/level-test/level-test-name"></h2>
+	<div class="ets-pr-score-all">
+		<div class="ets-pr-score">
+			<span class="ets-pr-percentage"><%= data.overallScore%></span>%
+		</div>
+		<div class="ets-pr-overall">
+
+			<i class="ets-pr-complete <%= (data.passed ? '' : 'ets-none')%>">
+				<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_checkmark',32,32)"></div>
+			</i>
+			<br/>
+			<span class="ets-pr-tips" data-weave="troopjs-ef/blurb/widget" data-blurb-id="660190" data-text-en="Overall Score"></span>
+		</div>
+	</div>
+
+	<div class="ets-pr-score-section">
+		<% for (var n=0; n<data.steps.length; n++){
+			var step = data.steps[n];
+			%>
+		<div class="ets-pr-score-each">
+			<span class="ets-pr-score-topic"><%= step.name%></span>
+			<div class="ets-pr-score <%= (step.passed ? '' : 'ets-failed')%>">
+				<% if(n === 0){ %>
+					<i class="ets-pr-flag" style="left:<%= (data.passPercent + '%') %>">
+					<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_flag',20,200)"></div>
+					</i>
+				<% } %>
+				<span class="ets-pr-score-progress"></span>
+			</div>
+			<span class="ets-pr-score-score"><%= step.score%>%</span>
+		</div>
+		<% } %>
+	</div>
+	<a class="ets-pr-retake" data-weave="troopjs-ef/blurb/widget" data-blurb-id="660191" data-text-en="Retake the test"></a>
+</div>

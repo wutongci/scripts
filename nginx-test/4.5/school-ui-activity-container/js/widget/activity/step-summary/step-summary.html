@@ -1,0 +1,115 @@
+<%
+    var pros = data.actPros,
+        len = pros.length,
+        bStepPassed = data.hasPassed,
+        i= 0,
+        stepPros = data.pros,
+        numNotPassed = data.numNotPassed,
+        isLastStep = data.isLastStep,
+        isLessonPassed = data.isLessonPassed,
+        isStepPerfect = data.isStepPerfect,
+        isLessonPerfect = data.isLessonPerfect;
+        
+    var outBlurb = function(id,en){
+        var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+
+        return res;
+    };
+%>
+<div class="ets-ui-step-summary-bd">
+<%if(bStepPassed){%>
+    <%if(isLessonPassed){%>
+        <h3 data-at-id="lbl-step-summary-title">
+            <i class="ets-ui-icon-pass-l"></i>
+            <span <%= outBlurb(450041,"Step passed")%> >&nbsp;</span>
+        </h3>
+        <div class="ets-cf"></div>
+        <h3 data-at-id="lbl-step-summary-sub-title">
+            <i class="ets-ui-icon-pass-l"></i>
+            <span <%= outBlurb(450040,"Lesson passed")%> >&nbsp;</span>
+        </h3>
+        <%if(isLessonPerfect){%>
+            <h4 data-at-id="lbl-step-summary-description" <%= outBlurb(450312,"Well done! You got everything correct and passed this lesson.")%> ></h4>
+        <%}else{%>
+            <h4 data-at-id="lbl-step-summary-description" <%= outBlurb(450042,"Well done! You passed this lesson.")%> ></h4>
+        <%}%>
+    <%}else{%>
+        <%if(isStepPerfect){%>
+            <h3 data-at-id="lbl-step-summary-title" <%= outBlurb(462934,"Perfect!")%> ></h3>
+            <h4 data-at-id="lbl-step-summary-description" <%= outBlurb(450048,"Good work! You got everything correct and passed the step.")%> ></h4>
+        <%}else{%>
+            <h3 data-at-id="lbl-step-summary-title" <%= outBlurb(450041,"Step passed")%> ></h3>
+            <h4 data-at-id="lbl-step-summary-description" <%= outBlurb(450315,"Good work! You passed the step.")%> ></h4>
+        <%}%>
+    <%}%>
+<%}else{%>
+    <%if(stepPros<40){%>
+        <h3 data-at-id="lbl-step-summary-title" <%= outBlurb(450045,"Keep trying")%> ></h3>
+    <%}else if(stepPros>=40 && stepPros<60){%>
+        <h3 data-at-id="lbl-step-summary-title" <%= outBlurb(450043,"Almost there")%> ></h3>
+    <%}%>
+    <%if(numNotPassed===1){%>
+        <h4 data-at-id="lbl-step-summary-description" <%= outBlurb(450576,"You need to pass 1 more activities to move on.")%> ></h4>
+    <%}else{%>
+        <h4 data-at-id="lbl-step-summary-description" <%= outBlurb(450317,"You need to pass ^numberofactivities^ more activities to move on.")%>  data-values='{"numberofactivities":<%= numNotPassed%>}'></h4>
+    <%}%>
+<%}%>
+
+<% if(!bStepPassed){ %>
+    <p>
+        <!--<span <%= outBlurb(450046,"You need to pass 60% of the activities in a step.")%> ></span>-->
+        <!--<br/>-->
+        <span data-at-id="lbl-step-summary-sub-description" <%= outBlurb(450047,"Your current progress will be saved.")%> ></span>
+    </p>
+<% }%>
+
+<%if(!isLessonPassed){%>
+<ul class="ets-ui-step-summary-acts">
+    <% for(;i<len;i++){%>
+        <% if(pros[i]) { %>
+            <li class="ets-pass" data-at-id="lbl-activity-status-<%= ( i + 1 ) %>"></li>
+        <% }else{ %>
+            <li class="ets-fail" data-at-id="lbl-activity-status-<%= ( i + 1 ) %>"><%= ( i + 1 ) %></li>
+        <% } %>
+        <!--<li class="<%if(pros[i]){%>ets-pass<%} else {%>ets-fail<%}%>"></li>-->
+    <%}%>
+</ul>
+<%}%>
+
+<div class="ets-ui-step-summary-actions">
+    <!--<div class="ets-btn-large ets-btn-shadowed ets-btn-white" data-action="close">-->
+        <!--<span <%= outBlurb(450015,"Back to the unit")%> ></span>-->
+    <!--</div> -->
+    <%if(isStepPerfect){%>
+        <%if(!isLessonPassed && !isLastStep){%>
+            <div class="ets-btn-large ets-btn-shadowed ets-btn-white" data-action="nextstep" data-at-id="btn-start-the-next-step">
+    <span <%= outBlurb(450053,"Start the next step")%> ></span>
+</div>
+        <%}else{%>
+            <div class="ets-btn-large ets-btn-shadowed ets-btn-white" data-action="close" data-at-id="btn-back-to-the-unit">
+                <span <%= outBlurb(450015,"Back to the unit")%> ></span>
+            </div>
+        <%}%>
+    <%}else if(bStepPassed){%>
+        <div class="ets-btn-large ets-btn-shadowed ets-btn-white" data-action="tryagain" data-at-id="btn-try-the-step-again">
+            <span <%= outBlurb(450050,"Try the step again")%> ></span>
+        </div>
+        <%if(!isLessonPassed && !isLastStep){%>
+            <div class="ets-btn-large ets-btn-shadowed ets-btn-white" data-action="nextstep" data-at-id="btn-start-the-next-step">
+                <span <%= outBlurb(450053,"Start the next step")%> ></span>
+            </div>
+        <%}else{%>
+            <div class="ets-btn-large ets-btn-shadowed ets-btn-white" data-action="close" data-at-id="btn-back-to-the-unit">
+                <span <%= outBlurb(450015,"Back to the unit")%> ></span>
+            </div>
+        <%}%>
+    <%}else{%> 
+        <div class="ets-btn-large ets-btn-shadowed ets-btn-white" data-action="tryagain" data-at-id="btn-try-the-step-again">
+            <span <%= outBlurb(450050,"Try the step again")%> ></span>
+        </div>  
+    <%}%>
+</div>
+</div>
+<%if(bStepPassed){%>
+<div class="ets-acc-sharing" data-ccl="Facebook.School.Share" data-weave="troopjs-ef/ccl/placeholder('school-ui-activity-container/widget/plugin/sharing/main')"></div>
+<%}%>

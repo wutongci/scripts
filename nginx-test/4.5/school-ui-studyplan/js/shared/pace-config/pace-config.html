@@ -1,0 +1,32 @@
+<%
+	var paces = data.paces;
+	var targetDate = data.targetDate;
+	var paceDays = data.paceDays;
+	var leftDays = data.leftDays;
+	var mode = data.paceSelectMode;
+%>
+<div class="ets-sp-cfg-item">
+	<div class="ets-sp-cfg-item-title">
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="656056" data-text-en="My pace"></span>
+	</div>
+	<div class="ets-sp-cfg-item-detail">
+		<div class="ets-cfg-paceSelect <%= (mode === 'view'? 'ets-cfg-paceSelect-view' : '')%>" data-weave="school-ui-studyplan/shared/pace-select/main" data-paces='<%= JSON.stringify(paces).replace(/\'/g, "&#39;")%>'></div>
+	</div>
+</div>
+<div class="ets-sp-cfg-item">
+	<div class="ets-sp-cfg-item-title">
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="569851" data-text-en="Target date"></span>
+	</div>
+	<div class="ets-sp-cfg-item-detail ets-sp-cfg-item-targetDate">
+		<h2><%= (targetDate ? targetDate : "&mdash;&mdash;" ) %></h2>
+	</div>
+</div>
+<div class="ets-sp-cfg-item">
+	<div class="ets-sp-cfg-item-title">
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="656057" data-text-en="Remaining days"></span>
+	</div>
+	<div class="ets-sp-cfg-item-detail ets-sp-cfg-item-days">
+		<h2><%= (leftDays === undefined ? (paceDays ? paceDays : "&mdash;&mdash;") : leftDays) %></h2>
+		<span class="<%= (paceDays ? '' : 'ets-none') %>" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656058" data-text-en="Days">Days</span>
+	</div>
+</div>

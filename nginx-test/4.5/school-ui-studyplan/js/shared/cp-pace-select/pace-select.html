@@ -1,0 +1,22 @@
+<% for (var i = 0; i < data.paces.length; i++) { %>
+	<%
+		var selectedClass = data.paces[i].selected ? 'pace-item-selected' : '';
+		var ownPace = data.paces[i].paceDays === 0 ? 'cp-goal-own-pace' : '';
+		var paceValue = data.paces[i].paceDays === 0 ?
+		'no-pace' : 'pace-value';
+	%>
+	<div class="pace-item-edit <%=selectedClass%> <%=ownPace%>" data-pacedays = "<%=data.paces[i].paceDays%>">
+		<div class="ets-sp-cfg-item cp-pace-item cp-pace-left">
+			<div class="cp-pace-left-body">
+				<span class="pace-item-icon"></span> 
+				<span class="<%=paceValue%>"><%=data.paces[i].text%></span>
+				<span class="pace-name" data-weave="troopjs-ef/blurb/widget" data-blurb-id="694970"
+				>Hours Weekly</span>
+			</div>
+		</div><!--
+		--><div class="ets-sp-cfg-item cp-pace-item cp-pace-right">
+			<p class="goal-date"><%=data.paces[i].targetDate%></p>
+			<p class="goal-timezone"></p>
+		</div>
+	</div>
+<% } %>

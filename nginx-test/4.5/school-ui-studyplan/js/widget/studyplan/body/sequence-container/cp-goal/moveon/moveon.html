@@ -1,0 +1,15 @@
+<% if(data.status.code === 'all_unit_complete'){%>
+<div class="cp-studyplan-action">
+	<p class="cp-studyplan-or" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695094"></p>
+	<div class="cp-action-move">
+		<% if(data.isLastLevel) {%>
+		<span class="cp-select-course" data-weave="troopjs-ef/blurb/widget" data-link="<%=data.changeCourseLink%>" data-blurb-id="<%=data.blurbIds.cpSelectCourse%>" data-action="select/course">
+		</span>
+		<%}else{%>
+		<span class="cp-next-level" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695074" data-action="next/level">
+		</span>
+		<%}%>
+		<span class="ets-icon-cp-arrow-right"></span>
+	</div>
+</div>
+<% } %>

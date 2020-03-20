@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="58px" viewBox="0 0 65 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <path d="M38.4434286,3.50311375 L63.823558,47.4953381 C65.7554816,50.8440058 64.6069837,55.1247708 61.2583161,57.0566944 C60.1946437,57.6703516 58.9882549,57.9933953 57.7602589,57.9933953 L7,57.9933953 C3.13400675,57.9933953 -6.63197973e-15,54.8593886 -7.10542736e-15,50.9933953 C-7.25581349e-15,49.7653993 0.32304374,48.5590105 0.936700898,47.4953381 L26.3168303,3.50311375 C28.248754,0.154446119 32.529519,-0.994051813 35.8781866,0.937871819 C36.9438357,1.55266938 37.828631,2.43746464 38.4434286,3.50311375 Z" id="Triangle" fill="#F5AB16"></path>
+            <text id="!" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="32" font-weight="400" fill="#FFFFFF">
+                <tspan x="29.052" y="43">!</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

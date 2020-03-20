@@ -1,0 +1,39 @@
+<%
+var feedbacks = data.items;
+var getTypeInfo = data.getTypeInfo;
+var formatDate = data.formatDate;
+var OSA = data.OSA;
+%>
+
+<% for(var i = 0; i < feedbacks.length ; i++) {
+	var item = feedbacks[i];
+	var typeInfo = getTypeInfo(item.typeCode);
+	var dateFormat = formatDate(item.startTime);
+	var grade = item.osaGradedStatus || item.grade;
+	%>
+	<tr class="ets-pr-fb-row" data-sourceId="<%= item.feedback_id %>" data-typeCode="<%= item.typeCode %>">
+		<td class="ets-pr-fb-date"><span>
+			<% if(item.isNew){ %><em data-weave="troopjs-ef/blurb/widget" data-blurb-id="659693" data-text-en="New"></em><% } %>
+			<% if(dateFormat.blurbId) { %><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=dateFormat.blurbId%>" data-text-en="<%=dateFormat.blurbTextEn%>"></span><% } %> <%= dateFormat.passedDate %>
+		</span></td>
+		<td class="ets-pr-fb-summary"><span>
+			<% if(item.typeCode !== OSA && item.courseBreadCrumb) { %><span class="ets-pr-fb-course-bread-crumb"><%= item.courseBreadCrumb %></span><% } %>
+			<span class="ets-pr-fb-title"><%= item.title %></span>
+			<% if(item.teacher) { %>
+				<span class="ets-pr-fb-teacher">
+					<span data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_teacher',25.5,15.5)"></span>
+					<%= item.teacher.displayName %>
+				</span>
+			<% } %>
+		</span></td>
+		<td class="ets-pr-fb-type"><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=typeInfo.blurbId%>" data-text-en="<%=typeInfo.blurbTextEn%>"></span></td>
+		<td class="ets-pr-fb-device">
+			<%if (item.device === "Mobile") {%>
+				<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_mobilephone',20,22)" data-at-device="mobile"></div>
+			<%} else if (item.device === "PC") {%>
+				<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_pc',44,29)" data-at-device="desktop"></div>
+			<%}%>
+		</td>
+		<td class="ets-pr-fb-score <%= (item.isPassed ? 'ets-pr-fb-passed' : 'ets-pr-fb-not-passed')%>"><span><%= grade %></span></td>
+	</tr>
+<% } %>

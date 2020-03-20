@@ -1,0 +1,24 @@
+<div class="ets-wgt-qs">
+    <p class="ets-wgt-qs-desc" data-weave='troopjs-ef/blurb/widget' data-blurb-id='467836' data-text-en='question'></p>
+    <ul class="ets-wgt-qs-index">
+        <li class="ets-wgt-qs-index-left">
+            <ul><li class="ets-wgt-qs-num"><%=data._preIndex.charAt(0)%></li>
+            <%if(data._curIndex.charAt(0) != data._preIndex.charAt(0)){%>
+                <li class="ets-wgt-qs-num ets-wgt-qs-num-cur"><%=data._curIndex.charAt(0)%></li>
+            <%}%>
+            </ul>
+        </li>
+        <li class="ets-wgt-qs-index-right">
+            <ul><li class="ets-wgt-qs-num"><%=data._preIndex.charAt(1)%></li>
+            <%if(data._curIndex.charAt(1) != data._preIndex.charAt(1)){%>
+                <li class="ets-wgt-qs-num ets-wgt-qs-num-cur"><%=data._curIndex.charAt(1)%></li>
+            <%}%>
+            </ul>
+        </li>
+    </ul>
+    <span class="ets-wgt-qs-split"></span>
+    <ul class="ets-wgt-qs-total">
+        <li class="ets-wgt-qs-num"><%=data._total.charAt(0)%></li>
+        <li class="ets-wgt-qs-num"><%=data._total.charAt(1)%></li>
+    </ul>
+</div>

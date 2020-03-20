@@ -1,0 +1,44 @@
+{
+  "_from": "@ef/placement-test-ui@2.1.13",
+  "_id": "@ef/placement-test-ui@2.1.13",
+  "_inBundle": false,
+  "_integrity": "sha512-sR3g1p+tnmGTNw6tlg/nq8/qNRIfgyc9bV8KsOfgeSYyOBzpIpFnDvRyiNLGQGMcXN5cwVg8KjIyPxDS/Fn2MQ==",
+  "_location": "/@ef/placement-test-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/placement-test-ui@2.1.13",
+    "name": "@ef/placement-test-ui",
+    "escapedName": "@ef%2fplacement-test-ui",
+    "scope": "@ef",
+    "rawSpec": "2.1.13",
+    "saveSpec": null,
+    "fetchSpec": "2.1.13"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/placement-test-ui/-/placement-test-ui-2.1.13.tgz",
+  "_shasum": "d66be2af51d3b768ee13222d04fcba46d47d97d9",
+  "_spec": "@ef/placement-test-ui@2.1.13",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "author": {
+    "name": "London Frontend Labs",
+    "email": "london-frontend-labs@ef.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "devDependencies": {},
+  "name": "@ef/placement-test-ui",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://eyal.arubas@bitbucket.eflabs.io/scm/b2c/placement-test-ui.git"
+  },
+  "scripts": {},
+  "version": "2.1.13"
+}

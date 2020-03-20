@@ -1,0 +1,36 @@
+<%
+	var outBlurb = function(id,en){
+        var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+
+        return res;
+    };
+
+    var outCls = function(fnType, type){
+    	var typeCls = type ? 'ets-btn-'+ type : 'ets-btn-green';
+    	var fnCls = fnType ? 'ets-btn-fn-' + fnType : "";
+
+    	return "ets-btn "+ typeCls +" ets-btn-large ets-btn-shadowed ets-disabled " + fnCls;
+    }
+%>
+
+<div class="<%= outCls('check', 'purple')%>" data-action="check" data-at-id="btn-check-answer">
+	<span <%= outBlurb(450316, "CHECK MY ANSWER")%>></span>
+</div>
+<div class="<%= outCls('retry', 'blue')%>" data-action="retry" data-at-id="btn-retry">
+	<span <%= outBlurb(450051, "RETRY")%>></span>
+</div>
+<div class="<%= outCls('next')%>" data-action="nextQues" data-at-id="btn-next-question">
+	<span <%= outBlurb(450052, "NEXT")%>></span>
+</div>
+<div class="<%= outCls('save')%>" data-action="save" data-at-id="save">
+	<span <%= outBlurb(443583, "DONE")%>></span>
+</div>
+<div class="<%= outCls('submit')%>" data-action="submit" data-at-id="btn-submit">
+	<span <%= outBlurb(150622, "SUBMIT")%>></span>
+</div>
+<div class="<%= outCls('done')%>" data-action="done" data-at-id="btn-done">
+	<span <%= outBlurb(443583, "DONE")%>></span>
+</div>
+<div class="<%= outCls('move')%>" data-action="next" data-type="button" data-at-id="btn-next">
+	<span <%= outBlurb(450052, "NEXT")%>></span>
+</div>

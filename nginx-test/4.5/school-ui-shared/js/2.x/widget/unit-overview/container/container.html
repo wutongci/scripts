@@ -1,0 +1,12 @@
+<div class="ets-uo-container ets-uo-loading">
+	<div class="ets-uo-title-bar">
+		<div class="ets-uo-title" data-weave="troopjs-ef/blurb/widget" data-blurb-id="450055" data-text-en="Unit overview"></div>
+		<% if (!data.hideWorldList && data.showDownloadButton) { %>
+		<div class="ets-uo-export" data-weave-delay="school-ui-shared/widget/unit-overview/export-pdf/main"></div>
+		<% } %>
+	</div>
+	<div class="ets-uo-unit-info" data-weave-delay="school-ui-shared/widget/unit-overview/unit-info/main(data)"></div>
+	<% if (!data.hideWorldList) { %>
+	<div class="ets-uo-word-list" data-weave-delay="school-ui-shared/widget/unit-overview/word-list/main(data)"></div>
+	<% } %>
+</div>

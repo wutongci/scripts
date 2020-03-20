@@ -1,0 +1,21 @@
+<div class="ets-acc-asr-not-supported">
+    <i class="ets-acc-asr-not-supported-warning-icon"></i>
+    <p class="ets-acc-asr-not-supported-notice"
+       data-blurb-id="<%=data.noticeBlurbId%>" data-blurb-en="<%=data.noticeBlurbEn%>"
+       data-weave="troopjs-ef/blurb/widget"></p>
+
+    <% if (data.hasNoAsrFallback) { %>
+    <div class="ets-acc-asr-not-supported-btn-proceed" data-action="proceedWithoutAsr"
+         data-blurb-id="707725" data-blurb-en="Proceed without Speech Recognition"
+         data-weave="troopjs-ef/blurb/widget"></div>
+    <% } %>
+    <div class="ets-acc-asr-not-supported-btn-skip" data-action="skip"
+         data-blurb-id="707726" data-blurb-en="Skip"
+         data-weave="troopjs-ef/blurb/widget"></div>
+    <div class="ets-acc-asr-not-supported-livechat">
+        <span data-blurb-id="644326" data-text-en="Need help? Get in touch"
+              data-weave="troopjs-ef/blurb/widget"></span>
+        <span data-weave="techcheck-ui/widget/shared/live-chat/main('small-button')"
+              class="tck-ui-livechat-widget" data-delegate="button"></span>
+    </div>
+</div>

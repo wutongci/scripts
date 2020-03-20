@@ -1,0 +1,20 @@
+<div class="ets-act-swh-droparea ets-cf">
+	
+</div>
+
+<div class="ets-act-swh-originarea">
+	<%
+        var items = data.words;
+        for (var i = 0; i < items.length; i++) {
+            writeItem(items[i]);
+        }
+    %>
+</div>
+
+<% function writeItem(data) { %>
+		<div class="ets-act-swh-strip" data-at-id="<%= data._id%>">
+			<div class="ets-l"></div>
+			<div class="ets-c"><%= data.txt%></div>
+			<div class="ets-r"></div>
+		</div>
+<% } %>

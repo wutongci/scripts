@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="11px" height="13px" viewBox="0 0 11 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>play btn</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Feedback-Page-to-Check-class-notes-DLA" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-545.000000, -860.000000)">
+        <g id="WHITE-CTA" transform="translate(490.000000, 844.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="noun_253957_cc" transform="translate(55.000000, 16.000000)">
+                <path d="M0.462184874,13 C0.369747899,13 0.323529412,13 0.231092437,12.9567388 C0.0924369748,12.8702163 0,12.7404326 0,12.5673877 L0,0.454242928 C0,0.281198003 0.0924369748,0.151414309 0.231092437,0.0648918469 C0.369747899,-0.0216306156 0.554621849,-0.0216306156 0.693277311,0.0648918469 L10.7689076,6.12146423 C10.907563,6.20798669 11,6.33777038 11,6.51081531 C11,6.640599 10.907563,6.81364393 10.7689076,6.90016639 L0.693277311,12.9567388 C0.647058824,13 0.554621849,13 0.462184874,13 Z M0.924369748,1.27620632 L0.924369748,11.7886855 L9.65966387,6.51081531 L0.924369748,1.27620632 Z" id="play-btn"></path>
+            </g>
+        </g>
+    </g>
+</svg>

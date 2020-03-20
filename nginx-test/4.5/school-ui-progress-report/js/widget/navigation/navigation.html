@@ -1,0 +1,26 @@
+<%
+var nav_item = data.nav_item;
+%>
+<div class="ets-pr-top-title">
+	<div class="ets-pr-top-title-content">
+		<div class="ets-pr-icon">
+			<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_progress',20,20)"></div>
+		</div>
+		<h1 data-weave="troopjs-ef/blurb/widget" data-blurb-id="707546" data-text-en="Progress &amp; Tests"></h1>
+	</div>
+</div>
+<div class="ets-pr-nav-list">
+	<% for(var i = 0; i < nav_item.length ; i++) {
+	%>
+	<div class="ets-pr-nav-button <%= (nav_item[i].enabled ? '' : 'ets-unavailable')%>"
+	     data-hash-path="<%=nav_item[i].hashPath%>"
+	     data-disable-bottom-border-when-selected="<%= (nav_item[i].disableBottomBorderWhenSelected ? 'true' : 'false') %>"
+	     data-item-index="<%=i%>">
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=nav_item[i].blurbId%>" data-text-en="<%=nav_item[i].name%>"></span>
+		<% if (!nav_item[i].enabled){ %>
+			<div class="ets-pr-nav-tip" data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%= nav_item[i].disableBlurbId %>" data-text-en="<%= nav_item[i].disableTipsEn %>"></div>
+		<% } %>
+	</div>
+	<%}%>
+</div>
+<div class="ets-pr-nav-bottom-border"></div>

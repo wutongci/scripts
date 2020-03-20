@@ -1,0 +1,117 @@
+<%
+
+function buildRowHeader() {
+    var header = "<div class='ets-sp-chc-courses-row'>";
+
+    return header;
+}
+
+function buildRowBody(group, cols) {
+    return buildCols(group, group.unit_children || group.children, cols);
+}
+
+function buildRowTail() {
+    return "</div>";
+}
+
+function buildCols (group, items, cols) {
+    var header = "<div class='ets-sp-chc-course ets-" + cols + "-col clearfix' data-course-type='" + group.courseTypeCode + "'>";
+    var sectionName = "<h3>" + group.courseName + "</h3>";
+    var section = buildSection(items);
+    var tail = "</div>";
+
+    return header + sectionName +  section + tail;
+}
+
+function buildSection(items) {
+    var length = items.length;
+    var i = 0;
+    var out = "";
+    var cls = "";
+    var bHasPassed;
+    var item;
+    var iColItems = 8;
+    var CLS_ACTIVE = "ets-active";
+    var CLS_PASS = "ets-pass";
+    var dataAttr =  " data-template-id='{templateId}'";
+
+    while(i < length) {
+        if( i % iColItems === 0)  out += "<ul>";
+        item = items[i];
+        bHasPassed = data.hasPassed(item.progress.state);
+        cls = (bHasPassed ? ("class='" +  CLS_PASS + "' ") : "");
+
+        out += "<li data-action='select-level' " + cls + dataAttr.replace("{templateId}", item.templateUnitId || item.templateLevelId) + ">";
+        out += (item.unitName || item.levelName );
+        out += bHasPassed ? '<i class="ets-icon-badge-checkmark"></i></li>' : '</li>';
+
+        if( ++i % iColItems === 0)  out += "</ul>";
+    }
+
+    return out;
+}
+
+function buildAllHtml(groups) {
+    var length = groups.length;
+    var i = 0;
+    var j = 0;
+    var iLimitCols = 4;
+    var iColItems = 8;
+    var items;
+    var out = "";
+    var cols;
+    var rows;
+    var iRestCols = 0;
+    var group;
+
+    while(i < length) {
+        group = groups[i];
+        if(group){
+            this[group.courseTypeCode] = this[group.courseTypeCode] || group;
+
+            items = group.unit_children || group.children;
+            cols = Math.ceil(items.length / iColItems);
+            rows = Math.ceil(cols / iLimitCols);
+
+            if(iRestCols < cols) {
+                out += (i !== 0) ? buildRowTail() : "";
+                out += buildRowHeader();
+                out += buildRowBody(group, cols);
+
+                iRestCols = (iLimitCols - cols % iLimitCols) % iLimitCols;
+            } else {
+                out += buildRowBody(group, cols);
+                iRestCols -= cols;
+            }
+
+            if( ++i === length) out += buildRowTail();
+        }
+    }
+
+    return out;
+}
+
+%>
+
+<div class="ets-sp-chc-bd ets-none">
+    <div class="ets-sp-chc-courses clearfix">
+        <button class="btn btn-default btn-sm ets-sp-chc-close" data-action="close">
+        <i class="glyphicon glyphicon-remove"></i> <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="450020" data-text-en="close"></span></button>
+        <div data-action='change-level'><%= buildAllHtml.call(this, data.groups) %></div>
+    </div>
+</div>
+
+
+<!--
+ <div class="ets-sp-chc-courses-row">
+    <div class="ets-sp-chc-course ets-2-col clearfix">
+        <h3>Level Name</h3>
+        <ul>
+            <li class="ets-pass"> Level Item<i class="ets-icon-badge-checkmark"></i></li>
+            <li class="ets-active">Actived Item</li>
+            <li>Normal Item</li>
+        </ul>
+        ...
+    </div>
+</div>
+-->

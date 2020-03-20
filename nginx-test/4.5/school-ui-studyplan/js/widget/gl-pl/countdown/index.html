@@ -1,0 +1,26 @@
+<%
+    var time = data.time;
+    var day = data.day;
+    var timezone = data.timezone;
+%>
+<div class="evc-studyplan-countdown">
+    <div class="evc-studyplan-countdown-block">
+        <strong><span><%= time %></span></strong><span>,</span>&nbsp;<span><%= day %></span>&nbsp;<span>UTC&nbsp;<%= timezone %></span>
+    </div>
+</div>
+
+<style type="text/css">
+    .evc-studyplan-countdown{
+        font-size: 14px;
+        display: inline-block;
+	    background:#eee;
+    }
+    .evc-studyplan-countdown-block{
+        display: inline-block;
+        padding: 10px 18px;
+    }
+    .evc-studyplan-countdown-status{
+        color: #fff;
+        background-color: #bbb;
+    }
+</style>

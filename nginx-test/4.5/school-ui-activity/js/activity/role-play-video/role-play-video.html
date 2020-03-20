@@ -1,0 +1,64 @@
+<%
+	var data = data || {};
+	var correctRequired = data.correctRequired;
+	var data = data.data;
+	
+	var blurb = function(id,en){
+	    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+	    return res;
+	};
+%>
+
+
+<div class="ets-act-rpv">
+	<div class="ets-act-rpv-bd">
+		<div class="ets-act-rpv-side">
+			<div class="ets-act-rpv-questions">
+				<h4><span <%=blurb(150634,"Question")%>></span> <strong>1</strong> / <%= data.content.questions.length%></h4>
+				<%
+			        var items = data.content.questions;
+			        for (var i = 0; i < items.length; i++) {
+			            writeItem(items[i], i);
+			        }
+			    %>
+			</div>
+			<div class="ets-act-rpv-mic ets-none">
+				<div data-weave="school-ui-activity/shared/asr/asr-ui"></div>
+			</div>
+		</div>
+		<div class="ets-act-rpv-main">
+			<div class="ets-act-vp-wrap"><!--<div data-weave="school-ui-shared/widget/video-player/main(videoInfo, options, successCallback)"></div>--></div>
+			<div class="ets-act-rpv-video-control">
+				<div class="ets-act-rpv-btn-replay" data-at-id="replay"><span <%=blurb(467622,"Replay this segment")%>></span></div>
+				<div class="ets-act-rpv-btn-skip" data-at-id="btn-skip"><span <%=blurb(467623,"Skip this segment")%>></span></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Activity Summary Start-->
+	<div class="ets-act-summary-wrap"></div>
+	<!-- Activity Summary End-->
+	
+</div>
+
+<% function writeItem(data, i) { 
+		var m = i + 1;
+		var mapIndexes = {
+			'0' : 'A',
+			'1' : 'B',
+			'2' : 'C',
+			'3' : 'D',
+			'4' : 'E',
+			'5' : 'F'
+		};
+		%>
+		<ul class="ets-act-rpv-question" data-order="<%= m%>" data-id="<%= data._id%>" data-at-id="<%= data._id%>" data-start-time="<%= data.startTime%>" data-end-time="<%= data.endTime%>">
+			<%
+		        var options = data.options;
+		        for (var j = 0; j < options.length; j++) {
+		        	var n = j + 1;%>
+		            <li class="ets-act-rpv-answer ets-nth-<%= n%>" data-id="<%= options[j]._id%>" data-at-id="<%= data._id%>_<%= options[j]._id%>"><b><%=mapIndexes[j]%></b><i class="ets-mark-correct"></i><i class="ets-mark-incorrect"></i><span><%= options[j].txt%></span></li>
+		    <%}%>
+			
+		</ul>
+<% } %>

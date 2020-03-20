@@ -1,0 +1,69 @@
+<%
+	var teacher = data.teacher;
+    var ratingBlurb = {
+		'1': { id: 701035, en: 'Strongly Disagree' },
+		'2': { id: 701036, en: 'Disagree' },
+		'3': { id: 701037, en: 'Neutral' },
+		'4': { id: 701038, en: 'Agree' },
+		'5': { id: 701039, en: 'Strongly Agree' },
+	};
+%>
+<div class="ets-pr-fb-survey-modal modal fade in" data-backdop="static" lang="<%=data.lang%>">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form class="ets-pr-fb-survey-form">
+				<div class="ets-pr-fb-survey-teacher-header">
+					<img class="ets-pr-fb-survey-teacher-image" src="<%= teacher.imageUrl %>"/>
+					<span class="ets-pr-fb-survey-teacher-profile">
+						<span class="ets-pr-fb-survey-teacher-name"><%= teacher.displayName %></span>
+						<br/>
+						<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="701042" data-text-en="Your Corrector"></span>
+					</span>
+				</div>
+				<% data.questions.forEach(function (question, questionIndex) { %>
+					<div class="ets-pr-fb-survey-question" data-weave="troopjs-ef/blurb/widget" 
+					     data-blurb-id="<%= question.blurbId %>" data-blurb-en="<%= question.blurbEn %>">
+					</div>
+					<div class="ets-pr-fb-survey-rating-answer">
+						<%
+						/* Using a recursive call to generate the rating line */ 
+						(function renderRatingGroup(rating) {
+							var id = ['radio',data.writingId,questionIndex,rating].join('-');
+							%>
+							<input id="<%=id%>" class="ets-pr-radio" type="radio" name="<%= question.inputName %>" value="<%= rating %>"/>
+							<span class="ets-pr-fb-survey-rating-group" data-rating="<%= rating %>">
+								<% if (rating > 1) { renderRatingGroup(rating-1); } %>
+								<label for="<%=id%>" data-rating="<%=rating%>" class="ets-pr-fb-survey-rating-label">
+									<span data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_survey_rating<%= rating %>',30,30)"></span>
+									<span class="ets-pr-fb-survey-rating-label-text" data-weave="troopjs-ef/blurb/widget"
+									      data-blurb-id="<%= ratingBlurb[rating].id %>" data-blurb-en="<%= ratingBlurb[rating].en %>"></span>
+								</label>
+							</span>
+							<%
+						})(5);
+						%>
+					</div>
+				<% }); %>
+
+				<label for="ets-pr-fb-survey-<%=data.writingId%>-comments" class="ets-pr-fb-survey-comments-label"
+					   data-weave="troopjs-ef/blurb/widget" data-blurb-id="701034" data-blurb-en="Comments"></label>
+				<textarea id="ets-pr-fb-survey-<%=data.writingId%>-comments" name="comments"></textarea>
+				<div class="ets-pr-fb-survey-buttons">
+					<button type="submit" class="ets-pr-btn submit disabled">
+						<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="701041" data-text-en="Submit"></span>
+					</button>
+				</div>
+			</form>
+			<div class="ets-pr-fb-survey-confirmation">
+				<h1 data-weave="troopjs-ef/blurb/widget" data-blurb-id="673744" data-text-en="Thank you!"></h1>
+				<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="673745" data-text-en="Your rating has been submitted"></p>
+				<p><span data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_confirmation', 102, 94)"></span></p>
+				<button type="button" class="ets-pr-btn" data-dismiss="modal" data-weave="troopjs-ef/blurb/widget" data-blurb-id="673746" data-text-en="Got it"></button>
+			</div>
+			<button type="button" class="ets-pr-btn close" data-dismiss="modal">
+				<span data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_close', 30, 30)"></span>
+			</button>
+		</div>
+	</div>
+	<div class="modal-backdrop fade in"></div>
+</div>

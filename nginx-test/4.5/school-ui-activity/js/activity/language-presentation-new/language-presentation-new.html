@@ -1,0 +1,109 @@
+<%
+	var data = data || {};
+	
+	var blurb = function(id,en){
+	    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+	    return res;
+	};
+%>
+
+<div class="ets-act-lpn">
+	<div class="ets-act-lpn-bd">
+		<div class="ets-act-lpn-view-wrap">
+			<div class="ets-act-lpn-view" id="ets-act-lpn-view">
+				<%
+					if (data.content.title) {
+				%>
+				<div class="ets-act-lpn-section" data-section="1">
+					<div class="ets-bd">
+						<div class="ets-act-lpn-start">
+							<h2><%=data.content.title%></h2>
+						</div>
+					</div>
+				</div>
+				<%}%>
+
+				<%
+					if (data.content.grammarVideo && data.content.grammarVideo.videoUrl) {
+						writeGrammarVideo(data.content.grammarVideo, 1);
+
+						for (var i=0; i < data.content.presentations.length; i++ ) {
+							var n = i+2;
+							writeSection(data.content.presentations[i], n);
+						}
+					} else {
+						for (var i=0; i < data.content.presentations.length; i++ ) {
+							var n = i+1;
+							writeSection(data.content.presentations[i], n);
+						}
+					}
+				%>
+				
+			</div>
+		</div>
+		
+		<div class="ets-act-lpn-tabs" id="ets-act-lpn-tabs">
+			<div class="ets-act-lpn-tabs-path">
+				<span></span>
+			</div>
+			<%	var totalSections;
+				if (data.content.grammarVideo && data.content.grammarVideo.videoUrl) {
+					totalSections = data.content.presentations.length + 1;
+				} else {
+					totalSections = data.content.presentations.length;
+				}
+			 %>
+			<ul class="ets-total-<%=totalSections%>">
+				<%
+					for (var i=0; i < totalSections; i++ ) {
+						var n = i + 1,
+							alphabets = ["A", "B", "C", "D", "E", "F", "G"],
+							txt = alphabets[i];
+						%>
+						<li data-section="<%=n%>">
+							<span>
+							<!--[if lte IE 7]>
+						<div class="ets-act-iefix-wrap">
+						    <div class="ets-act-iefix-offset">
+						        <div class="ets-act-iefix-inner">
+						<![endif]-->
+							<%=txt%>
+							<!--[if lte IE 7]>
+						        </div>
+						    </div>
+						</div>
+						<![endif]-->
+							</span>
+						</li>
+					<%}
+				%>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<% function writeGrammarVideo(section, n) { %>
+	<div class="ets-act-lpn-section" data-section="<%=n%>">
+		<div class="ets-bd">
+			<div class="ets-act-lpn-grammar-video">
+				<div class="ets-act-vp-wrap"><!--<div data-weave="school-ui-shared/widget/video-player/main(videoInfo, options, successCallback)"></div>--></div>
+				<%if (section.audioUrl && section.audioUrl.url) {%>
+				<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+				       data-pause-other-players="false"
+				       src="<%=section.audioUrl.url%>" type="audio/mpeg"
+				       class="ets-ap ets-ap-nobar"></audio>
+				<%}%>
+			</div>
+		</div>
+	</div>
+<% } %>
+
+<% function writeSection(section, n) { %>
+		<div class="ets-act-lpn-section" data-section="<%=n%>">
+			<div class="ets-bd">
+				<div class="ets-act-lpn-grammar">
+					<%=section.text%>
+				</div>
+			</div>
+		</div>
+<% } %>

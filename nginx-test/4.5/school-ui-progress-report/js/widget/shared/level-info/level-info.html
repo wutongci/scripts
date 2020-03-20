@@ -1,0 +1,15 @@
+<%if (data.unCompletedLessons === 0) {%>
+	<%if (data.hasLevelCertificate) {%>
+		<div class="ets-pr-completed-medal" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_medal',32,40)"></div>
+	<%} else {%>
+		<div class="ets-pr-completed-checkmark" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_checkmark',32,32)"></div>
+	<%}%>
+	<div class="ets-pr-completed-text" data-weave="troopjs-ef/blurb/widget" data-blurb-id="669820" data-text-en="Completed"></div>
+<%}%>
+<h2><%=data.level.levelName%></h2>
+<%if (data.unCompletedLessons > 0) {%>
+	<h3><%=data.lessonsLeft%></h3>
+<%}%>
+<%if (data.canShowCertificate) {%>
+	<div data-weave="school-ui-progress-report/widget/shared/certificate/main('<%=data.level.studentLevelId%>')"></div>
+<%}%>

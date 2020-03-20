@@ -1,0 +1,10 @@
+<%
+var iconName = {
+	passed: 'ico_circle_green',
+	current: 'ico_circle_blue',
+	progress: 'ico_circle_black'
+}[data.state] || 'ico_circle_gray';
+%>
+<div class="ets-pr-state-circle"
+     data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/<%=iconName%>',32,32)"
+></div>

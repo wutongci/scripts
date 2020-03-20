@@ -1,0 +1,46 @@
+<%
+	var paces = data;
+%>
+<div class="ets-sp-cfg-pace">
+
+	<%
+		for (var i = 0; i < paces.length; i++) {
+			findSelect(paces[i], i);
+		}
+	%>
+	<div class="ets-sp-cfg-paceList-wrapper">
+		<ul class="ets-sp-cfg-paceList">
+			<%
+				for (var i = 0; i < paces.length; i++) {
+					render(paces[i], i);
+				}
+			%>
+		</ul>
+	</div>
+</div>
+
+<% function findSelect(pace) { %>
+	<% if(pace.selected){ %>
+		<div class="ets-sp-cfg-pace-item ets-sp-cfg-pace-button">
+			<div>
+			<% if(pace.paceDays){ %>
+				<h2><%= pace.text %></h2><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="569848" data-text-en="hours weekly"></span>
+			<% } else { %>
+				<%= pace.text %>
+			<% } %>
+			</div> <i class="glyphicon icon-caret-down"></i>
+		</div>
+	<% } %>
+<% } %>
+
+<% function render(pace) { %>
+	<li>
+		<div class="ets-sp-cfg-pace-item" data-days="<%= pace.paceDays %>" data-points="<%= pace.pacePoints %>" data-text="<%= pace.text %>">
+			<% if(pace.paceDays){ %>
+				<h2><%= pace.text %></h2><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="569848" data-text-en="hours weekly"></span>
+			<% } else {%>
+				<%= pace.text %>
+			<% } %>
+		</div>
+	</li>
+<% } %>

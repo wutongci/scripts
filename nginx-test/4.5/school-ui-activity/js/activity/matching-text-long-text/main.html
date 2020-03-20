@@ -1,0 +1,54 @@
+<%
+var targets = data.targets;
+var sources = data.sources;
+%>
+<div class="ets-act-mtl ets-cf">
+    <% if (data.references.aud) { %>
+    <div class="ets-references">
+        <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                   data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+                   class="ets-ap ets-ap-bottom-right"></audio>
+        </div></div>
+    </div>
+    <% } %>
+
+    <div class="ets-targets">
+        <ul>
+            <% for (var i = 0, len = targets.length; i < len; i++) { %>
+            <li class="ets-droppable-line">
+                <ul class="ets-cf">
+                    <li class="ets-first">
+                        <span class="ets-mtl-left" data-at-id="<%= targets[i]._id %>" data-target-id="<%= targets[i]._id %>">
+                            <span>
+                                <div>
+                                    <div><%= targets[i].txt %></div>
+                                </div>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="ets-last"></li>
+                </ul>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="ets-options">
+        <ul>
+            <% for (var i = 0, len = sources.length; i < len; i++) { %>
+            <li>
+                <span class="ets-mtl-right" data-at-id="<%= sources[i]._id %>" data-source-id="<%= sources[i]._id %>" data-index="<%= i %>">
+                    <i class="ets-indicator"></i>
+                    <span>
+                        <div>
+                            <div><%= sources[i].txt %></div>
+                        </div>
+                    </span>
+                    <i class="ets-bottom-shadow"></i>
+                </span>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>

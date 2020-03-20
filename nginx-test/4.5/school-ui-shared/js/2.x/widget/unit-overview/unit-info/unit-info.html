@@ -1,0 +1,28 @@
+<%
+var data = data || {};
+var isGE = data.isGE;
+var level = data.level || {};
+var unit = data.unit || {};
+var lessons = data.lessons || [];
+%>
+<div class="ets-uo-unit-image">
+	<img src="<%= unit.unitImage.url %>"/>
+</div>
+<div class="ets-uo-unit-fields">
+	<div class="ets-uo-course-location">
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="126799" data-text-en="Level"></span>
+		<span class="ets-uo-level-no"><%=(isGE ? level.levelNo : level.levelName)%></span>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="126802" data-text-en="Unit"></span>
+		<span class="ets-uo-unit-no"><%=unit.unitNo%></span>
+	</div>
+	<div class="ets-uo-unit-name"><%=unit.unitName%></div>
+	<div class="ets-uo-unit-desc"><%=(unit.unitDesc || '')%></div>
+</div>
+<div class="ets-uo-unit-task">
+	<div data-weave="troopjs-ef/blurb/widget" data-blurb-id="470915" data-text-en="Tasks"></div>
+	<ul>
+		<% lessons.forEach(function (lesson) { %>
+		<li><%= lesson.lessonName %></li>
+		<% }); %>
+	</ul>
+</div>

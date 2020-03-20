@@ -1,0 +1,37 @@
+<%
+	var summary = data.summary;
+	var feedback = data.feedback;
+	var teacher = data.teacher;
+%>
+<div class="ets-pr-fb-detail ets-pr-fb-detail-writing ets-none ets-pr-fb-open">
+	<div class="ets-pr-fb-teacher">
+		<% if (teacher) { %>
+		<img src="<%= teacher.imageUrl %>"/>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659698" data-text-en="Teacher"></span>
+		<span><%= teacher.displayName %></span>
+		<% } %>
+	</div>
+	<div class="ets-pr-fb-content">
+		<% if (feedback.topic) { %>
+			<h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="659699" data-text-en="Topic"></h5>
+			<p><%= feedback.topic %></p>
+		<% } %>
+
+		<% if (feedback.comment) { %>
+			<h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="708940" data-text-en="Teacher's comments"></h5>
+			<p><%= feedback.comment %></p>
+		<% } %>
+
+		<div class="ets-pr-fb-correction" data-weave="school-ui-progress-report/widget/container/feedback/feedback-detail/writing-correction/main"></div>
+
+		<div class="ets-pr-fb-content-buttons">
+			<% if(!summary.isArchive) { %>
+			<button type="button" class="ets-pr-btn ets-pr-fb-open-survey-button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="701043" data-text-en="Writing Challenge Survey"></button>
+			<% } %>
+		</div>
+	</div>
+	<div class="ets-pr-fb-score-large">
+		<span class="ets-pr-fb-score-num"><%= feedback.grade %></span>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659692" data-text-en="Score"></span>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="ets-act-spv">
+	<%
+	var data = data || {};
+	if (data.references.aud) { %>
+	<div class="ets-act-spv-side">
+		<div class="ets-act-spv-side-bd">
+			<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+				<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+				       data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+				       class="ets-ap"></audio>
+			</div></div>
+		</div>
+	</div>
+	<%}%>
+	<div class="ets-act-spv-main">
+		<div class="ets-act-spv-list-wrap">
+		    <ul class="ets-act-spv-list">
+		    <%
+		        var items = data.content.sequences;
+		        for (var i = 0; i < items.length; i++) {
+		            writeItem(items[i]);
+		        }
+		    %>
+		    </ul>
+	    </div>
+	</div>
+</div>
+<% function writeItem(data) { 
+	if (data.isLock) {
+		data.lockClass = "ets-correct ets-locked";
+	} else {
+		data.lockClass = ""
+	}
+	%>
+	
+				<li id="<%= data._id%>" data-at-id="<%= data._id%>" class="ets-act-spv-item <%= data.lockClass%>" data-position="<%= data.position%>">
+					<div class="ets-bd"><%= data.item%><div class="ets-bd-handle"></div><div class="ets-bd-correct"></div><div class="ets-bd-incorrect"></div><div class="ets-bd-lock"></div></div>
+					<div class="ets-ft"></div>
+				</li>
+<% } %>

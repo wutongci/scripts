@@ -1,0 +1,21 @@
+<%
+    var model = data || {},
+        settings = model.settings || {};
+%>
+<h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="167332" data-text-en="Voice"></h4>
+<div class="ets-ui-tts-settings-voice">
+    <input type="radio" name="ets-ui-tts-voice" value="101"<%=(settings.speaker !== 100 ? " checked='checked'" : "")%> id="ets-ui-tts-voice-male" />
+    <label for="ets-ui-tts-voice-male" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167334" data-text-en="Male"></label>
+    <input type="radio" name="ets-ui-tts-voice" value="100"<%=(settings.speaker === 100 ? " checked='checked'" : "")%> id="ets-ui-tts-voice-female" />
+    <label for="ets-ui-tts-voice-female" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167336" data-text-en="Female"></label>
+</div>
+<h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="167345" data-text-en="Display Mode"></h4>
+<div class="ets-ui-tts-settings-display">
+    <input type="checkbox" name="ets-ui-tts-auto-launch" id="ets-ui-tts-auto-launch"<%=(settings.autoLaunch ? " checked='checked'" : "")%> />
+    <label for="ets-ui-tts-auto-launch" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167348" data-text-en="Launch it automatically when a word is double-clicked"></label>
+</div>
+<a class="ets-ui-tts-save-btn" href="javascript:void(0)" data-action="save/settings">
+    <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="167349" data-text-en="Save"></span>
+</a>
+<span class="ets-ui-tts-settings-msg ets-done" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167350" data-text-en="Saved successfully!"></span>
+<span class="ets-ui-tts-settings-msg ets-fail" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167351" data-text-en="Save failed, please try again!"></span>

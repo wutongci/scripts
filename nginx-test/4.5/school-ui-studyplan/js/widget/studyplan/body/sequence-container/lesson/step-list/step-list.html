@@ -1,0 +1,17 @@
+<%
+	var steps = data.steps;
+%>
+<div class="ets-sp-steps">
+	<%
+		for (var i = 0; i < steps.length; i++) {
+			var step = steps[i];
+			writeStep(step);
+		}
+	%>
+</div>
+
+<% function writeStep(step) { %>
+	<!-- Step Start -->
+	<div data-weave="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step/main" data-id="<%= step.id %>" data-physical-lesson-id="<%= data.physicalLesson%>" data-show-button="<%= (step._showButton ? true : false) %>" data-has-continue="<%= (step._hasContinue ? true : false) %>"></div>
+	<!-- Step End -->
+<% } %>

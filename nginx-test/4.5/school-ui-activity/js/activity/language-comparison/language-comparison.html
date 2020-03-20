@@ -1,0 +1,95 @@
+<%	var data = data || {},
+		me = this,
+		phrases = data.content.phrases[me.index()],
+		audioUrl = phrases.audio.url,
+		text = phrases.text,
+		translation = phrases.translation;
+
+	var outBlurb = function(id,en){
+	    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+	    return res;
+	};
+%>
+
+<div class="ets-act-lnc ets-cf">
+	<div class="ets-act-lnc-main">
+		<div class="ets-act-btn-skip ets-act-lnc-skip">
+			<span <%=outBlurb(450011,"Skip")%>></span>
+		</div>
+		<div class="ets-act-lnc-content">
+			<div class="ets-act-lnc-play">
+				<div class="ets-act-lnc-play-content">
+					<div class="ets-table-hack">
+						<div class="ets-act-lnc-play-container">
+							<div class="ets-act-lnc-play-tip ets-none">
+								<div class="ets-act-lnc-play-tip-top"></div>
+								<div class="ets-act-lnc-play-tip-mid">
+									<span class="ets-act-lnc-tip-msg" <%=outBlurb(462459,"Listen to the audio")%>></span>
+								</div>
+								<div class="ets-act-lnc-play-tip-bottom"></div>
+							</div>
+							<div class="ets-act-lnc-play-btn">
+								<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+									<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+									       data-src="<%=audioUrl%>" type="audio/mpeg"
+									       class="ets-ap" controls="controls"></audio>
+								</div></div>
+							</div>
+							<div class="ets-act-lnc-play-sentences">
+								<div class="ets-act-lnc-play-original"><%=text%></div>
+								<div class="ets-act-lnc-play-translation"><%=translation%></div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="ets-act-lnc-record">
+				<div class="ets-act-lnc-record-content">
+					<div class="ets-act-lnc-record-msg ets-first-time">
+						<div class="ets-table-hack">
+							<div class="ets-act-lnc-record-btn" data-weave="school-ui-activity/shared/asr/asr-ui"></div>
+							<div class="ets-act-lnc-record-tip ets-away">
+								<div class="ets-act-lnc-record-tip-top"></div>
+								<div class="ets-act-lnc-record-tip-mid">
+									<span class="ets-act-lnc-tip-msg ets-act-lnc-tip-msg-repeat" <%=outBlurb(465087,"Try to repeat the phrase")%>></span>
+								</div>
+								<div class="ets-act-lnc-record-tip-bottom"></div>
+							</div>
+							<div class="ets-act-lnc-record-msg-container ets-away">
+								<div class="ets-act-lnc-record-msg-title">
+									<div class="ets-act-lnc-record-msg-title-top"></div>
+									<div class="ets-act-lnc-record-msg-title-bottom">
+										<div class="ets-act-lnc-record-msg-title-content-container">
+											<span class="ets-act-lnc-record-msg-title-content ets-act-lnc-record-msg-title-content-correct" <%=outBlurb(480559,"Correct")%>>Correct</span>
+											<span class="ets-act-lnc-record-msg-title-content ets-act-lnc-record-msg-title-content-wrong" <%=outBlurb(480560,"Try again!")%>></span>
+										</div>
+									</div>
+								</div>	
+								<div class="ets-act-lnc-record-msg-content-container-top">
+									<div class="ets-act-lnc-record-msg-content-container-inner">
+										<div class="ets-table-hack">
+											<div class="ets-ap-lnc-record"></div>
+										</div>
+										<div class="ets-table-hack">
+											<div class="ets-act-lnc-record-msg-content"></div>
+										</div>
+									</div>
+								</div>
+								<div class="ets-act-lnc-record-msg-content-container-bottom"></div>
+							</div>
+						</div>
+					</div>
+					<div class="ets-act-lnc-new-icon"></div>
+				</div>
+			</div>
+			<div class="ets-act-lnc-number">
+                <span class="ets-act-lnc-number-current"></span> / <span class="ets-act-lnc-number-total"></span>
+            </div>
+		</div>
+	</div>
+	
+	<!-- Activity Summary Start-->
+	<div class="ets-act-summary-wrap"></div>
+	<!-- Activity Summary End-->
+</div>

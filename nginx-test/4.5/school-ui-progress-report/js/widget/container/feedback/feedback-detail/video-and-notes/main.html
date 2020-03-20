@@ -1,0 +1,17 @@
+<% if (data.hasVideoRecord && !data.videoAvailable && !data.noteAvailable) { %>
+    <p class="ets-pr-fb-class-notes-unavailable" data-weave="troopjs-ef/blurb/widget" data-blurb-id="709107" data-text-en="Class video and class notes are not available"></p>
+<% } else { %>
+    <% if (data.hasVideoRecord) { %>
+        <% if (data.videoAvailable) { %>
+            <div class="ets-pr-fb-class-video" data-weave="school-ui-progress-report/widget/container/feedback/feedback-detail/class-video/main(options)"></div>
+        <% } else { %>
+            <p class="ets-pr-fb-class-notes-unavailable" data-weave="troopjs-ef/blurb/widget" data-blurb-id="709106" data-text-en="Classs video is not available"></p>
+        <% } %>
+    <% } %>
+    
+    <% if (data.noteAvailable) { %>
+        <div class="ets-pr-fb-class-notes" data-weave="school-ui-progress-report/widget/container/feedback/feedback-detail/class-notes/main"></div>
+    <% } else { %>
+        <p class="ets-pr-fb-class-notes-unavailable" data-weave="troopjs-ef/blurb/widget" data-blurb-id="709105" data-text-en="Classs notes are not available"></p>
+    <% } %>
+<% } %>

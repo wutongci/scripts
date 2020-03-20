@@ -1,0 +1,44 @@
+{
+  "_from": "@ef/help-center-ui@1.0.19",
+  "_id": "@ef/help-center-ui@1.0.19",
+  "_inBundle": false,
+  "_integrity": "sha1-EWxwpj0AXHCx5vs3zxcxDl1iU5w=",
+  "_location": "/@ef/help-center-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/help-center-ui@1.0.19",
+    "name": "@ef/help-center-ui",
+    "escapedName": "@ef%2fhelp-center-ui",
+    "scope": "@ef",
+    "rawSpec": "1.0.19",
+    "saveSpec": null,
+    "fetchSpec": "1.0.19"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/help-center-ui/-/help-center-ui-1.0.19.tgz",
+  "_shasum": "116c70a63d005c70b1e6fb37cf17310e5d62539c",
+  "_spec": "@ef/help-center-ui@1.0.19",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "author": {
+    "name": "London Frontend Labs",
+    "email": "london-frontend-labs@ef.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "devDependencies": {},
+  "name": "@ef/help-center-ui",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.eflabs.io:7999/b2c/help-center-ui.git"
+  },
+  "scripts": {},
+  "version": "1.0.19"
+}

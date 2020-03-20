@@ -1,0 +1,220 @@
+body {
+  margin: 0px;
+}
+
+.frame {
+  font: 12px Verdana;
+}
+
+.top_frame {
+  background: url(assets/top_bg.gif) repeat-x;
+  height: 25px;
+  font: bold 16px Verdana;
+  color: #013684;
+  padding: 50px 0px 10px 50px;
+}
+
+.content_frame {
+  background: url(assets/content_bg.gif) repeat-x;
+  padding: 30px 10px 10px 10px;
+  min-width: 940px;
+}
+
+.left_frame {
+  width: 318px;
+  height: 408px;
+  border: solid 1px #BEDFF2;
+  float: left;
+  padding: 5px 5px;
+  overflow: auto;
+}
+
+.cer_frame {
+  background: url(assets/cer_bg.gif) no-repeat;
+  margin-left: 320px;
+  width: 600px;
+  height: 420px;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.cer_item {
+  width: 100%;
+  height: auto;
+  background-color: Transparent;
+}
+
+.msg {
+  width: 100%;
+  height: auto;
+  font: italic 10px Verdana;
+  color: #8c8c8c;
+  padding: 5px 5px 10px 10px;
+  float: left;
+}
+
+.cer_item .geitem {
+  float: left;
+  width: 198px;
+  height: 20px;
+  font: bold 11px Verdana;
+  color: #000;
+  padding: 5px 5px;
+  cursor: pointer;
+  border: 1px transparent solid;
+}
+
+.cer_item .date {
+  width: 80px;
+  height: 20px;
+  font: 11px Verdana;
+  color: #000;
+  text-align: right;
+  margin-left: 210px;
+  padding: 5px 5px;
+}
+
+.cer_item .spinitem {
+  float: left;
+  width: 190px;
+  height: 20px;
+  font: bold 11px Verdana;
+  color: #225EB6;
+  padding: 5px 5px;
+  cursor: pointer;
+  border: 1px transparent solid;
+}
+
+.cer_item .legacyitem {
+  float: left;
+  width: 198px;
+  height: 20px;
+  font: bold 11px Verdana;
+  color: #34455F;
+  padding: 5px 5px;
+  cursor: pointer;
+  border: 1px transparent solid;
+}
+
+.selected {
+  background-color: #FFF !important;
+  border: solid 1px #BEDFF2 !important;
+  cursor: pointer;
+}
+
+.certificate {
+  position: relative;
+  width: 580px;
+  height: 410px;
+  margin: 0 auto;
+}
+
+.certificate img {
+  display: block;
+  width: 580px;
+  height: 410px;
+}
+
+.student-name {
+  position: absolute;
+  bottom: 54%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.certificate.b2c .student-name {
+  bottom: 56.5%;
+}
+
+.course-name {
+  display: none;
+}
+
+.certificate.b2c .course-name {
+  display: block;
+  position: absolute;
+  bottom: 47.5%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.level-name {
+  position: absolute;
+  bottom: 44%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.certificate.b2c .level-name {
+  bottom: 38%;
+}
+
+.cert-date {
+  position: absolute;
+  bottom: 34%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.certificate.b2c .cert-date {
+  bottom: 28%;
+}
+
+.print {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  background: url(assets/print.png) center center no-repeat;
+  cursor: pointer;
+}
+
+@media print {
+  .top_frame {
+    display: none;
+    min-width: 0;
+  }
+
+  .content_frame {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    min-width: 0;
+  }
+
+  .left_frame {
+    display: none;
+  }
+
+  .cer_frame {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .print {
+    display: none;
+  }
+
+  .certificate {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .certificate img {
+    width: 100%;
+    height: auto;
+  }
+}
+

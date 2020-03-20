@@ -1,0 +1,43 @@
+<p class="evc-studyplan-coupon">
+    <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568613"></span>&nbsp;<span><%= data.couponLeft %></span>
+    <% if(data.canBuyMore) { %>
+        <a class="evc-studyplan-coupon-buymore" href="<%= data.buyUrl %>">
+            <span class="evc-studyplan-coupon-plus">+</span>
+            <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="176459"></span>
+        </a>
+    <% } %>
+</p>
+<style type="text/css">
+    .evc-studyplan-gap-block .evc-studyplan-coupon{
+        margin: 20px 0 0 0;
+    }
+    .evc-studyplan-gap-block:first-child .evc-studyplan-coupon{
+        margin: 20px 0 20px 0;
+    }
+    .evc-studyplan-coupon{
+        font-weight: bold;
+        margin-bottom: 0;
+        line-height: 24px;
+	    text-align: left;
+    }
+    a.evc-studyplan-coupon-buymore, /*add "a" tag to increase css priority*/
+    a.evc-studyplan-coupon-buymore:hover {
+        text-decoration: none;
+        color: #333;
+        margin-left: 10px;
+    }
+    .evc-studyplan-coupon-plus {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        vertical-align: baseline;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        font-family: arial;
+        font-size: 14px;
+        display: inline-block;
+        background-color: #81ba1a;
+        margin-right: 5px;
+    }
+</style>

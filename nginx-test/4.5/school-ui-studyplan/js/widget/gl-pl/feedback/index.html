@@ -1,0 +1,24 @@
+<%
+    var feedbackUrl = data.url;
+    var date = data.date;
+%>
+<div class="evc-studyplan-btn-feedback text-center">
+    <p class="evc-studyplan-feedback-status" data-weave="troopjs-ef/blurb/widget" data-blurb-id="568590"></p>
+    <p>
+        <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568591"></span>
+        <span><%= date%></span>
+    </p>
+    <a href="<%= feedbackUrl %>" class="btn btn-primary" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="568592"></a>
+</div>
+<style type="text/css">
+    .evc-studyplan-btn-feedback{
+        margin-top: 20px;
+    }
+    .evc-studyplan-btn-feedback > a{
+        display: inline-block;
+    }
+    .evc-studyplan-feedback-status{
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+</style>

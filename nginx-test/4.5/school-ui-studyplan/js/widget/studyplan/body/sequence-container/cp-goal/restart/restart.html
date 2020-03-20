@@ -1,0 +1,24 @@
+<%
+	var mailHidden = data.emailEnable === 'true' ? '' : 'hidden';
+%>
+<div class="ets-sp-goal-restart cp-goal-restart">
+	<div class="goal-mail <%=mailHidden%>">
+		<%if(data.isSubscribed){%>
+		<input type="checkbox" name="motivation-mail" checked>
+		<%}else{%>
+		<input type="checkbox" name="motivation-mail" >
+		<%}%>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="695969">Send me motivation emails to help me reach my study goal</span>
+	</div>
+	<div class="ets-sp-goal-restart-confirm-wrapper">
+		<button type="button" class="btn  btn-m btn-block cp-goal-change" data-weave="troopjs-ef/blurb/widget" data-blurb-id="694971">change your goal
+		</button>
+	</div>
+	<div class="ets-sp-goal-restart-confirm-wrapper">
+		<button type="button" class="btn  btn-m btn-block cp-goal-set" data-weave="troopjs-ef/blurb/widget" data-blurb-id="694972">Set new Goal
+		</button>
+	</div>
+	<p class="cp-goal-cancel" data-weave="troopjs-ef/blurb/widget" data-blurb-id="694973">
+		Cancel
+	</p>
+</div>

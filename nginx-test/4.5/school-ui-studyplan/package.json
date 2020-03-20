@@ -1,0 +1,33 @@
+{
+  "_from": "@ef/school-ui-studyplan@1.0.7-b2b",
+  "_id": "@ef/school-ui-studyplan@1.0.7-b2b",
+  "_inBundle": false,
+  "_integrity": "sha512-SqTbW517nfbIORed46B7U8eCKY2oyI3LPVd0H/N8A/w7mQv4x48Wz/O/CcgnUsi4cnhvtpvL8jPFv4r39D3mwA==",
+  "_location": "/@ef/school-ui-studyplan",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/school-ui-studyplan@1.0.7-b2b",
+    "name": "@ef/school-ui-studyplan",
+    "escapedName": "@ef%2fschool-ui-studyplan",
+    "scope": "@ef",
+    "rawSpec": "1.0.7-b2b",
+    "saveSpec": null,
+    "fetchSpec": "1.0.7-b2b"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/school-ui-studyplan/-/school-ui-studyplan-1.0.7-b2b.tgz",
+  "_shasum": "eb3da41d3118b720719a5753fd05ba2d9e7e61dc",
+  "_spec": "@ef/school-ui-studyplan@1.0.7-b2b",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "name": "@ef/school-ui-studyplan",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "version": "1.0.7-b2b"
+}

@@ -1,0 +1,33 @@
+<%
+    var wordItems = data.wordItems;
+    var wordGroups = data.wordGroups;
+    var references = data.references;
+    var itemsLen = wordItems.length;
+    var groupsLen = wordGroups.length;
+    var stripClass = data.isCopyMode ? 'ets-act-grp-strip-copy' : 'ets-act-grp-strip-move';
+%>
+<%if (references.aud) {%>
+<div class="ets-act-grp-audio">
+    <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+        <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+               data-src="<%=references.aud.url%>" type="audio/mpeg"
+               class="ets-ap"></audio>
+    </div></div>
+</div>
+<%}%>
+<div class="ets-act-grp">
+    <div class="ets-act-grp-droparea">
+        <%for(var i=0; i < groupsLen; i++){%>
+            <section>
+                <h5><span><%= wordGroups[i].txt%></span></h5>
+                <div class="ets-act-grp-target" data-group="<%= wordGroups[i]._id%>" data-at-id="<%= wordGroups[i]._id%>"></div>
+            </section>
+        <%}%>
+    </div>
+
+    <div class="ets-act-grp-originarea">
+        <%for(var i=0; i < itemsLen; i++){%>
+            <div class="ets-act-grp-strip <%=stripClass%>" data-group="<%= wordItems[i]._id%>" data-at-id="<%= wordItems[i]._id%>"><p><%= wordItems[i].txt%></p></div>
+        <%}%>
+    </div>
+</div>

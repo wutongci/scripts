@@ -1,0 +1,20 @@
+<div class="evc-studyplan-class-tips <%= (data.classname ? data.classname : "") %>">
+    <i class="<%= (data.icon ? data.icon : "glyphicon icon-comment") %>"></i>
+    <span   data-weave="troopjs-ef/blurb/widget" 
+            data-text-en="<%=data.en%>" 
+            data-blurb-id="<%=data.blurbId%>" >
+    </span>
+</div>
+<style>
+    .evc-studyplan-class-tips{
+        font-family: "roboto_condensedbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+    .evc-studyplan-class-tips .glyphicon {
+	    margin-right: 10px;
+    }
+    .evc-studyplan-class-tips *{
+        vertical-align: middle;
+    }
+</style>

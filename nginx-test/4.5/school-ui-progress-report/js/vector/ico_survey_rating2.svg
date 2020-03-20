@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg"
+	 xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g transform="translate(-568.000000, -231.000000)">
+			<g transform="translate(364.000000, 76.000000)">
+				<g transform="translate(60.000000, 150.000000)">
+					<g transform="translate(144.000000, 5.000000)">
+						<circle class="ets-pr-fb-survey-icon-background" cx="15" cy="15" r="15"/>
+						<path d="M19.8715667,19.4193492 C17.1150886,21.549624 13.2656628,21.5486151 10.5086824,19.4193492 L8.96670204,18.2278481 L8.35443038,19.0278992 L9.8964107,20.2194003 C11.454966,21.4235126 13.3219175,22.0253165 15.1898734,22.0253165 C17.0578294,22.0253165 18.9252831,21.4235126 20.4833361,20.2194003 L22.0253165,19.0278992 L21.4130448,18.2278481 L19.8715667,19.4193492 L19.8715667,19.4193492 Z"
+							  class="ets-pr-fb-survey-icon-fill"
+							  transform="translate(15.189873, 20.126582) scale(-1, -1) translate(-15.189873, -20.126582) "/>
+						<rect class="ets-pr-fb-survey-icon-fill"
+							  transform="translate(9.493671, 11.772152) scale(-1, -1) translate(-9.493671, -11.772152) "
+							  x="7.21518987" y="11.0126582" width="4.55696203" height="1.51898734"
+							  rx="0.759493671"/>
+						<rect class="ets-pr-fb-survey-icon-fill"
+							  x="18.2278481" y="11.0126582" width="4.55696203" height="1.51898734"
+							  rx="0.759493671"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

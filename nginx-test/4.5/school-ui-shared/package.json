@@ -1,0 +1,33 @@
+{
+  "_from": "@ef/school-ui-shared@2018.44.1-1",
+  "_id": "@ef/school-ui-shared@2018.44.1-1",
+  "_inBundle": false,
+  "_integrity": "sha512-bLeNKlCtLCw1pEuSMaIIakrKuy6zO2Roef6mm+bDHxL8QPDyz/4dwqBamH9/noreb5Gp8XDwhLTTcgP2poZ4cg==",
+  "_location": "/@ef/school-ui-shared",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/school-ui-shared@2018.44.1-1",
+    "name": "@ef/school-ui-shared",
+    "escapedName": "@ef%2fschool-ui-shared",
+    "scope": "@ef",
+    "rawSpec": "2018.44.1-1",
+    "saveSpec": null,
+    "fetchSpec": "2018.44.1-1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/school-ui-shared/-/school-ui-shared-2018.44.1-1.tgz",
+  "_shasum": "023cf7767e6b8c56e2d94a677a7ae6d4d1a80768",
+  "_spec": "@ef/school-ui-shared@2018.44.1-1",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "name": "@ef/school-ui-shared",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "version": "2018.44.1-1"
+}

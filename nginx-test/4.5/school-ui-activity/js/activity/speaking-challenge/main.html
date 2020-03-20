@@ -1,0 +1,40 @@
+<div class="ets-act-spc ets-cf">
+    <% if (data.references.aud) { %>
+    <div class="ets-act-spc-l">
+        <div class="ets-act-spc-content">
+            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                   data-src="<%= data.references.aud.url %>" class="ets-ap" type="audio/mpeg"
+                   controls="controls"></audio>
+
+            <div class="ets-tooltip">
+                <div class="ets-tooltip-content" data-weave="troopjs-ef/blurb/widget" data-blurb-id="464923">
+                    First, you listen to the dailog
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <div class="ets-act-spc-r">
+
+        <div class="ets-act-spc-content">
+            <!-- asr component -->
+            <div class="ets-act-spc-asr">
+                <div data-weave="school-ui-activity/shared/asr/asr-ui"></div>
+                <div class="ets-tooltip">
+                    <div class="ets-tooltip-content" data-weave="troopjs-ef/blurb/widget" data-blurb-id="464924">
+                        Press to record
+                    </div>
+                </div>
+            </div>
+
+            <div class="ets-act-record">
+                <div class="ets-tooltip ets-tooltip-green">
+                    <div class="ets-tooltip-content" data-weave="troopjs-ef/blurb/widget" data-blurb-id="464925">
+                        Listen to your recording. You can record again or press DONE.
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

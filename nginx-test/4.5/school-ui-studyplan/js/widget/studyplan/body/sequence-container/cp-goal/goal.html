@@ -1,0 +1,25 @@
+
+<div class="ets-sp-cfg cp-cfg <%=data.status%>">
+	<div class="ets-sp-cfg-hd">
+		<!--
+		the progress widget will render here
+		-->
+	</div>
+	<div class="ets-sp-cfg-bd cp-pace-bd">
+		<!--
+		the pace config widget will render here
+		-->
+	</div>
+	<div class="ets-sp-cfg-ft">
+		<!--
+		the restart & moveon widget will render here
+		-->
+	</div>
+	<% if(!data.isUnitCompleted) { %>
+		<div class="ets-sp-goal-locked">
+			<h1><i class="ets-icon-lock"></i></h1>
+			<h1 data-text-en="THE GOAL IS LOCKED" data-blurb-id="724606" data-weave="troopjs-ef/blurb/widget"></h1>
+			<p class="ets-sp-goal-tips" data-text-en="You must complete all lessons in this unit before continuing on." data-blurb-id="724607" data-weave="troopjs-ef/blurb/widget"></p>
+		</div>
+	<% } %>
+</div>

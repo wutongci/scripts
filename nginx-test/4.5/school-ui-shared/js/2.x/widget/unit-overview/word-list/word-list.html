@@ -1,0 +1,34 @@
+<%
+var wordList = data || {};
+var words = wordList.words;
+%>
+<h2 class="ets-uo-word-list-title" data-weave="troopjs-ef/blurb/widget" data-blurb-id="110570" data-text-en="Vocabulary"></h2><!-- only visible for pdf export -->
+<table>
+	<thead>
+	<tr>
+		<th class="ets-uo-word-list-column-player"></th>
+		<th class="ets-uo-word-list-column-vocabulary" data-weave="troopjs-ef/blurb/widget" data-blurb-id="126660" data-text-en="Vocabulary"></th>
+		<th class="ets-uo-word-list-column-phonetic" data-weave="troopjs-ef/blurb/widget" data-blurb-id="135412" data-text-en="Phonetic spelling"></th>
+		<th class="ets-uo-word-list-column-partofspeech" data-weave="troopjs-ef/blurb/widget" data-blurb-id="126662" data-text-en="Part of speech"></th>
+		<th class="ets-uo-word-list-column-translation" data-weave="troopjs-ef/blurb/widget" data-blurb-id="126661" data-text-en="Translation / definition"></th>
+	</tr>
+	</thead>
+	<tbody>
+		<% words.forEach(function(wordItem) { %><tr style="page-break-inside: avoid;">
+			<td class="ets-uo-word-list-column-player">
+				<audio src="<%= wordItem.audioPath %>" preload="none"></audio>
+			</td>
+			<td class="ets-uo-word-list-column-vocabulary"><%= wordItem.word %></td>
+			<td class="ets-uo-word-list-column-phonetic">
+				<%if (wordItem.pronunciation.uk) {%>
+					[<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="135413" data-text-en="UK"></span>]<%= wordItem.pronunciation.uk %>
+				<%}%>
+				<%if (wordItem.pronunciation.us) {%>
+					[<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="135414" data-text-en="US"></span>]<%= wordItem.pronunciation.us %>
+				<%}%>
+			</td>
+			<td class="ets-uo-word-list-column-partofspeech"><%= wordItem.partofSpeech %></td>
+			<td class="ets-uo-word-list-column-translation"><%= wordItem.translation %></td>
+		</tr><% }); %>
+	</tbody>
+</table>

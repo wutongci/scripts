@@ -1,0 +1,26 @@
+<%	var data = data || {}; 
+	var questions = data.content.questions;
+%>
+<div class="ets-act-mvq ets-cf">
+	<div class="ets-act-mvq-movie">
+		<div class="ets-movie" data-at-id="video"><!--<div data-weave="school-ui-shared/widget/video-player/main(videoInfo, options, successCallback)"></div>--></div>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="464922" data-text-en="Replay this video segment" class="ets-act-mvq-replay-blurb ets-none"></span>
+	</div>
+
+	<div class="ets-act-mvq-ques">
+		<% for(var i = 0; i < questions.length; i++) { %>
+		<div class="ets-act-mvq-que ets-none">
+			<span class="ets-act-mvq-que-title"><%=questions[i].txt%></span>
+			<ul class="ets-act-mvq-answers" data-at-id="<%=questions[i]._id%>">
+				<% for(var j = 0; j < questions[i].options.length; j++) { %>
+					<li class="ets-act-mvq-answer ets-table" data-at-id="<%=questions[i]._id%>_<%=questions[i].options[j]._id%>" data-option-id="<%=questions[i].options[j]._id%>" data-index="<%=j%>">
+						<div class="ets-table-hack">
+							<span><%=questions[i].options[j].txt%></span>
+						</div>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+		<% } %>
+	</div>
+</div>

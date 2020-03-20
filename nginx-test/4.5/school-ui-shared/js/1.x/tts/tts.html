@@ -1,0 +1,39 @@
+<div class="ets-ui-tts-small-box" data-action="show/box"></div>
+<div class="ets-ui-tts-box">
+    <div class="ets-ui-tts-close-btn" data-action="close/box"></div>
+    <div class="ets-ui-tts-main">
+        <div class="ets-ui-tts-hd">
+            <div class="ets-ui-tts-hd-listen ets-hidden"></div>
+            <div class="ets-ui-tts-tabs">
+                <div data-action="toggle/pin(index)" data-index="0" class="ets-ui-tts-tab ets-pin">
+                    <div class="ets-ui-tts-tab-ico"></div>
+                </div>
+                <div data-action="switch/tab(index)" data-index="1" class="ets-ui-tts-tab ets-translator ets-active">
+                    <div class="ets-ui-tts-tab-ico"></div>
+                    <div class="ets-ui-tts-tab-arrow"></div>
+                </div>
+                <div data-action="switch/tab(index)" data-index="2" class="ets-ui-tts-tab ets-speech">
+                    <div class="ets-ui-tts-tab-ico"></div>
+                    <div class="ets-ui-tts-tab-arrow"></div>
+                </div>
+                <div data-action="switch/tab(index)" data-index="3" class="ets-ui-tts-tab ets-settings">
+                    <div class="ets-ui-tts-tab-ico ets-last"></div>
+                    <div class="ets-ui-tts-tab-arrow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ets-ui-tts-bd ets-tab-1">
+            <div class="ets-ui-tts-bd-main">
+                <div class="ets-ui-tts-translator ets-loading" data-weave="school-ui-shared/tts/translator/main" data-enable-translator-detail="<%=data.enableTranslatorDetail%>"></div>
+                <div class="ets-ui-tts-speech">
+                    <textarea class="ets-ui-tts-speech-input" data-action="click/input"></textarea>
+                    <div class="ets-ui-tts-speech-listen ets-hidden"></div>
+                    <div class="ets-ui-tts-speech-tip" data-weave="troopjs-ef/blurb/widget" data-blurb-id="165019" data-text-en="You could enter your content to listen the pronunciation, allow max 300 characters."></div>
+                </div>
+                <div class="ets-ui-tts-settings ets-hidden"></div>
+            </div>
+        </div>
+        <div class="ets-ui-tts-ft"></div>
+    </div>
+</div>
+<div id="ets-ui-tts-sound-sprite"></div>

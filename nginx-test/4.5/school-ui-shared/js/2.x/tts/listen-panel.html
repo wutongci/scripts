@@ -1,0 +1,23 @@
+<%
+    var model = data || {},
+        settings = model.settings || {},
+        isForSpeech = model.isForSpeech,
+        id = new Date().getTime();
+%>
+<div class="ets-ui-tts-listen-panel">
+    <div class="ets-ui-tts-listen-panel-bd">
+        <div class="ets-ui-tts-listen">
+            <a id="ets-ui-tts-listen-btn-<%=id%>" data-action="listen/speech(<%=isForSpeech%>)" data-value="<%=isForSpeech%>" class="ets-ui-tts-listen-btn" href="javascript:void(0)"><span></span></a>
+            <audio id="ets-ui-tts-listen-audio-<%=id%>" class="ets-ui-tts-listen-audio"></audio>
+        </div>
+        <div class="ets-ui-tts-speed" data-action="toggle/speed">
+            <div class="ets-ui-tts-speed-bd">
+                <span class="ets-ui-tts-speed-selected" data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=(settings.speed === 100 ? 167328 : 167329)%>"></span>
+                <ul class="ets-ui-tts-speed-options">
+                    <li class="ets-ui-tts-select-speed" data-action="select/speed(value)" data-value="100" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167328" data-text-en="Normal speed"></li>
+                    <li class="ets-ui-tts-select-speed" data-action="select/speed(value)" data-value="80" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167329" data-text-en="Slow speed"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

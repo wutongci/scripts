@@ -1,0 +1,82 @@
+
+<div class="st-evc-status" data-weave="school-ui-studyplan/widget/gl-pl/announcement/gl"></div>
+<div class="st-evc-status" data-weave="school-ui-studyplan/widget/gl-pl/statusbar/gl"></div>
+<div class="evc-studyplan-wrapper">
+    <% if( data.statusCode === "welcome"){ %>
+        <div class="evc-studyplan-column-single evc-studyplan-welcome" data-weave="school-ui-studyplan/widget/gl-pl/welcome-gl/main"></div>
+    <% }else{ %>
+        <div class="evc-studyplan-column-single">
+            <div class="evc-studyplan-gap-2x" data-weave="school-ui-studyplan/widget/gl-pl/lesson/gl"></div>
+            <div class="evc-studyplan-gap-1x evc-studyplan-class-info">
+            </div>
+        </div>
+        <div class="evc-studyplan-activity-container">
+        </div>
+    <% } %>
+</div>
+<style type="text/css">
+    .evc-studyplan-wrapper{
+        text-align: center;
+        padding: 30px 0 50px;
+        color: #4a4a4a;
+    }
+    .evc-studyplan-column-full{
+        display: inline-block;
+    }
+    .evc-studyplan-column-single{
+        display: inline-block;
+        width: 980px;
+    }
+    .evc-studyplan-column-single hr{
+        margin-bottom: 0;
+    }
+    .evc-studyplan-welcome{
+        width: 900px;
+        padding-top: 50px;
+    }
+    .evc-studyplan-gap-2x{
+        text-align: left;
+        width: 620px;
+        padding-left: 35px;
+        padding-right: 35px;
+        vertical-align: top;
+        display: inline-block;
+        margin: 20px auto;
+    }
+    .evc-studyplan-gap-1x{
+        text-align: left;
+        width: 330px;
+        vertical-align: top;
+        margin: auto;
+        padding-left: 30px;
+        display: inline-block;
+        border-left:1px #eee solid;
+    }
+    .evc-studyplan-gap-1x .evc-studyplan-gap-block{
+        margin-bottom: 15px;
+    }
+    .st-evc-status{
+        color: #4a4a4a;
+        background-color: #e6e6e6;
+    }
+    .evc-studyplan-gray{
+        color:#999999;
+    }
+    .evc-studyplan-green{
+        color:#87c600;
+    }
+    .evc-studyplan-blue{
+        color: #00bee3;
+    }
+    .evc-none{
+        display: none;
+    }
+    .evc-studyplan-activity-container {
+        width:880px;
+        margin:0 auto;
+    }
+    .evc-studyplan-activity-tc {
+        text-align: left;
+        padding-right: 330px;
+    }
+</style>

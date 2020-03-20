@@ -1,0 +1,25 @@
+<%
+	var step = data.step;
+%>
+<ul class="ets-sp-step <%= (data._hasPassed ? 'ets-pass' : '') %> <%= (data._showButton ? 'ets-showButton' : '') %>" data-hash='<%= step._hash %>'>
+	<li class="ets-sp-step-no"><%= step.stepNo %></li>
+	<li class="ets-sp-step-type"><%= step.stepTypeName %></li>
+	<li class="ets-sp-step-title ets-overflow" title="<%= step.stepName %>"><%= step.stepName %></li>
+	<li class="ets-sp-step-action">
+		<% if (data._hasPassed) {%>
+			<% if (data._isPerfect) {%>
+				<span class="badge pull-right" data-weave="troopjs-ef/blurb/widget" data-blurb-id="462935" data-text-en="Perfect"><i class="glyphicon glyphicon-ok"></i></span>
+			<% } else {%>
+				<i class="ets-icon-badge-checkmark"></i>
+			<% } %>
+		<% } else {%>
+			<button class="btn btn-primary btn-block btn-sm ets-sp-step-start">
+				<% if (data._hasContinue) { %>
+					<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="450010" data-text-en="Continue"></span>
+				<% } else { %>
+					<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="450009" data-text-en="Start"></span>
+				<% } %>
+			</button>
+		<% } %>
+	</li>
+</ul>

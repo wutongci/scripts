@@ -1,0 +1,44 @@
+{
+  "_from": "@ef/level-test-ui@0.0.9",
+  "_id": "@ef/level-test-ui@0.0.9",
+  "_inBundle": false,
+  "_integrity": "sha512-Kjrp2dsBfSqY1XnfPvKWM2N5Hkvb/YzIO/01J13cW6x0FUDfqPTVaohRp/5X6ToBsSNZygvBjXvYFzyhqCnNxw==",
+  "_location": "/@ef/level-test-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/level-test-ui@0.0.9",
+    "name": "@ef/level-test-ui",
+    "escapedName": "@ef%2flevel-test-ui",
+    "scope": "@ef",
+    "rawSpec": "0.0.9",
+    "saveSpec": null,
+    "fetchSpec": "0.0.9"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/level-test-ui/-/level-test-ui-0.0.9.tgz",
+  "_shasum": "c71444ff4176a0b6fce5d70f6e5c6e9ccf3cf128",
+  "_spec": "@ef/level-test-ui@0.0.9",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "author": {
+    "name": "London Frontend Labs",
+    "email": "london-frontend-labs@ef.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "devDependencies": {},
+  "name": "@ef/level-test-ui",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://eyal.arubas@bitbucket.eflabs.io/scm/b2c/leveltest-ui.git"
+  },
+  "scripts": {},
+  "version": "0.0.9"
+}

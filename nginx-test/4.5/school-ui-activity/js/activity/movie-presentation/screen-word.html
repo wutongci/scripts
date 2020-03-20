@@ -1,0 +1,10 @@
+<table class="ets-screen-inner">
+    <tr>
+        <td>
+            <p class="ets-word"><%=data.txt%></p>
+            <%if(data.txt.replace(/\’/g,"'") !== data.translation.translation.replace(/\’/g,"'")){%>
+                <p class="ets-translation"><%=data.translation.translation%></p>
+            <%}%>
+        </td>
+    </tr>
+</table>  

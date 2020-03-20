@@ -1,0 +1,16 @@
+<div class="ets-act-tpg<%if(!data.references.aud){%> ets-act-tpg-noaudio<%}%>">
+    <%
+    if(data.references.aud){
+    %>
+    <div class="ets-act-hd-ap">
+        <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                 data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+                 class="ets-ap"></audio>
+        </div></div>
+    </div>
+    <%
+    }
+    %>
+   <div data-weave="school-ui-activity/activity/typing-gap-fill/typing-gap-fill"></div>
+</div>

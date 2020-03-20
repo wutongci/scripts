@@ -1,0 +1,34 @@
+<%
+	var _ = data._;
+	var teacher = data.teacher;
+	var feedback = data.feedback;
+%>
+<div class="ets-pr-fb-detail ets-pr-fb-detail-gl ets-none ets-pr-fb-open">
+	<div class="ets-pr-fb-teacher">
+		<% if (teacher) { %>
+		<img src="<%= teacher.imageUrl %>"/>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659698" data-text-en="Teacher"></span>
+		<span><%= teacher.displayName %></span>
+		<% } %>
+	</div>
+	<div class="ets-pr-fb-content">
+		<div class="ets-pr-fb-score-large">
+			<span class="ets-pr-fb-score-num"><%= feedback.grade %></span>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659692" data-text-en="Score"></span>
+		</div>
+
+		<%if(feedback.lessonSummary){%>
+			<h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="708940" data-text-en="Teacher's comments"></h5>
+			<p><%= _.escape(feedback.lessonSummary) %></p>
+		<%}%>
+
+		<%if(feedback.overall){%>
+			<h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="711390" data-text-en="GENERAL COMMENTS"></h5>
+			<p><%= _.escape(feedback.overall) %></p>
+		<%}%>
+
+		<% if (data.videoRecoredEnabled) { %>
+			<div class="ets-pr-fb-video-and-notes" data-weave="school-ui-progress-report/widget/container/feedback/feedback-detail/video-and-notes/main(options)"></div>
+		<% } %>
+	</div>
+</div>

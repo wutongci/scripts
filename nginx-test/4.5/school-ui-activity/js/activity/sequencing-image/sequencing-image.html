@@ -1,0 +1,48 @@
+<div class="ets-act-sqi">
+	<%
+	var data = data || {};
+	if (data.references.aud) { %>
+	<div class="ets-act-sqi-side">
+		<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+			<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+		           data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+		           class="ets-ap"></audio>
+		</div></div>
+	</div>
+	<%}%>
+	<div class="ets-act-sqi-main">
+		<div class="ets-act-sqi-droparea">
+		<%
+	        var items = data.content.sequences;
+	        for (var i = 1; i <= items.length; i++) {
+	        	if (i < items.length) {%>
+	            <div class="ets-act-sqi-droppable ets-nth-<%= i%>"></div>
+	            <%} else {%>
+	            <div class="ets-act-sqi-droppable ets-nth-<%= i%> ets-last"></div>
+	            <%}%>
+	    <%}%>
+		</div>
+		<div class="ets-act-sqi-originarea">
+			<%
+		        var items = data.content.sequences;
+		        for (var i = 1; i <= items.length; i++) {
+		        	writeItem(items[i - 1]);
+				}
+		    %>
+		</div>
+	</div>
+</div>
+<% function writeItem(data) { %>
+		<div class="ets-act-sqi-origin ets-nth-<%= i%>">
+			<div id="<%= data._id%>" data-at-id="<%= data._id%>" class="ets-act-sqi-item ets-nth-<%= i%>">
+				<% if (data.image) { %>
+					<img src="<%= data.image.url%>" />
+				<%} else {%>
+					
+				<%}%>
+				<div class="ets-act-act-sqi-item-cover"></div>
+				<i class="ets-icon-correct-s"></i>
+				<i class="ets-icon-incorrect-s"></i>
+			</div>
+		</div>
+<% } %>

@@ -1,0 +1,5 @@
+<form method="post" action="<%=data.exportPdfUrl%>">
+	<input type="hidden" name="pdfContent" value="<%=data.pdfContent.replace(/\"/g,'&quot;')%>"/>
+	<input type="hidden" name="fileName" value="<%=data.fileName%>"/>
+	<input type="hidden" name="cacheServers" value='[""]'/>
+</form>

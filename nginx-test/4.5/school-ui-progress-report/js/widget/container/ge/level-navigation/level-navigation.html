@@ -1,0 +1,58 @@
+<%
+	function computeIconState(level) {
+		if (this.progressState.hasPassed(level.progress.state)) {
+			return "passed";
+		} else if (level.id === data.currentLevelId) {
+			return "current";
+		} else if (this.progressState.hasStarted(level.progress.state)) {
+			return "progress";
+		} else {
+			return "normal";
+		}
+	}
+%>
+
+<div class="ets-pr-level-nav ets-pr-header-content">
+	<div class="ets-pr-level-holder">
+		<span class="ets-pr-line"></span>
+		<%
+		var index = 0;
+
+		for(var n=0; n < data.levelStages.length; n++){
+			var stage = data.levelStages[n];
+			var stage_normal_state = "ets-pr-normal";
+		%>
+			<div class="ets-pr-level-stage">
+				<%
+				for (var i=0; i < stage.levels.length; i++){
+					var level = stage.levels[i];
+					var iconState = computeIconState.call(this, level);
+
+					if(iconState !== "normal") {
+						stage_normal_state = "";
+					}
+				%>
+					<div class="ets-pr-level-point <%= (iconState==='normal'?'ets-pr-normal':'') %>">
+						<div class="ets-pr-level-icon" data-state="<%= iconState %>"
+						    data-id="<%= level.id %>"
+						    data-archive-e10-id="<%= (level.archiveId && level.archiveId.e10 || '') %>"
+							data-archive-e13-id="<%= (level.archiveId && level.archiveId.e13 || '') %>"
+						    data-weave="school-ui-progress-report/widget/container/ge/level-navigation/state-circle"></div>
+						<span class="ets-pr-level-num"><%= level.levelNo%></span>
+					</div>
+				<%
+					index++;
+				}
+				%>
+				<span class="ets-pr-stage <%= stage_normal_state %>">
+					<span data-weave="school-ui-shared/widget/hyphenate('troopjs-ef/blurb/widget')"
+					      data-blurb-id="<%= stage.blurbId%>" data-text-en="<%= stage.blurbTextEn%>"></span>
+				</span>
+			</div>
+		<%
+		}
+		%>
+	</div>
+</div>
+<div class="ets-pr-nav-bottom-border"
+     data-weave="school-ui-progress-report/widget/container/ge/level-navigation/callout"></div>

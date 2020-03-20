@@ -1,0 +1,18 @@
+<%
+    var model = data,
+        langList = model.languageList,
+        langCount = langList.length,
+        lang, langCode;
+%>
+<div class="ets-ui-tts-bing-logo">Powered by Microsoft<sup> &copy; </sup>Translator</div>
+<div class="ets-ui-tts-bing-lang">
+    <span class="ets-ui-tts-bing-tip" data-action="bing/toggle/lang" data-weave="troopjs-ef/blurb/widget" data-blurb-id="163091" data-text-en="Translate to"></span>
+    <ul class="ets-ui-tts-bing-lang-list">
+        <% for(var i = 0; i < langCount; i++) {
+            lang = langList[i];
+            langCode = lang.cultureCode;
+        %>
+        <li data-lang-code="<%=langCode%>"<%=(langCode === "en" ? ' class="ets-selected"' : '')%> data-action="bing/translate(langCode)" data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=lang.text%>"></li>
+        <%}%>
+    </ul>
+</div>

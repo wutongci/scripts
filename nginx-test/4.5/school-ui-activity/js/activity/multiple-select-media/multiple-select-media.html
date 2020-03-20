@@ -1,0 +1,32 @@
+<%
+	var data = data || {};
+	var txt = data.content.questions[this._index].txt;
+	var medias = data.content.questions[this._index].options;
+	var questionAudio = data.content.questions[this._index].audio;
+%>
+<div class="ets-act-msm ets-act-multiple ets-cf">
+	<div class="ets-act-msm-content">
+		<div class="ets-act-mt-top">
+			<%if (questionAudio) { %>
+				<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+					<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+				           data-src="<%=questionAudio.url%>" type="audio/mpeg"
+				           class="ets-ap"></audio>
+				</div></div>
+			<%}%>
+			<div class="ets-act-mt-title-container">
+				<span class="ets-act-mt-title"><%= txt %></span>
+			</div>
+		</div>
+		<ul class="ets-act-msm-options">
+			<% for (var i= 0;i< medias.length;i++) {%>
+				<li class="ets-act-msm-option" data-at-id="<%= medias[i]._id %>" data-answer="<%= medias[i]._id %>" data-index="<%=i%>">
+					<img src="<%= medias[i].image.url %>" width="162"  height="117"/>
+					<span class="ets-icon-correct-s ets-none"></span>
+					<span class="ets-icon-incorrect-s ets-none"></span>
+				</li>
+			<% } %>
+			<div class="ets-ar ets-clear"></div>
+		</ul>
+	</div>
+</div>

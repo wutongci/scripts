@@ -1,0 +1,72 @@
+<%
+	var cards = data.flashCards;
+ 	var len = cards.length;
+ 	var CLS_DISTANT = '';
+ 	if (len < 10) {
+ 		CLS_DISTANT = "ets-distant";
+ 	}
+%>
+<div class="ets-act-fcp">
+	<div class="ets-act-fcp-main ">
+		<ul>
+			<%for(var i=0; i<len; i++){%>
+				<li class="ets-act-fcp-item ets-foggy <%= CLS_DISTANT%>" data-at-id="<%=cards[i]._id%>" data-index="<%=i %>">
+					<img src="<%= cards[i].image.url%>" alt="" />
+				</li>
+			<%}%>
+		</ul>
+	</div>
+	<div class="ets-act-fcp-side">
+		<div class="ets-act-fcp-card-wrap">
+			<div class="ets-act-fcp-card">
+				<div class="ets-act-fcp-card-front">
+					<div class="ets-act-fcp-card-img"></div>
+					<div class="ets-act-fcp-card-vocabulary">
+
+						<div class="ets-act-fcp-card-audio">
+							<div data-at-id="answer_audio" class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+								<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+								       id="ets-act-fcp-audio-player"
+								       data-src="<%=cards[0].audio.url%>" type="audio/mpeg"
+								       class="ets-ap ets-ap-small ets-ap-nobar"></audio>
+							</div></div>
+						</div>
+
+						<div class="ets-act-fcp-card-text"></div>
+						
+					</div>
+				</div>
+				<div class="ets-act-fcp-card-back ets-none">
+					<div class="ets-act-fcp-card-translation">
+						<h4></h4>
+						<div class="ets-translation">
+							<span class="ets-translation-title"></span> 
+							<span class="ets-partofspeech"></span>
+						</div>
+						<div class="ets-pronunciation">
+							<span></span>
+						</div>
+						
+						<div class="ets-definition">
+							<span></span>
+						</div>
+						<div class="ets-example">
+							<ol>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ets-act-fcp-card-action ets-none">
+			<div class="ets-btn ets-btn-white ets-btn-shadowed ets-act-fcp-flip ets-act-fcp-normal" data-at-id="btn-filp">
+				<span>
+					<i class="ets-icon-flip"></i>
+					<span class="ets-act-fcp-info-normal" data-weave='troopjs-ef/blurb/widget' data-blurb-id='469642' data-text-en='Grammar Notes'></span>
+					<span class="ets-act-fcp-info-back" data-weave='troopjs-ef/blurb/widget' data-blurb-id='469643' data-text-en='Flip Back'></span>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="ets-act-fcp-reminder ets-clear" data-weave='troopjs-ef/blurb/widget' data-blurb-id='465094' data-text-en='Make sure you try all cards at least once before moving on!'></div>
+</div>

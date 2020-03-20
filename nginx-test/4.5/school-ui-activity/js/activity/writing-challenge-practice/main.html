@@ -1,0 +1,54 @@
+<%
+var data = data || {};
+
+var outBlurb = function(id,en){
+    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+    return res;
+};
+var showLeft = data.references.aud;
+var showExp = data.content.modelText;
+var CLS_CNT = (function(){
+    if(showLeft && !showExp) return 'ets-act-wtc-l_ne';
+    else if(!showLeft && showExp) return 'ets-act-wtc-nl_e';
+    else if(!showLeft && !showExp) return 'ets-act-wtc-nl_ne';
+    else return 'ets-act-wtc-l_e';
+})();
+%>
+<div class="ets-act-wtc">
+     <%if(data.references.aud){%>
+    <div class="ets-act-wtc-l ets-act-wtc-nongrade_l">
+        <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                   data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+                   class="ets-ap"></audio>
+        </div></div>
+    </div>
+    <%}%>
+    <div class='ets-act-wtc-r <%=CLS_CNT%>'>
+        <div class="ets-act-wtc-rl ets-left"></div>
+        <div class="ets-act-wtc-rm ets-left">
+            <div class='ets-act-wtc-ip ets-left'>
+                <textarea data-weave="school-ui-activity/shared/textchange/main" readonly="readonly" data-at-id="txt-single-textbox"></textarea>
+            </div>
+            <%if(showExp){%>
+            <div class='ets-act-wtc-expctn ets-left'>
+                <div class='ets-act-wtc-exp ets-left'>
+                    <div class='ets-act-wtc-exptxt'>
+                        <%=data.content.modelText%>
+                    </div>
+                </div>
+                <div class='ets-act-wtc-exptg' data-show='true'></div>
+                <div class="ets-act-wtc-arctn">
+                    <span class="ets-act-wtc-ar"></span>
+                    <span class="ets-act-wtc-artxt" <%= outBlurb(461311,"Show model answer")%>></span>
+                </div>
+            </div>
+            <%}%>
+        </div>
+        <div class="ets-act-wtc-rr ets-left"></div>
+        <p class="ets-act-wtc-wdscnt ets-act-wtc-clear"><span <%=outBlurb(150691,"Words typed:")%>></span> <span class="ets-act-wtc-wdsnum">0</span></p>
+        <%if(showExp){%>
+        <p class="ets-act-wtc-ic ets-act-wtc-clear ets-none" <%=outBlurb(461317,"Compare your answer with the model text.")%>></p>
+        <%}%>
+    </div>
+</div>

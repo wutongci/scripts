@@ -1,0 +1,15 @@
+<div class="ets-act-swh ets-cf">
+	<%
+	var data = data || {};
+	if (data.references.aud) { %>
+	<div class="ets-act-swh-audio">
+		<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+			<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+			       data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+			       class="ets-ap"></audio>
+		</div></div>
+	</div>
+	<%}%>
+	
+	<div class="et-act-swh-main" data-weave="school-ui-activity/activity/sequencing-word-horizontal/sequencing-word-horizontal"></div>
+</div>

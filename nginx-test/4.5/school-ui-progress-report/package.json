@@ -1,0 +1,33 @@
+{
+  "_from": "@ef/school-ui-progress-report@2019.11.2-5-b2b",
+  "_id": "@ef/school-ui-progress-report@2019.11.2-5-b2b",
+  "_inBundle": false,
+  "_integrity": "sha512-EytVGL1CfNP+Evt3FDwXiqAfAjCSf5G49VzdDb7ygkLQknoCPJIOPXSC61e30OfLRZpShPZUNRyQIOpVpWNgCg==",
+  "_location": "/@ef/school-ui-progress-report",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ef/school-ui-progress-report@2019.11.2-5-b2b",
+    "name": "@ef/school-ui-progress-report",
+    "escapedName": "@ef%2fschool-ui-progress-report",
+    "scope": "@ef",
+    "rawSpec": "2019.11.2-5-b2b",
+    "saveSpec": null,
+    "fetchSpec": "2019.11.2-5-b2b"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://nexus3.englishtown.com/repository/npm-eflabs/@ef/school-ui-progress-report/-/school-ui-progress-report-2019.11.2-5-b2b.tgz",
+  "_shasum": "39f10d840fe479210a5b9922fe7de9302a438924",
+  "_spec": "@ef/school-ui-progress-report@2019.11.2-5-b2b",
+  "_where": "/Users/yangshaohua/Code/newhouse/labs-ui-school",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "name": "@ef/school-ui-progress-report",
+  "publishConfig": {
+    "registry": "https://nexus3.englishtown.com/repository/npm-eflabs/"
+  },
+  "version": "2019.11.2-5-b2b"
+}

@@ -1,0 +1,21 @@
+<%
+	var showCertTip = data.showCertTip;
+%>
+<div class="ets-pr-cert-wrapper">
+	<button class="ets-pr-cert-view">
+		<span class="ets-pr-button-text" data-weave="troopjs-ef/blurb/widget" data-blurb-id="659688" data-text-en="View certificate"></span>
+		<span data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_arrow_light_right', 21, 11)"></span>
+	</button>
+	<div class="ets-pr-cert-tip <%=(showCertTip ? '' : 'ets-none')%>">
+		<div class="ets-pr-cert-description">
+			<p class="ets-pr-cert-subtitle" data-weave="troopjs-ef/blurb/widget" data-blurb-id="659684" data-text-en="You have earned a"></p>
+			<h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="659685" data-text-en="Certificate"></h4>
+			<div class="ets-pr-cert-icon">
+				<div class="ets-pr-cert-icon-vector" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_cert', 40, 40)"></div>
+				<hr />
+			</div>
+			<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="659686" data-text-en="Click on 'View certificate' to see the details"></p>
+		</div>
+		<button class="ets-pr-btn ets-pr-btn-cert" data-weave="troopjs-ef/blurb/widget" data-blurb-id="659687" data-text-en="Ok, got it!"></button>
+	</div>
+</div>

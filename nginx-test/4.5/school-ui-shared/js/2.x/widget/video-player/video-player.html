@@ -1,0 +1,9 @@
+<%
+	var videoUrl = data.video && data.video.url || "";
+	var videoLowQualityUrl = data.video && data.video.lowQualityUrl || "";
+	var posterUrl = data.poster && data.poster.url || "";
+	var customClass = data.customClass || "";
+%>
+<video class="ets-vp <%=customClass%>" width="640" height="360" playsinline="playsinline" <% if (posterUrl && posterUrl.indexOf(".jpg") > 0) { %>poster="<%=posterUrl%>"<% } %> preload="none">
+	<source type="video/mp4" src="<%=videoUrl%>" data-switch-src="<%=videoLowQualityUrl%>" />
+</video>

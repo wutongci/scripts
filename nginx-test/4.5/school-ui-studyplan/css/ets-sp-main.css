@@ -1,0 +1,2606 @@
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Study Plan > Icons (Glyphs)
+//  File:          ets-sp-icons.less
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+@font-face {
+  font-family: 'Courseware';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/Courseware.eot');
+  src: url('fonts/Courseware.eot?#iefix') format('embedded-opentype'), url('fonts/Courseware.woff') format('woff'), url('fonts/Courseware.ttf') format('truetype'), url('fonts/Courseware.svg') format('svg');
+}
+[class^="ets-icon-"],
+[class*=" ets-icon-"] {
+  font-family: 'Courseware';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ets-icon-arrow-up:before {
+  content: "\e000";
+}
+.ets-icon-arrow-down:before {
+  content: "\e001";
+}
+.ets-icon-badge-private-lesson:before {
+  content: "\e002";
+}
+.ets-icon-badge-lesson:before {
+  content: "\e003";
+}
+.ets-icon-badge-group-lesson:before {
+  content: "\e004";
+}
+.ets-icon-badge-check-point:before {
+  content: "\e005";
+}
+.ets-icon-badge-goal-poly:before {
+  content: "\e006";
+}
+.ets-icon-goal-bg:before {
+  content: "\e007";
+}
+.ets-icon-badge-checkmark:before {
+  content: "\e008";
+}
+.ets-icon-lock:before {
+  content: "\e009";
+}
+.ets-icon-setup:before {
+  content: "\e00a";
+}
+.ets-icon-mob-started:before {
+  content: '\e600';
+}
+.ets-icon-mob-passed:before {
+  content: '\e601';
+}
+.ets-icon-mob-tip:before {
+  content: '\e602';
+}
+body {
+  min-width: 1000px;
+}
+.ets-studyplan {
+  clear: both;
+  width: 100%;
+  background: #FFF;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #222;
+  height: 100%;
+}
+.ets-studyplan ul,
+.ets-studyplan li,
+.ets-studyplan h1,
+.ets-studyplan h2,
+.ets-studyplan h3,
+.ets-studyplan h4,
+.ets-studyplan h5,
+.ets-studyplan h6 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ets-studyplan h3,
+.ets-studyplan h4,
+.ets-studyplan h5,
+.ets-studyplan h6 {
+  letter-spacing: 0;
+}
+.ets-studyplan h1,
+.ets-studyplan h2,
+.ets-studyplan h3,
+.ets-studyplan h4,
+.ets-studyplan h5,
+.ets-studyplan h6 {
+  font-family: "roboto_condensedbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal !important;
+}
+.ets-theme-daylight .ets-studyplan-bg {
+  background: #ACCFD7 url("../img/ets-sp-theme-daylight.png") right bottom no-repeat;
+}
+.ets-sp-unit-hd {
+  background: #4A4A4A;
+  position: relative;
+  height: 50px;
+}
+.ets-sp-uno {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.ets-sp-uno .ets-sp-uno-main {
+  width: 980px;
+  margin: 0 auto;
+  text-align: right;
+  padding: 10px 0 0;
+}
+.ets-sp-uno .ets-sp-uno-main .ets-sp-uno-btn {
+  position: relative;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #111;
+}
+.ets-sp-uno .ets-sp-uno-main .ets-sp-uno-btn:hover {
+  background: #222;
+}
+.gud .modal.ets-uo-modal.ets-uo-modal-loading {
+  background: none;
+}
+.ets-sp-init {
+  min-height: 610px;
+}
+.ets-sp-sequence-wrapper.ets-sp-item-animation {
+  overflow: hidden;
+}
+.ets-sp-sequence-container {
+  min-height: 300px;
+}
+.ets-sp-sequence-container.ets-sp-prepend-item,
+.ets-sp-sequence-navigation-container.ets-sp-prepend-item {
+  margin-left: -100%;
+}
+.ets-sp-sequence-container.ets-sp-item-animation,
+.ets-sp-sequence-navigation-container.ets-sp-item-animation {
+  width: 400%;
+  -webkit-transition: -webkit-transform 500ms;
+  -moz-transition: -webkit-transform 500ms;
+  -ms-transition: -webkit-transform 500ms;
+  -o-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  -webkit-transition: transform 500ms;
+  -moz-transition: transform 500ms;
+  -ms-transition: transform 500ms;
+  -o-transition: transform 500ms;
+  transition: transform 500ms;
+}
+.ets-sp-sequence-container.ets-sp-item-animation .ets-sp-sequence-item,
+.ets-sp-sequence-navigation-container.ets-sp-item-animation .ets-sp-sequence-item {
+  width: 25%;
+}
+.ets-sp-sequence-container.ets-sp-item-animation.ets-sp-lt-index,
+.ets-sp-sequence-navigation-container.ets-sp-item-animation.ets-sp-lt-index {
+  -webkit-transform: translate3d(25%, 0, 0);
+  -moz-transform: translate3d(25%, 0, 0);
+  -ms-transform: translate3d(25%, 0, 0);
+  -o-transform: translate3d(25%, 0, 0);
+  transform: translate3d(25%, 0, 0);
+}
+.ets-sp-sequence-container.ets-sp-item-animation.ets-sp-gt-index,
+.ets-sp-sequence-navigation-container.ets-sp-item-animation.ets-sp-gt-index {
+  -webkit-transform: translate3d(-25%, 0, 0);
+  -moz-transform: translate3d(-25%, 0, 0);
+  -ms-transform: translate3d(-25%, 0, 0);
+  -o-transform: translate3d(-25%, 0, 0);
+  transform: translate3d(-25%, 0, 0);
+}
+.ets-sp-sequence-container .ets-sp-sequence-item,
+.ets-sp-sequence-navigation-container .ets-sp-sequence-item {
+  width: 100%;
+  vertical-align: top;
+  display: inline-block;
+}
+.ets-sp-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.ets-sp-btn.ets-purple {
+  background: #EC008C;
+}
+.ets-sp-btn [class*="ets-icon"] {
+  font-size: 12px;
+}
+.ets-sp-balloon-start {
+  position: absolute;
+  top: 165px;
+  left: 80px;
+  bottom: 0px;
+}
+.ets-sp-balloon {
+  z-index: 1;
+  top: -120px;
+  right: -60px;
+  width: 91px;
+  height: 140px;
+  position: absolute;
+  background: url("../img/ets-sp-balloons.png") -200px 0 no-repeat;
+}
+.ets-sp-balloon.ets-slow {
+  top: -90px;
+  right: -85px;
+}
+.ets-sp-balloon.ets-crashing {
+  top: -50px;
+  right: -110px;
+  background-position: -400px 0;
+}
+.ets-sp-balloon.ets-crashed {
+  top: auto!important;
+  right: -170px;
+  bottom: 0;
+  width: 141px;
+  height: 93px;
+  background-position: -550px 0;
+}
+.ets-sp-chrysalis-unit {
+  margin: 0 auto;
+  width: 560px;
+  padding: 80px 0 120px;
+  text-align: center;
+  line-height: 1.6;
+  color: #555;
+}
+.ets-sp-chrysalis-unit h3 {
+  margin-bottom: 10px;
+}
+.ets-sp-chrysalis-unit h5 {
+  margin-bottom: 5px;
+}
+.ets-sp-unit-locked {
+  padding: 80px 0 120px;
+  text-align: center;
+  color: #555;
+}
+.ets-sp-unit-locked h1 {
+  margin-bottom: 10px;
+}
+.ets-sp-init {
+  position: relative;
+  min-height: 500px;
+}
+.ets-spinning .ets-sp-loading {
+  display: block;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: #000000;
+}
+.modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Study Plan > Change Course
+//  File:          ets-sp-change-course.less
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-sp-chc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.ets-sp-chc-hd {
+  width: 980px;
+  margin: 0 auto;
+}
+.ets-sp-chc-link {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  position: relative;
+  z-index: 90;
+  white-space: nowrap;
+  padding-top: 10px;
+}
+.ets-sp-chc-link > h3 {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #eee;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.ets-sp-chc-link > h4 {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  line-height: 1;
+}
+.ets-sp-chc-link > a.ets-sp-chc-link-url {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  margin-left: 20px;
+  font-size: 10px;
+  color: #fff;
+}
+.ets-sp-chc-link > a.ets-sp-chc-link-url:hover {
+  text-decoration: none;
+}
+.ets-sp-chc-switch {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  position: relative;
+  z-index: 90;
+  color: #fff;
+}
+.ets-sp-chc-switch.ets-sp-chc-hand {
+  cursor: pointer;
+}
+.ets-sp-chc-switch .ets-sp-chc-switch-arrow {
+  float: left;
+  padding-top: 15px;
+  margin-right: 5px;
+}
+.ets-sp-chc-switch .ets-sp-chc-switch-arrow > i {
+  font-size: 18px;
+}
+.ets-sp-chc-switch .ets-sp-chc-switch-main {
+  white-space: nowrap;
+  padding-top: 10px;
+}
+.ets-sp-chc-switch .ets-sp-chc-switch-main > h3 {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #eee;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.ets-sp-chc-switch .ets-sp-chc-switch-main > h4 {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  line-height: 1;
+}
+/*
+   Fix issue https://jira.englishtown.com/browse/SPC-3414
+   TODO: need to remve '.ue-header-container' after when polaris's team next release at 2013.48-1
+*/
+div.ue-header-container {
+  z-index: 200;
+}
+.ets-sp-chc-bd {
+  background: #4A4A4A;
+  padding-top: 50px;
+  top: 0px;
+  z-index: 110;
+  position: absolute;
+  width: 100%;
+}
+.ets-sp-chc-courses {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  padding: 5px 0 15px 0;
+}
+.ets-sp-chc-courses .ets-sp-chc-course {
+  margin-left: 2.564102564102564%;
+}
+.ets-sp-chc-courses .ets-sp-chc-course:first-child {
+  margin-left: 0;
+}
+.ets-sp-chc-courses .ets-sp-chc-close {
+  text-transform: uppercase;
+  position: absolute;
+  top: -41px;
+  right: 0px;
+  font-weight: 700;
+  background: #111;
+}
+.ets-sp-chc-courses .ets-sp-chc-close:hover {
+  background: #222;
+}
+.ets-sp-chc-courses-row {
+  clear: both;
+}
+.ets-sp-chc-course {
+  float: left;
+  position: relative;
+  background: #3C3C3C;
+  color: #eee;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.ets-sp-chc-course > h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  min-height: 50px;
+  line-height: 20px;
+  padding: 15px 10px 15px 20px;
+  border-bottom: 1px solid #4A4A4A;
+  font-weight: 500;
+}
+.ets-sp-chc-course > ul {
+  float: left;
+  padding: 10px 0;
+  min-height: 260px;
+}
+.ets-sp-chc-course > ul > li {
+  height: 30px;
+  cursor: pointer;
+  line-height: 30px;
+  color: #fff;
+  padding: 0 10px 0 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ets-sp-chc-course > ul > li:hover {
+  background: #4A4A4A;
+}
+.ets-sp-chc-course > ul > li.ets-active {
+  color: #fff;
+  background: #00C7DF;
+}
+.ets-sp-chc-course > ul > li.ets-active:hover {
+  background: #00C7DF;
+}
+.ets-sp-chc-course > ul > li.ets-pass {
+  position: relative;
+}
+.ets-sp-chc-course > ul > li.ets-pass .ets-icon-badge-checkmark {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  font-size: 10px;
+  color: #87C600;
+}
+.ets-sp-chc-course.ets-1-col {
+  width: 23.076923076923077%;
+  *width: 23.023731587561375%;
+}
+.ets-sp-chc-course.ets-1-col > ul {
+  width: 100%;
+}
+.ets-sp-chc-course.ets-2-col {
+  width: 48.717948717948715%;
+  *width: 48.664757228587014%;
+}
+.ets-sp-chc-course.ets-2-col > ul {
+  width: 50%;
+}
+.ets-sp-chc-course.ets-3-col {
+  width: 74.35897435897436%;
+  *width: 74.30578286961266%;
+}
+.ets-sp-chc-course.ets-3-col > ul {
+  width: 33.3333333333333%;
+}
+.ets-sp-chc-course.ets-4-col {
+  width: 100%;
+  *width: 99.94680851063829%;
+}
+.ets-sp-chc-course.ets-4-col > ul {
+  width: 25%;
+}
+.ets-change-course-option input[type="checkbox"] {
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  position: absolute;
+}
+.ets-change-course-option {
+  margin-top: 20px;
+}
+.ets-change-course-option label {
+  display: block;
+  padding-left: 20px;
+  position: relative;
+}
+.gud .ets-sp-study .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -180px;
+  margin-left: -300px;
+}
+.gud .modal {
+  overflow-y: auto;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Study Plan > Unit > Unit Navigation
+//  File:          ets-sp-icons.less
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-sp-unn {
+  width: 980px;
+  margin: 0 auto;
+  padding: 0 150px;
+  position: relative;
+  z-index: 1;
+}
+.ets-sp-unn-main {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+.ets-sp-unn-main .ets-sp-unn-prev,
+.ets-sp-unn-main .ets-sp-unn-next {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  color: #ddd;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  font-size: 28px;
+}
+.ets-sp-unn-main .ets-sp-unn-prev .glyphicon,
+.ets-sp-unn-main .ets-sp-unn-next .glyphicon {
+  width: 20px;
+  line-height: 50px;
+}
+.ets-sp-unn-main .ets-sp-unn-prev.ets-disabled,
+.ets-sp-unn-main .ets-sp-unn-next.ets-disabled {
+  cursor: default;
+  color: #888;
+}
+.ets-sp-unn-main .ets-sp-unn-prev.ets-disabled:hover,
+.ets-sp-unn-main .ets-sp-unn-next.ets-disabled:hover {
+  color: #888;
+}
+.ets-sp-unn-main .ets-sp-unn-prev:hover,
+.ets-sp-unn-main .ets-sp-unn-next:hover {
+  color: #fff;
+}
+.ets-sp-unn-main .ets-sp-unn-title {
+  min-width: 375px;
+  max-width: 600px;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+.ets-sp-unn-main .ets-sp-unn-title > strong {
+  font-weight: 700;
+  margin-right: 6px;
+  font-style: normal;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Study Plan > Unit > Sequence Navigation
+//  File:          ets-sp-sequence-navigation.less
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-sp-sqn {
+  clear: both;
+  padding-top: 8px;
+  background: #fff;
+}
+.ets-sp-sqn-main {
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.ets-sp-sqn-main .ets-sp-sqn-line {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+}
+.ets-sp-sqn-main .ets-sp-sqn-container {
+  z-index: 2;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  margin: 0 auto;
+  position: relative;
+}
+.ets-sp-sqn-main .ets-sp-sqn-container .ets-sp-sqn-line {
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  width: 90%;
+  border-top: 1px dotted #999;
+  left: 5%;
+  top: 55px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-container.ets-complete .ets-sp-sqn-line {
+  border-top: 1px solid #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-container .popover.bottom {
+  margin-top: -40px;
+  margin-left: -20px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  box-shadow: none;
+}
+.ets-sp-sqn-main .ets-sp-sqn-container .popover.bottom .arrow {
+  margin-left: 20px;
+  border: none;
+}
+.ets-sp-sqn-main .ets-sp-sqn-container .popover.bottom .arrow:after {
+  border-bottom-color: #000;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+.ets-sp-sqn-main .ets-sp-sqn-container .popover.bottom .popover-title {
+  background: none;
+  color: #fff;
+  border: none;
+  min-width: 220px;
+  line-height: 1.2;
+  padding: 10px 16px 4px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-container .popover.bottom .popover-content {
+  padding-top: 0;
+  line-height: 1.3;
+  color: #ccc;
+  font-size: 12px;
+  padding: 0px 16px 10px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item-title {
+  min-height: 34px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  cursor: pointer;
+  padding: 20px 6px 0px;
+  text-align: center;
+  width: 125px;
+  height: 170px;
+  position: relative;
+  vertical-align: top;
+  margin: 0 3px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover .ets-sp-sqn-item-badge .ets-sp-sqn-icon-bg {
+  color: #666;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-title {
+  color: #666;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 2px;
+  position: relative;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon {
+  font-size: 69px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  display: block;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-icon-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #4A4A4A;
+  font-size: 82px;
+  margin-top: -41px;
+  margin-left: -41px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-icon-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #fff;
+  z-index: 1;
+  font-size: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-icon-badge.ets-icon-setup {
+  font-size: 46px;
+  margin-left: -23px;
+  margin-top: -22px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-icon-goal-bg {
+  font-size: 76px;
+  margin-top: -38px;
+  margin-left: -38px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge i.ets-icon-badge-checkmark {
+  display: block;
+  color: #5FA100;
+  font-size: 20px;
+  position: absolute;
+  right: -7px;
+  top: 0;
+  z-index: 1;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge i.ets-icon-badge-locked {
+  font-size: 20px;
+  position: absolute;
+  right: -7px;
+  top: -1px;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge i.ets-icon-badge-locked .ets-sp-locked-mark-icon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  color: #fff;
+  font-size: 13px;
+  left: 5px;
+  top: 5px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge i.ets-icon-badge-locked .ets-sp-locked-mark-bg {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  color: #000;
+  font-size: 23px;
+  left: 0px;
+  bottom: 0px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .badge {
+  position: absolute;
+  left: 45px;
+  bottom: 50px;
+  padding: 3px 4px;
+  z-index: 1;
+  text-align: center;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .badge.ets-sp-badge-normal {
+  background: #00bee3;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .badge.ets-sp-badge-urgent {
+  background: #ec008c;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .badge.ets-sp-badge-urgent {
+  background: #ec008c;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .badge.ets-sp-badge-skipped {
+  background: #898989;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-title {
+  color: #4A4A4A;
+  line-height: 1.2;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-icon-arrow-up {
+  position: absolute;
+  font-size: 21px;
+  left: 50%;
+  margin-left: -10px;
+  color: #fff;
+  bottom: -6px;
+  z-index: 1;
+  display: none;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item[data-type-code=config] .ets-icon-arrow-up,
+.ets-sp-sqn-main .ets-sp-sqn-item[data-type-code=goal] .ets-icon-arrow-up {
+  color: #f0f0f0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-icon-badge-check {
+  font-size: 32px;
+  top: -10px;
+  position: relative;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest .ets-sp-sqn-icon-bg {
+  color: #EC008C;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest .ets-sp-sqn-item-title {
+  color: #EC008C;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest:hover .ets-sp-sqn-icon-bg {
+  color: #fe089a;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest:hover .ets-sp-sqn-item-title {
+  color: #fe089a;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest.ets-active {
+  background: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped .ets-sp-sqn-icon-bg {
+  color: #666;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped .ets-sp-sqn-item-title {
+  color: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped:hover .ets-sp-sqn-icon-bg {
+  color: #666;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped:hover .ets-sp-sqn-item-title {
+  color: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped.ets-active {
+  background: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked .ets-sp-sqn-icon-bg {
+  color: #999;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked .ets-sp-sqn-item-title {
+  color: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked:hover .ets-sp-sqn-icon-bg {
+  color: #aaa;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked:hover .ets-sp-sqn-item-title {
+  color: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active {
+  background: #999;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active .ets-sp-sqn-icon-bg {
+  color: #999;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active .ets-sp-sqn-item-title {
+  color: #fff;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass .ets-sp-sqn-icon-bg {
+  color: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass .ets-sp-sqn-item-title {
+  color: #5FA100;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass:hover .ets-sp-sqn-icon-bg {
+  color: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass:hover .ets-sp-sqn-item-title {
+  color: #5FA100;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass.ets-active {
+  background: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active {
+  cursor: default;
+  background: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active .ets-sp-sqn-icon-bg {
+  color: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active .ets-sp-sqn-item-title {
+  color: #fff;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active .ets-icon-arrow-up {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active:hover .ets-sp-sqn-icon-bg {
+  color: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active:hover .ets-sp-sqn-item-title {
+  color: #fff;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active.ets-suggest .ets-sp-sqn-icon-bg {
+  color: #4A4A4A;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active.ets-locked .ets-sp-sqn-icon-bg {
+  color: #999;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active.ets-pass .ets-sp-sqn-icon-bg {
+  color: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable {
+  cursor: default;
+  background: none;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-sp-sqn-icon-bg {
+  color: #c1c1c1;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-badge-custommark {
+  display: none;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-sp-sqn-item-title {
+  color: #999;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable:hover .ets-sp-sqn-icon-bg {
+  color: #c1c1c1;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable:hover .ets-sp-sqn-item-title {
+  color: #999;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active {
+  background: none;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active .ets-sp-sqn-icon-bg {
+  color: #c1c1c1;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active .ets-sp-sqn-item-title {
+  color: #999;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-icon-arrow-up {
+  display: none;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item-goal.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon {
+  color: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item-goal.ets-pass .ets-sp-sqn-item-title {
+  color: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item-goal.ets-pass:hover .ets-sp-sqn-icon-bg {
+  color: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item-goal.ets-pass:hover .ets-sp-sqn-item-title {
+  color: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item-goal.ets-pass.ets-active {
+  background: #87C600;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item-goal.ets-pass.ets-active .ets-sp-sqn-item-title {
+  color: #fff;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-bg:before {
+  display: none\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge {
+  width: 70px\0;
+  height: 70px\0;
+  margin-top: -35px\0;
+  margin-left: -35px\0;
+  background: transparent url("../img/ets-sp-main-ie.png") 0 -400px no-repeat\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge:before {
+  display: none\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: 0 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: 0 -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: 0 -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: 0 -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: 0 -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-setup {
+  background-image: none\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-setup:before {
+  text-align: center\0;
+  vertical-align: middle\0;
+  display: inline-block\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.glyphicon-ok {
+  background-image: none\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.glyphicon-ok:before {
+  text-align: center\0;
+  vertical-align: middle\0;
+  display: inline-block\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -100px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -100px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -100px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -100px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -100px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: 0px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: 0px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: 0px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: 0 -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item:hover.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: 0px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -400px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -400px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -400px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -400px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -400px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -400px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -400px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -400px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -400px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -400px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -400px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -400px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -400px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -400px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -400px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -400px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -400px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -400px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -400px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-sp-sqn-item-goal.ets-pass.ets-active:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -400px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -200px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -200px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -200px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -200px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -200px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -300px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -300px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -300px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -300px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -300px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: 0 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: 0 -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: 0 -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: 0 -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-suggest.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: 0 -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -100px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -100px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -100px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -100px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -100px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -100px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -100px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -100px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -100px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -100px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: 0 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: 0 -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: 0 -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: 0 -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-skipped.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: 0 -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -600px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -600px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -600px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -600px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -600px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -700px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -700px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -700px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -700px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -700px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -600px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -600px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -600px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -600px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-locked.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -600px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -400px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -400px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -400px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -400px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -400px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -400px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -400px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -400px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -400px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -400px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -400px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -400px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -400px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -400px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-pass.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -400px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -500px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -500px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -500px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -500px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -500px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -500px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -500px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -500px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -500px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable:hover .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -500px -300px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-lesson {
+  background-position: -500px 0\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-group-lesson {
+  background-position: -500px -100px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-private-lesson {
+  background-position: -500px -200px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-check-point {
+  background-position: -500px -600px\0;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-unavailable.ets-active .ets-sp-sqn-item-badge .ets-sp-sqn-item-icon .ets-sp-sqn-icon-badge.ets-icon-badge-goal-poly {
+  background-position: -500px -300px\0;
+}
+.ets-sp-cfg {
+  background-color: #f0f0f0;
+  color: #555555;
+  display: inline-block;
+  width: 100%;
+  min-height: 300px;
+}
+.ets-sp-cfg .ets-none {
+  display: none;
+}
+.ets-sp-cfg .ets-sp-cfg-hd {
+  margin: 32px 0;
+  text-align: center;
+}
+.ets-sp-cfg .ets-sp-cfg-hd h2,
+.ets-sp-cfg .ets-sp-cfg-hd h5 {
+  margin: 8px 0;
+}
+.ets-sp-cfg .ets-sp-cfg-bd {
+  width: 974px;
+  margin: 0 auto;
+}
+.ets-sp-cfg .ets-sp-cfg-bd > * {
+  margin: 32px 0;
+}
+.ets-sp-cfg .ets-sp-cfg-bd .ets-sp-cfg-item {
+  width: 260px;
+  margin: 0 31px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+.ets-sp-cfg .ets-sp-cfg-bd .ets-sp-cfg-item .ets-sp-cfg-item-title {
+  line-height: 35px;
+  font-size: 16px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd .ets-sp-cfg-item .ets-sp-cfg-item-detail {
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  height: 68px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd .ets-sp-cfg-item .ets-sp-cfg-item-detail h2 {
+  display: inline-block;
+  line-height: 68px;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd .ets-sp-cfg-item .ets-sp-cfg-item-detail span {
+  display: inline-block;
+  line-height: 68px;
+  vertical-align: middle;
+}
+.ets-sp-cfg .ets-sp-cfg-bd .ets-sp-cfg-item .ets-sp-cfg-item-detail span.ets-none {
+  display: none;
+}
+.ets-sp-cfg .ets-sp-cfg-ft {
+  text-align: center;
+  width: 974px;
+  margin: 0 auto;
+  position: relative;
+}
+.ets-sp-cfg .ets-sp-cfg-ft.ets-sp-blank {
+  height: 80px;
+}
+.ets-sp-cfg .ets-sp-cfg-ft > * {
+  margin: 32px 0;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .ets-sp-cfg-create {
+  margin: 40px 0;
+  width: 170px;
+  display: inline-block;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .ets-sp-cfg-unit-overview {
+  color: #555555;
+  display: inline-block;
+  line-height: 40px;
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  margin-top: -20px;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .ets-sp-cfg-unit-overview:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.ets-sp-cfg .ets-sp-cfg-pace {
+  cursor: pointer;
+  position: relative;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-pace-item {
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 68px;
+  width: 260px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-pace-item h2 {
+  width: 60px;
+  color: #555555;
+  display: inline-block;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-pace-item i {
+  position: absolute;
+  right: 2px;
+  top: 26px;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-paceList-wrapper {
+  height: 0;
+  overflow: hidden;
+  z-index: 140;
+  position: relative;
+  top: -138px;
+  -webkit-transition: height 200ms;
+  -moz-transition: height 200ms;
+  -ms-transition: height 200ms;
+  -o-transition: height 200ms;
+  transition: height 200ms;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-paceList-wrapper ul {
+  background-color: #ffffff;
+  border: 1px solid #bfbfbf;
+  color: #aeaeae;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-paceList-wrapper ul li {
+  border-top: 1px solid #ececec;
+  height: 68px;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-paceList-wrapper ul li:first-child {
+  border-top: none;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-paceList-wrapper ul li:hover {
+  background-color: #555555;
+  color: #ffffff;
+}
+.ets-sp-cfg .ets-sp-cfg-pace .ets-sp-cfg-paceList-wrapper ul li:hover h2 {
+  color: #ffffff;
+}
+.ets-sp-cfg .ets-cfg-paceSelect-view .ets-sp-cfg-pace {
+  cursor: default;
+}
+.ets-sp-cfg .ets-cfg-paceSelect-view .ets-sp-cfg-pace .ets-sp-cfg-pace-button i.glyphicon {
+  display: none;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Study Plan > Unit > Lesson
+//  File:          ets-sp-icons.less
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-sp-lsn {
+  clear: both;
+}
+.ets-sp-lsn-main {
+  width: 640px;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+.ets-sp-lsn-hd {
+  padding: 0 30px;
+  color: #4A4A4A;
+}
+.ets-sp-lsn-hd > img {
+  float: left;
+  width: 160px;
+  height: 100px;
+  margin-right: 20px;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-info {
+  overflow: hidden;
+  padding-left: 1px;
+}
+.ets-sp-lsn-hd > h4 {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: none;
+}
+.ets-sp-lsn-hd > h1 {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status.ets-pass {
+  color: #5FA100;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status.ets-pass > h3 {
+  font-weight: 300;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status.ets-pass > h3 > .ets-icon-badge-checkmark {
+  font-size: 21px;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status.ets-start {
+  color: #a3a3a3;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status .ets-icon-mob-started,
+.ets-sp-lsn-hd .ets-sp-lsn-status .ets-icon-mob-passed {
+  font-weight: bold;
+  font-size: 30px;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status .ets-icon-mob-tip {
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #b6b6b6;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status .ets-icon-mob-tip:hover {
+  color: #4a4a4a;
+}
+.ets-sp-lsn-hd .ets-sp-lsn-status .ets-mob-icon,
+.ets-sp-lsn-hd .ets-sp-lsn-status .ets-mob-status {
+  vertical-align: middle;
+}
+.ets-sp-lsn-bd {
+  margin-top: 25px;
+}
+.ets-sp-lsn-bd .ets-sp-step {
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #555;
+  line-height: 30px;
+  padding: 2px 0 3px;
+  cursor: pointer;
+}
+.ets-sp-lsn-bd .ets-sp-step > li {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  vertical-align: middle;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-no {
+  width: 10%;
+  text-align: center;
+  font-weight: bold;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-type {
+  width: 20%;
+  font-weight: bold;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-title {
+  width: 55%;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-action {
+  width: 13%;
+  text-align: right;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-action .btn {
+  min-width: 60px;
+  display: none;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-action > i.ets-icon-badge-checkmark {
+  font-size: 20px;
+  color: #63a600;
+  position: relative;
+  top: 3px;
+  right: 10px;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-action .badge {
+  background: #63a600;
+  position: relative;
+  top: 0px;
+  right: 10px;
+  line-height: 1.3;
+}
+.ets-sp-lsn-bd .ets-sp-step .ets-sp-step-action .badge > i {
+  font-size: 12px;
+  -webkit-transform: scale(0.9);
+}
+.ets-sp-lsn-bd .ets-sp-step:hover {
+  background: #eee;
+}
+.ets-sp-lsn-bd .ets-sp-step:hover .ets-sp-step-action .btn {
+  display: block;
+}
+.ets-sp-lsn-bd .ets-sp-step.ets-pass {
+  background: #87C600;
+  color: #fff;
+}
+.ets-sp-lsn-bd .ets-sp-step.ets-pass:hover {
+  background: #9CE500;
+}
+.ets-sp-lsn-bd .ets-sp-step.ets-showButton .ets-sp-step-action .btn {
+  display: block;
+}
+.ets-sp-skip-pl {
+  padding-bottom: 30px;
+  color: #369;
+  text-align: center;
+}
+.ets-sp-skip-pl .ets-sp-skip-link {
+  cursor: pointer;
+  border-bottom: dotted 1px #369;
+}
+.ets-sp-skip-pl .ets-sp-skip-link:hover {
+  color: #4880B8;
+}
+.ets-mob-modal-tip {
+  text-align: center;
+  padding: 30px 20px;
+}
+.ets-mob-modal-tip .ets-tip-icon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+.ets-mob-modal-tip h2 {
+  margin-bottom: 20px;
+}
+.ets-mob-modal-tip p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.ets-mob-modal-tip .ets-tip-button {
+  margin-top: 30px;
+}
+.ets-sp-cp20-locked {
+  text-align: center;
+  margin: 30px auto;
+  width: 980px;
+  color: #4A4A4A;
+  line-height: 1.8;
+}
+.ets-sp-cp20-locked .ets-sp-cp20-purpose {
+  border-top: 1px solid #999;
+  color: #999;
+  width: 640px;
+  padding: 20px 0px;
+  font-size: 14px;
+  margin: 30px auto 0 auto;
+}
+.ets-sp-cp20-locked .ets-sp-cp20-tips {
+  font-size: 16px;
+  font-weight: bold;
+}
+.ets-sp-cp20-locked .ets-sp-cp20-btn-tips {
+  font-size: 14px;
+  font-weight: bold;
+}
+.ets-sp-cp20-locked .ets-sp-cp20-next {
+  padding: 20px 0px;
+  text-align: center;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Study Plan > Goal
+//  File:          ets-sp-goal.less
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-sp-goal-progress {
+  color: #555;
+}
+.ets-sp-goal-progress .ets-sp-velocity {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+.ets-sp-goal-progress .ets-sp-moveon-tips {
+  text-align: center;
+  font-size: 16px;
+  margin: 8px 0;
+}
+.ets-sp-goal-progress .ets-sp-bar {
+  margin: 24px 0;
+  padding-bottom: 16px;
+  text-align: center;
+}
+.ets-sp-goal-progress .ets-sp-bar > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-complete-rate {
+  padding: 5px 0;
+  font-size: 13px;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-progress-border {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-optional-popover {
+  padding: 8px 0;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-optional-popover:hover .ets-sp-optional {
+  background: #f2f2f2;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-mandatory {
+  height: 10px;
+  width: 600px;
+  border-radius: 100px;
+  position: relative;
+  background: #fff;
+  margin: 0 20px;
+  overflow: hidden;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-optional {
+  border-radius: 100px;
+  width: 110px;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  font-size: 0;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-finished {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  position: absolute;
+  border-radius: 100px 0 0 100px;
+  background: #87C600;
+  display: block;
+  -webkit-transition: width 800ms;
+  -moz-transition: width 800ms;
+  -ms-transition: width 800ms;
+  -o-transition: width 800ms;
+  transition: width 800ms;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-dots {
+  text-align: center;
+  position: relative;
+  font-size: 0;
+  display: inline-block;
+}
+.ets-sp-goal-progress .ets-sp-bar .ets-sp-dots .ets-sp-dot {
+  display: inline-block;
+  background: #888;
+  margin: 4px 1px;
+  width: 2px;
+  height: 2px;
+}
+.ets-sp-goal-progress .popover.bottom {
+  box-shadow: none;
+  border-color: #555;
+  background-color: #555;
+}
+.ets-sp-goal-progress .popover.bottom .arrow {
+  border-bottom-color: #555;
+}
+.ets-sp-goal-progress .popover.bottom .arrow:after {
+  border-bottom-color: #555;
+}
+.ets-sp-optional-lessons {
+  background: #555;
+  color: #fff;
+  display: inline-block;
+}
+.ets-sp-optional-lessons .ets-sp-optional-title {
+  margin: 15px 0 20px 0;
+  text-align: center;
+}
+.ets-sp-optional-lessons .ets-sp-optional-items {
+  margin: 15px 20px;
+}
+.ets-sp-optional-lessons .ets-sp-item-small {
+  display: block;
+}
+.ets-sp-item-small {
+  margin-top: 5px;
+  display: inline-block;
+}
+.ets-sp-item-small .ets-sp-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+.ets-sp-item-small .ets-sp-icon > * {
+  display: block;
+  position: absolute;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  left: 0;
+  top: 0;
+}
+.ets-sp-item-small .ets-sp-icon-bg {
+  font-size: 40px;
+}
+.ets-sp-item-small .ets-sp-icon-badge {
+  font-size: 22px;
+  line-height: 40px;
+  color: #555;
+}
+.ets-sp-item-small .ets-icon-badge-locked {
+  font-size: 23px;
+  width: 23px;
+  height: 23px;
+  right: -7px;
+  top: -7px;
+  left: auto;
+  position: absolute;
+}
+.ets-sp-item-small .ets-sp-locked-mark-bg {
+  color: #000;
+  font-size: 23px;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.ets-sp-item-small .ets-sp-locked-mark-icon {
+  color: #fff;
+  font-size: 13px;
+  width: 23px;
+  height: 23px;
+  line-height: 22px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.ets-sp-item-small .ets-sp-name {
+  margin-left: 5px;
+}
+.ets-sp-goal-moveon {
+  text-align: center;
+}
+.ets-sp-goal-moveon .ets-sp-goal-moveon-main {
+  padding-bottom: 60px;
+}
+.ets-sp-goal-moveon .ets-sp-goal-moveon-main > * {
+  margin: 0 10px;
+}
+.ets-sp-goal-moveon .ets-sp-moveon-items {
+  border-top: 1px solid #ddd;
+  padding-top: 38px;
+}
+.ets-sp-goal-moveon .ets-sp-optional-title {
+  font-size: 16px;
+}
+.ets-sp-goal-moveon .ets-sp-optional-items {
+  margin-top: 30px;
+}
+.ets-sp-goal-moveon .ets-sp-optional-items .ets-sp-icon-badge {
+  color: #fff;
+}
+.ets-sp-goal-moveon .ets-sp-optional-items .ets-sp-item-small {
+  margin: 0 20px;
+}
+.ets-sp-goal-locked {
+  text-align: center;
+  margin: 30px auto;
+  width: 980px;
+  color: #4A4A4A;
+  line-height: 1.8;
+}
+.ets-sp-goal-locked .ets-sp-goal-tips {
+  font-size: 16px;
+  font-weight: 700;
+}
+.ets-sp-goal-restart {
+  padding: 40px 0;
+  position: relative;
+}
+.ets-sp-goal-restart .ets-sp-goal-restart-confirm-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.ets-sp-goal-restart .ets-sp-goal-restart-link {
+  line-height: 40px;
+}
+.ets-sp-goal-restart .ets-sp-goal-restart-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.ets-sp-goal-restart .ets-sp-goal-restart-link.btn-primary {
+  line-height: 20px;
+  padding: 10px 0;
+  width: 170px;
+  text-decoration: none;
+}
+.ets-sp-goal-restart .ets-sp-goal-restart-confirm {
+  width: 170px;
+  display: inline-block;
+}
+.ets-sp-goal-restart .ets-sp-goal-restart-cancel {
+  color: #555555;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  height: 16px;
+  right: -110px;
+  margin-top: -8px;
+}
+.ets-sp-goal-restart .ets-sp-goal-restart-cancel:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.ets-sp-goal-restart .ets-none {
+  display: none;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////
+//
+//  Hierarchy:     Englishtown > School > Study Plan > Loading state
+//  File:          ets-sp-loading.less
+//
+////////////////////////////////////////////////////////////////////////////////////// */
+.ets-sp-loading {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  height: calc(100% - 60px);
+  position: absolute\0;
+  top: 0\0;
+  height: 100%\0;
+  /* a bit higher than the other so it covers */
+  z-index: 180;
+}
+.ets-sp-loading:empty,
+.ets-sp-loading:not(:empty) {
+  position: fixed;
+  top: 60px;
+  height: calc(100% - 60px);
+}
+.ets-sp-loading > .ets-inner > .ets-inner-cell > .ets-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  background: url("../img/ets-loading-dark-l.gif") center center;
+}
+.ets-sp-loading > .ets-backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ets-sp-migration-progress-modal {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.ets-sp-migration-progress-modal .modal-dialog {
+  padding-top: 100px;
+}
+.ets-sp-migration-progress-modal .progress-striped .progress-bar {
+  background-color: #87c600;
+}
+.ets-sp-migration-fail-modal {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.ets-sp-migration-fail-modal .modal-dialog {
+  padding-top: 100px;
+}
+.ets-sp-migration-fail-modal .modal-content {
+  border-bottom: 2px solid #DE4C4C;
+}
+.ets-sp-migration-fail-modal .glyphicon-remove {
+  color: #DE4C4C;
+  font-size: 24px;
+}
+.ets-sp-migration-fail-modal a {
+  text-transform: uppercase;
+}
+.ets-sp-cfg.cp-cfg {
+  background-color: #f9f6f2;
+  text-align: center;
+}
+.ets-sp-cfg.cp-cfg-nopace.cp-cfg-edit .ets-sp-cfg-bd {
+  display: block;
+}
+.ets-sp-cfg.cp-cfg-nopace .ets-sp-cfg-bd {
+  display: none;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd {
+  display: inline-block;
+  text-align: center;
+  width: auto;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd > div {
+  margin: 0;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete {
+  background: #f9f6f2;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left,
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-right {
+  width: 308px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #fff;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left img,
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-right img {
+  max-width: 308px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left a,
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-right a {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left a:hover,
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-right a:hover {
+  color: #000;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-complete-next,
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-right .cp-complete-next {
+  padding: 16px 20px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left {
+  background: #ffffff;
+  margin-right: 68px;
+  min-height: 224px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate {
+  position: relative;
+  min-height: 171px;
+  padding: 52px 56px 0 56px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate:after {
+  content: '';
+  width: 250px;
+  height: 2px;
+  background: #9e9e9e;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  margin-left: -125px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate .cp-certificate-content {
+  margin-bottom: 26px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate .cp-certificate-content .cp-certificate-text {
+  font-size: 20px;
+  line-height: 1.1;
+  color: #000000;
+  display: inline-block;
+  width: 152px;
+  text-align: left;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate .cp-certificate-content .ets-icon-badge-checkmark {
+  font-size: 25px;
+  color: #87c800;
+  vertical-align: middle;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate .cp-certificate-action {
+  font-size: 12px;
+  color: #0078ff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate .cp-certificate-action .cp-certificate-action-text {
+  margin-right: 20px;
+  vertical-align: middle;
+  color: #0078ff;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate .cp-certificate-action .cp-certificate-action-text:hover {
+  text-decoration: none;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-certificate .cp-certificate-action .ets-icon-cp-arrow-right {
+  font-size: 19px;
+  vertical-align: middle;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-retake {
+  font-size: 12px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-retake span {
+  vertical-align: middle;
+  color: #000;
+  font-size: 19px;
+}
+.ets-sp-cfg.cp-cfg-completed .ets-sp-cfg-bd.cp-pace-bd .cp-pace-complete .complete-left .cp-retake a {
+  vertical-align: middle;
+  padding-left: 0px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd {
+  width: 792px;
+  background: #fff;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd p {
+  margin: 0;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-title p {
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+  width: 50%;
+  text-transform: uppercase;
+  color: #000;
+  padding: 28px 66px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content {
+  position: relative;
+  color: #000000;
+  padding-bottom: 32px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .goal-date {
+  font-size: 22px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .goal-timezone {
+  font-size: 16px;
+  opacity: 0.8;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-goal-own-pace .pace-name {
+  display: none;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-goal-own-pace .cp-pace-right {
+  visibility: hidden;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content.cp-pace-edit .cp-pace-readonly {
+  display: none;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content.cp-pace-edit .pace-item-edit {
+  display: block;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .pace-item-edit {
+  display: none;
+  min-height: 44px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .pace-item-edit .pace-item-icon {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  vertical-align: baseline;
+  border: solid 1px #8b8b8b;
+  cursor: pointer;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .pace-item-edit .cp-pace-right {
+  visibility: hidden;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .pace-item-edit.cp-goal-own-pace.pace-item-selected .cp-pace-right {
+  visibility: hidden;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .pace-item-edit.pace-item-selected .cp-pace-left-body {
+  border-radius: 2px;
+  background-color: #f9f6f2;
+  border: solid 0.5px #000000;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .pace-item-edit.pace-item-selected .pace-item-icon:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #7ed321;
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .pace-item-edit.pace-item-selected .cp-pace-right {
+  visibility: visible;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-pace-left {
+  font-size: 16px;
+  display: inline-block;
+  text-align: left;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-pace-left .cp-pace-left-body {
+  margin-left: 80px;
+  padding: 12px 20px;
+  display: inline-block;
+  min-width: 200px;
+  min-height: 49px;
+  cursor: pointer;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-pace-left .pace-value {
+  min-width: 32px;
+  font-size: 20px;
+  margin-left: 10px;
+  display: inline-block;
+  text-align: left;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-pace-left .no-pace,
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-pace-left .pace-name {
+  opacity: 0.8;
+  margin-left: 10px;
+  vertical-align: text-bottom;
+  text-transform: capitalize;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-pace-right {
+  position: relative;
+  text-align: left;
+  padding-left: 120px;
+}
+.ets-sp-cfg .ets-sp-cfg-bd.cp-pace-bd .cp-pace-content .cp-pace-right:before {
+  content: '';
+  position: absolute;
+  background: #000000;
+  width: 60px;
+  height: 1px;
+  left: -30px;
+  top: 50%;
+}
+.ets-sp-cfg .ets-sp-cfg-bd .ets-sp-cfg-item.cp-pace-item {
+  width: 50%;
+  margin: 0;
+  vertical-align: middle;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .cp-studyplan-action {
+  color: #000;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .cp-studyplan-action .cp-studyplan-or {
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .cp-studyplan-action .cp-action-move {
+  cursor: pointer;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .cp-studyplan-action .cp-action-move .cp-next-level {
+  font-size: 12px;
+  vertical-align: middle;
+  margin-right: 13px;
+}
+.ets-sp-cfg .ets-sp-cfg-ft .cp-studyplan-action .cp-action-move .ets-icon-cp-arrow-right {
+  font-size: 19px;
+  vertical-align: middle;
+}
+.ets-sp-goal-progress.cp-goal-progress {
+  position: relative;
+  text-align: left;
+  display: inline-block;
+  margin-left: 34px;
+}
+.ets-sp-goal-progress.cp-goal-progress:before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  top: 6px;
+  left: -34px;
+  min-height: 116px;
+  background: #000;
+  transform: rotate(12deg);
+}
+.ets-sp-goal-progress.cp-goal-progress .cp-left-day {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 42px;
+  font-style: italic;
+}
+.ets-sp-goal-progress.cp-goal-progress .ets-icon-badge-goal-poly {
+  display: none;
+  font-size: 54px;
+  color: #87c800;
+}
+.ets-sp-goal-progress.cp-goal-progress .cp-left-unit {
+  font-size: 22px;
+}
+.ets-sp-goal-progress.cp-goal-progress [class^="cp-progress-msg"] {
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ets-sp-goal-progress.cp-goal-progress [class^="cp-progress-sub-msg"] {
+  text-align: left;
+}
+.ets-sp-goal-progress.cp-goal-progress [class^="cp-progress-sub-msg"] h2 {
+  text-transform: none;
+  font-size: 20px;
+  opacity: 0.6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline;
+}
+.ets-sp-goal-progress.cp-goal-progress [class^="cp-progress-sub-msg"] .msg-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.ets-sp-goal-progress.cp-goal-progress .cp-progress-msg-goal-set,
+.ets-sp-goal-progress.cp-goal-progress .cp-progress-sub-msg-goal-set {
+  display: none;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-nopace .cp-progres-title {
+  margin: 0;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-nopace .cp-left-day,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-nopace .cp-left-unit {
+  display: none;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-nopace .ets-icon-badge-goal-poly {
+  display: inline;
+  margin-left: -16px;
+  color: #7a7977;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .cp-progres-title {
+  margin: 0;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .cp-left-day,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .cp-left-unit {
+  display: none;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .ets-icon-badge-goal-poly {
+  display: inline;
+  margin-left: -16px;
+  color: #c9b188;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .cp-progress-msg,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .cp-progress-sub-msg {
+  display: none;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .cp-progress-msg-goal-set,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-goal-edit .cp-progress-sub-msg-goal-set {
+  display: block;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-crashing:before {
+  background: #f5954f;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-crashing .cp-progres-title,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-crashing .cp-progress-msg {
+  color: #f5954f;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-slow:before {
+  background: #f5954f;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-slow .cp-progres-title,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-slow .cp-progress-msg {
+  color: #f5954f;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-complete .cp-progres-title {
+  margin: 0;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-complete .cp-left-day,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-complete .cp-left-unit {
+  display: none;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-complete .ets-icon-badge-goal-poly {
+  display: inline;
+  margin-left: -16px;
+  color: #87c800;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-complete:before {
+  background: #87c800;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-complete .cp-progres-title,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-complete .cp-progress-msg {
+  color: #87c800;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-crashed .cp-progres-title {
+  visibility: hidden;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-crashed:before {
+  background: #d0021b;
+}
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-crashed .cp-progres-title,
+.ets-sp-goal-progress.cp-goal-progress.cp-progress-crashed .cp-progress-msg {
+  color: #d0021b;
+}
+.ets-sp-goal-restart.cp-goal-restart {
+  padding: 0;
+}
+.ets-sp-goal-restart .cp-goal-change,
+.ets-sp-goal-restart .cp-goal-set {
+  padding: 12px 54px;
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
+  min-width: 254px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.ets-sp-goal-restart .cp-goal-set {
+  display: none;
+  background: #0078ff;
+}
+.ets-sp-goal-restart .cp-goal-cancel {
+  display: none;
+  text-transform: uppercase;
+  margin-top: 29px;
+  color: #0078ff;
+  font-size: 12px;
+  cursor: pointer;
+}
+.ets-sp-goal-restart .goal-mail {
+  margin-bottom: 70px;
+}
+.ets-sp-goal-restart .goal-mail input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+  margin-top: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.ets-sp-goal-restart .goal-mail span {
+  font-size: 16px;
+  vertical-align: middle;
+  color: #000;
+}
+.ets-sp-goal-restart.goal-changing .cp-goal-change {
+  display: none;
+}
+.ets-sp-goal-restart.goal-changing .cp-goal-set {
+  display: inline-block;
+}
+.ets-sp-goal-restart.goal-changing .cp-goal-cancel {
+  display: block;
+}
+@font-face {
+  font-family: 'cp-Courseware';
+  font-style: normal;
+  font-weight: normal;
+  src: url('cp-fonts/Courseware.eot');
+  src: url('cp-fonts/Courseware.eot?#iefix') format('embedded-opentype'), url('cp-fonts/Courseware.woff') format('woff'), url('cp-fonts/Courseware.ttf') format('truetype'), url('cp-fonts/Courseware.svg') format('svg');
+}
+[class^="ets-icon-cp-"],
+[class*=" ets-icon-cp-"] {
+  font-family: 'cp-Courseware';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ets-icon-cp-close:before {
+  content: '\e900';
+}
+.ets-icon-cp-arrow-up:before {
+  content: "\e000";
+}
+.ets-icon-cp-arrow-right:before {
+  content: "\e901";
+}
+.ets-sp-sqn-main .ets-sp-sqn-item[data-velocity="slow"] .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #f5954f;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item[data-velocity="crashing"] .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #f5954f;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item[data-velocity="crashed"] .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #d0021b;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active[data-velocity="slow"] .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #4a4a4a;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active[data-velocity="crashing"] .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #4a4a4a;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active[data-velocity="crashed"] .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #4a4a4a;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.ets-active .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #4a4a4a;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.cp-item-goal-complete {
+  background: #86c800;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.cp-item-goal-complete.ets-active {
+  background: #86c800;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.cp-item-goal-complete.ets-active:hover .ets-sp-sqn-icon-bg {
+  color: #86c800;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.cp-item-goal-complete .ets-sp-sqn-item-icon .ets-sp-sqn-icon-bg {
+  color: #86c800;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.cp-item-goal-complete .ets-sp-sqn-item-title {
+  color: #fff;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item.cp-item-goal-complete .campus-badge-normal {
+  text-transform: uppercase;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .badge.ets-sp-badge-normal.campus-badge-normal {
+  background: #5A92DD;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: -44px;
+  border-radius: 0px;
+  padding: 4px 10px;
+}
+.ets-sp-sqn-main .ets-sp-sqn-item .badge.ets-sp-badge-normal.campus-badge-normal.cp-badge-complete {
+  background: #86c800;
+}
+.campus-tooltip {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  z-index: 2;
+  cursor: default;
+}
+.campus-tooltip.goal {
+  top: 100px;
+}
+.campus-tooltip.goal .ets-icon-mob-tip {
+  visibility: hidden;
+}
+.campus-tooltip.message {
+  width: 280px;
+  margin-left: -140px;
+  top: -13px;
+}
+.campus-tooltip.message .tooltip-content {
+  padding: 26px 26px 16px 14px;
+}
+.campus-tooltip .tooltip-title {
+  position: relative;
+  margin-bottom: 20px;
+}
+.campus-tooltip .tooltip-title .title-icon {
+  position: absolute;
+  left: 50%;
+  cursor: pointer;
+}
+.campus-tooltip .tooltip-title .title-icon .ets-icon-mob-tip {
+  color: #666;
+}
+.campus-tooltip .tooltip-title .ets-icon-cp-arrow-up {
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  color: #666;
+  top: 12px;
+}
+.campus-tooltip .tooltip-body {
+  position: relative;
+  color: #fff;
+}
+.campus-tooltip .tooltip-body .tooltip-content {
+  padding: 10px 20px 10px 10px;
+  background: #666;
+  border-radius: 5px;
+  text-align: left;
+}
+.campus-tooltip .tooltip-body .ets-icon-cp-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  cursor: pointer;
+}
+.gud .ets-sp-study .ets-sp-modal-tc .modal-dialog {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 750px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.gud .ets-sp-study .ets-sp-modal-tc .modal-dialog .modal-header {
+  border-bottom: 0;
+}
+.gud .ets-sp-study .ets-sp-modal-tc .modal-dialog .modal-header .close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  background: url("../img/close-btn.svg") no-repeat center center;
+  opacity: 1;
+  outline: none;
+  border: 0;
+}
+.gud .ets-sp-study .ets-sp-modal-tc .modal-dialog .modal-header .close span {
+  display: none;
+}
+.gud .ets-sp-study .ets-sp-modal-tc .modal-dialog .modal-body {
+  width: 100%;
+  height: 475px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,140 @@
+<%
+    var STATUS_LEFT_EARLY = "leftearly";
+    var STATUS_MISSING_CLASS = "missingclass";
+    var STATUS_NO_COUPON_PL = "no_coupon_pl";
+    var STATUS_NO_COUPON_GL = "no_coupon_gl";
+    var STATUS_OPTIONAL_MSG_GL = "optional_msg_gl";
+    var STATUS_OPTIONAL_MSG_PL = "optional_msg_pl";
+
+    var statusCode = data.statusCode;
+    var link = data.link || "";
+%>
+<% if(statusCode === STATUS_OPTIONAL_MSG_GL){ %>
+    <div class="evc-studyplan-status-container evc-studyplan-status-optional-gl-container clearfix">
+<% }else if(statusCode === STATUS_OPTIONAL_MSG_PL){ %>
+    <div class="evc-studyplan-status-container evc-studyplan-status-optional-pl-container clearfix">
+<% }else{ %>
+    <div class="evc-studyplan-status-container clearfix">
+<% } %>
+    <hr>
+    <div class="evc-studyplan-status-tips">
+        <% 
+            switch(statusCode){ 
+                case STATUS_LEFT_EARLY:
+                    showLeftEarly();
+                    break;
+                case STATUS_MISSING_CLASS:
+                    showMissingClass();
+                    break;
+                case STATUS_NO_COUPON_PL:
+                    showNoCouponPL();
+                    break;
+                case STATUS_NO_COUPON_GL:
+                    showNoCouponGL();
+                    break;
+                case STATUS_OPTIONAL_MSG_GL:
+                    showOptionalMsgGL();
+                    break;
+                case STATUS_OPTIONAL_MSG_PL:
+                    showOptionalMsgPL();
+                    break;
+                default:
+                    break;
+            }
+        %>
+    </div>
+</div>
+
+<% function showLeftEarly() { %>
+    <h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="568598"></h4>
+    <p class="evc-studyplan-status-subline">
+        <span><%= data.msg %></span><br>
+        <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568602"></span>
+    </p>
+<% } %>
+
+<% function showMissingClass() {%>
+    <h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="568621"></h4>
+    <p class="evc-studyplan-status-subline">
+        <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568622"></span>
+        <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568602"></span>
+    </p>
+<% } %>
+
+<% function showNoCouponPL() { %>
+    <h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="568594"></h4>
+    <% if (link) { %>
+        <p class="evc-studyplan-status-subline">
+            <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="568593"></span>
+            <strong>
+                <a href="<%= link %>" data-weave="troopjs-ef/blurb/widget" data-blurb-id="568595"></a>
+            </strong>
+<!--             <% if(data.showSkip) { %>
+                <span data-blurb-id="101321" data-weave="troopjs-ef/blurb/widget">or</span>
+                <strong data-weave="school-ui-studyplan/widget/gl-pl/skip-pl/main"></strong>
+            <% } %> -->
+        </p>
+    <% } %>
+<% } %>
+
+<% function showNoCouponGL() { %>
+    <h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="570577"></h4>
+    <% if (link) { %>
+        <p class="evc-studyplan-status-subline">
+            <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="570578"></span>
+            <strong>
+                <a href="<%= link %>" data-weave="troopjs-ef/blurb/widget" data-blurb-id="568595"></a>
+            </strong>
+        </p>
+    <% } %>
+<% } %>
+
+<% function showOptionalMsgGL() { %>
+    <button type="button" class="close" aria-hidden="true" data-action="closeGLOptionalMsg">&times;</button>
+    <h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="629827"></h4>
+    <p class="evc-studyplan-status-subline">
+        <span data-weave="school-ui-shared/widget/blurb" data-blurb-ccl="school.courseware.blurb.629828" data-blurb-id="629828" data-text-en="The Group Class is a great opportunity to practice your English, meet other students and get answers to your questions from one of our experienced teachers."></span>
+    </p>
+<% } %>
+
+<% function showOptionalMsgPL() { %>
+    <button type="button" class="close" aria-hidden="true" data-action="closePLOptionalMsg">&times;</button>
+    <h4 data-weave="troopjs-ef/blurb/widget" data-blurb-id="629827"></h4>
+    <p class="evc-studyplan-status-subline">
+        <span data-weave="school-ui-shared/widget/blurb" data-blurb-ccl="school.courseware.blurb.629829" data-blurb-id="629829" data-text-en="The Private Class is a great opportunity for you to practice and get feedback from one of our experienced teachers on what you’ve just learned."></span>
+    </p>
+<% } %>
+
+<style type="text/css">
+    .evc-studyplan-status-container{
+        text-align: left;
+        width: 680px;
+        margin: 0 auto;
+    }
+    .evc-studyplan-status-container hr{
+        border-top-color: #bdbdbd;
+        margin: 0;
+    }
+    .evc-studyplan-status-tips{
+        margin: 15px 0;
+    }
+    .evc-studyplan-status-tips .evc-studyplan-status-subline {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+    .evc-studyplan-status-tips .evc-studyplan-status-subline strong {
+        white-space: nowrap;
+        font-style: italic;
+    }
+    .evc-studyplan-status-tips .evc-studyplan-status-subline strong a{
+        cursor: pointer;
+    }
+    .evc-studyplan-status-tips button.close {
+        float: right;
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+    }
+</style>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="ets-dark">
+<head>
+	<!-- Latest IE, Enable Chrome frame, and require ActiveX(flash) in Windows UI mode IE10 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, requiresActiveX=true, chrome=1"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no" />
+	<meta charset="utf-8"/>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{CONTEXT:cache.server}/_shared/school-ui-iet/{CCL:school.ui.iet.version}/css/ets-iet-main.min.css" media="all" />
+
+	
+</head>
+<body>
+<div data-weave="school-ui-iet/widget/container/main"></div>
+
+<script type="text/javascript">
+var require = (function() {
+
+	return {
+		"callback" : function () {
+
+			var config = {
+				"cacheServer": "{CONTEXT:cache.server}",
+                "imgPath": "{CONTEXT:cache.server}/_shared/school-ui-iet/{CCL:school.ui.iet.version}/img/"
+			};
+			
+
+            var deps = ["require", "jquery", "troopjs-bundle", "troopjs-ef"];
+            !config.debug && deps.push("school-ui-iet");
+
+			require.config({
+				"waitSeconds": 0,
+
+				"baseUrl": "{CONTEXT:cache.server}/",
+
+				"packages": [
+					{
+						"name": "jquery",
+						"location": "_shared/jquery/1.9.1",
+						"main": "jquery-1.9.1.min"
+					},
+					{
+						"name": "troopjs-bundle",
+						"location": "_shared/troopjs-bundle/2.0.2-8",
+						"main": "maxi.min"
+					},
+					{
+						"name": "troopjs-ef",
+						"location": "_shared/troopjs-ef/2.0.1-0",
+						"main": "nodeps"
+					},
+					{
+						"name": "poly",
+						"location": "_shared/poly/0.5.1-43",
+						"main": "es5"
+					},
+					{
+						"name" : "when",
+						"location": "_shared/when/2.1.1",
+						"main": "when"
+					},
+                    {
+                        "name": "school-ui-iet",
+                        "location": "_shared/school-ui-iet/{CCL:school.ui.iet.version}/js",
+                        "main": "app-built.min"
+                    },
+                    {
+                        "name": "jquery.jscrollpane",
+                        "location": "_shared/jquery-jscrollpane/2.0.0b12",
+                        "main": "jquery.jscrollpane.min"
+                    },
+                    {
+                        "name": "jquery.mousewheel",
+                        "location": "_shared/jquery-mousewheel/3.0.6",
+                        "main": "jquery.mousewheel.min"
+                    },
+                    {
+                        "name": "jquery.mediaelement",
+                        "location": "_shared/mecleaner/1.0.0-7",
+                        "main": "mecleaner.min"
+                    },
+                    {
+                        "name": "jquery.mediaelement.player",
+                        "location": "_shared/mediaelement/2.8.2-ef.12",
+                        "main": "mediaelement-and-player.min"
+                    }
+				],
+
+				"shim" : {
+                    "jquery.mousewheel": {
+                        deps: ["jquery"],
+                        exports: function($) {
+                            return $;
+                        }
+                    },
+                    "jquery.mediaelement": {
+                        deps: ["jquery.mediaelement.player"],
+                        init: function($) {
+                            return $;
+                        }
+                    },
+                    "jquery.mediaelement.player": {
+                        deps: ["jquery"],
+                        init: function($) {
+                            return $;
+                        }
+                    }
+				},
+
+				"deps" : deps,
+
+				"config": {
+					"troopjs-data/query/service" : {
+						"url" : "/services/school/queryproxy",
+						"type" : "post"
+					},
+					"school-ui-iet/module": config
+				},
+
+				"map" : {
+					"*" : {
+						"template" : "troopjs-requirejs/template",
+						"logger" : "troopjs-core/logger/pubsub"
+					}
+				},
+
+				"callback" : function (localRequire) {
+					localRequire([ "jquery"], function (jQuery) {
+						localRequire([
+							"troopjs-browser/application/widget",
+							"troopjs-browser/ajax/service",
+							"troopjs-data/query/service",
+							"troopjs-data/cache/component",
+							"troopjs-browser/route/widget",
+							"troopjs-ef/service/config",
+							"troopjs-jquery/loom"
+						], function (Application, AjaxService, QueryService, Cache, RouteWidget, ConfigService) {
+							jQuery(function ($) {
+								var cache = Cache();
+
+								Application($("html"),
+											"bootstrap",
+											AjaxService(),
+											RouteWidget($(window), "route"),
+											QueryService(cache),
+											ConfigService(cache))
+										.start();
+							});
+						});
+					});
+				}
+			});
+		}
+	};
+})();
+</script>
+
+<script type="text/javascript" src="{CONTEXT:cache.server}/_shared/require.js/2.0.4/require.js"></script>
+</body>
+</html>

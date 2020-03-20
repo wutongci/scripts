@@ -1,0 +1,27 @@
+<%
+    var model = data,
+        hasSharedAudio = model.hasSharedAudio,
+        weaver = model.weaver;
+%>
+
+<div class="ets-act-tsl">
+    <div class="ets-act-tsl-main">
+        <%if(hasSharedAudio) {%>
+        <div class="ets-act-tsl-audio ets-shared">
+            <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+                <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                       data-src="<%=model.ref.aud.url%>" type="audio/mpeg"
+                       class="ets-ap"></audio>
+            </div></div>
+        </div>
+        <%}%>
+        <div class="ets-act-tsl-view" data-weave="school-ui-activity/activity/text-select/text-select"></div>
+    </div>
+    <%if(model.isMultiType && model.isGradeMode) {%>
+    <div class="ets-act-tsl-ft<%=(hasSharedAudio ? ' ets-shrink' : '')%>">
+        <div class="ets-act-tpg-b" data-weave="school-ui-activity/shared/toggle-slide/main"></div>
+        <div class="ets-ar" data-at-id="pnl-answer-remaining" data-weave="school-ui-activity/shared/rolling-number/main"></div>
+        <div class="ets-cf"></div>
+    </div>
+    <%}%>
+</div>

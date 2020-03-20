@@ -1,0 +1,49 @@
+<div class="com-tablet-download com-tablet-<%=data.version%>">
+    <div class="com-tablet-cover">
+        <div class="com-tablet-logo"></div>
+        <div class="com-tablet-links">
+            <span class="com-tablet-available" <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511879' data-text-en='APP AVAILABLE ON'></span>
+            <%if(data.os === "ios" && data.ipadLink){%>
+            <a href="<%=data.ipadLink%>" target="_blank" class="com-tablet-app-store" data-action="iosClick"></a>
+            <%}%>
+            <%if(data.os === "android" && data.androidLink){%>
+            <a href="<%=data.androidLink%>" target="_blank" class="com-tablet-google-play" data-action="androidClick"></a>
+            <%}%>
+        </div>
+
+        <ul class="com-tablet-point">
+            <li class="com-tablet-levels">
+                <span class="com-tablet-circle">
+                    16
+                </span>
+                <p class="com-tablet-disc">
+                    <span class="com-tablet-disc-title" <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511880' data-text-en='16 levels'></span>
+                    <br />
+                    <span <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511881' data-text-en='of interactive course lessons'></span> 
+                </p>
+            </li>
+            <li class="com-tablet-levels">
+                <span class="com-tablet-circle com-tablet-circle-s">
+                    24/7
+                </span>
+                <p class="com-tablet-disc">
+                    <span class="com-tablet-disc-title" <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511882' data-text-en='24/7 Access'></span>
+                    <br />
+                    <span <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511883' data-text-en='to skilled English teachers'></span> 
+                </p>
+            </li>
+            <li class="com-tablet-levels">
+                <span class="com-tablet-circle com-tablet-circle-s">
+                    100 <span class="com-tablet-s">%</span>
+                </span>
+                <p class="com-tablet-disc">
+                    <span class="com-tablet-disc-title" <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511884' data-text-en='100% Portable learning'></span>
+                    <br />
+                    <span <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511885' data-text-en='online or offline'></span> 
+                </p>
+            </li>
+        </ul>
+        <button class="com-tablet-not-now" data-action="close" <%=data.weaveAttr%>='troopjs-ef/blurb/widget' data-blurb-id='511886' data-text-en='NOT NOW, TAKE ME TO THE WEBSITE'>
+        </button>
+    </div>
+</div>

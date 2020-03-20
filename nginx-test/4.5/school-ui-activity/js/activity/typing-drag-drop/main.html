@@ -1,0 +1,10 @@
+<%if(data.references.aud){%>
+    <div class="ets-act-tpd-hd-ap">
+        <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                   data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+                   class="ets-ap"></audio>
+        </div></div>
+    </div>
+<%}%>
+<div class="ets-act-tpd" data-weave="school-ui-activity/activity/typing-drag-drop/typing-drag-drop"></div>

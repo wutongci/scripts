@@ -1,0 +1,17 @@
+<%
+ function outputBody() {
+ 	var unitNo = data.isGE ? '<strong data-weave="troopjs-ef/blurb/widget" data-blurb-id="105267" data-text-en="Unit"></strong><strong>'+ data.unit.unitNo +'</strong> ' : '';
+ 	var unitNameTag = '<span title="' + data.unit.unitName + '">' + data.unit.unitName + '</span>';
+	return '<div class="ets-sp-unn-title"> ' + unitNo + unitNameTag + ' </div>';
+ }
+%>
+
+<div class="ets-sp-unn-main">
+	<%if (data.enableNavUnit && data.enableShowCourseName) { %>
+	    <div class="ets-sp-unn-prev ets-disabled" data-action="navigate/prev/unit"><i class="glyphicon icon-angle-left"></i></div>
+	    <%= outputBody()%>
+	    <div class="ets-sp-unn-next ets-disabled" data-action="navigate/next/unit"><i class="glyphicon icon-angle-right"></i></div>
+    <% } else {%>
+		<%= outputBody()%>
+    <% } %>
+</div>

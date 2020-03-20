@@ -1,0 +1,33 @@
+<%
+	var nav_item = data.nav_item;
+	var type = data.type;
+	var isDisplayCompanyGoal = data.isDisplayCompanyGoal;
+	var courseTitle;
+	if(type === 'general-english') {
+		courseTitle = 659680;
+	}
+	if(type === 'business-english') {
+		courseTitle = 718696;
+	}
+	if(type === 'industry-english') {
+		courseTitle = 718697;
+	}
+%>
+<div class="ets-pr-top-container">
+	<div class="bread-crumb-nav">
+		<a href="/2/progress-goals/" data-weave="troopjs-ef/blurb/widget" data-blurb-id="717604" data-text-en="My progress & goals"></a>
+		<span class="nav-arrow"> > </span>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=courseTitle%>"> </span>
+	</div>
+	<div class="ets-pr-top-title-content">
+		<h2 data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=courseTitle%>"></h2>
+	</div>
+	<% if(isDisplayCompanyGoal) {%>
+	<div class="company-goal">
+	<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="717614" data-text-en="Company Goal"></span>
+	<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_progress_flag',14,14)"
+    class="progress-flag"></div>
+	</div>
+	<% } %>
+</div>
+<div class="ets-pr-nav-bottom-border"></div>

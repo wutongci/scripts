@@ -1,0 +1,50 @@
+<%
+	var blurbIds = data.blurbIds;
+%>
+
+<% if(data.status.key === 'Completed'){%>
+	<div class="cp-pace-complete">
+		<% if(data.status.code === 'level_complete'){%>
+			<div class="complete-left">
+				<div class="cp-certificate">
+					<div class="cp-certificate-content">
+						<span class="cp-certificate-text" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695071">You've already passed this level test</span>
+						<i class="ets-icon-badge-checkmark"></i>
+					</div>
+					<div class="cp-certificate-action">
+						<a data-url="<%=data.certUrl%>" class="cp-certificate-action-text" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695072">view certificate</a>
+						<i class="ets-icon-cp-arrow-right"></i>
+					</div>
+				</div>
+				<div class="cp-retake">
+					<a href="<%=data.levelTestPath%>?testid=<%=data.levelTestId%>" class="btn cp-complete-next" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695073">
+					</a>
+					<span class="ets-icon-cp-arrow-right"></span>
+				</div>
+			</div>
+		<% } %>
+		<div class="complete-right">
+			<div>
+				<img src="/_imgs/school/changecourse/pepper/ge/13.jpg"/>
+			</div>
+			<% if(data.status.code === 'unit_complete'){%>
+				<a class="btn cp-complete-next cp-next-unit" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=blurbIds.cpNextUnit%>">
+				</a>
+			<% } else if(data.status.code === 'course_change'){ %>
+				<a class="btn cp-complete-next cp-course-change" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=blurbIds.cpCourseChange%>">
+				</a>
+			<% } else if(data.status.code === 'level_complete'){ %>
+				<% if(data.isLastLevel){%>
+				<a class="btn cp-complete-next cp-course-change" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%=blurbIds.cpCourseChange%>">
+				</a>
+				<%}else{%>
+				<a class="btn cp-complete-next cp-next-level" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695074">
+				</a>
+				<%}%>
+			<%} else {%>
+				<a href="<%=data.levelTestPath%>?testid=<%=data.levelTestId%>" class="btn cp-complete-next" role="button" data-weave="troopjs-ef/blurb/widget" data-blurb-id="695076">
+				</a>
+			<% } %>
+		</div>
+	</div>
+<% } %>

@@ -1,0 +1,26 @@
+<% var words = data.content.words; %>
+<div class="ets-act-mvp ets-cf">
+    <div class="ets-movie" data-at-id="video">
+        <!--<div data-weave="school-ui-shared/widget/video-player/main(videoInfo, options, successCallback)"></div>-->
+    </div>
+
+    <div class="ets-word-list">
+        <ul>
+            <%for (var i = 0, len = words.length; i < len; i++) {%>
+            <li class="<%=(i === 0 ? 'ets-first' : '')%>" data-at-id="answer">
+                <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                       class="ets-ap ets-ap-small ets-ap-nobar"
+                       data-src="<%=words[i].translation.audio.url%>" type="audio/mpeg"
+                       controls="controls"></audio>
+
+                <div class="ets-words-info">
+                    <p class="ets-word"><%=words[i].txt%></p>
+                    <%if(words[i].txt.replace(/\’/g,"'") !== words[i].translation.translation.replace(/\’/g,"'")){%>
+                        <p class="ets-translation"><%=words[i].translation.translation%></p>
+                    <%}%>
+                </div>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+</div>

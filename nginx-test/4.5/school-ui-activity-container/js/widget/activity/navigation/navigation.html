@@ -1,0 +1,36 @@
+<%
+    var model = data || {},
+        activities = model.activities || [],
+        count = activities.length,
+        act,
+        passed,
+        actNum;
+    var activeIndex = model.index,
+        currentType = model.currentType,
+        summaryPassedClass = model.hasStepPassed ? " ets-ui-acc-act-nav-summary-green" : "",
+        summaryArrowClass = model.hasStepPassed ? " ets-passed" : "",
+        hasPassingNav = false,
+        passedClass,
+        activeClass;
+%>
+<ul class="ets-ui-acc-act-nav"><!--
+    <% for(var i = 0; i < count; i++) {
+        act = activities[i];
+        passed = !!act.hasPassed,
+        actNum = passed ? "&nbsp;" : i + 1;
+        passedClass = passed ? " ets-ui-acc-act-nav-passed" : "",
+        activeClass = i === activeIndex ? " ets-ui-acc-act-nav-active" : "";
+
+        if(!hasPassingNav && act.hasPassing) {
+            passedClass = " ets-ui-acc-act-nav-passing";
+            hasPassingNav = true;
+        }
+    %>
+    --><li class='ets-ui-acc-act-nav-act<%=passedClass%>' data-at-id="<%=act.id%>">
+        <a class="<%=activeClass%>" data-nav-index="<%=i%>" data-act-id="<%=act.id%>" data-action="route" href="javascript:void(0)"><%=actNum%></a>
+    </li><!--
+    <%}%>
+    --><li class="ets-ui-acc-act-nav-summary<%=summaryPassedClass%>">
+        <a href="javascript:void(0)" data-action="route" class="<%=(currentType === 'summary' ? 'ets-ui-acc-act-nav-active' : '')%><%=summaryArrowClass%>">&nbsp;</a>
+    </li>
+</ul>

@@ -1,0 +1,60 @@
+<%
+var cardsPerPage = data.cardsPerPage;
+var spinCards = data.spinCards;
+
+function renderSpinCard(spinCard) {
+	var classes = ['ets-pr-spin-nav-card'];
+	if (spinCard.levelId === data.selectedLevelId) {
+		classes.push('ets-pr-selected');
+	}
+	// be careful not to leave line return or spaces around cards
+%><span class="<%=classes.join(' ')%>" data-id="<%=spinCard.levelId%>" data-archive-e13-level-id="<%=(spinCard.archiveId && spinCard.archiveId.e13 || '') %>">
+	<span class="ets-pr-spin-nav-card-header">
+		<span class="ets-pr-spin-nav-card-image"></span>
+	</span>
+	<span class="ets-pr-spin-nav-card-content">
+		<span class="ets-pr-spin-nav-card-course"><%=spinCard.courseName%></span>
+		<span class="ets-pr-spin-nav-card-level"><%=spinCard.levelName%></span>
+	</span>
+	<span data-state="<%=spinCard.state%>" data-id="<%=spinCard.levelId%>"
+	      class="ets-pr-spin-nav-card-progress"
+	     data-weave="school-ui-progress-report/widget/container/spin/spin-navigation/state-circle"></span>
+</span><%
+}
+
+function renderSpinCardsPage(pageCards, pageIndex) {
+	var classes = ['ets-pr-spin-nav-page'];
+	if (pageIndex !== data.selectedPage) {
+		classes.push('ets-none');
+	}
+%><div class="<%=classes.join(' ')%>"><%
+	pageCards.forEach(renderSpinCard);
+%></div><%
+}
+
+
+// TEMPLATE BEGIN
+
+%>
+<div class="ets-pr-spin-nav ets-pr-header-content">
+<%
+	var pageIndex = 0;
+	for (var cardIndex = 0; cardIndex < spinCards.length; cardIndex+=cardsPerPage) {
+		var pageCards = spinCards.slice(cardIndex, cardIndex+cardsPerPage);
+		renderSpinCardsPage(pageCards, pageIndex);
+		++pageIndex;
+	}
+%>
+<% if (spinCards.length > cardsPerPage) { %>
+	<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_spin_previous_page',11,21)"
+	     class="ets-pr-spin-nav-previous-page ets-pr-disabled" data-action="previous-page"></div>
+	<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_spin_next_page',11,21)"
+	     class="ets-pr-spin-nav-next-page ets-pr-disabled" data-action="next-page"></div>
+	<div class="ets-pr-spin-nav-pagination" data-weave="troopjs-ef/blurb/widget"
+	     data-blurb-id="694984" data-text-en="^number^ / ^total^"
+	     data-values="{&quot;total&quot;:<%=String(data.maxPageIndex+1)%>}">
+		<span class="ets-pr-spin-nav-page-num" data-value-name="number"></span>
+	</div>
+<% } %>
+</div>
+<div class="ets-pr-nav-bottom-border"></div>

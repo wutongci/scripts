@@ -1,0 +1,73 @@
+<%
+var blurb = function(id,en){
+	    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+	    return res;
+	};
+%>
+
+<div class="ets-act-fce">
+	<div class="ets-act-fce-main">
+		<div class="ets-act-fce-bd">
+			<div class="ets-act-fce-stack">
+				<%
+				var data = data || {};
+				var cards = data.cards;
+				var correctRequired = data.correctRequired;
+				for(var i = 0; i < cards.length; i++){
+					writeItem(cards[i], i);%>
+				<%}%>
+			</div>
+			<div class="ets-act-fce-ctrl">
+				<div class="ets-bd">
+					<div data-at-id="btn-skip" class="ets-act-fce-btn ets-act-btn-skip ets-btn-skip"><span <%=blurb(450011,"Skip")%>></span></div>
+					<div class="ets-act-fce-number">
+						<span class="ets-act-fce-number-current">4</span> / <span class="ets-act-fce-number-total">6</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ets-act-fce-ft">
+			<div class="ets-act-fce-mic">
+				 <div data-weave="school-ui-activity/shared/asr/asr-ui"></div>
+			</div>
+			<div class="ets-act-fce-typing ets-none">
+				<div class="ets-act-fce-typing-box">
+					<div class="ets-input"><input type="text" name="" data-at-id="answer_input" class="ets-act-fce-typing-input" /> <div data-at-id="submit" class="ets-btn ets-btn-blue ets-act-fce-typing-check ets-disabled"><span <%=blurb(443583, "DONE")%>></span></div></div>
+					<i class="ets-icon-correct-s"></i> <i class="ets-icon-incorrect-s"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Activity Summary Start-->
+	<div class="ets-act-summary-wrap"></div>
+	<!-- Activity Summary End-->
+</div>
+
+
+<% function writeItem(data, index) {
+	var index = parseInt(index) + 1;
+	%>
+	<div class="ets-act-fce-card <%if (index > 4) {%>ets-candidate <%} else {%> ets-stack-<%=index%> <%}%>" id="ets-act-fce-card<%=data._id%>" data-at-id="<%=data._id%>">
+		<div class="ets-bd">
+			<img src="<%=data.image.url%>" />
+		</div>
+        <div class="ets-icon">
+            <span></span>
+        </div>
+		<div class="ets-ft">
+			<div class="ets-act-fce-word">
+				<%if (data.audio) {%>
+				<div class="ets-audio">
+					<div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap ets-ap-small">
+						<audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+						       data-src="<%=data.audio.url%>" type="audio/mpeg"
+						       data-at-id="answer_audio_<%=data._id%>"
+						       class="ets-ap ets-ap-small ets-ap-nobar"></audio>
+					</div></div>
+				</div>
+				<%}%>
+				<div class="ets-text <%if (data.txt.length > 26) {%> ets-text-long<%}%>"><span><%=data.txt%></span></div>
+			</div>
+		</div>
+	</div>
+<% } %>

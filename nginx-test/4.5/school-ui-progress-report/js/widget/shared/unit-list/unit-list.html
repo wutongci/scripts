@@ -1,0 +1,105 @@
+<%
+	var units = data.units;
+	var lessonLinks = data.lessonLinks;
+	var _getUnitState = this._getUnitState;
+	var _hasLessonPassed = this._hasLessonPassed;
+	var _progressState = this._progressState;
+%>
+<div class="ets-pr-unit-list-header">
+	<div class="ets-pr-lesson-name"></div>
+	<div class="ets-pr-lesson-time-spent">
+		<span class="ets-pr-text" data-weave="troopjs-ef/blurb/widget" data-blurb-id="666926" data-text-en="Total time"></span>
+	</div>
+	<div class="ets-pr-lesson-score">
+		<span class="ets-pr-text" data-weave="troopjs-ef/blurb/widget" data-blurb-id="666925" data-text-en="Total score"></span>
+		<span class="ets-pr-icon" data-toggle="popover" data-placement="right" data-trigger="hover" data-html="true">?</span>
+	</div>
+	<div class="ets-pr-lesson-state"></div>
+</div>
+
+<%
+function renderLessonItems(lessons) {
+	for(var lessonIndex = 0, lessonCount = lessons.length; lessonIndex < lessonCount; lessonIndex++) {
+	var lesson = lessons[lessonIndex];
+	%>
+	<div class="ets-pr-lesson">
+		<div class="ets-pr-lesson-name" data-merged-template-lesson-id="<%=lesson.templateLessonId%>" data-actual-template-lesson-id="<%=(lesson.actualLesson && lesson.actualLesson.templateLessonId)%>">
+			<%if (lesson.lessonLink) {%>
+			<a href="<%=lesson.lessonLink%>"><%= (lesson.actualLesson && lesson.actualLesson.lessonName || lesson.lessonName) %></a>
+			<%} else {%>
+			<%= (lesson.actualLesson && lesson.actualLesson.lessonName || lesson.lessonName) %>
+			<%}%>
+		</div>
+		<div class="ets-pr-lesson-time-spent">
+			<% if (lesson.progress.timeSpent === 1) { %>
+			<%= lesson.progress.timeSpent %> <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="668332" data-text-en="minute"></span>
+			<% } else if (lesson.progress.timeSpent > 1) { %>
+			<%= lesson.progress.timeSpent %> <span data-weave="troopjs-ef/blurb/widget" data-blurb-id="668333" data-text-en="minutes"></span>
+			<% } else { %>
+			<span class="ets-pr-empty-content">--</span>
+			<% } %>
+		</div>
+		<div class="ets-pr-lesson-score">
+			<% if (_progressState.hasPassed(lesson.progress.state)) { %>
+			<%= lesson.progress.score %>%
+			<% } else { %>
+			<span class="ets-pr-empty-content">--</span>
+			<% } %>
+		</div>
+		<div class="ets-pr-lesson-state">
+			<div class="ets-pr-ico-mobilephone">
+				<% if (_hasLessonPassed(lesson,'MOBLesson')){ %>
+				<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_mobilephone',20,22)" data-at-device="mobile"></div>
+				<% } %>
+			</div>
+			<div class="ets-pr-ico-pc">
+				<% if (_hasLessonPassed(lesson,'PCLesson')){ %>
+				<div data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_pc',44,29)" data-at-device="desktop"></div>
+				<% } %>
+			</div>
+			<% if (_progressState.hasPassed(lesson.progress.state)) { %>
+			<div class="ets-pr-checkmark ets-pr-checkmark-passed" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_checkmark',24,24)"></div>
+			<% } else { %>
+			<div class="ets-pr-checkmark ets-pr-checkmark-not-passed" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_circle_gray',24,24)"></div>
+			<% } %>
+		</div>
+	</div>
+	<%
+	}
+}
+%>
+
+<%
+for(var i = 0; i < units.length ; i++) {
+	var unit = units[i];
+	var unitState = _getUnitState(unit);
+%>
+<div class="ets-pr-unit-item">
+	<div class="ets-pr-unit-header">
+		<p class="ets-pr-unit-no">
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659676" data-text-en="Unit"></span>
+			<span><%= unit.unitNo %></span>
+			<% if (unit.archiveUnit) {%>
+				<span class="ets-pr-lesson-list-switch to-new switched"><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="705112" data-text-en="New"></span><%if (_progressState.hasPassed(unit.progress.state)) {%><span class="ets-pr-checkmark" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_checkmark',16,16)"></span><%}%></span>
+				<span class="ets-pr-lesson-list-switch to-old"><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="705113" data-text-en="Old"></span><%if (_progressState.hasPassed(unit.archiveUnit.progress.state)) {%><span class="ets-pr-checkmark" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_checkmark',16,16)"></span><%}%></span>
+			<% } else if (_progressState.hasPassed(unit.progress.state)) { %>
+				<span class="ets-pr-checkmark" data-weave="school-ui-shared/widget/vector('school-ui-progress-report/vector/ico_checkmark',24,24)"></span>
+			<% } %>
+		</p>
+		<p class="ets-pr-unit-name"><span data-weave="school-ui-shared/widget/hyphenate"><%= unit.unitName %></span></p>
+		<% if(unitState) { %>
+			<p class="ets-pr-unit-state ets-pr-unit-state-<%=unitState.stateName%>"><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="<%= unitState.blurbId%>" data-text-en="<%= unitState.blurbTextEn%>"></span> <%=unitState.suffix%></p>
+		<% } %>
+	</div>
+	<div class="ets-pr-unit-detail">
+		<div class="ets-pr-lesson-list is-new switched ets-show">
+			<% renderLessonItems(unit.children); %>
+		</div>
+		<%if (unit.archiveUnit) {%>
+		<div class="ets-pr-lesson-list is-old">
+			<% renderLessonItems(unit.archiveUnit.children); %>
+		</div>
+		<%}%>
+	</div>
+</div>
+<% } %>

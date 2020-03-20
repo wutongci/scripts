@@ -1,0 +1,100 @@
+<%
+	var _ = data._;
+	var teacher = data.teacher;
+	var feedback = data.feedback;
+%>
+<div class="ets-pr-fb-detail ets-pr-fb-detail-pl ets-none ets-pr-fb-open">
+	<div class="ets-pr-fb-teacher">
+		<% if (teacher) { %>
+		<img src="<%= teacher.imageUrl %>"/>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659698" data-text-en="Teacher"></span>
+		<span><%= teacher.displayName %></span>
+		<% } %>
+	</div>
+	<div class="ets-pr-fb-content">
+		<div class="ets-pr-fb-score-large">
+			<span class="ets-pr-fb-score-num"><%= feedback.grade %></span>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659692" data-text-en="Score"></span>
+		</div>
+
+		<h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="708940" data-text-en="Teacher's comments"></h5>
+		<p><%= _.escape(feedback.overall) %></p>
+
+	<%if (feedback.gradingType === 0) {%>
+		<div class="ets-pr-fb-lists">
+		<%if (feedback.details.showClarity) {%>
+		<h6>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672774" data-text-en="Clarity"></span>
+			<span class="ets-pr-fb-detail-score"><%=feedback.details.clarityGrade%></span>
+		</h6>
+		<dl>
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672780" data-text-en="Strength"></span>:</dt>
+			<dd><%= feedback.details.clarityStrength%></dd>
+
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672781" data-text-en="Areas for improvement"></span>:</dt>
+			<dd><%= feedback.details.clarityImprovement%></dd>
+		</dl>
+		<%}%>
+
+		<%if (feedback.details.showConfidence) {%>
+		<h6>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672775" data-text-en="Confidence"></span>
+			<span class="ets-pr-fb-detail-score"><%=feedback.details.confidenceGrade%></span>
+		</h6>
+		<dl>
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672780" data-text-en="Strength"></span>:</dt>
+			<dd><%= feedback.details.confidenceStrength%></dd>
+
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672781" data-text-en="Areas for improvement"></span>:</dt>
+			<dd><%= feedback.details.confidenceImprovement%></dd>
+		</dl>
+		<%}%>
+
+		<%if (feedback.details.showExpression) {%>
+		<h6>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672776" data-text-en="Expression"></span>
+			<span class="ets-pr-fb-detail-score"><%=feedback.details.expressionGrade%></span>
+		</h6>
+		<dl>
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672780" data-text-en="Strength"></span>:</dt>
+			<dd><%= feedback.details.expressionStrength%></dd>
+
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672781" data-text-en="Areas for improvement"></span>:</dt>
+			<dd><%= feedback.details.expressionImprovement%></dd>
+		</dl>
+		<%}%>
+
+		<%if (feedback.details.showAccuracy) {%>
+		<h6>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672777" data-text-en="Accuracy"></span>
+			<span class="ets-pr-fb-detail-score"><%=feedback.details.accuracyGrade%></span>
+		</h6>
+		<dl>
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672780" data-text-en="Strength"></span>:</dt>
+			<dd><%= feedback.details.accuracyStrength%></dd>
+
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672781" data-text-en="Areas for improvement"></span>:</dt>
+			<dd><%= feedback.details.accuracyImprovement%></dd>
+		</dl>
+		<%}%>
+
+		<%if (feedback.details.showRange) {%>
+		<h6>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672778" data-text-en="Range"></span>
+			<span class="ets-pr-fb-detail-score"><%=feedback.details.rangeGrade%></span>
+		</h6>
+		<dl>
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672780" data-text-en="Strength"></span>:</dt>
+			<dd><%= feedback.details.rangeStrength%></dd>
+
+			<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672781" data-text-en="Areas for improvement"></span>:</dt>
+			<dd><%= feedback.details.rangeImprovement%></dd>
+		</dl>
+		<% } %>
+		</div>
+	<% } %>
+		<% if (data.videoRecoredEnabled) { %>
+			<div class="ets-pr-fb-video-and-notes" data-weave="school-ui-progress-report/widget/container/feedback/feedback-detail/video-and-notes/main(options)"></div>
+		<% } %>
+	</div>
+</div>

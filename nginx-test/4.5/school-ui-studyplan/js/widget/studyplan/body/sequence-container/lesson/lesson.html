@@ -1,0 +1,79 @@
+<%
+	var lesson = data.lesson;
+	var pcScore = data.pcScore;
+	var pcHasPassed = data.pcHasPassed;
+	var mobHasPassed = data.mobHasPassed;
+	var mobHasStarted = data.mobHasStarted;
+	var physicalLesson = data.physicalLesson;
+%>
+<div class="ets-sp-lsn">
+	<div class="ets-sp-lsn-main">
+		<div class="ets-sp-lsn-hd clearfix">
+			<img src="<%= (lesson.lessonImage ? lesson.lessonImage.url : '') %>" width="260" height="160">
+			<div class="ets-sp-lsn-info">
+				<h4><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="490238" data-text-en="Lesson"></span> <%= lesson.lessonNo %></h4>
+				<h1><%= lesson.lessonName %></h1>
+				<%if (pcHasPassed) {%>
+				<div class="ets-sp-lsn-status ets-pass">
+					<h3>
+						<i class="ets-icon-badge-checkmark"></i>
+						<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="569854" data-text-en="PASSED"></span> / <%= pcScore %>%
+					</h3>
+				</div>
+				<% } else { %>
+					<% if(mobHasStarted){ %>
+					<div class="ets-sp-lsn-status ets-start">
+						<h3>
+							<i class="ets-mob-icon ets-icon-mob-started"></i>
+							<span class="ets-mob-status" data-weave="troopjs-ef/blurb/widget" data-blurb-id="661846" data-text-en="Started on mobile"></span>
+							<i class="ets-icon-mob-tip ets-mob-tip-started"></i>
+						</h3>
+					</div>
+					<% } %>
+					<% if(mobHasPassed){ %>
+					<div class="ets-sp-lsn-status ets-pass">
+						<h3>
+							<i class="ets-mob-icon ets-icon-mob-passed"></i>
+							<span class="ets-mob-status" data-weave="troopjs-ef/blurb/widget" data-blurb-id="661847" data-text-en="Passed on mobile"></span>
+							<i class="ets-icon-mob-tip ets-mob-tip-passed"></i>
+						</h3>
+					</div>
+					<% } %>
+				<% } %>
+			</div>
+		</div>
+		<div class="ets-sp-lsn-bd">
+			<div data-weave="school-ui-studyplan/widget/studyplan/body/sequence-container/lesson/step-list/main" data-physical-lesson-id="<%= physicalLesson%>"></div>
+		</div>
+	</div>
+</div>
+<div class="modal fade ets-mob-modal ets-mob-modal-started" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content ets-mob-modal-tip">
+			<div class="ets-tip-icon">
+				<i class="ets-icon-mob-started"></i>
+			</div>
+			<h2 data-weave="troopjs-ef/blurb/widget" data-blurb-id="661846" data-text-en="Started on mobile"></h2>
+			<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="661848" data-text-en="You have started this lesson on your mobile."></p>
+			<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="663229" data-text-en="You can choose to study the lesson on the web as well, or continue on your mobile device."></p>
+			<div class="ets-tip-button">
+				<button class="btn btn-default ets-btn-modal-close" data-weave="troopjs-ef/blurb/widget" data-blurb-id="661850" data-text-en="Got it"></button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade ets-mob-modal ets-mob-modal-passed" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content ets-mob-modal-tip">
+			<div class="ets-tip-icon">
+				<i class="ets-icon-mob-passed"></i>
+			</div>
+			<h2 data-weave="troopjs-ef/blurb/widget" data-blurb-id="661847" data-text-en="Passed on mobile"></h2>
+			<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="663228" data-text-en="You have passed this lesson on your mobile."></p>
+			<p data-weave="troopjs-ef/blurb/widget" data-blurb-id="661849" data-text-en="You might see more new content herebut don't worry, all good!"></p>
+			<div class="ets-tip-button">
+				<button class="btn btn-default ets-btn-modal-close" data-weave="troopjs-ef/blurb/widget" data-blurb-id="661850" data-text-en="Got it"></button>
+			</div>
+		</div>
+	</div>
+</div>

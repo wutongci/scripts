@@ -1,0 +1,853 @@
+/*! campus-studyplan-ui - v2018.17.1-1 - 2018-05-09 03:58:03
+* Copyright (c) 2018 DLA_HAO Team; Licensed  */
+vml\:oval,
+vml\:fill {
+  behavior: url(#default#VML);
+  display: inline-block;
+}
+.csu-fancybox .fancybox-skin {
+  border-radius: 0;
+  padding: 0 !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.csu-fancybox .fancybox-close {
+  width: 32px;
+  height: 32px;
+  right: 20px;
+  top: 20px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACKElEQVRYCc2XwYvTQBjFv46Gkh42i+4hl6Ksy170sCJ4WLz5d3vdiwcD0kvRohQkqMvaHDaUQfF98AIhTcPXjwb2wSNbdpLfm8lk5puJGPXi2fMEl6d0Bs/glP+u4Xt4A9+qv37/FsWgiQGsoEs4J6iEf8MRkIptTnDRgGdsl7LdEm3uXQG0xwSfw+v2ww4IPYdXvDeaA7BHr+EIF71ge5Arjs4njthwAMKvtde4YWHgWIK85GjcdEM82gNfoOEXOZLuNn9+PTk93eLPN7j+xO/tTgC+87dwaYB7QlSATxWF6w/8/idQEIqTJnLYRxGfHcmCGICT5RwuZHwVyiJTQqv3677ZzoBzzg+T2H4uPSJjTaYEvvscXsqwri0hCL4aakNWruzApbXe13um1sSLJoQBXvCeXpFVK7sJUAplDeGEt1U2ATKu7eIN4YALmdlj7mq1GKUAAIUhbvQhDrjwczzREUjb7//AkXjnhAuXZJ2EfnEl/cs6wKUA17ZvvH/CwZ9Nn2j/phcDK5nEA9dht36iXZFZBQ7fmQculCcEmZvAGi73wr0hyLxtAqTcHFxwx4rJghYBWKuV3Bz2adaFG0JkA80ulansSSvRe/gD14TR1GWF1uaw4jCPKjJWZErobJEJC8hRxGcnytqpCbVGQ612hz9faQGpNdwx4ZzIF/BH9L7eCcAQW61aWb1OtZo9Ys8vmrL8YR9Mxj+aPfzDqet4HuHKczz/D5nVY3kKnkioAAAAAElFTkSuQmCC") no-repeat 0 0;
+}
+.csu-fancybox .csu-fancybox-small {
+  padding: 40px;
+  width: 480px;
+}
+.csu-fancybox .csu-fancybox-alert {
+  border-bottom: 2px solid #de4c4c;
+}
+.csu-fancybox .csu-fancybox-alert .csu-fancybox-alert-header {
+  width: 78%;
+  margin-bottom: 30px;
+}
+.csu-fancybox .csu-fancybox-alert .csu-fancybox-alert-header .csu-fancybox-alert-icon {
+  float: left;
+  width: 15%;
+}
+.csu-fancybox .csu-fancybox-alert .csu-fancybox-alert-header .csu-fancybox-alert-title {
+  float: left;
+  width: 85%;
+  font-size: 15px;
+  font-weight: bold;
+}
+.csu-fancybox .csu-fancybox-alert .csu-fancybox-alert-content {
+  width: 85%;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+.campus-studyplan-ui h4,
+.campus-studyplan-ui .h4 {
+  font-weight: 500;
+}
+.campus-studyplan-ui .btn {
+  font-size: 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.campus-studyplan-ui .btn.btn-primary {
+  background-color: #0078ff;
+  padding: 15px;
+}
+.campus-studyplan-ui .btn.btn-default,
+.campus-studyplan-ui .btn.btn-default:hover {
+  background-color: transparent;
+  color: #050505;
+}
+.campus-studyplan-ui .btn.btn-disabled,
+.campus-studyplan-ui .btn.btn-disabled:hover {
+  background-color: #bfbdba;
+  color: #ffffff;
+}
+.campus-studyplan-ui .scu-checkbox {
+  display: none;
+}
+.campus-studyplan-ui .scu-checkbox + label {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-color: #777777;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 6px;
+}
+.campus-studyplan-ui .scu-checkbox:checked + label {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAYElEQVQIHW3NsQmAUAyE4Yhga2UlCFbO6Qa2gpWVM7iElSDY2jpD/AMJpPDgg8dx5BWqKj+psKITBgMaiCuxwbJb8eJB74MFlgO1FaMXN2Z/n3E1zk7QNGwheRCjK74KH2ZtjELKb7tTAAAAAElFTkSuQmCC");
+}
+.campus-studyplan-ui .btn-link,
+.campus-studyplan-ui .btn-link:hover,
+.campus-studyplan-ui .btn-link:active,
+.campus-studyplan-ui .btn-link:link,
+.campus-studyplan-ui .btn-link:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0078ff;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+.campus-studyplan-ui .tabulation {
+  display: table;
+  width: 100%;
+}
+.campus-studyplan-ui .tabulation .row {
+  display: table-row;
+}
+.campus-studyplan-ui .tabulation .row > div {
+  display: table-cell;
+  float: none;
+  vertical-align: top;
+  position: relative;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-teacher-large {
+  height: 16px;
+  width: 25px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBUlEQVQ4Ea2UjU3DMBCF7YoBOkI3wBsQJsBs0A1gBEZIN2ADMkJGcCcANsgGx6v0CaHIZysRT/oUtXfWux8nYYNmYXu4C75O4pXnJI7iEbNfmVloKcZoByeWxadIomB2H/5LVLyIt9X/07oLOmkiVVu9Vf3ljM9E2mpSG9dA1WvdjK/Ea7PPYqzFDu646lqIO3tEXZP9yuysLxY+NToZ1jthT7Zl8YlA6l8ITCjMM4k1FzoZOFwYxYv4rhlR0OLEHv6aZEi8eBeWfBKF5xO5V/EuCjkf4tm9MCQVEkaMjo1PzZlOTcz8Ls13hUS+TRtEh5iNPRPjwB6dOZ97JkvYryRm1wB+AAjX+D8C2pbyAAAAAElFTkSuQmCC") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-timeslot {
+  height: 17px;
+  width: 17px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtElEQVQ4EZ2Ufa0EIQzEGxRUAhJOElJOAhJWykpAAhLqgOsfQ/LS9G6WN8lkk378Akd7kqi6L7e5h/vG1xCvf4vXWhLV3dPd3BpyivhEXQoZ7itpfkcY6kaEdCQy3VkQ9X1DKo6ohxBFX93EhgSDRLV9AwP1GII+KziSyT+EvlkeAl4EJOMBYP4ADfqbEJCin71OBCWvE+eEqOZzwidW+MTy3RG2OyXcGev/fYuRN/Ls5/8nH6jxTnKq+nCKAAAAAElFTkSuQmCC") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-accent {
+  height: 16px;
+  width: 20px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEJ0lEQVQ4EZ2U62+T5R/GP8/z3O3Tdj10XbutY105jIMccGMDDARQEA0kxkSUiMZogomi4gF94Rvzi698IajRN4bEFxpHJBFjohNR5mY4DBhsVMYOIGUb7cZKu7Xr+dDn+T1/g3dy57qTK7mub+5P8pUcZtW7ta1tx+L29U2jt+PK6PCUXqloKLKCZJIJBmpZZ85QmYkyt3Q918dj5DIlhCJTlmXqPTW0uVGkBzOp05HJbuG1Wlread/wbucbr62cdfg5e2aM0JXblIslnF4nmza28IR9FkIhph99lh9+H2U2kkS22/HW2djuqdLRJEg6zLEb7x8ZEQuo1kEaXVtied8aa5LgvjaubVzNH79eI5NK4/P58Nt1MLTaUI/NFcOpuOlormFrTZYVrR7oaGdycMKUylatSkkzN88pyx5TVO8i10JCakjPsMhrRq51EImlqeRybLCmKUxMcMu1iCv/RFlVnWNvQ4Gly71kAy2cG03S1fV3qv98949Cq2rE53LSn1Ml7iyY2T0d53HVyo61q7D465mJPKCcDFGMx7G5XWxb76eTeQJrA9ytaeT05QT9PcOMD09RMbKEw66yrbOZdcudpDEzvyTAvMOKr5hjy5oWEk0qme97KcQSBD0qD21fjFlrouAPMDWeIHFrgla/jaC3lfCIBVGn6jwfLLFnRRoMuguFKMVhifvlMkLIiGqJ1NAg2myM8i8/ka11k9RAM/zVmgEkoGJ324nGc5yy6ohKKkni5Emmf+tGzubIFQpUdUCXkGRDAElVkRTB3NFPkYwQTTI848oSpBWFjM3GrDBRSSQQusdH8eBh8psfoZgroesavuZ6apxWo62MqZjl3rGvKPb+RVPXCSzBAMUZ41+NkkRRJzGTQHdYyafm0d47hIgnC3zeFeKTb6ZJzuc59NF+Pty1EueNAWLhGHf9y2gx4GA18a/mwG4PsDxohqHrdPfd44vLaQNckgZnnvvxPKJQKDJ2M4y9zs0Lbz7NgXY3zp9PMNp7ky+jLrQVWY65BZIRODAW5bvjAxzc38EzSxrZXbpIPDNNly3IUHQePV9EKEKwZtPD+tuHX2LfUhl36CKXLkxydCDHmQd5nqzzYvJICFlC0nT6+waYuhUm/foeXj7wFEfWhujsucNxl5lTaRPC53Uoh5/b4D7YKsvV/quc6ovw9aSTs1Edk1wi2OhFtcURwkSj8a51exi+eof/fdZP9K2dvLh5J9u9fnznhxznhmVjPrmSKY333+jtO129vGCRvk049LFwGDJzqLUuJicG6UlGKKRzjFy7QC4TATJMjvTw8QeXGH11l/TK3lVUqvMxqZJbkCRwq9AowJsx2QXlkgZlJMkE6AiTggUNYwWhmS0USoZquuHL6HoRQLI4a7E6LOnU/VhYAmRABxRA4r8dHdAA/g9E8NBhczGv1wAAAABJRU5ErkJggg==") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-bilingual {
+  height: 17px;
+  width: 20px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAABJ0lEQVQ4EY2TwUnEQBSGJ0EQJClgU0AsYBtIAW4BpoDs3bUAG9C78eZhvasF6H1VxNvieS0gKcB/4Qs8hhkyH3wY5fFn3uQ3c87VspeFm2cv13KIDRwD3+RWfiQEtvzcyCg7uZSWmhf5dGwT5cQLaXiuZEHAxJODpEBoCP6Tn3IlF/LdJZKx8po7LOWLPMhr+cDfzhKyRtn5JxzMPT0z9CUfEwKXsvcDjzSmQrn85fQpdLkDVtuaE7bylDu1VDSgCyXmfnEJ6nn+lj+B6hTMlaHAUZ5zfzcExajkhbzj98tQbaYVr+LFB9Y0fW3p52ADpzUXgbCN/Yqc7pVa7WTLS279Yh/QZ/QC91yLZUVgEr1ZM6WHu3xmaOCDzcLcmM0MlfJe1qn/ev+A4z/igggY9QAAAABJRU5ErkJggg==") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-booked {
+  height: 26px;
+  width: 28px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlklEQVRIDbWWwW3DMAxF1SIDeIN4hIzgEXyxr/UIGUEjZASfc9II6gRVN3A28Agli5/2Q1AUGYo/8JFECvhMWiL4NgyDeaKTuBd34lZ8xPq3eBF7sbter4sp0EMgABZApwYg0H6Lzx7rZwGHVLBxHDXO9J7Ya8QzQfT3hO8czItnAUwKxu8vCXxOwbAfDjEMGyuCrKZAAtX/WQnsUJEUTLOfDwlYQEabhXKGRzBd45JekBFgFUrBIGT49+LbPWGcoYXXvWCc4Qnu9oUhQ5TS7QHDuhV3DOwywBauzewfiIBLpq0F/ayAhRh4xGJKTgMhYAqahUFrfGie6R7I40lDKYzFwBuVrhRqNsCaGLjgPYYNmRqUOg+jSjDQb7gaM72ToquE2JaBDtCmsNO4DXfz91pJ2R2f0gBP5vWy8QMeeINKVi10l158SjVvD6B7Eew+NViedRh4P3X4YzXMqwV2STVv7ggdHeOmooEHzDomB2ToAk+lWYmtDlFiB9iuY+KH+DMzJhb1Uk8l7jVYNAjf8AAuOhxZ/QAM9si/er0S1AAAAABJRU5ErkJggg==") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-teacher {
+  height: 13px;
+  width: 20px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVQ4EZ2SAc3CMBSEV4KA4gAHVEIdgIQ5AAdYmAQkIKFz8OOgEjoF5VguZHk5oP8u+QI8Xm93UNf9VgVj16aghh7cacTXz6q1voHSRuwkUMAODGACsVupE/gzs55JVyUM9jA/H4XXfm5gpCrbhOVLG99iGMSfNIm9KNrIp2Yzu4Cb2C3A29/QqcpcHpj2Ch6mugcHcT+DWyTrWSMzkV8cPvP9yO94jURyJsk0pIlUpEHhfrDX5sU8o1GjaEpZwy1rlH8YJiaUegJhg2AdOJ5+NAAAAABJRU5ErkJggg==") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-video-lesson {
+  height: 13px;
+  width: 19px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAANCAYAAABLjFUnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmklEQVQoFa2SURHCQAxEl0z/QQIOKA4qAQlIqAQkIKESrg6Kg5NQCYcCWGa2Hxw/Dembeb+bzV12AC70RgvW09KeDqiY6QEONDzVA0xhBT6mqsCn6WSIc1U4bIOgu949q7KbjhbZLqs3+J89PS+Noms+tVW3RVjWmyXdHBrESGo20JMhTlbgCPLSj3jof65Aaz5Ud8Z6jrqvL967wx4rulHkGAAAAABJRU5ErkJggg==") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-error {
+  height: 24px;
+  width: 24px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABqUlEQVRIDdXWQWSbcRjH8SwjhBFCCGNslxHGGGNsNhuRQ+SU2ewwzbG9J5dETi2VHEt7XOVQpbk0SmmU0mhOJXoIvWSM2SyEEAsh7Ht4Qvz832zvJqMPH9Xnfd//7/++3ueVW710OrDMCuK/BbzDD3xDFn7rNir4iSskNGALMcSxjxWfi9eQRxiPUNaAgVzwCav4XYVsQx+kP9CAHEZy0rbtatHiB45H2kFJA9pIYignV1CEVhiHyEj/Em/0DuZDXqEv/XUzqzs4RspxvS3u/Zp2LOS79It2NxGc4KUcb+kTWDQHXQv5Kv08engm/aYtPvIzaNd4gS/Sj8r/DaQx/ptJ/mwh/HVWHW8x+ZdPxRSTZX2L7uMCD+GqrM1ByHeALXqOe44Jna+MzUPYT0ACZ7gr/SoeoC39FI4kxDPgsS0el/4GCvaeJ9GS469tPiKLAp7gFDHpl8ysRhbSlPOe2/VRV8BTPWhVsN1rje39b3hsMqoBNb09as2eu1dNbA7qjsdc1oCYvPs57MBZEvIee66JD8puh+jbBbv405riI6oW2MUmAjf/V8UvJJFdJYeMXXMAAAAASUVORK5CYII=") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-arrow {
+  height: 9px;
+  width: 20px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAeklEQVQoFa3SsQnDMBCFYV0EagOpskRAVSAGl17AwxncBgwGV57C4GlUhHRB+QXSBHcPPhBXPI5DThGPFUPO2TUXReEPH+wi8nRG8diQ8CgbSh1GRWnAG1d0Uh8JFjmtNpxxR29xwwUJsdxQmwlfvCy+TcANI0VHG/4Bs9smWNv5EQYAAAAASUVORK5CYII=") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-lock-slim {
+  height: 27px;
+  width: 20px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA4UlEQVRIDe2Wwe2CMBjF+zfcdQTcgA3sCHqAq7ABIzACGwBXLrqBOIFuoCMwgq/JM2nQTyoSD/h/yS9Nm68vj7af8S8MQyUoACnYdtYrkIGrmdR1rWzNBLMYnGiagCVJuHZhzYO8J2saFEzS3VRaFEzZ9CXMwJFmkmLWZC4JV2Cj+pWDHXh5hppj22vHmiiKtGw4XL9s6PGhrjn3rWehxV2dWuti9qb1Wj5QjB9pAXyTcM6ebYa43HuZKQ/TueWcONyym4JvfvJ/67npPLZhOr0zDN7c10rnan6+Sv47GEPVDQ/ELIMIzd3OAAAAAElFTkSuQmCC") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-alert {
+  height: 27px;
+  width: 27px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVRIDb2WgYnzMAyFXdMBukF7E5xH0AAtZISM4BE8QkbICIEuoBHSBe5PN8gIvwzPYAKuldDkwePMxeiLZFfR6e9+NxU5cSsm8S/+91qsWdz/PJ/jp0C29ADBGY7y4hPssrXHc/73eERTKWApsw7ZBKyLkmxMkoAiOCBLX4Ndskwa8YS1CgbgTf4MqTryfC6VMYJGlKkKKsAnsUMcLp1ZKldrviOPTLsljABplIFIkeGMeG28NDkswNrSBSVwSrETzMGd2UECjHGdZOcsytebHYX4rUU5hj1JiE8WbYf3oqCUHDnWHCiLRnqE3ijjIbpuLSOLp61lJLNOYQ0MHeRl8ZaN2VGIzzb94DZkdlPvRuOIsBH2Ri/SwvBBHePIcM7edIAnZWasAN2wt8m7PqOc2ralAV0Qr0cHASz72H2jKQPUoVX50lhA+NyMlTOplY4Rhz6NcjM28epLk10GMcc5RDxXR7ksywB4Ok8u7GvELUAhndFS58oloGwi7rI++hZfFxMx1Sbi/5adj1/OOnNhAAAAAElFTkSuQmCC") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-passed {
+  height: 26px;
+  width: 28px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAYAAACkVDyJAAAACXBIWXMAAAsTAAALEwEAmpwYAAABkklEQVRIDbWWwU3EMBBFvSgFpINNCblycwnpAJeQI0ffluOWkBJcQrjAkaGDbAfpAGbQB0aWN2vLmy99hdireZlJPMzh9GZuqWcPbMvu2Eesf7IX9swOz49fi8nQVSAAHsAgBoDUfofrgPWRwZQK9vJ+kDjuIbHXsicFkXuHv3UwyWxigANY7j848JiCYZ+aGIaNFUFWkyGGyu88Bw5SkRQM2U9NAkbIqFgoJ12DyZou6RkZAVajBAxChn8vvtsTpjP08LoXTGfYw3ZfGDJEKcMeMKx7ttVAuwHs4NrM/oEIuGy0NZJrBYxi4BGLKQUJhIAp6CYMWqOP5qYm1cosm7JhUAy8qNLlQk0BrI2BC94jFWRqUOptmKqEBs4FR2NS7yTrKCG218AAaJvZaULB2fw5Vlz2oL9Sgp25v3z8gE20gZLVC91lYPep5j0DGO4E+50afDzr6P+HoxovamGzmGHnVPPWHcGqz7itaOCEWcdsATV0gV1uVmwvQxRGRrf3mPjEftVjYj4wfxC+4AFCySD8DaH2yVeV4Xd8AAAAAElFTkSuQmCC") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-unlock {
+  height: 28px;
+  width: 21px;
+  background: url("data:image/png;base64,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") no-repeat center center;
+}
+.campus-studyplan-ui .glyphicon.glyphicon-arrow-primary {
+  height: 9px;
+  width: 19px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAJCAYAAADQHRcxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjElEQVQoFa3SvwnCQBTH8fMP1wpWVm5gpVgIguAEOoADOEHWCFYp0gRugLQJqdMkEEiVMTJAiN9X3ALv8oVP84pfc7cy0WwUbeCQovTHNTRNGJHj6o9baPtihwJ39DJ2hrYYJ1S4yViDJXIydoE2iwQHfGSshfZFMxzxwBDyAD+88EQX8jUs9nij9sc/G7oTIHsn01kAAAAASUVORK5CYII=") no-repeat center center;
+}
+.campus-studyplan-ui .csu-pl-container {
+  width: 980px;
+  margin: 0 auto 40px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-lead {
+  padding: 25px 0 20px 0;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-lead span {
+  color: #666666;
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-lead span:first-child {
+  margin-right: 10px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-topic {
+  padding: 20px 30px 15px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-topic .media {
+  width: 50%;
+  margin: auto;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-topic .media .pull-left {
+  margin-right: 20px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-topic .media .pull-left img.media-object {
+  width: 100px;
+  height: 100px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-topic .media .media-body > p {
+  margin-bottom: 0;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-class-panel {
+  background-color: #faf7f2;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .pull-left {
+  margin: 0;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .pull-left .csu-pl-class-topic-image {
+  height: 238px;
+  width: 238px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body {
+  color: #000000;
+  font-size: 13px;
+  padding: 15px 20px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body > .media-heading {
+  margin-bottom: 0;
+  font-size: 20px;
+  width: 85%;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .csu-pl-class-time {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info {
+  line-height: 238px;
+  white-space: nowrap;
+  background-color: #efece9;
+  padding: 0 30px;
+  width: 285px;
+  text-align: center;
+  color: #383737;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info > div {
+  display: inline-block;
+  width: 100%;
+  line-height: 1.2;
+  white-space: normal;
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info > div > span {
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info .csu-pl-status-info-title {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #666666;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info .csu-pl-status-info-title.csu-pl-status-info-title-fullsize {
+  width: 100%;
+  margin-bottom: 0;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info .csu-pl-status-info-title.csu-pl-status-info-title-highlight {
+  color: #ff0084;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info .csu-pl-status-info-title,
+.campus-studyplan-ui .csu-pl-container .csu-pl-status-info .csu-pl-status-info-description {
+  margin-bottom: 12px;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar {
+  display: inline-block;
+  height: 81px;
+  width: 81px;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #c3c3c3;
+  border-radius: 50%;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar,
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar:hover,
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar:active,
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar:link,
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar:visited {
+  text-decoration: none;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar em {
+  font-style: normal;
+  font-size: 28.35px;
+  line-height: 81px;
+  color: #ffffff;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar.hide-in-ie8 {
+  display: none;
+}
+.campus-studyplan-ui .csu-pl-container .csu-pl-teacher-avatar.hide-in-ie8:not([lte-ie-8]) {
+  display: inline-block;
+}
+.campus-studyplan-ui .csu-pl-link,
+.campus-studyplan-ui .csu-pl-link:hover,
+.campus-studyplan-ui .csu-pl-link:active,
+.campus-studyplan-ui .csu-pl-link:link,
+.campus-studyplan-ui .csu-pl-link:visited {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+.campus-studyplan-ui .csu-pl-msg .csu-pl-msg-details {
+  width: 650px;
+  margin: 0 auto 30px;
+  padding: 0 30px;
+}
+.campus-studyplan-ui .csu-pl-msg .csu-pl-msg-details > .pull-left {
+  width: 90px;
+  margin-right: 30px;
+  font-size: 12px;
+}
+.campus-studyplan-ui .csu-pl-msg .csu-pl-msg-details > .pull-left .csu-pl-teacher-avatar-wrapper {
+  margin-bottom: 10px;
+}
+.campus-studyplan-ui .csu-pl-msg .csu-pl-msg-details > .pull-left .csu-pl-teacher-name {
+  font-size: 15px;
+}
+.campus-studyplan-ui .csu-pl-msg .csu-pl-msg-details > .media-body {
+  padding: 10px 0;
+}
+.campus-studyplan-ui .csu-pl-msg .btn-primary {
+  min-width: 247px;
+}
+.campus-studyplan-ui .csu-pl-msg-with-topic {
+  min-height: 380px;
+}
+.campus-studyplan-ui .csu-pl-msg-with-topic .csu-pl-container {
+  width: 40%;
+}
+.campus-studyplan-ui .csu-pl-msg-with-topic .csu-pl-container .csu-pl-topic {
+  padding: 40px 40px 30px;
+}
+.campus-studyplan-ui .csu-pl-msg-with-topic .csu-pl-container .csu-pl-topic .media {
+  width: auto;
+}
+.campus-studyplan-ui .csu-pl-msg-with-topic .csu-pl-container .csu-pl-msg-lead {
+  font-weight: bold;
+  margin: 0 80px 20px;
+}
+.campus-studyplan-ui .csu-pl-msg-with-topic .csu-pl-container .btn-primary {
+  padding: 15px 40px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher,
+.campus-studyplan-ui .csu-pl-nevertake-timeslot {
+  margin-bottom: 20px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-title,
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-title {
+  font-size: 15px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-title span,
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-title span {
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-title span.glyphicon,
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-title span.glyphicon {
+  margin-right: 10px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher {
+  max-width: 225px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile {
+  position: relative;
+  border-bottom: 3px solid #80c0e6;
+  background: #ffffff;
+  margin-top: 45.5px;
+  padding-top: 40.5px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-avatar {
+  position: absolute;
+  width: 100%;
+  top: -40.5px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-name {
+  color: #0078ff;
+  font-size: 18px;
+  margin-top: 15px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-name.cpn-teacher-name-standalone {
+  margin-top: 22px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-language {
+  margin: 20px 20px 10px 20px;
+  min-height: 8px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-language li {
+  display: inline-block;
+  width: 50%;
+  text-transform: uppercase;
+  vertical-align: top;
+  border-left: 1px solid #666666;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-language li .cpn-teacher-text {
+  margin: 0 10px;
+  font-size: 8px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-language li .cpn-teacher-text .glyphicon {
+  float: right;
+}
+.campus-studyplan-ui .csu-pl-nevertake-teacher .cpn-teacher-profile .cpn-teacher-language li:first-child {
+  border-left: 0;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-timeslot-list {
+  display: inline-block;
+  margin: 20px 0 10px;
+  min-height: 81px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-timeslot-list li {
+  margin-bottom: 10px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-timeslot-list li input {
+  margin: 0 8px 0 0;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-timeslot-list li input + label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #666666;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-timeslot-list li input[checked] + label {
+  color: #0078ff;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-timeslot-list li input,
+.campus-studyplan-ui .csu-pl-nevertake-timeslot .cpn-timeslot-list li input + label {
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone {
+  font-size: 14px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone .cpn-timezone-button-wrapper {
+  position: relative;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone .cpn-timezone-button-wrapper .cpn-timezone-button-change {
+  position: absolute;
+  bottom: 0;
+  margin-left: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: none;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone .cpn-timezone-button-wrapper .cpn-timezone-button-change:hover {
+  text-decoration: underline;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone .cpn-timezone-select {
+  width: 235px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone + .cpn-timezone-readonly,
+.campus-studyplan-ui .csu-pl-nevertake-timezone + .cpn-timezone-editable {
+  display: none;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone > .cpn-timezone-readonly,
+.campus-studyplan-ui .csu-pl-nevertake-timezone > .cpn-timezone-editable {
+  display: block;
+}
+.campus-studyplan-ui .csu-pl-nevertake-timezone > .cpn-timezone-readonly:hover .cpn-timezone-button-change {
+  display: inline;
+}
+.campus-studyplan-ui .csu-pl-nevertake-tscs {
+  padding: 50px 100px 40px 100px;
+  background: #ffffff;
+  color: #000000;
+  width: 556px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-tscs-title {
+  font-weight: bold;
+  font-size: 13px;
+}
+.campus-studyplan-ui .csu-pl-nevertake-tscs-des {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  color: #b1b7b8;
+}
+.campus-studyplan-ui .csu-pl-nevertake-tscs-content {
+  line-height: 1.8;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking {
+  padding: 15px 30px 30px;
+  background: #faf7f2;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-form {
+  min-height: 150px;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-lead {
+  font-size: 22px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button {
+  display: inline-block;
+  max-width: 250px;
+  color: #383737;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  line-height: 1.5;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .cpn-button-video-lesson input {
+  margin: 0 8px 0 0;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .cpn-button-video-lesson input + label {
+  margin: 0;
+  font-weight: normal;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .cpn-button-video-lesson input,
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .cpn-button-video-lesson input + label {
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .cpn-button-video-lesson .tooltip-info {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  color: black;
+  font-family: Georgia, serif;
+  line-height: 14px;
+  font-size: 12px;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .cpn-button-video-lesson .tooltip-inner {
+  text-align: left;
+  border-radius: 4px;
+  min-width: 250px;
+  max-width: 250px;
+  padding: 10px 15px;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .btn {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .csu-pl-nevertake-button .csu-pl-link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .btn-link-change-teacher,
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .btn-link-change-time {
+  font-size: 12px;
+}
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .btn-link-change-teacher > .glyphicon-arrow,
+.campus-studyplan-ui .csu-pl-nevertake .csu-pl-container .csu-pl-nevertake-booking .btn-link-change-time > .glyphicon-arrow {
+  margin-left: 10px;
+}
+.campus-studyplan-ui .csu-pl-booked-countdown {
+  color: #000000;
+}
+.campus-studyplan-ui .csu-pl-booked-countdown > div {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.campus-studyplan-ui .csu-pl-booked-countdown > div > div:first-child {
+  font-size: 22px;
+  padding: 0 15px;
+  position: relative;
+}
+.campus-studyplan-ui .csu-pl-booked-countdown > div > div:first-child span {
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  color: #8f8f8f;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder {
+  padding: 30px 15px 0;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-notice {
+  margin-bottom: 13px;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-privacy-policy,
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-privacy-policy:hover,
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-privacy-policy:active,
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-privacy-policy:link,
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-privacy-policy:visited {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-lead {
+  font-size: 14px;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  margin-bottom: 8px;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-mobile-number,
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-request-reminder {
+  width: 50%;
+  float: left;
+  position: relative;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-mobile-number-input {
+  width: 70%;
+  font-size: 14px;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 5px;
+  outline: none;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-mobile-number-input:focus {
+  border-bottom-color: #0078ff;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-mobile-number-input.error {
+  border-bottom-color: #de4c4c;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-mobile-number-input.valid {
+  border-bottom-color: #87c600;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAJCAYAAAACTR1pAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVQoFZXQTwbDQBTH8dc/ShfVe5Teo6ueoZR200XpIdptNzOSQ4RcIjlSCCHf4T2iPM38+DCGL2MW70ZydsAe7TojOqHS826ZGW0RMVh4wXlG9MULksINAmrc/kRPiIX95KLQ2I909jklVggaH3H1IgttEaLxA+JF9lT5ie/o8PGitBFcvBm1gMsz6QAAAABJRU5ErkJggg==") no-repeat right center;
+  padding-right: 15px;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-country-code {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .btn-link-request {
+  font-size: 12px;
+  text-align: left;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder label.error {
+  font-weight: normal;
+  color: #de4c4c;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-subscribe {
+  max-width: 300px;
+  margin: auto;
+  display: table;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-subscribe .cpsr-subscribe-inner-wrapper {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 4px;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-subscribe .cpsr-subscribe-inner-wrapper .cpsr-subscribe-checkbox {
+  margin: 0;
+}
+.campus-studyplan-ui .csu-pl-sms-reminder .cpsr-subscribe .cpsr-subscribe-inner-wrapper .cpsr-subscribe-label {
+  font-weight: normal;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media {
+  overflow: visible;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body {
+  /* 2 line height + 13 pixel margin */
+  overflow: visible;
+  margin-left: 238px;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper {
+  position: relative;
+  padding-bottom: 41px;
+  min-height: 167px;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper > .media-heading {
+  margin-bottom: 0;
+  font-size: 20px;
+  width: 85%;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper .csu-pl-booked-links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper .csu-pl-booked-links > li {
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper .csu-pl-booked-links > li .csu-pl-link {
+  display: inline-block;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper .csu-pl-booked-links > li .tooltip-arrow {
+  border-bottom-color: #000\9;
+  filter: alpha(opacity=90);
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper .csu-pl-booked-links > li .tooltip-inner {
+  background-color: #000\9;
+  filter: alpha(opacity=90);
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body .media-body-inner-wrapper:not([lte-ie-8]) {
+  min-height: 208px;
+}
+.campus-studyplan-ui .csu-pl-booked .csu-pl-container .cpbc-inner-wrapper {
+  display: none;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container {
+  position: relative;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVQYGe3KMREAAAjDQMC/TmyEq4NOTM2Q6RvYMhrtDwYeQfQD9/w1y0kAAAAASUVORK5CYII=") repeat;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-lead {
+  visibility: hidden;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel {
+  background-color: #efece9;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media {
+  margin-left: 0;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body {
+  padding: 0;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body > .media-heading,
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body .csu-pl-class-time,
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body .csu-pl-booked-reminder {
+  background-color: #faf7f2;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body > .media-heading {
+  padding: 15px 25% 0 20px;
+  width: auto;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body .csu-pl-class-time {
+  padding: 0 20px 15px;
+  margin-bottom: 0;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body .csu-pl-booked-reminder {
+  padding: 0 20px 15px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body .csu-pl-booked-buttons {
+  padding: 20px;
+  background-color: transparent;
+  text-align: center;
+}
+.campus-studyplan-ui .csu-pl-booked.csu-pl-booked-cancellation .csu-pl-container .cpbc-inner-wrapper .csu-pl-class-panel .csu-pl-class-media > .media-body .csu-pl-booked-buttons .btn {
+  margin: 0 15px;
+  min-width: 230px;
+}
+.campus-studyplan-ui .csu-pl-attended .csu-pl-container .csu-pl-lead.csu-pl-lead-with-time > div {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+}
+.campus-studyplan-ui .csu-pl-attended .csu-pl-container .csu-pl-lead.csu-pl-lead-with-time > div .h4 {
+  color: #87c600;
+}
+.campus-studyplan-ui .csu-pl-attended .csu-pl-container .csu-pl-lead.csu-pl-lead-with-time > div .csu-pl-class-time {
+  font-size: 16px;
+}
+.campus-studyplan-ui .csu-pl-attended .csu-pl-container .csu-pl-lead.csu-pl-lead-with-time > div:first-child {
+  margin-right: 10px;
+}
+.campus-studyplan-ui .csu-pl-attended .csu-pl-container .csu-pl-class-panel .csu-pl-class-media > .media-body > .media-heading {
+  margin-bottom: 18px;
+}
+.campus-studyplan-ui .csu-pl-dropout .csu-pl-container .csu-pl-lead span {
+  color: #de4c4c;
+}
+.campus-studyplan-ui .csu-pl-dropout .csu-pl-container .csu-pl-status-info .csu-pl-status-info-title {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.campus-studyplan-ui .csu-pl-dropout .csu-pl-container .csu-pl-status-info .csu-pl-status-info-description {
+  margin-bottom: 30px;
+}
+.campus-studyplan-ui .csu-pl-welcome .csu-pl-container .csu-pl-msg-details-wrapper {
+  width: 800px;
+  margin: 0 auto 30px;
+  background-color: #faf7f2;
+}
+.campus-studyplan-ui .csu-pl-welcome .csu-pl-container .csu-pl-msg-details-wrapper .csu-pl-msg-details {
+  width: 490px;
+  margin: 0;
+  padding: 20px 30px;
+}
+.campus-studyplan-ui .csu-pl-welcome .csu-pl-container .csu-pl-msg-details-wrapper .csu-pl-msg-details > .media-body {
+  padding: 0;
+}
+.campus-studyplan-ui .csu-pl-welcome .csu-pl-container .csu-pl-msg-details-wrapper .csu-pl-tutorial-video {
+  display: inline-block;
+  cursor: pointer;
+}
+.campus-studyplan-ui .csu-pl-welcome .csu-pl-container .csu-pl-msg-details-wrapper .csu-pl-tutorial-video,
+.campus-studyplan-ui .csu-pl-welcome .csu-pl-container .csu-pl-msg-details-wrapper .csu-pl-tutorial-video > img {
+  width: 310px;
+  height: 192px;
+}
+.campus-studyplan-ui .csu-pl-unlocked .csu-pl-container .csu-pl-lead .csu-pl-unlocked-status {
+  color: #0078ff;
+}
+.campus-studyplan-ui .csu-pl-msg-with-topic.csu-pl-nocouponleft .csu-pl-container .csu-pl-msg-lead {
+  margin: 0 150px 20px;
+}
+.campus-studyplan-ui .csu-pl-locked .csu-pl-container {
+  width: 530px;
+  margin: auto;
+  padding: 0 15px;
+}
+.campus-studyplan-ui .csu-pl-locked .csu-pl-container .csu-pl-lead {
+  padding: 25px 0 20px;
+}
+.campus-studyplan-ui .csu-pl-locked .csu-pl-container .csu-pl-lead span {
+  margin-left: 10px;
+  vertical-align: middle;
+  color: #de4c4c;
+}
+.campus-studyplan-ui .csu-pl-locked .csu-pl-container .csu-pl-lead span:first-child {
+  margin-left: 0;
+}
+.campus-studyplan-ui .csu-pl-locked .csu-pl-locked-message {
+  margin-bottom: 40px;
+}
+.campus-studyplan-ui .csu-pl-profile ul {
+  display: inline-block;
+  margin-left: 20px;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+.campus-studyplan-ui .csu-pl-profile ul li {
+  margin: 7px 0;
+}
+.campus-studyplan-ui .csu-pl-profile ul li span {
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-pl-profile ul li span:first-child {
+  margin-right: 10px;
+}
+.campus-studyplan-ui .csu-pl-profile ul li span.csu-pl-profile-duration {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+.campus-studyplan-ui .csu-pl-profile img,
+.campus-studyplan-ui .csu-pl-profile ul {
+  vertical-align: middle;
+}
+.campus-studyplan-ui .csu-notification {
+  color: #4a4a4a;
+  background-color: #e6e6e6;
+}

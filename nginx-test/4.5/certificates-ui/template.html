@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>
+    Certificates
+  </title>
+  <link type="text/css" rel="stylesheet"
+        href='{CCL:configuration.servers.cache}/school/4.5/certificates-ui/dist/main.min.css'/>
+  <style>
+    .content_frame{
+      min-width: auto;
+      display: inline-block;
+    }
+
+    .cer_frame{
+      margin-left: auto;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="frame">
+  <div class="content_frame">
+    <div class="cer_frame">
+      <div id="myContent" class="certificate b2c">
+        <img src="{CCL:configuration.servers.cache}/school/4.5/certificates-ui/dist/assets/certificate-b2c.jpg"
+             width="580" height="410"/>
+        <span class="student-name"><%= name %></span>
+        <span class="course-name"><%= course %></span>
+        <span class="level-name"><%= levelcertificate %></span>
+        <span class="cert-date"><%= date %></span>
+        <span class="print"></span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

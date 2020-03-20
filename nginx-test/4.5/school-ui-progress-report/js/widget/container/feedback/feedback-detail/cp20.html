@@ -1,0 +1,39 @@
+<%
+	var _ = data._;
+	var teacher = data.teacher;
+	var feedback = data.feedback;
+%>
+<div class="ets-pr-fb-detail ets-pr-fb-detail-cp20 ets-none ets-pr-fb-open">
+	<div class="ets-pr-fb-teacher">
+		<% if (teacher) { %>
+		<img src="<%= teacher.imageUrl %>"/>
+		<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659698" data-text-en="Teacher"></span>
+		<span><%= teacher.displayName %></span>
+		<% } %>
+	</div>
+	<div class="ets-pr-fb-content">
+		<div class="ets-pr-fb-score-large">
+			<span class="ets-pr-fb-score-num"><%= feedback.grade %></span>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="659692" data-text-en="Score"></span>
+		</div>
+
+		<h5 data-weave="troopjs-ef/blurb/widget" data-blurb-id="708940" data-text-en="Teacher's comments"></h5>
+		<p><%= _.escape(feedback.overall) %></p>
+
+		<%if (feedback.gradingType === 0) {%>
+		<div class="ets-pr-fb-lists">
+			<h6 data-weave="troopjs-ef/blurb/widget" data-blurb-id="672768" data-text-en="Overall"></h6>
+			<dl class="ets-pr-fb-list-overall">
+				<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672780" data-text-en="Strength"></span>:</dt>
+				<dd><%= feedback.strength %></dd>
+
+				<dt><span data-weave="troopjs-ef/blurb/widget" data-blurb-id="672781" data-text-en="Areas for improvement"></span>:</dt>
+				<dd><%= feedback.improvement %></dd>
+			</dl>
+		</div>
+		<% } %>
+		<% if (data.videoRecoredEnabled) { %>
+			<div class="ets-pr-fb-video-and-notes" data-weave="school-ui-progress-report/widget/container/feedback/feedback-detail/video-and-notes/main(options)"></div>
+		<% } %>
+	</div>
+</div>

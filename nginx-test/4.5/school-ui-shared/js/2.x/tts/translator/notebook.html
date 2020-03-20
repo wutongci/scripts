@@ -1,0 +1,21 @@
+<%
+    var NOTEBOOK_TIP = "Add to My Notebook";
+    var model = data || {},
+        wordGroupList = model.wordGroups || [],
+        wordGroupCount = wordGroupList.length,
+        wordGroup;
+%>
+<%if(model.enableTranslatorDetail) {%><a class="ets-ui-tts-detail-btn" href="javascript:void(0)" data-action="open/translator" data-weave="troopjs-ef/blurb/widget" data-blurb-id="163088" data-text-en="Details"></a><%}%>
+<div class="ets-ui-tts-wordgroup">
+    <span class="ets-ui-tts-notebook-tip ets-ui-tts-toggle-wordgroup" data-action="notebook/toggle/wordgroup"><%=NOTEBOOK_TIP%></span>
+    <ul class="ets-ui-tts-wordgroup-list">
+        <li class="ets-ui-tts-wordgroup-tip ets-ui-tts-toggle-wordgroup" data-action="notebook/toggle/wordgroup"><%=NOTEBOOK_TIP%></li>
+        <% for(var i = 0; i < wordGroupCount; i++) {
+            wordGroup = wordGroupList[i];
+        %>
+        <li class="ets-ui-tts-add-word" data-action="notebook/add/word(wordGroupId)" data-word-group-id="<%=wordGroup.wordGroup_id%>"><%=wordGroup.wordGroupName%></li>
+        <%}%>
+    </ul>
+</div>
+<p class="ets-ui-tts-notebook-msg ets-done" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167354" data-text-en="Add success!"></p>
+<p class="ets-ui-tts-notebook-msg ets-fail" data-weave="troopjs-ef/blurb/widget" data-blurb-id="167355" data-text-en="Add failure, please try again!"></p>

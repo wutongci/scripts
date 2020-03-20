@@ -1,0 +1,26 @@
+<%
+var outBlurb = function(id,en){
+    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+    return res;
+};
+%>
+<div class="ets-act-wgt-ts-ctn ets-none">
+    <div class="ets-act-wgt-ci">
+        <span <%=outBlurb(462460,"Show correct answers")%>></span>
+    </div>
+    <div class="ets-act-wgt-ts" data-at-id="btn-show-correct-answer" data-show="true">
+        <div class="ets-act-wgt-ts-sd">
+            <ul class="ets-cf">
+                <li class="ets-act-wgt-ts-hd">
+                    <span <%=outBlurb(462461,"YES")%>></span>
+                </li>
+                <li class="ets-act-wgt-ts-sh">
+                    <span <%=outBlurb(462462,"NO")%>></span>
+                </li>
+            </ul>
+        </div>
+        <div class="ets-act-wgt-ts-sd">
+            <div class="ets-act-wgt-ts-kb"></div>
+        </div>
+    </div>
+</div>

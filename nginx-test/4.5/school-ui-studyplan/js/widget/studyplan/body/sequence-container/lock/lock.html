@@ -1,0 +1,7 @@
+<div class="ets-sp-unit-locked">
+    <h1><i class="ets-icon-lock"></i></h1>
+    <h1 data-weave="troopjs-ef/blurb/widget" data-text-en="UNIT ^currentunit^ IS LOCKED" data-blurb-id="569834" data-values='<%= JSON.stringify(data.blurbValues)%>'></h1>
+    <% if(data.blurbValues.previousunit){ %>
+        <h5 data-weave="troopjs-ef/blurb/widget" data-text-en="Complete Unit ^previousunit^ to unlock this unit" data-blurb-id="569835" data-values='<%= JSON.stringify(data.blurbValues)%>'></h5>
+    <% } %>
+</div>

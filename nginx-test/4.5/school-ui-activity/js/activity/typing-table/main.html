@@ -1,0 +1,19 @@
+<%
+var outBlurb = function(id,en){
+    var res = "data-weave='troopjs-ef/blurb/widget' data-blurb-id='"+id+"' data-text-en='"+en+"'";
+    return res;
+};
+%>
+<div class="ets-act-tpt">
+    <%if(data.references.aud){%>
+    <div class="ets-act-hd-ap">
+        <div class="ets-act-ap-wrap"><div data-at-id="btn-audio-start" class="ets-act-ap">
+            <audio data-weave="school-ui-shared/widget/audio-player/main" preload="none"
+                   data-src="<%=data.references.aud.url%>" type="audio/mpeg"
+                   class="ets-ap"></audio>
+        </div></div>
+    </div>
+    <%}%>
+    <div class="ets-act-tpt-main" data-weave="school-ui-activity/activity/typing-table/typing-table">
+    </div>
+</div>

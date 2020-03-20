@@ -1,0 +1,142 @@
+<div class="ets-sp-goal-progress">
+	<% 
+	if(data.completed){
+		%>
+		<h2 class="ets-sp-velocity" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656554" data-text-en="Congratulations!"></h2>
+		<%
+	}
+	else if(data.isNopace){
+		%>
+		<h2 class="ets-sp-velocity" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656581" data-text-en="You are studying at your own pace."></h2>
+		<%
+	}
+	else{
+		switch (data.velocity){
+			case this.velocityState.Fast:
+				%>
+				<h2 class="ets-sp-velocity" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656562" data-text-en="Fantastic. You are running ahead."></h2>
+				<%
+			break;
+			case this.velocityState.Normal:
+				%>
+				<h2 class="ets-sp-velocity" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656561" data-text-en="Thumbs up. You are right on track."></h2>
+				<%
+			break;
+			case this.velocityState.Slow:
+				%>
+				<h2 class="ets-sp-velocity" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656563" data-text-en="You are falling behind. Let’s get back on track."></h2>
+				<%
+			break;
+			case this.velocityState.Crashing:
+				%>
+				<h2 class="ets-sp-velocity" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656582" data-text-en="Your unit plan will expire soon. Let’s get back on track."></h2>
+				<%
+			break;
+			case this.velocityState.Crashed:
+				%>
+				<h2 class="ets-sp-velocity" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656564" data-text-en="Your study plan has expired. Set a new one."></h2>
+				<%
+			break;
+		}
+	}
+	%>
+	
+	<div class="ets-sp-moveon-tips ets-none"></div>
+	<div class="ets-sp-bar">
+		<span class="ets-sp-complete-rate">
+			<span class="ets-sp-rate-num"><%= data.mandatoryRate%></span>
+			<span data-weave="troopjs-ef/blurb/widget" data-blurb-id="656557" data-text-en="completed"></span>
+		</span>
+		
+		<div class="ets-sp-mandatory">
+			<div class="ets-sp-progress-border"></div>
+			<span class="ets-sp-finished"></span>
+		</div>		
+		<%
+		if(data.optionalItems.length){
+		%>
+			<div class="ets-sp-optional-popover">
+				<div class="ets-sp-optional">
+					<div class="ets-sp-progress-border"></div>
+					<span class="ets-sp-finished"></span>
+					<span class="ets-sp-dots">
+						<span class="ets-sp-dot"></span>
+						<span class="ets-sp-dot"></span>
+						<span class="ets-sp-dot"></span>
+					</span>
+				</div>
+			</div>
+		<%
+		}
+		%>
+
+
+	</div>
+</div>
+<!-- use in gubstrap popover plugin -->
+<div class="ets-sp-optional-holder ets-none">
+	<div class="ets-sp-optional-lessons">
+		<div class="ets-sp-optional-title" data-weave="troopjs-ef/blurb/widget" data-blurb-id="656558" data-text-en="Optional lessons"></div>
+		<div class="ets-sp-optional-items">
+		<%
+		if(data.optionalItems && data.optionalItems.length){
+			for (var n=0; n<data.optionalItems.length; n++){
+				switch(data.optionalItems[n].itemData.typeCode){
+					case "cp20":
+			%>
+						<div class="ets-sp-item-small">
+							<i class="ets-sp-icon">
+								<i class="ets-sp-icon-bg glyphicon icon-circle"></i>
+								<i class="ets-sp-icon-badge ets-icon-badge-check-point"></i>
+								<%
+								 if (data.optionalItems[n].locked) { %>
+									<i class="ets-icon-badge-locked">
+										<i class="ets-sp-locked-mark-bg glyphicon icon-circle"></i>
+										<i class="ets-sp-locked-mark-icon ets-icon-lock"></i>
+									</i>
+								<% } %>
+							</i>
+							<span class="ets-sp-name" data-weave="troopjs-ef/blurb/widget" data-text-en="Private Class" data-blurb-id="639494"></span>
+						</div>
+						<% 
+						break;
+					case "pl":
+						%>
+						<div class="ets-sp-item-small">
+							<i class="ets-sp-icon">
+								<i class="ets-sp-icon-bg glyphicon icon-circle"></i>
+								<i class="ets-sp-icon-badge ets-icon-badge-private-lesson"></i>
+								<% if (data.optionalItems[n].locked) { %>
+									<i class="ets-icon-badge-locked">
+										<i class="ets-sp-locked-mark-bg glyphicon icon-circle"></i>
+										<i class="ets-sp-locked-mark-icon ets-icon-lock"></i>
+									</i>
+								<% } %>
+							</i>
+							<span class="ets-sp-name" data-weave="troopjs-ef/blurb/widget" data-text-en="Private Class" data-blurb-id="569833"></span>
+						</div>
+						<% 
+						break;
+					case "gl":
+						%>
+						<div class="ets-sp-item-small">
+							<i class="ets-sp-icon">
+								<i class="ets-sp-icon-bg glyphicon icon-circle"></i>
+								<i class="ets-sp-icon-badge ets-icon-badge-group-lesson"></i>
+								<% if (data.optionalItems[n].locked) { %>
+									<i class="ets-icon-badge-locked">
+										<i class="ets-sp-locked-mark-bg glyphicon icon-circle"></i>
+										<i class="ets-sp-locked-mark-icon ets-icon-lock"></i>
+									</i>
+								<% } %>
+							</i>
+							<span class="ets-sp-name" data-weave="troopjs-ef/blurb/widget" data-text-en="Private Class" data-blurb-id="638118"></span>
+						</div>
+			<%
+				}
+			}
+		}
+		%>
+		</div>	
+	</div>
+</div>
