@@ -1,0 +1,6 @@
+"{CONTEXT:cache.server}" "/2"
+"{CONTEXT:timesection.version}" "2"
+"getContent::School\\x23EVC\\x23Mobile\\x23Android\\x23ApkDownloadPath" "/Juno/EvcMobile/efclassroom-live-release-2.5.2.2927.apk"
+"getContext::configuration.servers.cache" "/2"
+"getTrans::{CCL:configuration.dlasite.pagetitle}" "EF"
+"NewHouseInjectValue:EnglishTownHost" "{{ .Values.elb2bCluster.corporateUrl }}"
