@@ -1,7 +1,7 @@
 * Configs
 * How to install plugins?
   * git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  * run vim .vimrc, and then copy configs to the destination host
+  * run vim .vimrc, and then copy existing .vimrc config
   * exit it, and then run vim .vimrc again, input ":", input VundleInstall
   * copy color themes: cp .vim/bundle/vim-colors-solarized/colors/solarized.vim  .vim/colors/solarized.vim
 * What's the most commonly used keyboard shortcuts?
