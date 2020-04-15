@@ -5,3 +5,6 @@
         *  export M3_HOME=/usr/local/maven/maven-apache-3.6.3
         *  export PATH=$M3_HOME/bin:$PATH
     * source ~/.zshrc
+* How to Config Maven?
+    * You will see config/settings.xml directory in Maven Home
+    * Refer to settings-newhouse.xml
