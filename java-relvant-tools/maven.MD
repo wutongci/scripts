@@ -8,3 +8,6 @@
 * How to Config Maven?
     * You will see config/settings.xml directory in Maven Home
     * Refer to settings-newhouse.xml
+* why does the jar library is downloaded from central repo in intellij?
+    * The reason is that you should config the setting file mannualy
+    * screenshot can be seen ![avatar](./images/maven-settings.jpg)
