@@ -9,3 +9,7 @@
     sysctl -p
     ```
   *  exception caught on transport layer?
+  * 常用命令
+    * service elasticsearch status
+  * 参考资源
+    * https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-ubuntu-18-04-ubuntu-16-04.html
