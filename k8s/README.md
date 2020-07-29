@@ -83,3 +83,6 @@
     * [2](https://www.qikqiak.com/k8s-book/docs/17.%E5%AE%89%E8%A3%85%20Dashboard%20%E6%8F%92%E4%BB%B6.html)
     * [3](https://tomoyadeng.github.io/blog/2018/10/12/k8s-in-ubuntu18.04/index.html)
     * [4](https://jimmysong.io/kubernetes-handbook/practice/install-kubernetes-on-ubuntu-server-16.04-with-kubeadm.html)
+* MAC
+  * where is kubeconfig?
+    * ~/.kube/config.yaml
