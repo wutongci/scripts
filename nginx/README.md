@@ -12,3 +12,5 @@
 * config for https
   * it is better to check if port 443 is occupiedßßßß
   * In real case, i run into it and it is occupied by VMWare
+* How to install specified version on MAC?
+* How to uninstall specified version on MAC?
