@@ -3,8 +3,11 @@
   * brew install nginx
 * nginx 在mac上有哪些目录?
   * /usr/local/var/www -- 默认的主页存放的目录
+  * /usr/local/var/log/nginx -- 日志文件
   * /usr/local/etc/nginx/ -- nginx配置文件存放的目录
   * /usr/local/Cellar/nginx/1.19.1 -- nginx的安装目录
+* 如何生成证书?
+  * 
 * 如何查看nginx版本?
   * nginx -v
 * 如果启动nginx?
