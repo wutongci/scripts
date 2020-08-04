@@ -12,6 +12,7 @@
     * 配置 sudo vim /etc/apache2/extra/httpd-vhosts.conf
     * 配置 sudo vim /etc/apache2/httpd.conf
     * https://zhuanlan.zhihu.com/p/40635337
+* apache URL 设置基本规则?
 * 如何验证apache的配置没问题?
   * sudo apachectl configtest
 * 如何在Mac上禁用apache?

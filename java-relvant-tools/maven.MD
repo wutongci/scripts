@@ -13,3 +13,9 @@
 * why does the jar library is downloaded from central repo in intellij?
     * The reason is that you should config the setting file mannualy
     * screenshot can be seen ![avatar](./images/maven-settings.jpg)
+* maven的定位是什么?
+    * 版本管理
+        * 版本有冲突怎么办?
+    * 打包编译
+* maven是如何管理权限的?
+* maven是如何管理版本的?
