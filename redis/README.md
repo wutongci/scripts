@@ -29,16 +29,16 @@
   * create cluster
     ```
     cd /opt/redis/bin
-  ./redis-cli --cluster create 10.128.42.59:7000 10.128.42.59:7001 10.128.42.59:7002 10.128.42.78:7003 10.128.42.78:7004 10.128.42.78:7005 10.128.42.118:7006 10.128.42.118:7007 10.128.42.118:7008 --cluster-replicas 1
+  ./redis-cli --cluster create 10.128.42.77:7000 10.128.42.77:7001 10.128.42.77:7002 10.128.42.153:7003 10.128.42.153:7004 10.128.42.153:7005 10.128.42.129:7006 10.128.42.129:7007 10.128.42.129:7008 --cluster-replicas 1
     ```
   * Verify cluster
     run cmd in one machine
     ```
-    ./redis-cli -h 10.128.42.59 -c -p 7000
+    ./redis-cli -h 10.128.42.77 -c -p 7000
     ```
     run cmd in other machine
     ```
-    ./redis-cli -h 10.128.42.118 -c -p 7007
+    ./redis-cli -h 10.128.42.129 -c -p 7007
     ```
   * useful commands 
     * cluster info
@@ -46,7 +46,7 @@
   * view node infomation
     * ip:port is any available address
     ```
-    ./redis-cli --cluster check 10.128.42.118:7006
+    ./redis-cli --cluster check 10.128.42.129:7006
     ```
 * How to verify reids status?
   * ps -ef | grep redis
