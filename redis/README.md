@@ -38,7 +38,7 @@
   * create directory
   ```
   mkdir /opt/redis/redis-cluster
-  cd /opt/redis/redis-cluster && mkdir 7000 7001 7002
+  cd /opt/redis/redis-cluster && sudo mkdir 7000 7001 7002
   ```
   备注：第一台机器上的目录是7000， 70001， 7002， 那2台机器上的目录就是7003, 7004, 7005, 以此类推
   * 修改 redis.conf文件
