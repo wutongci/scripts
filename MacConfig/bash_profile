@@ -1,0 +1,25 @@
+
+export PYTHONPATH=/study/caffe/python:$PYTHONPATH
+LICOLOR=1
+LSCOLORS=gxfxcxdxbxegedabagacad
+exportPS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
+bles colorin the terminal bash shell export
+export CLICOLOR=1
+
+#sets up thecolor scheme for list export
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+#sets up theprompt color (currently a green similar to linux terminal)
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
+
+#enables colorfor iTerm
+export TERM=xterm-256color
+
+
+export PATH=/Developer/NVIDIA/CUDA-8.0/bin:$PATH
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib:$DYLD_LIBRARY_PATH
+export HOMEBREW_NO_AUTO_UPDATE=true
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

@@ -1,0 +1,70 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+52.83.241.177   vpn.cn-northwest-1.edtech.sre.ef-cloud.io
+34.197.61.42  qa-englishlive.ef.com
+127.0.0.1 local.englishtown.com
+127.0.0.1 local.englishtown.cn
+#127.0.0.1 corporate.eu-west-1.local.elb2b.ef-cloud.io
+#hao team uat
+10.179.237.170    devdeepblue2.englishtown.com
+10.179.237.170 cllsuat.englishtown.cn
+
+# cllsuat
+10.179.237.170    devdeepblue2.eflabs.io
+10.179.237.170    devdeepblue3.eflabs.io
+10.179.237.170    cllsuat.englishtown.cn
+10.179.237.170    cllsuat.idp.cn
+10.179.237.170    schooluat.englishtown.com
+10.179.237.170    lolita.englishtown.cn
+10.179.237.170    lolita.englishtown.com
+10.179.237.170    uat-corporate.eflabs.io    
+ 
+
+# cllsuat-cn
+10.179.237.173    devdeepblue2.eflabs.cn
+10.179.237.173    devdeepblue3.eflabs.cn
+10.179.237.173    uat-corporate.eflabs.cn
+
+
+#10.128.34.233 uatdeepblue2.englishtown.com
+#10.128.34.233 uatdeepblue2cn.englishtown.com
+
+#127.0.0.1  cllsuat.englishtown.com
+#192.168.0.120  cllsuat.englishtown.com
+
+#10.128.34.200 cllsuat-ak.englishtown.com
+#10.128.34.200 cllsuatcn.englishtown.com
+#10.128.34.200 cllsuatcn.englishtown.cn
+#10.128.34.200 cllsuatcn-ak.englishtown.com
+
+#10.128.57.240  local.englishtown.com
+#10.128.57.240  dev.englishtown.com
+#192.168.0.120 local.englishtown.com
+#192.168.0.120 dev.englishtown.com
+127.0.0.1 local.englishtown.com
+127.0.0.1 localsecure.englishtown.com
+127.0.0.1 dev.englishtown.com
+127.0.0.1 devus1.englishtown.com
+127.0.0.1 dev-services.englishtown.com
+127.0.0.1 dev-comet.englishtown.com
+127.0.0.1 local-ak.englishtown.com
+127.0.0.1 cache.englishtown.com
+127.0.0.1 cache-ak1.englishtown.com
+127.0.0.1 cache-ak2.englishtown.com
+
+10.128.34.233 local-windows.englishtown.com
+//10.128.42.200 local-windows.englishtown.com
+10.128.34.233 uatdeepblue2.englishtown.com
+10.128.34.233 uatdeepblue2cn.englishtown.com
+209.235.2.144 qa-englishlive.ef.com
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
