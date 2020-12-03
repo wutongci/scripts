@@ -5,7 +5,8 @@
     * Windows - Wox
   * 窗口管理 
     * BetterTouchTool
-    * sizeup 
+    * sizeup - 纯键盘使用
+    * swish - 触控板使用
   * 剪贴板管理
     * Mac - Quicksilver / paste
     * Windows - Ditto
@@ -20,6 +21,7 @@
     * windows - AutoHotkey
   * 具体的键盘
   * 快捷键体系
+    * Mac - 查看快捷键 cheatsheet
 * 知识管理
   * 云盘
   * 笔记
@@ -33,6 +35,7 @@
     * 命令行终端录制 - asciinema
 *  浏览网页
   * OCtotree
+  * vimium
   * Pocket for Chrome - 在线网页书签保存服务
   * smartUp Gestures - 手势服务
 * 开发工具 - 这个话题比较大，以后会作为一个话题单独列出来
