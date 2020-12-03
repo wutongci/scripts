@@ -21,7 +21,7 @@
     * windows - AutoHotkey
   * 具体的键盘
   * 快捷键体系
-    * Mac - 查看快捷键 cheatsheet
+    * Mac - 查看快捷键 cheatsheet / KeyCue
 * 知识管理
   * 云盘
   * 笔记
