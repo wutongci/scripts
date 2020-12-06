@@ -7,9 +7,13 @@
     * BetterTouchTool
     * sizeup - 纯键盘使用
     * swish - 触控板使用
+    * Moom - 调整窗口位置
   * 剪贴板管理
     * Mac - Quicksilver / paste
     * Windows - Ditto
+  * Shell相关
+    * 自由切换文件夹工具 - autojump
+    * 命令行自动补全 - zsh-autosuggestions
 * 输入
   * 语音输入 - 讯飞？？
   * 文字快速输入
