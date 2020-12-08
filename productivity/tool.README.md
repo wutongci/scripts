@@ -3,7 +3,7 @@
   * 程序启动
     * Mac - Alfred、Quicksilver
     * Windows - Wox
-  * 窗口管理 
+  * 窗口管理
     * BetterTouchTool
     * sizeup - 纯键盘使用
     * swish - 触控板使用
@@ -23,6 +23,7 @@
     * 比如将 caps lock定义为
     * mac - Karabiner-Elements
     * windows - AutoHotkey
+    * Hammerspoon - 可以定义快捷键切换不同的屏幕
   * 具体的键盘
   * 快捷键体系
     * Mac - 查看快捷键 cheatsheet / KeyCue
@@ -44,3 +45,4 @@
   * smartUp Gestures - 手势服务
 * 开发工具 - 这个话题比较大，以后会作为一个话题单独列出来
   * API测试工具 - Postman
+  * github - Chrome插件"GitHub加速"

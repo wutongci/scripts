@@ -6,6 +6,19 @@
 * Alfred 插件 - 有用的workflow
 * Dash 和 Alfred的组合
 * mackup - brew install mackup
+* Iterm2 - Mac上最好的shell工具
+* Iterm2插件 
+    * zsh-syntax-highlighting
+    * zsh-autosuggestions
+* zsh 主题
+    * https://www.cnblogs.com/askDing/p/6270269.html
+    * https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes
+    * fino-time - 知道什么时候在什么地方, 其他类似的有jovial和ys
+        * 定义完整的时间 %D{%Y-%m-%d} - 2020-12-08 - 15:34:48
+        * 再加上 最近一次的commit信息 \$(git_prompt_short_sha)
+    * strug - 相比于fino-time 没有时间
+* brew国内镜像设置
+    * export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 * VsCode插件
     * Settings Sync - 可以将VS Code很多设置同步到别的环境
         * Sync: Update/Upload Settings
