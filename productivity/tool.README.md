@@ -1,8 +1,11 @@
 * 操作系统上的通用操作
   * 窗口切换
   * 程序启动
-    * Mac - Alfred、Quicksilver
+    * Mac - Alfred、Quicksilver, contexts
     * Windows - Wox
+  * 隐藏菜单栏图标
+    * Bartender
+    * Vanilla
   * 窗口管理
     * BetterTouchTool
     * sizeup - 纯键盘使用
