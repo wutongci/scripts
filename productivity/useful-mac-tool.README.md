@@ -29,7 +29,8 @@
     * Trailing Spaces - 高亮多余的空格
     * TODO TREE - 识别出代码中的 TODO： 关键字
     * vscode-icons - 可以让文件显示出对应的图标
-    * Foam - 写文档专用，可以生成类似的概念关系图
+    * Foam - 写文档专用，可以生成类似的概念关系图，是受Roam Research启发
+        * 相应的笔记软件logseq-基于github
     * Better Comments - 对不同的信息进行颜色分类
     * Bracket Pair Colorizer - 括号匹配高亮
     * Better Align - 代码对齐
