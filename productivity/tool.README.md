@@ -46,6 +46,7 @@
   * vimium
   * Pocket for Chrome - 在线网页书签保存服务
   * smartUp Gestures - 手势服务
+  * Tab Manager Plus for Chrome - 快速选择biao
 * 开发工具 - 这个话题比较大，以后会作为一个话题单独列出来
   * API测试工具 - Postman
   * github - Chrome插件"GitHub加速"

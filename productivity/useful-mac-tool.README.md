@@ -5,6 +5,7 @@
 * Bartender - 如果菜单栏过长, 可以将不太常用的菜单栏隐藏起来
 * Alfred 插件 - 有用的workflow
 * Dash 和 Alfred的组合
+* 文件搜索 - HoudahSpot
 * mackup - brew install mackup
     * 同步mac上面的的一些配置
 * Iterm2 - Mac上最好的shell工具
