@@ -6,6 +6,7 @@
 * Alfred 插件 - 有用的workflow
 * Dash 和 Alfred的组合
 * mackup - brew install mackup
+    * 同步mac上面的的一些配置
 * Iterm2 - Mac上最好的shell工具
 * Iterm2插件 
     * zsh-syntax-highlighting
@@ -21,6 +22,22 @@
     * export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 * 命名和插件
     * brew install tree - 目录方式查看文件夹
+    * brew install exa
+    * brew install git-extras - 可以查看每个人对这个项目的贡献度
+    * brew install httpie
+    * brew install ranger - 浏览文件和目录下的工具
+    * brew install syncthing
+    * brew install fd - 搜索文件夹和目录的工具
+    * brew install tldr - 更直观的命令说明文档
+    * brew install fpp
+    * brew install multitail
+    * brew install sl - 搞笑小火车
+    * brew install ripgrep - 搜索一个文件夹下文本的内容
+    * brew install tig - 命令行模式下，查看和比对commit历史
+    * brew install htop - top的代替者
+    * brew install glances - 更好的性能查看工具
+    * brew install cat - bat的代替者
+    * brew install fzf - 模糊搜索工具
 * VsCode插件
     * Settings Sync - 可以将VS Code很多设置同步到别的环境
         * Sync: Update/Upload Settings
