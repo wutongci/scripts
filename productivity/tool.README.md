@@ -24,9 +24,10 @@
       * Mac -  TextExpander
   * 重新定义按键
     * 比如将 caps lock定义为
-    * mac - Karabiner-Elements
+    * mac - Karabiner-Elements 侧重于对键盘的按键进行重新映射
     * windows - AutoHotkey
     * Hammerspoon - 可以定义快捷键切换不同的屏幕
+  * 输入的内容映射为特定的功能 - Keyboard Maestro
   * 具体的键盘
   * 快捷键体系
     * Mac - 查看快捷键 cheatsheet / KeyCue
@@ -37,10 +38,15 @@
     * 使用 iCloud 进行同步，在手机使用 1Writer，在电脑上使用 Typora
   * 思维导图 - mindmaster
   * 截屏 录屏
-    * MonoSnap
+    * MonoSnap - 支持截屏和录屏
     * KeyCastr - 能将键盘输入显示到屏幕上
     * GIF Brewery3 - 编辑gif文件
     * 命令行终端录制 - asciinema
+    * 需要实践和确认的
+      * ScreenFlow 可能是最好的屏幕录屏软件
+      * snipaste可能是最好的截图软件
+      * Licecap-gif录制软件
+      * Annotate - 屏幕截图批注应用
 *  浏览网页
   * OCtotree
   * vimium
@@ -50,3 +56,5 @@
 * 开发工具 - 这个话题比较大，以后会作为一个话题单独列出来
   * API测试工具 - Postman
   * github - Chrome插件"GitHub加速"
+* 其他
+  * 5k个星星的mac效率工具指南 - https://github.com/Louiszhai/tool

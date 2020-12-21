@@ -6,6 +6,7 @@
 * Alfred 插件 - 有用的workflow
 * Dash 和 Alfred的组合
 * 文件搜索 - HoudahSpot
+* 文本输入增强 - aText或者TextExpander
 * mackup - brew install mackup
     * 同步mac上面的的一些配置
 * Iterm2 - Mac上最好的shell工具
@@ -21,12 +22,14 @@
     * strug - 相比于fino-time 没有时间
 * brew国内镜像设置
     * export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-* 命名和插件
+* 命令和插件
+    * brew install autojump - 任意目录切换工具, z.lua貌似更好，但配起来比较折腾，还需要详细的和autojump比较
+    * z.lua - 目前看来比autojump好
     * brew install tree - 目录方式查看文件夹
     * brew install exa
     * brew install git-extras - 可以查看每个人对这个项目的贡献度
     * brew install httpie
-    * brew install ranger - 浏览文件和目录下的工具
+    * brew install ranger - 浏览文件和目录下的工具，如何配合fzf?
     * brew install syncthing
     * brew install fd - 搜索文件夹和目录的工具
     * brew install tldr - 更直观的命令说明文档
@@ -38,7 +41,10 @@
     * brew install htop - top的代替者
     * brew install glances - 更好的性能查看工具
     * brew install cat - bat的代替者
-    * brew install fzf - 模糊搜索工具
+    * 日志工具 - tail vs inav, 有观点认为inav更强大
+    * brew install fzf - 模糊搜索工具， 其他的有pick， selecta, ctrlp, fzy, 需要比较一下
+    * 处理json - fx 和 jq.node
+    * 开发自己的命令行工具初始化自定义项目 - https://github.com/tj/commander.js
 * VsCode插件
     * Settings Sync - 可以将VS Code很多设置同步到别的环境
         * Sync: Update/Upload Settings
@@ -63,3 +69,4 @@
     * Error Lens - 会对一些语法错误给出明显的提示
     * vscode-leetcode - 刷leetcode
     * VS Live Share - 协同开发
+* VIM插件
