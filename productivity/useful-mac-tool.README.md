@@ -13,6 +13,7 @@
 * Iterm2插件 
     * zsh-syntax-highlighting
     * zsh-autosuggestions
+    * 值得去研究的配置 - git z vi-mode osx colored-man-pages catimg web-search vscode docker docker-compose copydir copyfile npm yarn extract fzf-z
 * zsh 主题
     * https://www.cnblogs.com/askDing/p/6270269.html
     * https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes
