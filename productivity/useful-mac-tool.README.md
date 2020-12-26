@@ -10,7 +10,7 @@
 * mackup - brew install mackup
     * 同步mac上面的的一些配置
 * Iterm2 - Mac上最好的shell工具
-* Iterm2插件 
+* Iterm2插件
     * zsh-syntax-highlighting
     * zsh-autosuggestions
     * 值得去研究的配置 - git z vi-mode osx colored-man-pages catimg web-search vscode docker docker-compose copydir copyfile npm yarn extract fzf-z
@@ -42,6 +42,7 @@
     * brew install htop - top的代替者
     * brew install glances - 更好的性能查看工具
     * brew install cat - bat的代替者
+    * sudo -H  pip3 install thefuck - 命令打错之后可以给出一些提示
     * 日志工具 - tail vs inav, 有观点认为inav更强大
     * brew install fzf - 模糊搜索工具， 其他的有pick， selecta, ctrlp, fzy, 需要比较一下
     * 处理json - fx 和 jq.node
@@ -71,3 +72,12 @@
     * vscode-leetcode - 刷leetcode
     * VS Live Share - 协同开发
 * VIM插件
+* MAC 资源集散地
+    * https://github.com/donnemartin/dev-setup - 用脚本初始化环境
+    * https://github.com/macdao/ocds-guide-to-setting-up-mac - 可以参考的mac设置指南
+    * https://github.com/sb2nov/mac-setup - 另外一个初始开发环境的项目
+    * https://github.com/serhii-londar/open-source-mac-os-apps - 开源的mac app
+    * https://leohxj.gitbooks.io/a-programmer-prepares/content/index.html - 程序员的自我修养
+    * https://python-web-guide.readthedocs.io/zh/latest/codingtools/codingtools.html - 开发和编程工具 不一定与Mac有关
+    * https://github.com/jaywcjlove/awesome-mac - mac上可能有用的工具
+    * https://github.com/hzlzh/Best-App/blob/master/README.md - 推荐了一些 付费的app

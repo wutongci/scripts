@@ -1,0 +1,72 @@
+{
+  "description": "Double right_command to open Context Search",
+  "manipulators": [
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "right_command",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+            {
+                "key_code": "c",
+                "modifiers": [
+                    "left_control",
+                    "left_shift"
+                ]
+            }
+      ],
+      "conditions": [
+        {
+          "type": "variable_if",
+          "name": "double right_command",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "right_command",
+        "modifiers": {
+          "optional": [
+            "any"
+          ]
+        }
+      },
+      "to": [
+        { //第一次按下left_command生成变量“double left_commad”，并设置值为1
+          "set_variable": {
+            "name": "double right_command",
+            "value": 1
+          }
+        },
+        { //设置变量的同时不改变按键值，还是left_command
+          "key_code": "right_command"
+        }
+      ],
+      "to_delayed_action": {
+        "to_if_invoked": [ // 按下left_command后延迟500ms(默认)啥也不做的话将变量值设为0
+          {
+            "set_variable": {
+              "name": "double right_command",
+              "value": 0
+            }
+          }
+        ],
+        "to_if_canceled": [
+          {// 按下left_command到to_delayed_action延迟事件触发前按了其他键也把变量设为0
+            "set_variable": {
+              "name": "double right_command",
+              "value": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
