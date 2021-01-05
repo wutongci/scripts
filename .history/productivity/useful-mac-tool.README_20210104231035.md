@@ -40,7 +40,7 @@
     * brew install fpp
     * brew install multitail
     * brew install sl - 搞笑小火车
-    * brew install ripgrep - 搜索一个文件夹下文本的内容，但不是模糊的，对标的是grep和rg(the_silver_searcher)
+    * brew install ripgrep - 搜索一个文件夹下文本的内容，但不是m
     * brew install tig - 命令行模式下，查看和比对commit历史
     * brew install htop - top的代替者
     * brew install glances - 更好的性能查看工具

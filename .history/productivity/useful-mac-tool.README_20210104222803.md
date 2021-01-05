@@ -40,7 +40,7 @@
     * brew install fpp
     * brew install multitail
     * brew install sl - 搞笑小火车
-    * brew install ripgrep - 搜索一个文件夹下文本的内容，但不是模糊的，对标的是grep和rg(the_silver_searcher)
+    * brew install ripgrep - 搜索一个文件夹下文本的内容
     * brew install tig - 命令行模式下，查看和比对commit历史
     * brew install htop - top的代替者
     * brew install glances - 更好的性能查看工具
@@ -48,7 +48,7 @@
     * brew install onefetch - 一键查看一个repo的信息
     * sudo -H  pip3 install thefuck - 命令打错之后可以给出一些提示
     * 日志工具 - tail vs inav, 有观点认为inav更强大
-    * brew install fzf - 模糊搜索文件列表工具，不搜索文件里面的内容， 其他的有pick， selecta, ctrlp, fzy, 需要比较一下
+    * brew install fzf - 模糊搜索工具， 其他的有pick， selecta, ctrlp, fzy, 需要比较一下
     * 处理json - fx 和 jq.node
     * 开发自己的命令行工具初始化自定义项目 - https://github.com/tj/commander.js
 * VsCode插件
@@ -78,7 +78,7 @@
 * VIM插件
 * NeoVim
     * LeaderF
-        * 模糊搜索命令 - :Leaderf rg ricky
+        
 * MAC 资源集散地
     * https://github.com/donnemartin/dev-setup - 用脚本初始化环境
     * https://github.com/macdao/ocds-guide-to-setting-up-mac - 可以参考的mac设置指南
