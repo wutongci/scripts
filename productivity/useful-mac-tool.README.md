@@ -51,6 +51,12 @@
     * brew install fzf - 模糊搜索文件列表工具，不搜索文件里面的内容， 其他的有pick， selecta, ctrlp, fzy, 需要比较一下
     * 处理json - fx 和 jq.node
     * 开发自己的命令行工具初始化自定义项目 - https://github.com/tj/commander.js
+    * 代码命令行统计工具 - 
+        * brew install cloc -- 统计结果中规中矩，比较慢
+        * brew install sloccount - 统计结果有亮点，但是比较慢
+        * brew install loc - 统计结果中规中矩，速度较快
+        * brew install tokei - 统计结果中规中矩，速度较快
+        * brew install scc - 统计结果有两点，速度较快
 * VsCode插件
     * Settings Sync - 可以将VS Code很多设置同步到别的环境
         * Sync: Update/Upload Settings
