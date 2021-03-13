@@ -12,10 +12,14 @@
     * psql -U postgres
     * alter user postgres with password '11111111';
     * ![](./password-set.png)
+  * 如何退出postgres的命令行？
+    * \q 按回车
+  * 如何查看postgres版本？
+    * psql --version
   * 如何登陆本地数据库或远程数据库？
     * psql -U postgres -h 127.0.0.1
     * ![](./postgres-login.png)
-  * 如何设置外网客户端可以可以连接？
+  * 如何设置外网客户端可以可以连接？- 版本10.16 亲测有效
     * sudo vim /etc/postgresql/[XXX]/main/postgresql.conf
       *  取消注释: listen_addresses = ‘*’
       *  取消注释：password_encryption = on, 某些版本是password_encryption = md5

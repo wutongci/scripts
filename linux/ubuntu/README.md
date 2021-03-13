@@ -13,3 +13,4 @@
   * 2nd way
     * sudo apt-get install aptitude
     * sudo aptitude
+* 

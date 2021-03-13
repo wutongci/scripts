@@ -1,6 +1,17 @@
 
-* 如何在mac上安装nginx?
-  * brew install nginx
+* 如何在安装nginx?
+  * Mac
+    * brew install nginx
+  * Ubuntu
+    * sudo apt update
+    * sudo apt install nginx
+  * CentOS
+* 如何查看nginx状态?
+  * Ubuntu, Centos
+    * systemctl status nginx
+* 如何启动nginx?
+  * Ubuntu, Centos
+    * sudo systemctl start nginx
 * nginx 在mac上有哪些目录?
   * /usr/local/var/www -- 默认的主页存放的目录
   * /usr/local/var/log/nginx -- 日志文件
