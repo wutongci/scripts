@@ -1,11 +1,22 @@
 * Ubuntu/Debian
   * 如何安装 redis-server?
     * sudo apt install redis-server
+  * 如何查看redis版本？
+    * redis-server
   * 如何查看redis状态？
     ```
     sudo systemctl status redis
     ```
     ![](./ubuntu-redis-status.png)
+  * 如何让外网访问redis? - 亲测有效- 服务端版本 - 4.0.9
+    * 确保阿里云放开了6379端口
+    * sudo vim /etc/redis/redis.conf
+      * 将 bind 127.0.0.1 ::1 改为 bind 0.0.0.0
+    * sudo vim /etc/redis/redis.conf
+      * requirepass 11111111
+    * 重启
+      * sudo service redis restart
+    * 使用Another Redis Desktop Manager, 可以看到连接成功的配置-success.png
   * 如何卸载 redis-server?
     * sudo apt-get purge --auto-remove redis-server
   * 如何启动/关闭/重启redis? -- 非源码安装方式

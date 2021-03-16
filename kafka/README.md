@@ -1,3 +1,5 @@
+* 如何安装kafka?
+  * 
 * How to start kafka?
   ```
   cd /opt/kafka/bin

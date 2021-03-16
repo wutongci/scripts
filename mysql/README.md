@@ -37,7 +37,7 @@
       * update user set host='%' where user='root';
       * flush privileges;
       * service mysql restart
-    * 按照下面这个链接操作，亲测成功
+    * 按照下面这个链接操作，在亲测成功 - 版本5.7.33
       * https://zhuanlan.zhihu.com/p/61459645
       * 注意事项
         * 不知道是哪一步导致了之前不能连接

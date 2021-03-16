@@ -86,3 +86,73 @@
 * MAC
   * where is kubeconfig?
     * ~/.kube/config.yaml
+* 如何搭建k8s集群？Ubuntu版本
+  * 安装Docker
+  * 在所有节点上安装  kubectl kubelet kubeadm
+    * sudo apt-get update && apt-get install -y apt-transport-https
+    * sudo curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add - 
+    * cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
+EOF
+    * sudo apt-get update
+    * apt-get install -y kubectl kubelet kubeadm
+  * 关闭swap
+    * sudo swapoff -a
+    * free -m
+  * 选择任意一台服务器作为master
+    * kubeadm init --apiserver-advertise-address=106.14.148.37 --image-repository registry.aliyuncs.com/google_containers  --pod-network-cidr=10.244.0.0/16
+      * 注意：在阿里云中会报错，具体解决办法如下 https://my.oschina.net/u/4389078/blog/3233116 - 亲测有效
+    *配置config - 注意：这个是文件是来自于master机器，但是非master机器也要配置
+      * mkdir -p $HOME/.kube
+      * sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+        * 注意这个地方会提示你是否需要覆盖，输入y
+      * sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  * 安装网络插件flannel
+    * kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  * 验证相关信息
+    * kubectl get pod -n kube-system
+    * kubectl get nodes
+  * 其余的节点加入这台master
+    * 查看如何加入master?
+      * kubeadm token create --print-join-command
+    * kubeadm join 106.14.148.37:6443 --token he430e.0pvbwq1qvdm2hgmc \
+    --discovery-token-ca-cert-hash sha256:f8c21514c6c3e2e2cce5557d40cb81f485e2245a443c3df5a8702320e05ecc33 --ignore-preflight-errors=all
+  * 如何安装k8s Dashboard?
+    * kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml
+    * https://zhuanlan.zhihu.com/p/146028810
+  * 资源
+    * https://www.cnblogs.com/alamisu/p/10751418.html
+* 如何搭建k8s集群？Centos版本
+  * 关闭防火墙
+    * systemctl disable firewalld
+    * systemctl stop firewalld
+  * setenforce 0
+  * sed -i 's/SELINUX=permissive/SELINUX=disabled/' /etc/sysconfig/selinux
+  * sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
+  * swapoff -a
+  * sed -i 's/.*swap.*/#&/' /etc/fstab
+  * cat <<EOF >  /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+  * sysctl --system
+  * 配置镜像
+    cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+  * yum install -y kubectl-1.16.0-0 kubeadm-1.16.0-0 kubelet-1.16.0-0
+  * 创建配置文件
+    * systemctl enable kubelet && systemctl start kubelet
+  * 验证是否加入master?
+    * kubectl get node
+    * 结果发现状态是NotReady, 这是一个坑，解决办法是
+      * vim /var/lib/kubelet/kubeadm-flags.env, 移除 --network-plugin=cni
+  * 资源
+    * https://segmentfault.com/a/1190000037682150  - 主要参考这个资源
+    * https://zhuanlan.zhihu.com/p/96084545 - 这个里面修改systemd把握带沟里去了

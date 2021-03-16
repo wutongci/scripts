@@ -9,6 +9,8 @@
 * 如何查看nginx状态?
   * Ubuntu, Centos
     * systemctl status nginx
+* 如何查看nginx版本
+  * nginx -v
 * 如何启动nginx?
   * Ubuntu, Centos
     * sudo systemctl start nginx

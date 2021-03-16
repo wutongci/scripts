@@ -9,3 +9,5 @@
         * jenv add /Library/Java/JavaVirtualMachines/jdk-14.jdk/Contents/Home
         * jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home
         * jenv local 1.8
+* 如何安装jdk8?
+    * sudo apt-get install openjdk-8-jdk
