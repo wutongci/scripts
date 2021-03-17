@@ -25,3 +25,12 @@
       * 安装方式比Ubuntu简单
 * 查看docker版本
   * docker version
+* 如何构建一个image?
+  * docker build -t ricky:0.0.1 .
+* 如何搭建docker仓库？
+  * sudo docker pull registry:latest
+  * sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry docker.io/registry:latest
+    * 这个会在后台运行
+* 如何推送一个image到仓库？
+  * sudo docker tag ricky:0.0.1 localhost:5000/ricky:0.0.1
+  * sudo docker push localhost:5000/ricky:0.0.1
