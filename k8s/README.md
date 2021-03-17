@@ -117,12 +117,17 @@ EOF
       * kubeadm token create --print-join-command
     * kubeadm join 106.14.148.37:6443 --token he430e.0pvbwq1qvdm2hgmc \
     --discovery-token-ca-cert-hash sha256:f8c21514c6c3e2e2cce5557d40cb81f485e2245a443c3df5a8702320e05ecc33 --ignore-preflight-errors=all
+  * 如何重新加入master?
+    * 先要运行 kubeadm reset
   * 如何安装k8s Dashboard?
+    * 借鉴这篇文章 https://cloud.tencent.com/developer/article/1638856
+      * 通过https://freessl.cn，在线生成免费1年的证书。
+      * 目前还不能很好的work
     * kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml
     * https://zhuanlan.zhihu.com/p/146028810
   * 资源
     * https://www.cnblogs.com/alamisu/p/10751418.html
-* 如何搭建k8s集群？Centos版本
+* 如何搭建k8s集群？Centos版本-版本7.9, k8s版本1.20.4, docker版本:18.06.1-ce
   * 关闭防火墙
     * systemctl disable firewalld
     * systemctl stop firewalld
@@ -146,13 +151,25 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
-  * yum install -y kubectl-1.16.0-0 kubeadm-1.16.0-0 kubelet-1.16.0-0
+  * yum install -y kubectl kubeadm kubelet
   * 创建配置文件
     * systemctl enable kubelet && systemctl start kubelet
+  * 如何加入Master?
+    * 步骤和Ubuntu一致
   * 验证是否加入master?
     * kubectl get node
     * 结果发现状态是NotReady, 这是一个坑，解决办法是
       * vim /var/lib/kubelet/kubeadm-flags.env, 移除 --network-plugin=cni
+      * systemctl restart kubelet
   * 资源
     * https://segmentfault.com/a/1190000037682150  - 主要参考这个资源
     * https://zhuanlan.zhihu.com/p/96084545 - 这个里面修改systemd把握带沟里去了
+* 如何搭建k8s集群-Debian
+  * 基本步骤和ubuntu一致
+  * 加入master之后状态也是NotReady, 解决办法也是
+    * vim /var/lib/kubelet/kubeadm-flags.env, 移除 --network-plugin=cni
+    * systemctl restart kubelet
+* 如何部署一个应用到k8s集群？
+  * 创建一个命名空间
+    * kubectl create -f https://k8s.io/examples/admin/namespace-dev.json
+  *
