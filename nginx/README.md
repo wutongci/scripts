@@ -30,6 +30,9 @@
   * 把真正有效的两个文件server.crt和server.key拷贝到 /usr/local/etc/nginx/下
 * 如何查看nginx版本?
   * nginx -v
+* 测试ngiinx是否正常？
+  * ubuntu
+    * sudo nginx -t
 * 如果启动nginx?
   * nginx
   * http://localhost:8080/, 查看是否work

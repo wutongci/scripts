@@ -27,10 +27,17 @@
   * docker version
 * 如何构建一个image?
   * docker build -t ricky:0.0.1 .
+  * docker tag ricky:0.0.1 101.132.172.54:5000/ricky:0.0.1
 * 如何搭建docker仓库？
   * sudo docker pull registry:latest
-  * sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry docker.io/registry:latest
+  * sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry registry:latest
     * 这个会在后台运行
 * 如何推送一个image到仓库？
+  * 修改配置让推送端可以不基于https
+    * vim /etc/docker/daemon.json 
+    * {"insecure-registries":["101.132.172.54:5000"]}
+    * mac的具体配置可参考mac-push.png
   * sudo docker tag ricky:0.0.1 localhost:5000/ricky:0.0.1
-  * sudo docker push localhost:5000/ricky:0.0.1
+  * sudo docker push localhost:5000/ricky:0.0.1 或者 sudo docker push 101.132.172.54:5000/ricky:0.0.1
+* 踩坑记
+  * 有时候发现无法下载或者上传Image，试试重新运行 sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry registry:latest

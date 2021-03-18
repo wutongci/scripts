@@ -172,4 +172,6 @@ EOF
 * 如何部署一个应用到k8s集群？
   * 创建一个命名空间
     * kubectl create -f https://k8s.io/examples/admin/namespace-dev.json
-  *
+* K8s踩坑记
+  * Failed create pod sandbox: open /run/systemd/resolve/resolv.conf: no such file or directory
+    * 这个原因是因为创建的pod是在debian上，缺少了文件/run/systemd/resolve/resolv.conf，在正常的机器上找到这个文件然后拷贝过去. 耗时大概半个小时
