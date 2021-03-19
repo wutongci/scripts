@@ -124,7 +124,13 @@ EOF
       * 通过https://freessl.cn，在线生成免费1年的证书。
       * 目前还不能很好的work
     * kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml
-    * https://zhuanlan.zhihu.com/p/146028810
+    *开启端口
+      * kubectl proxy --port=33458 --address='0.0.0.0' --accept-hosts='^\*$' &
+    * https://zhuanlan.zhihu.com/p/91731765
+      * 这个操作已经验证通过
+      * 注意事项
+        * 用的是自己定义的recommend.yaml文件，这样可以让pod在指定的node上运行
+        * 免费产生的nginx证书无效
   * 资源
     * https://www.cnblogs.com/alamisu/p/10751418.html
 * 如何搭建k8s集群？Centos版本-版本7.9, k8s版本1.20.4, docker版本:18.06.1-ce
@@ -172,6 +178,8 @@ EOF
 * 如何部署一个应用到k8s集群？
   * 创建一个命名空间
     * kubectl create -f https://k8s.io/examples/admin/namespace-dev.json
+* 如何将pod分配给固定的Node?
+  * NodeSelector
 * K8s踩坑记
   * Failed create pod sandbox: open /run/systemd/resolve/resolv.conf: no such file or directory
-    * 这个原因是因为创建的pod是在debian上，缺少了文件/run/systemd/resolve/resolv.conf，在正常的机器上找到这个文件然后拷贝过去. 耗时大概半个小时
+    * 这个原因是因为创建的pod是在debian上，缺少了文件/run/systemd/resolve/resolv.conf，在正常的机器上找到这个文件然后拷贝过去 或者看看 是不是存在 /etc/resolv.conf. 耗时大概半个小时
