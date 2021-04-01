@@ -32,12 +32,29 @@
   * sudo docker pull registry:latest
   * sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry registry:latest
     * 这个会在后台运行
+* 删除所有container
+  * docker rm $(docker ps -a -q)
+* 如何删除镜像？
+  * 先删除容器 docker rm
+  * 再删除镜像 docker rmi
+* 删除所有不再运行的container?
+  * sudo docker rm $(sudo docker ps -a -q)
+* 如何以命令行的方式进入/bin/bash内部？
+  * docker run -it -p 5631:80 mac:latest /bin/bash
+    * 注意这里的80是容器内部的端口,这里的5631是运行这个命令的宿主机端口，这样可以做到命令的map
+    * 启示能否做到一个环境一个Docker?
 * 如何推送一个image到仓库？
   * 修改配置让推送端可以不基于https
     * vim /etc/docker/daemon.json 
     * {"insecure-registries":["101.132.172.54:5000"]}
+      * 需要重启docker: systemctl restart docker
     * mac的具体配置可参考mac-push.png
   * sudo docker tag ricky:0.0.1 localhost:5000/ricky:0.0.1
   * sudo docker push localhost:5000/ricky:0.0.1 或者 sudo docker push 101.132.172.54:5000/ricky:0.0.1
 * 踩坑记
   * 有时候发现无法下载或者上传Image，试试重新运行 sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry registry:latest
+  * 各种被墙的镜像如何下载？
+    * https://www.cnblogs.com/hongdada/p/11395200.html
+    * 下载defaultbackend镜像
+    docker pull lanny/gcr.io_google_containers_defaultbackend_1.4:v1.4 
+    docker tag lanny/gcr.io_google_containers_defaultbackend_1.4:v1.4  gcr.io/google_containers/defaultbackend:1.4

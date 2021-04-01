@@ -19,6 +19,10 @@
   * /usr/local/var/log/nginx -- 日志文件
   * /usr/local/etc/nginx/ -- nginx配置文件存放的目录
   * /usr/local/Cellar/nginx/1.19.1 -- nginx的安装目录
+* nginx在ubuntu上有哪些目录？
+  * /etc/nginx/nginx.conf 
+  * /etc/nginx/sites-enabled/
+  * /etc/nginx/conf.d/
 * 如何生成证书? -- 亲测没有问题
   * openssl genrsa -out server.key 1024
   * openssl req -new -key server.key -out server.csr
@@ -30,7 +34,7 @@
   * 把真正有效的两个文件server.crt和server.key拷贝到 /usr/local/etc/nginx/下
 * 如何查看nginx版本?
   * nginx -v
-* 测试ngiinx是否正常？
+* 测试nginx是否正常？
   * ubuntu
     * sudo nginx -t
 * 如果启动nginx?

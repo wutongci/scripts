@@ -120,17 +120,32 @@ EOF
   * 如何重新加入master?
     * 先要运行 kubeadm reset
   * 如何安装k8s Dashboard?
-    * 借鉴这篇文章 https://cloud.tencent.com/developer/article/1638856
-      * 通过https://freessl.cn，在线生成免费1年的证书。
-      * 目前还不能很好的work
-    * kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml
-    *开启端口
-      * kubectl proxy --port=33458 --address='0.0.0.0' --accept-hosts='^\*$' &
+    * 下载自己的k8s项目，运行其中的 recommend.yaml
+      * kubectl apply -f recommended.yaml
+      * 这里面已经自定义了port和指定了运行在某一台机器上
+    * 验证dashboard是否运行正常？
+      * kubectl get pods --namespace=kubernetes-dashboard -o wide
+    * 生成证书
+      * openssl genrsa -out dashboard.key 2048
+      * openssl req -new -out dashboard.csr -key dashboard.key -subj '/CN=ip地址'
+      * openssl x509 -req -in dashboard.csr -signkey dashboard.key -out dashboard.crt
+      * kubectl delete secret kubernetes-dashboard-certs -n kubernetes-dashboard
+      * kubectl create secret generic kubernetes-dashboard-certs --from-file=dashboard.key --from-file=dashboard.crt -n kubernetes-dashboard
+      * kubectl get pod -n kubernetes-dashboard
+      * kubectl delete pod XXXXX  -n kubernetes-dashboard
+    * 新建用户
+      * kubectl create -f dash-admin.yaml
+    * 获取token
+      * kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+    * 配置niginx
+      * 具体参见ssl
     * https://zhuanlan.zhihu.com/p/91731765
       * 这个操作已经验证通过
       * 注意事项
         * 用的是自己定义的recommend.yaml文件，这样可以让pod在指定的node上运行
         * 免费产生的nginx证书无效
+    *  https://cloud.tencent.com/developer/article/1638856
+      * 通过https://freessl.cn，在线生成免费1年的证书。这是借鉴的重点
   * 资源
     * https://www.cnblogs.com/alamisu/p/10751418.html
 * 如何搭建k8s集群？Centos版本-版本7.9, k8s版本1.20.4, docker版本:18.06.1-ce
@@ -180,6 +195,17 @@ EOF
     * kubectl create -f https://k8s.io/examples/admin/namespace-dev.json
 * 如何将pod分配给固定的Node?
   * NodeSelector
+* 如何搭建一个简单的Ingress?
+  * 
 * K8s踩坑记
   * Failed create pod sandbox: open /run/systemd/resolve/resolv.conf: no such file or directory
     * 这个原因是因为创建的pod是在debian上，缺少了文件/run/systemd/resolve/resolv.conf，在正常的机器上找到这个文件然后拷贝过去 或者看看 是不是存在 /etc/resolv.conf. 耗时大概半个小时
+  * 如何彻底的删除一个命名空间？
+    * kubectl patch namespace cattle-system -p '{"metadata":{"finalizers":[]}}' --type='merge' -n cattle-system
+      kubectl delete namespace cattle-system --grace-period=0 --force
+
+      kubectl patch namespace fleet-system -p '{"metadata":{"finalizers":[]}}' --type='merge' -n fleet-system
+
+      kubectl delete namespace fleet-system --grace-period=0 --force
+  * K8s集群中Controller Manager，Scheduler发生不健康的状态怎么办？
+    * ls /etc/kubernetes/manifests/， 找到kube-controller-manager.yaml kube-scheduler.yaml文件，将--port=0 注释掉
