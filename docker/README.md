@@ -58,3 +58,4 @@
     * 下载defaultbackend镜像
     docker pull lanny/gcr.io_google_containers_defaultbackend_1.4:v1.4 
     docker tag lanny/gcr.io_google_containers_defaultbackend_1.4:v1.4  gcr.io/google_containers/defaultbackend:1.4
+    * docker pull googlecontainer/defaultbackend-amd64:1.5 -> docker pull mirrorgooglecontainers/defaultbackend-amd64:1.5

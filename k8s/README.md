@@ -196,7 +196,10 @@ EOF
 * 如何将pod分配给固定的Node?
   * NodeSelector
 * 如何搭建一个简单的Ingress?
+  * docker run -p 1080:80 -p 1443:443 -p 20201:30201  --name rancher --privileged --restart=unless-stopped -d rancher/rancher:v2.5-head
   * 
+* 如何部署rancher?
+  * kubectl apply -f rancher.yaml
 * K8s踩坑记
   * Failed create pod sandbox: open /run/systemd/resolve/resolv.conf: no such file or directory
     * 这个原因是因为创建的pod是在debian上，缺少了文件/run/systemd/resolve/resolv.conf，在正常的机器上找到这个文件然后拷贝过去 或者看看 是不是存在 /etc/resolv.conf. 耗时大概半个小时
@@ -209,3 +212,6 @@ EOF
       kubectl delete namespace fleet-system --grace-period=0 --force
   * K8s集群中Controller Manager，Scheduler发生不健康的状态怎么办？
     * ls /etc/kubernetes/manifests/， 找到kube-controller-manager.yaml kube-scheduler.yaml文件，将--port=0 注释掉
+  * kube-controller-manager 中的 报错：kubelet  Liveness probe failed: Get "https://127.0.0.1:10257/healthz": dial tcp 127.0.0.1:10257: connect: connection refused
+    * sed -i '/- --port=0/d' /etc/kubernetes/manifests/kube-controller-manager.yaml
+    * 重启k8s: systemctl restart kubelet
