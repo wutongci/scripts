@@ -200,6 +200,15 @@ EOF
   * 
 * 如何部署rancher?
   * kubectl apply -f rancher.yaml
+* 如何进入pod内部？
+  * kubectl exec -it nginx-56b8c64cb4-t97vb -- /bin/bash
+* 查看pod内部的进程
+  * ps -ef
+* Node标签
+  * 如何查看Node 标签？
+    * kubectl get nodes --show-labels
+  * 如何打标签？
+    * kubectl label nodes yang-bj-1 group=bj
 * K8s踩坑记
   * Failed create pod sandbox: open /run/systemd/resolve/resolv.conf: no such file or directory
     * 这个原因是因为创建的pod是在debian上，缺少了文件/run/systemd/resolve/resolv.conf，在正常的机器上找到这个文件然后拷贝过去 或者看看 是不是存在 /etc/resolv.conf. 耗时大概半个小时
@@ -215,3 +224,8 @@ EOF
   * kube-controller-manager 中的 报错：kubelet  Liveness probe failed: Get "https://127.0.0.1:10257/healthz": dial tcp 127.0.0.1:10257: connect: connection refused
     * sed -i '/- --port=0/d' /etc/kubernetes/manifests/kube-controller-manager.yaml
     * 重启k8s: systemctl restart kubelet
+  * 北京的主机和上海主机不能ping通
+    * 目前没有好的解决方案，也耗尽了我不少精力，让我头脑清晰一下吧
+    * 可行的方案
+      * 上海的机器尝试好几个机器（北京1，北京2）？？？
+      * 以后部署尽量部署在北京1，北京2上，因为北京1和北京2在一个局域网上
