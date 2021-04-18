@@ -52,7 +52,16 @@
   * sudo docker tag ricky:0.0.1 localhost:5000/ricky:0.0.1
   * sudo docker push localhost:5000/ricky:0.0.1 或者 sudo docker push 101.132.172.54:5000/ricky:0.0.1
 * 如何创建swarm集群？
-  * docker node ls
+  * 选择一台机器作为Manager，执行docker swarm init --advertise-addr 8.141.54.77，会看到worker如何加入集群的命令
+  * 选择其余的节点作为Worker, 例如 docker swarm join --token SWMTKN-1-5a6f125lfvwz7zd72q0ouqufvbfzb8ijf80krdy3dsf8ad3j9l-e7dr31srgg9odbbz6yh4f7s12 8.141.54.77:2377
+  * 安装可视化管理Portainer
+    * mkdir -p /data/portainer/
+    * chmod -R 777 /data/portainer/
+    * docker stack deploy -c docker-stack-manager.yml manager --resolve-image=never
+    * 用docker service ls查看service是不是准备好了 - 可能需要等待一段时间，因为下载image需要时间.
+  * 大体上的操作按照这个网址来https://my.oschina.net/qbj/blog/3079124
+    * Endpoint操作也是按照这个网址来
+  * 在master节点上查看集群信息, docker node ls
 * 踩坑记
   * 有时候发现无法下载或者上传Image，试试重新运行 sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry registry:latest
   * 各种被墙的镜像如何下载？

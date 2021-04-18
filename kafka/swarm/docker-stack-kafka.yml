@@ -1,0 +1,108 @@
+version: "3.2"
+services:
+#kafka服务
+  kafka-server-a:
+    hostname: kafka-server-a
+    image: wurstmeister/kafka:2.12-2.5.0
+    ports:
+      - "19092:9092"
+    networks:
+      swarm-net:
+        aliases:
+          - kafka-server-a
+    environment:
+      - TZ=CST-8
+      - KAFKA_ADVERTISED_HOST_NAME=kafka-server-a
+      - HOST_IP=kafka-server-a
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper-server-a:2181,zookeeper-server-b:2181,zookeeper-server-c:2181
+      - KAFKA_BROKER_ID=0
+      - KAFKA_HEAP_OPTS="-Xmx512M -Xms16M"
+    volumes:
+      - /data/kafka_cluster/kafka/data:/kafka/kafka-logs-kafka-server-a
+      - /data/kafka_cluster/kafka/logs:/opt/kafka/logs
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == yang]
+      resources:
+        limits:
+#          cpus: '1'
+          memory: 1GB
+        reservations:
+#          cpus: '0.2'
+          memory: 512M
+
+  kafka-server-b:
+    hostname: kafka-server-b
+    image: wurstmeister/kafka:2.12-2.5.0
+    ports:
+      - "29092:9092"
+    networks:
+      swarm-net:
+        aliases:
+          - kafka-server-b
+    environment:
+      - TZ=CST-8
+      - KAFKA_ADVERTISED_HOST_NAME=kafka-server-b
+      - HOST_IP=kafka-server-b
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper-server-a:2181,zookeeper-server-b:2181,zookeeper-server-c:2181
+      - KAFKA_BROKER_ID=1
+      - KAFKA_HEAP_OPTS="-Xmx512M -Xms16M"
+    volumes:
+      - /data/kafka_cluster/kafka/data:/kafka/kafka-logs-kafka-server-b
+      - /data/kafka_cluster/kafka/logs:/opt/kafka/logs
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == yang-bj-1]
+      resources:
+        limits:
+#          cpus: '1'
+          memory: 1GB
+        reservations:
+#          cpus: '0.2'
+          memory: 512M
+
+  kafka-server-c:
+    hostname: kafka-server-c
+    image: wurstmeister/kafka:2.12-2.5.0
+    ports:
+      - "39092:9092"
+    networks:
+      swarm-net:
+        aliases:
+          - kafka-server-c
+    environment:
+      - TZ=CST-8
+      - KAFKA_ADVERTISED_HOST_NAME=kafka-server-c
+      - HOST_IP=kafka-server-c
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper-server-a:2181,zookeeper-server-b:2181,zookeeper-server-c:2181
+      - KAFKA_BROKER_ID=2
+      - KAFKA_HEAP_OPTS="-Xmx512M -Xms16M"
+    volumes:
+      - /data/kafka_cluster/kafka/data:/kafka/kafka-logs-kafka-server-c
+      - /data/kafka_cluster/kafka/logs:/opt/kafka/logs
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == yang-bj-2]
+      resources:
+        limits:
+#          cpus: '1'
+          memory: 1GB
+        reservations:
+#          cpus: '0.2'
+          memory: 512M
+networks:
+  swarm-net:
+    external:
+      name: swarm-net

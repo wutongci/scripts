@@ -1,0 +1,93 @@
+version: "3.2"
+services:
+#zookeeper服务
+  zookeeper-server-a:
+    hostname: zookeeper-server-a
+    image: zookeeper:3.6.1
+    ports:
+      - "12181:2181"
+    networks:
+      swarm-net:
+        aliases:
+          - zookeeper-server-a
+    environment:
+      TZ: Asia/Shanghai
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
+    volumes:
+      - /data/kafka_cluster/zookeeper/data:/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == yang]
+      resources:
+        limits:
+#          cpus: '1'
+          memory: 1GB
+        reservations:
+#          cpus: '0.2'
+          memory: 512M
+
+  zookeeper-server-b:
+    hostname: zookeeper-server-b
+    image: zookeeper:3.6.1
+    ports:
+      - "22181:2181"
+    networks:
+      swarm-net:
+        aliases:
+          - zookeeper-server-b
+    environment:
+      TZ: Asia/Shanghai
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
+    volumes:
+      - /data/kafka_cluster/zookeeper/data:/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == yang-bj-1]
+      resources:
+        limits:
+#          cpus: '1'
+          memory: 1GB
+        reservations:
+#          cpus: '0.2'
+          memory: 512M
+
+  zookeeper-server-c:
+    hostname: zookeeper-server-c
+    image: zookeeper:3.6.1
+    ports:
+      - "32181:2181"
+    networks:
+      swarm-net:
+        aliases:
+          - zookeeper-server-c
+    environment:
+      TZ: Asia/Shanghai
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
+    volumes:
+      - /data/kafka_cluster/zookeeper/data:/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == yang-bj-2]
+      resources:
+        limits:
+#          cpus: '1'
+          memory: 1GB
+        reservations:
+#          cpus: '0.2'
+          memory: 512M
+networks:
+  swarm-net:
+    external:
+      name: swarm-net
