@@ -1,5 +1,14 @@
-* 如何安装kafka?
-  * 
+* 如何用Swarm安装kafka?
+  * 前提：三个带有公网的机器已经准备好，yang, yang-bj-1, yang-bj-2, 基于这三台机器的swarm集群也已经搭建好
+  * 在每台机器上分别执行如下命令
+    * mkdir -p {/data/kafka_cluster/zookeeper/data,/data/kafka_cluster/kafka/data,/data/kafka_cluster/kafka/logs}
+    * chown -R 777 /data/kafka_cluster/
+  * 安装zookeeper
+    * docker stack deploy -c docker-stack-zookeeper.yml zoo --resolve-image=never --with-registry-auth
+  * 安装kafka
+    *  docker stack deploy -c docker-stack-kafka.yml kafka  --resolve-image=never --with-registry-auth
+  * 安装kafka manager
+    * docker stack deploy -c docker-stack-kafka-manager.yml kafka_manager  --resolve-image=never --with-registry-auth
 * How to start kafka?
   ```
   cd /opt/kafka/bin
