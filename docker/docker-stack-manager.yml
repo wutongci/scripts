@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+#docker集群可视化工具
+  portainer:
+    image: portainer/portainer
+    hostname: portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/data/portainer:/data"
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      resources:
+        limits:
+#          cpus: '1'
+          memory: 1GB
+        reservations:
+#          cpus: '0.2'
+          memory: 512MB

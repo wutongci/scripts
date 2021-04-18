@@ -51,6 +51,8 @@
     * mac的具体配置可参考mac-push.png
   * sudo docker tag ricky:0.0.1 localhost:5000/ricky:0.0.1
   * sudo docker push localhost:5000/ricky:0.0.1 或者 sudo docker push 101.132.172.54:5000/ricky:0.0.1
+* 如何创建swarm集群？
+  * docker node ls
 * 踩坑记
   * 有时候发现无法下载或者上传Image，试试重新运行 sudo docker run -d -p 5000:5000 --name dev -v /tmp/registry:/tmp/registry registry:latest
   * 各种被墙的镜像如何下载？

@@ -229,3 +229,6 @@ EOF
     * 可行的方案
       * 上海的机器尝试好几个机器（北京1，北京2）？？？
       * 以后部署尽量部署在北京1，北京2上，因为北京1和北京2在一个局域网上
+  * 删除PV和PVC
+    * kubectl patch pv opspv -p '{"metadata":{"finalizers":null}}'
+    * kubectl delete pv opspvc
