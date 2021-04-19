@@ -1,8 +1,6 @@
 version: '3.7'
 networks:
   swarm-net:
-    external:
-      name: swarm-net
 services:
   zookeeper-server-a:
     image: zookeeper:3.4
