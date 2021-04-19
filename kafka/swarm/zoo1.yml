@@ -5,7 +5,7 @@ services:
         restart: always
         hostname: zookeeper-server-a
         ports:
-            - 2181:2181
+            - 12181:2181
         deploy:
             placement:
                 constraints:
@@ -21,7 +21,7 @@ services:
         restart: always
         hostname: zookeeper-server-b
         ports:
-            - 2182:2181
+            - 22181:2181
         deploy:
             placement:
                 constraints:
@@ -37,7 +37,7 @@ services:
         restart: always
         hostname: zookeeper-server-c
         ports:
-            - 2183:2181
+            - 32181:2181
         deploy:
             placement:
                 constraints:
