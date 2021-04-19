@@ -1,10 +1,20 @@
 version: '3.7'
 networks:
   swarm-net:
+volumes:
+  zk-1-data:
+  zk-2-data:
+  zk-3-data:
+  zk-1-datalog:
+  zk-2-datalog:
+  zk-3-datalog:
 services:
   zookeeper-server-a:
     image: zookeeper:3.4
     hostname: zookeeper-server-a
+    volumes:
+        - zk-1-data:/data
+        - zk-1-datalog:/datalog
     networks:
       - swarm-net
     ports:
@@ -27,6 +37,9 @@ services:
   zookeeper-server-b:
     image: zookeeper:3.4
     hostname: zookeeper-server-b
+    volumes:
+        - zk-2-data:/data
+        - zk-2-datalog:/datalog
     ports:
       - target: 2181
         published: 2181
@@ -49,6 +62,9 @@ services:
   zookeeper-server-c:
     image: zookeeper:3.4
     hostname: zookeeper-server-c
+    volumes:
+        - zk-3-data:/data
+        - zk-3-datalog:/datalog
     ports:
       - target: 2181
         published: 2181
