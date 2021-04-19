@@ -3,7 +3,7 @@ networks:
   swarm-net:
 services:
   zookeeper-server-a:
-    image: zookeeper:3.4
+    image: zookeeper:3.6.1
     hostname: zookeeper-server-a
     networks:
       - swarm-net
