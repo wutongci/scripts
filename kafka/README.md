@@ -3,12 +3,20 @@
   * 在每台机器上分别执行如下命令
     * mkdir -p {/data/kafka_cluster/zookeeper/data,/data/kafka_cluster/kafka/data,/data/kafka_cluster/kafka/logs}
     * chown -R 777 /data/kafka_cluster/
+  * 创建一个集群网络
+    * docker network create --driver overlay swarm-net
+  * 手动下载镜像
+    * docker pull zookeeper:3.6.1
+    * docker pull wurstmeister/kafka:2.12-2.5.0
+    * docker pull kafkamanager/kafka-manager:3.0.0.4
   * 安装zookeeper
     * docker stack deploy -c docker-stack-zookeeper.yml zoo --resolve-image=never --with-registry-auth
   * 安装kafka
     *  docker stack deploy -c docker-stack-kafka.yml kafka  --resolve-image=never --with-registry-auth
   * 安装kafka manager
     * docker stack deploy -c docker-stack-kafka-manager.yml kafka_manager  --resolve-image=never --with-registry-auth
+* 查看kafka的工具
+  * https://www.kafkatool.com/download.html
 * How to start kafka?
   ```
   cd /opt/kafka/bin

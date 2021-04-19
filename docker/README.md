@@ -43,6 +43,7 @@
   * docker run -it -p 5631:80 mac:latest /bin/bash
     * 注意这里的80是容器内部的端口,这里的5631是运行这个命令的宿主机端口，这样可以做到命令的map
     * 启示能否做到一个环境一个Docker?
+  * docker exec -it 342ceeb517f4 bash
 * 如何推送一个image到仓库？
   * 修改配置让推送端可以不基于https
     * vim /etc/docker/daemon.json 

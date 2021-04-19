@@ -27,6 +27,6 @@ services:
           memory: 512M
 
 networks:
-  avatar-net:
+  swarm-net:
     external:
       name: swarm-net

@@ -5,4 +5,6 @@
   ```
   /opt/zookeeper/bin/zkServer.sh restart
   ```
-* Usually, there should have at least 2 machines in cluster 
+* Usually, there should have at least 2 machines in cluster
+* Zookeeper客户端？
+  * prettyZoo-mac.dmg, https://github.com/vran-dev/PrettyZoo/releases
