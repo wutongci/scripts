@@ -19,6 +19,7 @@ services:
     volumes:
       - /opt/zk/1/:/data
     deploy:
+      endpoint_mode: dnsrr
       replicas: 1
       placement:
         constraints: [node.hostname == yang]
@@ -40,6 +41,7 @@ services:
     volumes:
       - /opt/zk/2/:/data
     deploy:
+      endpoint_mode: dnsrr
       replicas: 1
       placement:
         constraints: [node.hostname == yang-bj-1]
@@ -61,6 +63,7 @@ services:
     volumes:
       - /opt/zk/3/:/data
     deploy:
+      endpoint_mode: dnsrr
       replicas: 1
       placement:
         constraints: [node.hostname == yang-bj-2]
