@@ -9,7 +9,10 @@ services:
     image: zookeeper:3.6.1
     hostname: zookeeper-server-a
     ports:
-     - 12181:2181
+     - target: 2181
+        published: 12181
+        protocol: tcp
+        mode: host
     networks:
      - swarm-net
     environment:
@@ -31,7 +34,10 @@ services:
     image: zookeeper:3.6.1
     hostname: zookeeper-server-b
     ports:
-     - 22181:2181
+     - target: 2181
+        published: 22181
+        protocol: tcp
+        mode: host
     networks:
      - swarm-net
     environment:
@@ -53,7 +59,10 @@ services:
     image: zookeeper:3.6.1
     hostname: zookeeper-server-c
     ports:
-     - 32181:2181
+     - target: 2181
+        published: 32181
+        protocol: tcp
+        mode: host
     networks:
      - swarm-net
     environment:
