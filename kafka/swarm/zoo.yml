@@ -3,10 +3,12 @@ networks:
   swarm-net:
 services:
   zookeeper-server-a:
-    image: zookeeper:3.5
+    image: zookeeper:3.4
     hostname: zookeeper-server-a
     networks:
       - swarm-net
+    ports:
+      - 2181:2181
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
@@ -20,8 +22,10 @@ services:
         condition: any
 
   zookeeper-server-b:
-    image: zookeeper:3.5
+    image: zookeeper:3.4
     hostname: zookeeper-server-b
+    ports:
+      - 2181:2181
     networks:
       - swarm-net
     environment:
@@ -37,8 +41,10 @@ services:
         condition: any
 
   zookeeper-server-c:
-    image: zookeeper:3.5
+    image: zookeeper:3.4
     hostname: zookeeper-server-c
+    ports:
+      - 2181:2181
     networks:
       - swarm-net
     environment:
