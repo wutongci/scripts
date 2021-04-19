@@ -8,7 +8,10 @@ services:
     networks:
       - swarm-net
     ports:
-      - 2181:2181
+      - target: 2181
+        published: 2181
+        protocol: tcp
+        mode: host
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
@@ -25,7 +28,10 @@ services:
     image: zookeeper:3.4
     hostname: zookeeper-server-b
     ports:
-      - 2181:2181
+      - target: 2181
+        published: 2181
+        protocol: tcp
+        mode: host
     networks:
       - swarm-net
     environment:
@@ -44,7 +50,10 @@ services:
     image: zookeeper:3.4
     hostname: zookeeper-server-c
     ports:
-      - 2181:2181
+      - target: 2181
+        published: 2181
+        protocol: tcp
+        mode: host
     networks:
       - swarm-net
     environment:
