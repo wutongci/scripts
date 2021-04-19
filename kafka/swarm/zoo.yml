@@ -17,11 +17,11 @@ services:
         - zk-1-datalog:/datalog
     networks:
       - swarm-net
-    ports:
-      - target: 2181
-        published: 2181
-        protocol: tcp
-        mode: host
+    # ports:
+    #   - target: 2181
+    #     published: 2181
+    #     protocol: tcp
+    #     mode: host
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=0.0.0.0:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
@@ -40,11 +40,11 @@ services:
     volumes:
         - zk-2-data:/data
         - zk-2-datalog:/datalog
-    ports:
-      - target: 2181
-        published: 2181
-        protocol: tcp
-        mode: host
+    # ports:
+    #   - target: 2181
+    #     published: 2181
+    #     protocol: tcp
+    #     mode: host
     networks:
       - swarm-net
     environment:
@@ -65,11 +65,11 @@ services:
     volumes:
         - zk-3-data:/data
         - zk-3-datalog:/datalog
-    ports:
-      - target: 2181
-        published: 2181
-        protocol: tcp
-        mode: host
+    # ports:
+    #   - target: 2181
+    #     published: 2181
+    #     protocol: tcp
+    #     mode: host
     networks:
       - swarm-net
     environment:

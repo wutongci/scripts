@@ -15,6 +15,10 @@
     *  docker stack deploy -c docker-stack-kafka.yml kafka  --resolve-image=never --with-registry-auth
   * 安装kafka manager
     * docker stack deploy -c docker-stack-kafka-manager.yml kafka_manager  --resolve-image=never --with-registry-auth
+  * 如何检查zookeeper是否健康？
+    * 进入容器内部 docker exec -it 0539b9784554 bash
+    * ./bin/zkServer.sh status
+    * 如果想查看详细报错， ./bin/zkServer.sh start-foreground
 * 查看kafka的工具
   * https://www.kafkatool.com/download.html
 * How to start kafka?
