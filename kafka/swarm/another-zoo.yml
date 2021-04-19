@@ -14,7 +14,7 @@ services:
      - swarm-net
     environment:
       ZOO_MY_ID: "1"
-      ZOO_SERVERS: "server.1=0.0.0.0:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181"
+      ZOO_SERVERS: "server.1=0.0.0.0:2888:3888;2181 server.2=8.141.54.77:2888:3888;2181 server.3=112.125.27.229:2888:3888;2181"
       ZOO_DATA_DIR: "/data/"
     volumes:
       - /opt/zk/1/:/data
@@ -35,7 +35,7 @@ services:
      - swarm-net
     environment:
       ZOO_MY_ID: "2"
-      ZOO_SERVERS: "server.1=zookeeper-server-a:2888:3888;2181 server.2=0.0.0.0:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181"
+      ZOO_SERVERS: "server.1=106.14.148.37:2888:3888;2181 server.2=0.0.0.0:2888:3888;2181 server.3=112.125.27.229:2888:3888;2181"
       ZOO_DATA_DIR: "/data/"
     volumes:
       - /opt/zk/2/:/data
@@ -56,7 +56,7 @@ services:
      - swarm-net
     environment:
       ZOO_MY_ID: "3"
-      ZOO_SERVERS: "server.1=zookeeper-server-a:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=0.0.0.0:2888:3888;2181"
+      ZOO_SERVERS: "server.1=106.14.148.37:2888:3888;2181 server.2=8.141.54.77:2888:3888;2181 server.3=0.0.0.0:2888:3888;2181"
       ZOO_DATA_DIR: "/data/"
     volumes:
       - /opt/zk/3/:/data
