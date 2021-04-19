@@ -14,7 +14,7 @@ services:
         mode: host
     environment:
       ZOO_MY_ID: 1
-      ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
     deploy:
       endpoint_mode: dnsrr
       replicas: 1
@@ -36,7 +36,7 @@ services:
       - swarm-net
     environment:
       ZOO_MY_ID: 2
-      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888;2181 server.2=0.0.0.0:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
+      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=0.0.0.0:2888:3888 server.3=zookeeper-server-c:2888:3888
     deploy:
       endpoint_mode: dnsrr
       replicas: 1
@@ -58,7 +58,7 @@ services:
       - swarm-net
     environment:
       ZOO_MY_ID: 3
-      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=0.0.0.0:2888:3888;2181
+      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=0.0.0.0:2888:3888
     deploy:
       endpoint_mode: dnsrr
       replicas: 1
