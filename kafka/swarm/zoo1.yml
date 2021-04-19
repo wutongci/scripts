@@ -12,7 +12,7 @@ services:
                     - node.hostname == yang
         environment:
             ZOO_MY_ID: 1
-            ZOO_SERVERS: server.1=0.0.0.0:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
+            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
         networks:
             - webnet
 
@@ -21,14 +21,14 @@ services:
         restart: always
         hostname: zookeeper-server-b
         ports:
-            - 2181:2181
+            - 2182:2181
         deploy:
             placement:
                 constraints:
                     - node.hostname == yang-bj-1
         environment:
             ZOO_MY_ID: 2
-            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=0.0.0.0:2888:3888 server.3=zookeeper-server-c:2888:3888
+            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
         networks:
             - webnet
 
@@ -37,14 +37,14 @@ services:
         restart: always
         hostname: zookeeper-server-c
         ports:
-            - 2181:2181
+            - 2183:2181
         deploy:
             placement:
                 constraints:
                     - node.hostname == yang-bj-2
         environment:
             ZOO_MY_ID: 3
-            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=0.0.0.0:2888:3888
+            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
         networks:
             - webnet
 
