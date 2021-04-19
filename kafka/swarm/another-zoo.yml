@@ -3,7 +3,6 @@ networks:
   swarm-net:
     external:
       name: swarm-net
-      driver: overlay
 services:
   zookeeper-server-a:
     container_name: zookeeper-server-a   # https://github.com/31z4/zookeeper-docker/tree/master/3.5.6
@@ -64,7 +63,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.hostname == yang-bj-3]
+        constraints: [node.hostname == yang-bj-2]
       resources:
         limits:
           memory: 1024M
