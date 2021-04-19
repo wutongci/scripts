@@ -20,7 +20,7 @@ services:
         condition: any
 
   zookeeper-server-b:
-    image: zookeeper:3.4
+    image: zookeeper:3.6.1
     hostname: zookeeper-server-b
     networks:
       - swarm-net
@@ -37,7 +37,7 @@ services:
         condition: any
 
   zookeeper-server-c:
-    image: zookeeper:3.4
+    image: zookeeper:3.6.1
     hostname: zookeeper-server-c
     networks:
       - swarm-net
