@@ -1,7 +1,7 @@
 version: '3.1'
 services:
     zookeeper-server-a:
-        image: zookeeper
+        image: zookeeper:3.4
         restart: always
         hostname: zookeeper-server-a
         ports:
@@ -17,7 +17,7 @@ services:
             - webnet
 
     zookeeper-server-b:
-        image: zookeeper
+        image: zookeeper:3.4
         restart: always
         hostname: zookeeper-server-b
         ports:
@@ -33,7 +33,7 @@ services:
             - webnet
 
     zookeeper-server-c:
-        image: zookeeper
+        image: zookeeper:3.4
         restart: always
         hostname: zookeeper-server-c
         ports:
