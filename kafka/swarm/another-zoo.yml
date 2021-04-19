@@ -1,4 +1,9 @@
 version: '3.7'
+networks:
+  swarm-net:
+    external:
+      name: swarm-net
+      driver: overlay
 services:
   zookeeper-server-a:
     container_name: zookeeper-server-a   # https://github.com/31z4/zookeeper-docker/tree/master/3.5.6
