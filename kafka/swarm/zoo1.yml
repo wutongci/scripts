@@ -1,0 +1,53 @@
+version: '3.1'
+services:
+    zookeeper-server-a:
+        image: zookeeper
+        restart: always
+        hostname: zookeeper-server-a
+        ports:
+            - 2181:2181
+        deploy:
+            placement:
+                constraints:
+                    - node.hostname == yang
+        environment:
+            ZOO_MY_ID: 1
+            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
+        networks:
+            - webnet
+
+    zookeeper-server-b:
+        image: zookeeper
+        restart: always
+        hostname: zookeeper-server-b
+        ports:
+            - 2181:2181
+        deploy:
+            placement:
+                constraints:
+                    - node.hostname == yang-bj-1
+        environment:
+            ZOO_MY_ID: 2
+            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
+        networks:
+            - webnet
+
+    zookeeper-server-c:
+        image: zookeeper
+        restart: always
+        hostname: zookeeper-server-c
+        ports:
+            - 2181:2181
+        deploy:
+            placement:
+                constraints:
+                    - node.hostname == yang-bj-2
+        environment:
+            ZOO_MY_ID: 3
+            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
+        networks:
+            - webnet
+
+networks:
+    webnet:
+        driver: overlay
