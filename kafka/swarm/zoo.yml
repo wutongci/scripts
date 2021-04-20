@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.7' # docker compose的version
 networks:
   swarm-net:
 volumes:
