@@ -1,53 +1,56 @@
-version: '3.1'
+version: '3.8'
 services:
-    zookeeper-server-a:
-        image: zookeeper:3.4
-        restart: always
-        hostname: zookeeper-server-a
-        ports:
-            - 12181:2181
-        deploy:
-            placement:
-                constraints:
-                    - node.hostname == yang
-        environment:
-            ZOO_MY_ID: 1
-            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
-        networks:
-            - webnet
-
-    zookeeper-server-b:
-        image: zookeeper:3.4
-        restart: always
-        hostname: zookeeper-server-b
-        ports:
-            - 22181:2181
-        deploy:
-            placement:
-                constraints:
-                    - node.hostname == yang-bj-1
-        environment:
-            ZOO_MY_ID: 2
-            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
-        networks:
-            - webnet
-
-    zookeeper-server-c:
-        image: zookeeper:3.4
-        restart: always
-        hostname: zookeeper-server-c
-        ports:
-            - 32181:2181
-        deploy:
-            placement:
-                constraints:
-                    - node.hostname == yang-bj-2
-        environment:
-            ZOO_MY_ID: 3
-            ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888 server.2=zookeeper-server-b:2888:3888 server.3=zookeeper-server-c:2888:3888
-        networks:
-            - webnet
-
+  zookeeper-server-a:
+    image: zookeeper
+    networks:
+      - kafka
+    hostname: zookeeper-server-a
+    ports: # 端口
+      - 2181:2181
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
+    volumes:
+      - "/root/zookeeper/conf:/conf"
+      - "/root/zookeeper/data:/data"
+      - "/root/zookeeper/datalog:/datalog"
+    deploy:
+      mode: replicated
+      replicas: 1
+  zookeeper-server-b:
+    image: zookeeper
+    networks:
+      - kafka
+    hostname: zookeeper-server-b
+    ports: # 端口
+      - 2182:2181
+    environment:
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888;2181 server.2=0.0.0.0:2888:3888;2181 server.3=zookeeper-server-c:2888:3888;2181
+    volumes:
+      - "/root/zookeeper/conf:/conf"
+      - "/root/zookeeper/data:/data"
+      - "/root/zookeeper/datalog:/datalog"
+    deploy:
+      mode: replicated
+      replicas: 1
+  zookeeper-server-c:
+    image: zookeeper
+    networks:
+      - kafka
+    hostname: zookeeper-server-c
+    ports: # 端口
+      - 2183:2181
+    environment:
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: server.1=zookeeper-server-a:2888:3888;2181 server.2=zookeeper-server-b:2888:3888;2181 server.3=0.0.0.0:2888:3888;2181
+    volumes:
+      - "/root/zookeeper/conf:/conf"
+      - "/root/zookeeper/data:/data"
+      - "/root/zookeeper/datalog:/datalog"
+    deploy:
+      mode: replicated
+      replicas: 1
 networks:
-    webnet:
-        driver: overlay
+  kafka:
+    driver: overlay
