@@ -96,6 +96,7 @@ deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
 EOF
     * sudo apt-get update
     * apt-get install -y kubectl kubelet kubeadm
+    apt-get install -y kubeadm=1.20.4-00 kubectl=1.20.4-00 kubelet=1.20.4-00
   * 关闭swap
     * sudo swapoff -a
     * free -m
@@ -182,6 +183,7 @@ EOF
     * 结果发现状态是NotReady, 这是一个坑，解决办法是
       * vim /var/lib/kubelet/kubeadm-flags.env, 移除 --network-plugin=cni
       * systemctl restart kubelet
+      * 备注：Flannel安装的时候pod遇到一个问题： [ContainersNotInitialized] containers with incomplete status: [install-cni]，也是类似的解决办法
   * 资源
     * https://segmentfault.com/a/1190000037682150  - 主要参考这个资源
     * https://zhuanlan.zhihu.com/p/96084545 - 这个里面修改systemd把握带沟里去了

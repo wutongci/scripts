@@ -2,6 +2,7 @@
   * Ubuntu
     * https://www.myfreax.com/how-to-install-and-use-docker-on-ubuntu-18-04/
     * 整个安装过程步骤较多，参考上面的连接是有效的
+    * sudo apt install docker-ce=18.06.1~ce~3-0~ubuntu
    * Debian
     * https://www.myfreax.com/how-to-install-and-use-docker-on-debian-9/
     * 具体做的时候，需要参考ubuntu的步骤，手动指定版本
