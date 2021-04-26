@@ -39,4 +39,4 @@ services:
     environment:
       collector.ribbon.listOfServers: oap:12800
       # 默认账号：admin，配置默认密码：adminsou888!
-      security.user.admin.password: adminsou888!
+      security.user.admin.password: 11111111
