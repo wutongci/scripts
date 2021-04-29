@@ -16,6 +16,10 @@
     * auth=true
   * systemctl restart mongodb.service
   * 最后连接成功的状态: success.png
+* 如果修改账号的密码？
+  * use admin;
+  * db.auth("admin","admin");
+  * db.changeUserPassword('root','yang$1111');
 * 创建一个数据库
   * use demo
   * db.demo.insert({"name":"rickymongodb"})
