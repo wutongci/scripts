@@ -10,7 +10,7 @@
   * 如何设置Postgres密码？
     * sudo su postgres
     * psql -U postgres
-    * alter user postgres with password '11111111';
+    * alter user postgres with password 'yang$1111';
     * ![](./password-set.png)
   * 如何退出postgres的命令行？
     * \q 按回车
@@ -27,4 +27,7 @@
       * 在文件末尾添加 host all all 0.0.0.0 0.0.0.0 md5
     * 重启： sudo systemctl restart postgresql
     * 测试： psql -U postgres -h [ipaddress]
+  * 踩坑记
+    * 黑客通过postgress种植了挖矿程序
+      * 采取措施：修改密码为yang$1111
 * Centos
