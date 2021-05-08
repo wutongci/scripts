@@ -8,8 +8,21 @@ services:
       - 9200:9200
       - 9300:9300
     environment:
-      discovery.type: single-node
+      - "cluster.name=elasticsearch" #设置集群名称为elasticsearch
+      - "discovery.type=single-node" #以单一节点模式启动
+      - "http.port=9200"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-origin=http://localhost:1358,http://127.0.0.1:1358,http://101.132.172.54:1358,http://sh2.ricky.pro:1358"
+      - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization"
+      - "http.cors.allow-credentials=true"
       TZ: Asia/Shanghai
+  dejavu:
+    image: appbaseio/dejavu:3.4.7
+    container_name: dejavu
+    ports:
+      - '1358:1358'
+    links:
+      - elasticsearch
   oap:
     image: apache/skywalking-oap-server:6.1.0
     container_name: skywalking-oap
