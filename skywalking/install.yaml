@@ -12,7 +12,7 @@ services:
       - "discovery.type=single-node" #以单一节点模式启动
       - "http.port=9200"
       - "http.cors.enabled=true"
-      - "http.cors.allow-origin=http://localhost:1358,http://127.0.0.1:1358,http://101.132.172.54:1358,http://sh2.ricky.pro:1358"
+      - "http.cors.allow-origin=http://localhost:1358,http://127.0.0.1:1358,http://8.141.54.77:1358,http://bj1.ricky.pro:1358"
       - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization"
       - "http.cors.allow-credentials=true"
       TZ: Asia/Shanghai
