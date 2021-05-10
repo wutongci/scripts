@@ -1,0 +1,66 @@
+version: "3.6"
+services:
+    zookeeper:
+        image: zookeeper
+        networks:
+          - esnet1
+        deploy:
+            mode: global
+            restart_policy:
+                condition: on-failure
+    nimbus:
+        image: storm
+        command: storm nimbus
+        volumes:
+            - logs:/logs
+        depends_on:
+            - zookeeper
+        networks:
+          - esnet1
+        ports:
+            - 6627:6627
+        deploy:
+            restart_policy:
+                condition: on-failure
+    supervisor:
+        image: storm
+        command: storm supervisor -c storm.log.dir="/logs"
+        depends_on:
+            - nimbus
+            - zookeeper
+        networks:
+          - esnet1
+#        volumes:
+#          - type: bind
+#            source: /data/storm
+#            target: /data
+#          - type: volume
+#            source: logs
+#            target: /logs
+        deploy:
+            #mode: global
+            replicas: 1
+            placement:
+                constraints:
+                  - node.labels.processor==true
+            restart_policy:
+                condition: on-failure
+    ui:
+        image: storm
+        command: storm ui -c storm.log.dir="/logs"
+        volumes:
+            - logs:/log
+        networks:
+          - esnet1
+        depends_on:
+            - nimbus
+        ports:
+            - 8081:8080
+        deploy:
+            restart_policy:
+                condition: on-failure
+networks:
+  esnet1:
+    attachable: true
+volumes:
+    logs:
