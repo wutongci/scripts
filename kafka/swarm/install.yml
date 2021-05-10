@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   zoo1:
     image: wurstmeister/zookeeper
@@ -54,4 +54,4 @@ services:
     environment:
         ZK_HOSTS: 8.141.54.77                   ## 修改:宿主机IP
     ports:
-      - "9000:9000"                               ## 暴露端口
+      - "9001:9000"                               ## 9000是Docker容器内部的端口，9001是宿主机的端口
