@@ -4,12 +4,12 @@ services:
   sonarqube:
     image: sonarqube:8.3.1-community
     container_name: sonarqube
-    restart: 'no'
+    restart: always
     networks:
       - sonarnet
     environment:
       - sonar.jdbc.username=postgres
-      - sonar.jdbc.password=yang$1111
+      - sonar.jdbc.password=yang$$1111
       - sonar.jdbc.url=jdbc:postgresql://106.14.148.37:5432/sonarqube
       - sonar.search.javaOpts=-Xms256m -Xmx256m
     ports:
@@ -28,4 +28,4 @@ volumes:
 
 networks:
   sonarnet:
-    driver: bridge
+    external: true
