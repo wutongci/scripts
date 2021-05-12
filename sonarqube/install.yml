@@ -6,9 +6,9 @@ services:
     container_name: sonarqube
     restart: 'no'
     environment:
-      - sonar.jdbc.username=sonar
-      - sonar.jdbc.password=sonar
-      - sonar.jdbc.url=jdbc:postgresql://sonarqube-postgre:5432/sonarqube
+      - sonar.jdbc.username=postgres
+      - sonar.jdbc.password=yang$$5631
+      - sonar.jdbc.url=jdbc:postgresql://106.14.148.37:5432/sonarqube
       - sonar.search.javaOpts=-Xms1G -Xmx1G
     ports:
       - "9010:9000"
