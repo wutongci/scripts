@@ -1,19 +1,50 @@
 version: "3"
+
 services:
-  sonar:
-    image: sonarqube:7.9-community
-    restart: always 
+  sonarqube:
+    image: sonarqube:8.3.1-community
     container_name: sonarqube
-    depends_on:
-      - postgres
-    volumes:
-      - /dockerdata/sonarqube/extensions:/opt/sonarqube/extensions
-      - /dockerdata/sonarqube/logs:/opt/sonarqube/logs
-      - /dockerdata/sonarqube/data:/opt/sonarqube/data
-      - /dockerdata/sonarqube/conf:/opt/sonarqube/conf
-    ports:
-      - 9010:9000
+    restart: 'no'
+    networks:
+      - sonarnet
     environment:
-      SONARQUBE_JDBC_USERNAME: postgres
-      SONARQUBE_JDBC_PASSWORD: yang$$1111
-      SONARQUBE_JDBC_URL: jdbc:postgresql://106.14.148.37:5432/sonar
+      - sonar.jdbc.username=sonar
+      - sonar.jdbc.password=sonar
+      - sonar.jdbc.url=jdbc:postgresql://sonarqube-postgre:5432/sonarqube
+      - sonar.search.javaOpts=-Xms256m -Xmx256m
+    ports:
+      - "9010:9000"
+      - "9011:9092"
+    depends_on:
+      - sonarqube-postgre
+    links:
+      - sonarqube-postgre
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+
+  sonarqube-postgre:
+    image: postgres:12.3
+    container_name: sonarqube-postgre
+    restart: 'no'
+    networks:
+        - sonarnet
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=sonar
+      - POSTGRES_DB=sonarqube
+    volumes:
+      - sonarqube_postgre_db:/var/lib/postgresql
+      - sonarqube_postgre_data:/var/lib/postgresql/data
+
+volumes:
+  sonarqube_bundled-plugins:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_postgre_db:
+  sonarqube_postgre_data:
+
+networks:
+  sonarnet:
+    driver: bridge
