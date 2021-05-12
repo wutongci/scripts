@@ -5,8 +5,6 @@ services:
     image: sonarqube:8.3.1-community
     container_name: sonarqube
     restart: always
-    networks:
-      - sonarnet
     environment:
       - sonar.jdbc.username=postgres
       - sonar.jdbc.password=yang$$1111
@@ -25,7 +23,3 @@ volumes:
   sonarqube_extensions:
   sonarqube_postgre_db:
   sonarqube_postgre_data:
-
-networks:
-  sonarnet:
-    external: true
