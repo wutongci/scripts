@@ -9,7 +9,7 @@ services:
       - sonar.jdbc.username=sonar
       - sonar.jdbc.password=sonar
       - sonar.jdbc.url=jdbc:postgresql://sonarqube-postgre:5432/sonarqube
-      - sonar.search.javaOpts=-Xms256m -Xmx256m
+      - sonar.search.javaOpts=-Xms1G -Xmx1G
     ports:
       - "9010:9000"
       - "9011:9092"
