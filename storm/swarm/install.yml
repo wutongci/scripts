@@ -11,6 +11,7 @@ services:
     nimbus:
         image: storm
         command: storm nimbus
+        hostname: 112.125.27.229
         volumes:
             - logs:/logs
         depends_on:
@@ -25,6 +26,7 @@ services:
     supervisor:
         image: storm
         command: storm supervisor -c storm.log.dir="/logs"
+        hostname: 112.125.27.229
         depends_on:
             - nimbus
             - zookeeper
