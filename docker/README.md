@@ -8,7 +8,7 @@
     * 具体做的时候，需要参考ubuntu的步骤，手动指定版本
   * Centos - centos7.9 + docker 18.06.1
     * yum -y update
-    * yum remove docker  docker-common docker-selinux docker-engine --如果之前安装过
+    * yum remove docker docker-common docker-selinux docker-engine --如果之前安装过
     * yum install -y yum-utils device-mapper-persistent-data lvm2
     * 添加阿里镜像
       * yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
