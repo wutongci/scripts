@@ -7,6 +7,7 @@ services:
       - "22"
   nimbus:
     image: wurstmeister/storm-nimbus
+    hostname: 47.103.138.95
     ports:
       - "9773:3773"
       - "9772:3772"
@@ -16,6 +17,7 @@ services:
       - zookeeper:zk
   supervisor:
     image: wurstmeister/storm-supervisor
+    hostname: 47.103.138.95
     ports:
       - "8000"
       - "22"
