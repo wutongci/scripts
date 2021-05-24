@@ -1,16 +1,16 @@
-version: "3.6"
+version: "3.3"
 services:
   zookeeper:
     image: wurstmeister/zookeeper
     ports: 
-      - "49181:2181"
+      - "9181:2181"
       - "22"
   nimbus:
     image: wurstmeister/storm-nimbus
     ports:
-      - "49773:3773"
-      - "49772:3772"
-      - "49627:6627"
+      - "9773:3773"
+      - "9772:3772"
+      - "9627:6627"
       - "22"
     links: 
       - zookeeper:zk
@@ -25,7 +25,7 @@ services:
   ui:
     image: wurstmeister/storm-ui
     ports:
-      - "49080:8080"
+      - "9080:8080"
       - "22"
     links: 
       - nimbus:nimbus
