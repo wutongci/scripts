@@ -2,6 +2,10 @@ version: "3.3"
 services:
     zookeeper:
         image: zookeeper
+        ports:
+          - 2181:2181
+          - 2888:2888
+          - 3888:3888
         networks:
           - esnet1
         deploy:
@@ -57,7 +61,7 @@ services:
         depends_on:
             - nimbus
         ports:
-            - 8081:8080
+            - 8071:8080
         deploy:
             restart_policy:
                 condition: on-failure
