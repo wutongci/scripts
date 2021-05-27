@@ -3,21 +3,19 @@ services:
   zookeeper:
     image: wurstmeister/zookeeper
     ports: 
-      - "9181:2181"
+      - "49181:2181"
       - "22"
   nimbus:
     image: wurstmeister/storm-nimbus
-    hostname: 47.103.138.95
     ports:
-      - "9773:3773"
-      - "9772:3772"
-      - "9627:6627"
+      - "49773:3773"
+      - "49772:3772"
+      - "49627:6627"
       - "22"
     links: 
       - zookeeper:zk
   supervisor:
     image: wurstmeister/storm-supervisor
-    hostname: 47.103.138.95
     ports:
       - "8000"
       - "22"
@@ -27,7 +25,7 @@ services:
   ui:
     image: wurstmeister/storm-ui
     ports:
-      - "9080:8080"
+      - "49080:8080"
       - "22"
     links: 
       - nimbus:nimbus
