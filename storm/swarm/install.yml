@@ -13,9 +13,9 @@ services:
             restart_policy:
                 condition: on-failure
     nimbus:
-        image: storm
+        image: storm:1.2.3
         command: storm nimbus
-        hostname: 112.125.27.229
+        hostname: ricky-storm
         volumes:
             - logs:/logs
         depends_on:
@@ -28,9 +28,9 @@ services:
             restart_policy:
                 condition: on-failure
     supervisor:
-        image: storm
+        image: storm:1.2.3
         command: storm supervisor -c storm.log.dir="/logs"
-        hostname: 112.125.27.229
+        hostname: 47.103.138.95
         depends_on:
             - nimbus
             - zookeeper
@@ -52,7 +52,7 @@ services:
             restart_policy:
                 condition: on-failure
     ui:
-        image: storm
+        image: storm:1.2.3
         command: storm ui -c storm.log.dir="/logs"
         volumes:
             - logs:/log
@@ -61,7 +61,7 @@ services:
         depends_on:
             - nimbus
         ports:
-            - 8071:8080
+            - 8081:8080
         deploy:
             restart_policy:
                 condition: on-failure
