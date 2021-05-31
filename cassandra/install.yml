@@ -25,13 +25,3 @@ services:
     depends_on:
       - cassandra-7000
     restart: always
-  web-ui:
-    image: fmarslan/cassandra-web-ui:latest
-    expose:
-        - "3000"
-    environment:
-        - CASSANDRA_HOST=127.0.0.1
-        - CASSANDRA_USER=cassandra
-        - CASSANDRA_PASSWORD=cassandra
-        - WEB_UI_PORT=3000
-    restart: always
