@@ -6,3 +6,7 @@
 	* vim /usr/local/apache-maven-3.6.3/conf/settings.xml
 * 如何push jar包到maven服务器？
 * 如何pull jar包到maven服务器？
+* maven打包有哪几种策略？
+	* maven-assembly-plugin
+		* mvn clean
+		* mvn package assembly:single  
