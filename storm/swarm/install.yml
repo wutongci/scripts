@@ -2,6 +2,7 @@ version: "3.3"
 services:
     zookeeper:
         image: zookeeper
+        restart: always
         ports:
           - 2181:2181
           - 2888:2888
@@ -14,6 +15,7 @@ services:
                 condition: on-failure
     nimbus:
         image: storm:1.2.3
+        restart: always
         command: storm nimbus
         hostname: ricky-storm
         volumes:
@@ -29,6 +31,7 @@ services:
                 condition: on-failure
     supervisor:
         image: storm:1.2.3
+        restart: always
         command: storm supervisor -c storm.log.dir="/logs"
         hostname: 47.103.138.95
         depends_on:
@@ -53,6 +56,7 @@ services:
                 condition: on-failure
     ui:
         image: storm:1.2.3
+        restart: always
         command: storm ui -c storm.log.dir="/logs"
         volumes:
             - logs:/log
