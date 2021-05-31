@@ -1,0 +1,3 @@
+###
+* 知识点
+  * ssddata/workspace/data/cassandra/cassandra 这个目录是属于宿主机的目录，而且不需要手工创建
