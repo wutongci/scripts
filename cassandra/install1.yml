@@ -1,7 +1,7 @@
 version: '2'
 services:
   cassandra-1:
-    image: cassandra:3
+    image: cassandra:3.11.6
     container_name: cassandra-1
     environment:
       - CASSANDRA_BROADCAST_ADDRESS=cassandra-1
@@ -9,7 +9,7 @@ services:
       - 7000
     restart: always
   cassandra-2:
-    image: cassandra:3
+    image: cassandra:3.11.6
     container_name: cassandra-2
     environment:
       - CASSANDRA_BROADCAST_ADDRESS=cassandra-2
@@ -20,7 +20,7 @@ services:
       - cassandra-1
     restart: always
   cassandra-3:
-    image: cassandra:3
+    image: cassandra:3.11.6
     container_name: cassandra-3
     environment:
       - CASSANDRA_BROADCAST_ADDRESS=cassandra-3
