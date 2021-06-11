@@ -18,3 +18,5 @@ CREATE TABLE JSONBTest (data jsonb);
 insert into JSONBTest values ('{"name": "ricky", "age":      35, "active":false}')
 
 select * from JSONBTest x where x.data::json->>'name' = 'ricky'
+
+# 分析一个SQL语句的执行过程
