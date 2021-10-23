@@ -23,6 +23,7 @@
   * /etc/nginx/nginx.conf 
   * /etc/nginx/sites-enabled/
   * /etc/nginx/conf.d/
+  * /usr/share/nginx/html/
 * 如何生成证书? -- 亲测没有问题
   * openssl genrsa -out server.key 1024
   * openssl req -new -key server.key -out server.csr
