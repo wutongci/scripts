@@ -146,7 +146,9 @@ EOF
         * 用的是自己定义的recommend.yaml文件，这样可以让pod在指定的node上运行
         * 免费产生的nginx证书无效
     *  https://cloud.tencent.com/developer/article/1638856
-      * 通过https://freessl.cn，在线生成免费1年的证书。这是借鉴的重点
+      * 通过https://freessl.cn，在线生成免费1年的ssl证书。这是借鉴的重点
+      * 这里会用到一个工具叫KeyManager,使用细节可参考印象笔记
+      * 或者尝试这个 https://ohttps.com/monitor/dashboard
   * 资源
     * https://www.cnblogs.com/alamisu/p/10751418.html
 * 如何搭建k8s集群？Centos版本-版本7.9, k8s版本1.20.4, docker版本:18.06.1-ce

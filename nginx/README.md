@@ -19,9 +19,10 @@
   * /usr/local/var/log/nginx -- 日志文件
   * /usr/local/etc/nginx/ -- nginx配置文件存放的目录
   * /usr/local/Cellar/nginx/1.19.1 -- nginx的安装目录
-* nginx在ubuntu上有哪些目录？
+* nginx在ubuntu上有哪些目录和文件？
   * /etc/nginx/nginx.conf 
   * /etc/nginx/sites-enabled/
+  * /etc/nginx/sites-enabled/default - http配置文件
   * /etc/nginx/conf.d/
   * /usr/share/nginx/html/
 * 如何生成证书? -- 亲测没有问题
@@ -46,6 +47,8 @@
   * nginx -s stop
   * nginx -s reload
   * nginx -t
+* 一些配置示例
+  * 见nging.conf
 * Generate server.key and server.crt
     * Don't use git bash, please use powershell or commandline
     * Ideally, you can specify relative path or absolute path for server.crt and server.key.
