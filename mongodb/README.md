@@ -12,6 +12,7 @@
   * systemctl restart mongodb.service
     * use admin;
     * db.createUser({user: "root", pwd: "11111111", roles: [{role: "userAdminAnyDatabase", db: "admin"}]});
+    * db.grantRolesToUser('root', [{ role: 'root', db: 'admin' }])
   * 再次修改 sudo vim /etc/mongodb.conf
     * auth=true
   * systemctl restart mongodb.service
