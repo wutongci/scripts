@@ -21,18 +21,11 @@ services:
     links:
       - cadvisor:cadvisor
       - alertmanager:alertmanager
-#      - pushgateway:pushgateway
     depends_on:
       - cadvisor
-#      - pushgateway
     networks:
       - back-tier
     restart: always
-#    deploy:
-#      placement:
-#        constraints:
-#          - node.hostname == ${HOSTNAME}
-
   node-exporter:
     image: prom/node-exporter
     volumes:
@@ -51,7 +44,6 @@ services:
     restart: always
     deploy:
       mode: global
-
   alertmanager:
     image: prom/alertmanager
     ports:
@@ -64,10 +56,6 @@ services:
     command:
       - '--config.file=/etc/alertmanager/config.yml'
       - '--storage.path=/alertmanager'
-#    deploy:
-#      placement:
-#        constraints:
-#          - node.hostname == ${HOSTNAME}
   cadvisor:
     image: gcr.io/cadvisor/cadvisor
     volumes:

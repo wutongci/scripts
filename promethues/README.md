@@ -1,3 +1,7 @@
+* 如何安装 - 2022.3.6验证
+	* docker-compose -f install.yml up -d
+	* 开放3000
+	* 9090端口是否一定要开放?
 * 安装promethues
 	* docker pull prom/node-exporter
 	* docker pull prom/prometheus
