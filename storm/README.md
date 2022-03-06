@@ -1,3 +1,7 @@
+* 如何安装storm
+  * docker-compose -f install.yml up -d
+  * 开放8061端口
+  * 验证 http://47.101.156.185:8061
 * add env varaible
   ```
   vim /etc/profile
