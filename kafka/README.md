@@ -1,4 +1,4 @@
-* 如何用Swarm安装kafka?
+* 如何用Swarm安装kafka? - 比较繁琐，暂时不建议使用
   * 前提：三个带有公网的机器已经准备好，yang, yang-bj-1, yang-bj-2, 基于这三台机器的swarm集群也已经搭建好
   * 在每台机器上分别执行如下命令
     * mkdir -p {/data/kafka_cluster/zookeeper/data,/data/kafka_cluster/kafka/data,/data/kafka_cluster/kafka/logs}
@@ -19,6 +19,11 @@
     * 进入容器内部 docker exec -it 0539b9784554 bash
     * ./bin/zkServer.sh status
     * 如果想查看详细报错， ./bin/zkServer.sh start-foreground
+* 如何用docker-compose 安装kafka? - 2022.3.6 验证通过
+  * docker-compose -f install.yml up -d
+  * 在云服务器的控制台开启9001端口
+  * 检查kafka manager是否work - http://sh5.ricky.pro:9001/
+  * 如果有错误，可尝试开启2181端口
 * 查看kafka的工具
   * https://www.kafkatool.com/download.html
 * How to start kafka?
