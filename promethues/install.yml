@@ -7,9 +7,9 @@ networks:
   back-tier:
 services:
   prometheus:
-    image: prom/prometheus:v2.1.0
+    image: prom/prometheus
     volumes:
-      - ./prometheus/:/etc/prometheus/
+      - /etc/prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -49,15 +49,12 @@ services:
     ports:
       - 9093:9093
     volumes:
-      - ./alertmanager/:/etc/alertmanager/
+      - /etc/prometheus/:/etc/prometheus/
     networks:
       - back-tier
     restart: always
-    command:
-      - '--config.file=/etc/alertmanager/config.yml'
-      - '--storage.path=/alertmanager'
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor
+    image: google/cadvisor
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
@@ -79,9 +76,6 @@ services:
       - 3000:3000
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
-    env_file:
-      - ./grafana/config.monitoring
     networks:
       - back-tier
       - front-tier

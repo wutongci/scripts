@@ -1,0 +1,4 @@
+- targets:
+  - "42.192.41.175:9100"
+  labels:
+    hostname: yang-sh-5

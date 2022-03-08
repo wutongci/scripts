@@ -1,0 +1,4 @@
+- targets:
+  - "42.192.41.175:8080"
+  labels:
+    hostname: yang-sh-5
