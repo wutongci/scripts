@@ -11,6 +11,6 @@ sudo ifconfig flannel.1 down
 sudo ifconfig docker0 down
 sudo ip link delete cni0
 sudo ip link delete flannel.1
+sudo /etc/init.d/networking restart
 sudo systemctl start docker
 sudo systemctl start kubelet
-/etc/init.d/networking restart
