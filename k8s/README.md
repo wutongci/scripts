@@ -123,9 +123,11 @@ EOF
       * pod-network-cidr=10.244.0.0这个配置参数十分重要，要和下面的flannel文件里面的设置要配起来
     * 配置config - 注意：这个是文件是来自于master机器，但是非master机器也要配置
       * mkdir -p $HOME/.kube
-      * sudo cp vim-i /etc/kubernetes/admin.conf $HOME/.kube/config
+      * sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
         * 注意这个地方会提示你是否需要覆盖，输入y
       * sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  * 在/etc/kubernetes/manifests/kube-apiserver.yaml 修改 --bind-address=0.0.0.0和修改--advertise-addres=101.133.155.50
+    * 这个操作仅仅会在master上执行
   * 安装网络插件flannel - 仅仅需要在master节点上执行
     * kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml - 不需要了
     * kubectl apply -f fannel.yml -- 使用这个
