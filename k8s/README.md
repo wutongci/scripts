@@ -86,7 +86,7 @@
 * MAC
   * where is kubeconfig?
     * ~/.kube/config.yaml
-* 如何搭建k8s集群？Ubuntu版本
+* 如何搭建跨vpc的k8s集群？Ubuntu版本
   * 安装Docker
   * 在所有节点上安装  kubectl kubelet kubeadm
     * sudo apt-get update && apt-get install -y apt-transport-https
@@ -100,20 +100,43 @@ EOF
   * 关闭swap
     * sudo swapoff -a
     * free -m
+  * 清除网络设置 - 参见clearnetwork.sh
+  * 开放各种端口
+    * Master节点端口 6443 2379-2380 10250 10259 10257
+    * work节点端口 30000-32767 10250 8472
+  * 创建虚拟网卡
+    * unbuntu - 参考 vitualIP.sh
+    * 如果是centos - 参考 centos-virtualIP.sh
+  * 配置所有公网的Host
+  * 设置/etc/modules-load.d/k8s.conf - 参见module.config
+  * 设置/etc/sysctl.d/k8s.conf - 参见sysctl.config
+  * 设置/etc/docker/daemon.json - 参见damon.json
+  * 添加公网ip到配置文件, /etc/systemd/system/kubelet.service.d/10-kubeadm.conf -- 参见kubeadm.config, 如果在centos下面看不到这个文件和文件夹，自己手动创建
+  * 重启 
+    * systemctl daemon-reload
+    * systemctl restart docker
+    * systemctl restart kubelet
   * 选择任意一台服务器作为master
-    * kubeadm init --apiserver-advertise-address=106.14.148.37 --image-repository registry.aliyuncs.com/google_containers  --pod-network-cidr=10.244.0.0/16
+    * kubeadm init --apiserver-advertise-address=101.133.155.50 --image-repository registry.aliyuncs.com/google_containers  --control-plane-endpoint=101.133.155.50 --service-cidr=10.96.0.0/12  --pod-network-cidr=10.244.0.0/16
       * 注意：在阿里云中会报错，具体解决办法如下 https://my.oschina.net/u/4389078/blog/3233116 - 亲测有效
-    *配置config - 注意：这个是文件是来自于master机器，但是非master机器也要配置
+      * 后来再次安装的时候，上述问题不见了
+      * pod-network-cidr=10.244.0.0这个配置参数十分重要，要和下面的flannel文件里面的设置要配起来
+    * 配置config - 注意：这个是文件是来自于master机器，但是非master机器也要配置
       * mkdir -p $HOME/.kube
-      * sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+      * sudo cp vim-i /etc/kubernetes/admin.conf $HOME/.kube/config
         * 注意这个地方会提示你是否需要覆盖，输入y
       * sudo chown $(id -u):$(id -g) $HOME/.kube/config
-  * 安装网络插件flannel
-    * kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  * 安装网络插件flannel - 仅仅需要在master节点上执行
+    * kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml - 不需要了
+    * kubectl apply -f fannel.yml -- 使用这个
+  * 以上跨集群的操作基本上基于如下的三个连接
+    * https://blog.csdn.net/weixin_43988498/article/details/122639595
+    * https://www.caiyifan.cn/p/d6990d10.html
+    * https://www.cnblogs.com/wangxu01/articles/11803547.html#top
   * 验证相关信息
     * kubectl get pod -n kube-system
     * kubectl get nodes
-  * 其余的节点加入这台master
+  * worker节点加入这台master
     * 查看如何加入master?
       * kubeadm token create --print-join-command
     * kubeadm join 106.14.148.37:6443 --token he430e.0pvbwq1qvdm2hgmc \
@@ -219,7 +242,6 @@ EOF
   * 如何彻底的删除一个命名空间？
     * kubectl patch namespace cattle-system -p '{"metadata":{"finalizers":[]}}' --type='merge' -n cattle-system
       kubectl delete namespace cattle-system --grace-period=0 --force
-
       kubectl patch namespace fleet-system -p '{"metadata":{"finalizers":[]}}' --type='merge' -n fleet-system
 
       kubectl delete namespace fleet-system --grace-period=0 --force
