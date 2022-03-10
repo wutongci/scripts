@@ -1,3 +1,5 @@
+sudo swapoff -a
+free -m
 sudo kubeadm reset				
 sudo rm -rf /etc/kubernetes/
 sudo rm -rf /var/lib/kubelet/
