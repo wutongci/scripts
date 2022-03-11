@@ -146,7 +146,7 @@ EOF
   * 如何重新加入master?
     * 先要运行 kubeadm reset
   * 漂亮的实践
-    * 如果一台机器因为某种原因需要重启怎么办？
+    * 如果一台或者多台机器因为某种原因需要重启怎么办？
       * work节点：
         * 删除kube-proxy这个pod, 然后会自动更新这个pod。 如果这个行不同，转到下面
         * 更新flannel网络 - 本质上是重建flannel网络
@@ -161,7 +161,7 @@ EOF
         * kubectl get node -- 看看能不能拿到结果
         * kubectl delete -f flannel.yml
         * kubectl apply -f flannel.yml
-        * 等待相关pod变绿, 然后ping一下
+        * 等待相关pod变绿, 然后ping一下其他主机的pod
   * 如何安装k8s Dashboard?
     * 下载自己的k8s项目，运行其中的 recommend.yaml
       * kubectl apply -f recommended.yaml
