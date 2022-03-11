@@ -145,6 +145,15 @@ EOF
     --discovery-token-ca-cert-hash sha256:f8c21514c6c3e2e2cce5557d40cb81f485e2245a443c3df5a8702320e05ecc33 --ignore-preflight-errors=all
   * 如何重新加入master?
     * 先要运行 kubeadm reset
+  * 漂亮的实践
+    * 如果一台机器因为某种原因需要重启怎么办？
+      * work节点： 删除kube-proxy这个pod, 然后会自动更新这个pod
+      * Master节点-(这可是终极大杀器，即使很多work节点和master节点同时重启也能成功,实测通过):
+        * /etc/init.d/networking restart -- 无脑先执行
+        * kubectl get node -- 看看能不能拿到结果
+        * kubectl delete -f flannel.yml
+        * kubectl apply -f flannel.yml
+        * 等待相关pod变绿, 然后ping一下
   * 如何安装k8s Dashboard?
     * 下载自己的k8s项目，运行其中的 recommend.yaml
       * kubectl apply -f recommended.yaml
