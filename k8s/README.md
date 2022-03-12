@@ -149,15 +149,13 @@ EOF
     * 如果一台或者多台机器因为某种原因需要重启怎么办？
       * work节点：
         * 删除kube-proxy这个pod, 然后会自动更新这个pod。 如果这个行不同，转到下面
-        * 更新flannel网络 - 本质上是重建flannel网络
-          * sudo ifconfig flannel.1 down
-          * sudo ip link delete flannel.1
-          * sudo /etc/init.d/networking restart
+        * 更新flannel网络 - 终极大杀器 - 本质上是重建flannel网络
+          * sh ./clear-flannel.sh
           * 找到这台机器对应的kube-flannel-XX的pod,删除之，会自动更新
           * 大概率就好了
         * 如果上述方案实在不行, 重新加入master节点
       * Master节点-(这可是终极大杀器，即使很多work节点和master节点同时重启也能成功,实测通过):
-        * /etc/init.d/networking restart -- 无脑先执行
+        * sh ./clear-flannel.sh -- 无脑先执行
         * kubectl get node -- 看看能不能拿到结果
         * kubectl delete -f flannel.yml
         * kubectl apply -f flannel.yml
