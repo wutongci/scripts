@@ -8,13 +8,10 @@ services:
     environment:
       - PRE_CREATE_DB=prometheus
       - ADMIN_USER="admin"
-      - INFLUXDB_INIT_PWD="admin"
+      - INFLUXDB_INIT_PWD="admin111111"
       - GOGC=10
       - INFLUXDB_DATA_INDEX_VERSION=tsi1
     ports:
       - "8086:8086"
-    expose:
-      - "8090"
-      - "8099"
     volumes:
       - "/usr/share/influxdb:/var/lib/influxdb"
