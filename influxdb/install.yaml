@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    restart: always
+    environment:
+      - PRE_CREATE_DB=prometheus
+      - ADMIN_USER="admin"
+      - INFLUXDB_INIT_PWD="admin"
+      - GOGC=10
+      - INFLUXDB_DATA_INDEX_VERSION=tsi1
+    ports:
+      - "8086:8086"
+    expose:
+      - "8090"
+      - "8099"
+    volumes:
+      - "/usr/share/influxdb:/var/lib/influxdb"
