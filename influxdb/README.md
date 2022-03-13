@@ -1,0 +1,1 @@
+* docker-compose -f install.yaml up -d
