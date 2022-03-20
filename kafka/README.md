@@ -1,3 +1,9 @@
+* 如何安装kafka? 2022.3.20验证通过
+  * docker stack deploy --compose-file="install.yml" Kafka
+  *  或者 docker-compose -f install.yaml up -d
+  * 注意事项
+    * 2181，9001这个端口要在主机上开启
+    * install.yaml里面相应的IP要改成主机公网上的IP
 * 如何用Swarm安装kafka? - 比较繁琐，暂时不建议使用
   * 前提：三个带有公网的机器已经准备好，yang, yang-bj-1, yang-bj-2, 基于这三台机器的swarm集群也已经搭建好
   * 在每台机器上分别执行如下命令
