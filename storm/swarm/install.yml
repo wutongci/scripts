@@ -8,6 +8,11 @@ services:
             mode: global
             restart_policy:
                 condition: on-failure
+            resources:
+                limits:
+                  memory: 1024m
+                reservations:
+                  memory: 200m
     nimbus:
         image: storm:1.2.3
         command: storm nimbus
@@ -23,6 +28,11 @@ services:
         deploy:
             restart_policy:
                 condition: on-failure
+            resources:
+                limits:
+                  memory: 512m
+                reservations:
+                  memory: 200m
     supervisor:
         image: storm:1.2.3
         command: storm supervisor -c storm.log.dir="/logs"
@@ -47,6 +57,11 @@ services:
                   - node.labels.processor==true
             restart_policy:
                 condition: on-failure
+            resources:
+                limits:
+                  memory: 512m
+                reservations:
+                  memory: 200m
     ui:
         image: storm:1.2.3
         command: storm ui -c storm.log.dir="/logs"
