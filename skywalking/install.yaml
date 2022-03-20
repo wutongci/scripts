@@ -7,6 +7,14 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 1024m
+        reservations:
+          memory: 200m
     environment:
       - "cluster.name=elasticsearch" #设置集群名称为elasticsearch
       - "discovery.type=single-node" #以单一节点模式启动
