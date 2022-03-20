@@ -4,6 +4,14 @@ services:
     image: wurstmeister/zookeeper
     restart: unless-stopped
     hostname: zoo1
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 1024m
+        reservations:
+          memory: 200m
     ports:
       - "2181:2181"
     container_name: zookeeper
@@ -11,9 +19,17 @@ services:
     image: wurstmeister/kafka
     ports:
       - "9092:9092"
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 512m
+        reservations:
+          memory: 100m
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 8.141.54.77                     ## 修改:宿主机IP
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://8.141.54.77:9092    ## 修改:宿主机IP
+      KAFKA_ADVERTISED_HOST_NAME: 42.192.41.175                     ## 修改:宿主机IP
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://42.192.41.175:9092    ## 修改:宿主机IP
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181"
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_BROKER_ID: 1
@@ -25,9 +41,17 @@ services:
     image: wurstmeister/kafka
     ports:
       - "9093:9092"
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 512m
+        reservations:
+          memory: 100m
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 8.141.54.77                   ## 修改:宿主机IP
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://8.141.54.77:9093   ## 修改:宿主机IP
+      KAFKA_ADVERTISED_HOST_NAME: 42.192.41.175                   ## 修改:宿主机IP
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://42.192.41.175:9093   ## 修改:宿主机IP
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181"
       KAFKA_ADVERTISED_PORT: 9093
       KAFKA_BROKER_ID: 2
@@ -39,9 +63,17 @@ services:
     image: wurstmeister/kafka
     ports:
       - "9094:9092"
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 512m
+        reservations:
+          memory: 100m
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 8.141.54.77                   ## 修改:宿主机IP
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://8.141.54.77:9094   ## 修改:宿主机IP
+      KAFKA_ADVERTISED_HOST_NAME: 42.192.41.175                   ## 修改:宿主机IP
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://42.192.41.175:9094   ## 修改:宿主机IP
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181"
       KAFKA_ADVERTISED_PORT: 9094
       KAFKA_BROKER_ID: 3
@@ -52,6 +84,6 @@ services:
   kafka-manager:
     image: sheepkiller/kafka-manager              ## 镜像：开源的web管理kafka集群的界面
     environment:
-        ZK_HOSTS: 8.141.54.77                   ## 修改:宿主机IP
+        ZK_HOSTS: 42.192.41.175                  ## 修改:宿主机IP
     ports:
       - "9001:9000"                               ## 9000是Docker容器内部的端口，9001是宿主机的端口
