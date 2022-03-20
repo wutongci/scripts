@@ -59,7 +59,7 @@ services:
                 condition: on-failure
             resources:
                 limits:
-                  memory: 512m
+                  memory: 1024m
                 reservations:
                   memory: 200m
     ui:

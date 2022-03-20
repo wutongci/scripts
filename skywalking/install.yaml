@@ -12,7 +12,7 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 1024m
+          memory: 2024m
         reservations:
           memory: 200m
     environment:
