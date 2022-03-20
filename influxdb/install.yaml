@@ -11,5 +11,11 @@ services:
       - INFLUXDB_ADMIN_PASSWORD=admin
     ports:
       - "8086:8086"
+    deploy:
+      resources:
+        limits:
+          memory: 2048m
+        reservations:
+          memory: 200m
     volumes:
       - "/usr/share/influxdb:/var/lib/influxdb"
