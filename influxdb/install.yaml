@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   influxdb:
-    image: influxdb:1.8.10-alpine
+    image: influxdb:1.8.10
     container_name: influxdb
     restart: always
     environment:
@@ -16,7 +16,7 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 2048m
+          memory: 2024m
         reservations:
           memory: 200m
     volumes:
